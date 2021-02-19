@@ -56,10 +56,10 @@ footer
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #343434;
+    background-color: #565656;
     color: #fff;
     padding: 10px 15px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 }
 
 footer p
