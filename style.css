@@ -41,7 +41,41 @@ header a
 }
 
 header a:hover,
-header a:focus
+header a:focus,
+header a:active
 {
+    text-decoration: underline;
+}
+
+footer
+{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #343434;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+}
+
+footer p
+{
+    margin: 0;
+    line-height: 1.5;
+}
+
+footer a
+{
+    color: #bcbcbc;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active
+{
+    color: #dedede;
     text-decoration: underline;
 }
