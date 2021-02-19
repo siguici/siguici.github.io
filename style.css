@@ -81,3 +81,32 @@ footer a:active
     color: #dedede;
     text-decoration: underline;
 }
+
+main
+{
+    text-align: center;
+    padding: 25px 15px 50px;
+}
+
+main h1
+{
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+main p:first-child
+{
+    font-size: 1.75rem;
+    margin-bottom: 50px;
+}
+
+main a
+{
+    border: 1px solid #565656;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+}
