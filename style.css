@@ -13,8 +13,9 @@ body
 
 header
 {
-    background-color: #7800ff;
-    color: #fff;
+    background-color: #fff;
+    color: #565656;
+    border-bottom: 1px solid #bcbcbc;
     padding: 0 30px;
     display: flex;
     flex-direction: row;
