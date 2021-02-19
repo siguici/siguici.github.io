@@ -42,6 +42,12 @@ header a
     text-decoration: none;
 }
 
+header h1 a
+{
+    content: url("logo.svg");
+    height: 32px;
+}
+
 header a:hover,
 header a:focus,
 header a:active
