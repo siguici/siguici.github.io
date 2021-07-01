@@ -1,118 +1,161 @@
-*
-{
-    box-sizing: border-box;
+#ske-doc *::before,
+#ske-doc *,
+#ske-doc *::after {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
 }
 
-body
-{
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    background: #dedede;
-    color: #343434;
-    margin: 0;
+#ske-doc.html,
+#ske-doc body {
+  width: 100%;
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-header
-{
-    background-color: #fff;
-    color: #565656;
-    border-bottom: 1px solid #bcbcbc;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+#ske-doc body {
+  background: #007f7f;
+  color: #beffff;
 }
 
-header h1,
-header p
-{
-    padding: 15px 5px;
-    margin: 0;
+#ske-doc .ske-page {
+  width: 100%;
+  height: 100vmin;
 }
 
-header h1
-{
-    font-weight: normal;
+#ske-doc .page_heading {
+  background-color: #001010;
+  padding: 24px 56px;
 }
 
-header a
-{
-    color: inherit;
-    text-decoration: none;
+#ske-doc .page_heading .ske-logo {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  content: url("https://sikessem.omninf.com/logo.svg");
+  height: 40px;
 }
 
-header h1 a
-{
-    content: url("https://sikessem.github.io/logo.svg");
-    height: 32px;
+#ske-doc .page_content {
+  background-color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-header a:hover,
-header a:focus,
-header a:active
-{
-    text-decoration: underline;
+#ske-doc .ske-view {
+  padding: 64px 56px 72px;
+  border-bottom: 1px solid #004040;
 }
 
-footer
-{
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #565656;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 0.75rem;
+#ske-doc .page_content .ske-view.home .view_heading {
+  color: #007f7f;
+  font-weight: bolder;
+  font-size: 2rem;
 }
 
-footer p
-{
-    margin: 0;
-    line-height: 1.5;
+#ske-doc .page_content .ske-view.home .view_content .subtitle {
+  font-weight: 600;
+  margin: 24px auto 32px;
+  font-size: 2.4rem;
+  color: #000;
 }
 
-footer a
-{
-    color: #bcbcbc;
-    text-decoration: none;
+#ske-doc .page_content .ske-view.home .view_content .content {
+  margin: 8px auto;
 }
 
-footer a:hover,
-footer a:focus,
-footer a:active
-{
-    color: #dedede;
-    text-decoration: underline;
+#ske-doc .page_content .ske-view.home .view_content .button {
+  background-color: #00bebe;
+  color: #fff;
+  display: inline-block;
+  border: 1px solid #007f7f;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 1.4rem;
 }
 
-main
-{
-    text-align: center;
-    padding: 25px 15px 50px;
+#ske-doc .page_content .ske-view.home .view_content .button:hover {
+  background-color: #007f7f;
 }
 
-main h1
-{
-    font-size: 2.25rem;
-    font-weight: 500;
+#ske-doc .page_content .ske-view.home .view_content .button:active {
+  background-color: #007878;
 }
 
-main p:first-child
-{
-    font-size: 1.75rem;
-    margin-bottom: 50px;
+#ske-doc .page_content .ske-view.home .view_content .button:focus {
+  background-color: #005050;
 }
 
-main a
-{
-    border: 1px solid #565656;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-    font-weight: 700;
+#ske-doc footer {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 8px 16px;
+}
+
+#ske-doc footer .ske-buttons .list {
+  margin: 18px auto;
+}
+
+#ske-doc footer .ske-buttons .list .item {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+#ske-doc footer .ske-buttons .list .item .button {
+  font-size: 1rem;
+  display: inline-block;
+  border: 1px solid #beffff;
+  border-radius: 4px;
+  padding: 16px 32px;
+    background-color: #006060;
+  color: #beffff;
+}
+
+#ske-doc footer .ske-buttons .list .item .button:hover {
+  background-color: #004040;
+  color: #fff;
+}
+
+#ske-doc footer .ske-buttons .list .item .button:active {
+  background-color: #005050;
+  color: #fff;
+}
+
+#ske-doc footer .ske-buttons .list .item .button:focus {
+  background-color: #002020;
+  color: #fff;
+}
+
+#ske-doc footer .content p {
+  margin: 8px auto;
+  line-height: 1.5;
+  font-size: .875rem;
+}
+
+#ske-doc footer .content .link {
+  color: #002020;
+  text-decoration: none;
+}
+
+#ske-doc footer .content .link:hover,
+#ske-doc footer .content .link:focus,
+#ske-doc footer .content .link:active {
+  text-decoration: underline;
+}
+
+#ske-doc footer .content .link:hover {
+  color: #001010;
+}
+
+#ske-doc footer .content .link:active {
+  color: #004040;
+}
+
+#ske-doc footer .content .link:focus {
+  color: #004040;
 }
