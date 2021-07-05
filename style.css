@@ -30,15 +30,15 @@
 
 #ske-doc .page_heading {
   background-color: #001010;
-  padding: 24px 56px;
+  padding: 16px 48px;
 }
 
 #ske-doc .page_heading .ske-logo {
   color: #fff;
-  font-size: 2.2rem;
-  font-weight: bolder;
+  font-size: 1.8rem;
+  font-weight: bold;
   content: url("https://sikessem.omninf.com/logo.svg");
-  height: 40px;
+  height: 30px;
 }
 
 #ske-doc .page_content {
@@ -58,24 +58,23 @@
   width: 100vmin;
 }
 
-#ske-doc .page_content .ske-view .view_heading {
+#ske-doc .view_heading {
   font-weight: bolder;
+  font-size: clamp(max(18px, 1rem), 4vmin, min(24px,1.4rem));
 }
 
-#ske-doc .page_content .ske-view.home .view_heading {
+#ske-doc .view_heading.light {
   color: #007f7f;
-  font-size: 2rem;
 }
 
-#ske-doc .page_content .ske-view.error .view_heading {
+#ske-doc .view_heading.dark {
   color: #002020;
-  font-size: 1.275rem;
 }
 
-#ske-doc .page_content .ske-view.home .view_content .subtitle {
+#ske-doc .subtitle {
   font-weight: 600;
   margin: 24px auto 32px;
-  font-size: 2.4rem;
+  font-size: clamp(min(24px, 1.2rem), 4vmin, max(28px,1.6rem));
   color: #000;
 }
 
@@ -90,44 +89,91 @@
   line-height: 1.6;
 }
 
-#ske-doc .page_content .ske-view.error .view_content .content .link {
-  color: #beffff;
+#ske-doc .link {
+  text-decoration: none;
 }
 
-#ske-doc .page_content .ske-view.error .view_content .content .link:hover {
+#ske-doc .link:hover,
+#ske-doc .link:focus,
+#ske-doc .link:active {
   text-decoration: underline;
 }
 
-#ske-doc .page_content .ske-view.error .view_content .content .button {
+#ske-doc .link.dark {
+  color: #002020;
+}
+
+#ske-doc .link.dark:hover {
+  color: #001010;
+}
+
+#ske-doc .link.dark:active {
+  color: #004040;
+}
+
+#ske-doc .link.dark:focus {
+  color: #004040;
+}
+
+#ske-doc .button {
+  padding: 12px 16px;
+  font-size: 1rem;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #007f7f;
+}
+
+#ske-doc .main.button {
   margin-top: 24px;
 }
 
-#ske-doc .page_content .ske-view.home .view_content .button {
-  background-color: #00bebe;
-  color: #fff;
-  display: inline-block;
-  border: 1px solid #007f7f;
-  border-radius: 4px;
-  font-weight: 400;
-  padding: 16px 32px;
-  font-size: 1.4rem;
+#ske-doc .large.button {
+  padding: 16px 22px;
+  font-size: min(22px, 1.2rem);
 }
 
-#ske-doc .page_content .ske-view.home .view_content .button:hover {
+#ske-doc .small.button {
+  padding: 8px 12px;
+  font-size: max(14px, .875rem);
+}
+
+#ske-doc .button.light {
+  background-color: #00bebe;
+  color: #fff;
+  border-color: #007f7f;
+}
+
+#ske-doc .button.dark {
+  border-color: #beffff;
+  background-color: #006060;
+  color: #beffff;
+}
+
+#ske-doc .button.light:hover {
   background-color: #007f7f;
 }
 
-#ske-doc .page_content .ske-view.home .view_content .button:active {
+#ske-doc .button.dark:hover {
+  background-color: #004040;
+  color: #fff;
+}
+
+#ske-doc .button.light:active {
   background-color: #007878;
 }
 
-#ske-doc .page_content .ske-view.home .view_content .button:focus {
+#ske-doc .button.dark:active {
+  background-color: #005050;
+  color: #fff;
+}
+
+#ske-doc .button.light:focus {
   background-color: #005050;
 }
 
-#ske-doc .page_content .ske-view.error .view_content .button {
-  padding: 12px 32px;
-  font-size: 1.1rem;
+#ske-doc .button.dark:focus {
+  background-color: #002020;
+  color: #fff;
 }
 
 #ske-doc footer {
@@ -145,60 +191,8 @@
   margin: 0 12px;
 }
 
-:is(#ske-doc footer .ske-buttons .list .item, #ske-doc .page_content .ske-view.error .view_content) .button {
-  font-size: 1rem;
-  display: inline-block;
-  border: 1px solid #beffff;
-  border-radius: 4px;
-  padding: 16px 32px;
-  background-color: #006060;
-  color: #beffff;
-}
-
-#ske-doc .page_content .ske-view.error .view_content .button {
-  padding: 8px 24px;
-}
-
-:is(#ske-doc footer .ske-buttons .list .item, #ske-doc .page_content .ske-view.error .view_content) .button:hover {
-  background-color: #004040;
-  color: #fff;
-}
-
-:is(#ske-doc footer .ske-buttons .list .item, #ske-doc .page_content .ske-view.error .view_content) .button:active {
-  background-color: #005050;
-  color: #fff;
-}
-
-:is(#ske-doc footer .ske-buttons .list .item, #ske-doc .page_content .ske-view.error .view_content) .button:focus {
-  background-color: #002020;
-  color: #fff;
-}
-
 #ske-doc footer .content p {
   margin: 8px auto;
   line-height: 1.5;
-  font-size: .875rem;
-}
-
-#ske-doc footer .ske-buttons .list .item .link {
-  color: #002020;
-  text-decoration: none;
-}
-
-#ske-doc footer .ske-buttons .list .item .link:hover,
-#ske-doc footer .ske-buttons .list .item .link:focus,
-#ske-doc footer .ske-buttons .list .item .link:active {
-  text-decoration: underline;
-}
-
-#ske-doc footer .content .link:hover {
-  color: #001010;
-}
-
-#ske-doc footer .content .link:active {
-  color: #004040;
-}
-
-#ske-doc footer .content .link:focus {
-  color: #004040;
+  font-size: max(12px, .725rem);
 }
