@@ -24,7 +24,7 @@ jobs:
       fail-fast: true
       matrix:
         operating-system: [ubuntu-latest]
-        bun-version: [1.0.6]
+        bun-version: [1.0.12]
 
     name: 🚀 Deploy siguici.github.io with bun@${{ matrix.bun-version }} on ${{ matrix.operating-system }}
 
