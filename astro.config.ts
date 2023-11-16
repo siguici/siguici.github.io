@@ -6,6 +6,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			favicon: '/favicon.svg',
+			logo: {
+			  src: './src/assets/sigui.svg',
+			  alt: 'Sigui\'s logo',
+			},
 			title: 'Sigui\'s work',
 			social: {
 				github: 'https://github.com/siguici',
