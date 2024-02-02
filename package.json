@@ -11,7 +11,7 @@
     "yarn": "prefer using bun",
     "node": "prefer using bun"
   },
-  "packageManager": "bun@1.0.12",
+  "packageManager": "bun@1.0.25",
   "publishConfig": {
     "access": "public"
   },
@@ -31,13 +31,13 @@
     "sync": "astro sync"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.12.0",
-    "astro": "^3.5.5",
-    "sharp": "^0.32.6"
+    "@astrojs/starlight": "^0.17.2",
+    "astro": "^4.3.1",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.3.1",
-    "typescript": "^5.2.2"
+    "@astrojs/check": "^0.4.1",
+    "typescript": "^5.3.3"
   },
   "trustedDependencies": [
     "sharp"
