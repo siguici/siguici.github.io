@@ -13,6 +13,9 @@ export default defineConfig({
 			title: 'Sigui Docs',
 			social: {
 				github: 'https://github.com/siguici',
+				twitter: 'https://twitter.com/siguici',
+				discord: 'https://discord.gg/PURzNH7KBj',
+				youtube: 'https://youtube.com/@siguici',
 			},
 			editLink: {
 				baseUrl: 'https://github.com/siguici/siguici.github.io/edit/0.x/'
