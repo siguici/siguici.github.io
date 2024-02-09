@@ -10,7 +10,7 @@ export default defineConfig({
 			  src: './src/assets/sigui.svg',
 			  alt: 'Sigui\'s logo',
 			},
-			title: 'Sigui\'s work',
+			title: 'Sigui Docs',
 			social: {
 				github: 'https://github.com/siguici',
 			},
