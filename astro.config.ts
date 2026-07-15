@@ -63,12 +63,12 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: 'Home',
-          link: '/',
+          label: 'Open-source projects',
+          link: '/opensource/',
         },
         {
           label: 'Getting started',
-          items: [{ label: 'Quickstart', link: '/start/' }],
+          items: [{ label: 'Quickstart', link: '/opensource/start/' }],
         },
         {
           label: 'Reference',
