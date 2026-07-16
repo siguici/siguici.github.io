@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:wght@100..900&family=Rubik:wght@300..900&display=swap');
+@import '@fontsource-variable/geist/wght-italic.css';
+@import '@fontsource/geist-sans/100.css';
+@import '@fontsource/geist-sans/200.css';
+@import '@fontsource/geist-sans/300.css';
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/600.css';
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource/geist-sans/800.css';
+@import '@fontsource/geist-sans/900.css';
+@import '@fontsource-variable/geist-mono/wght-italic.css';
 
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +73,12 @@
   --surface-raw-floating: #1C313B;
 
   /* Typography Base */
-  --font-sans: 'Inter', 'Public Sans', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+  --font-system:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-body: 'Geist Variable', var(--font-system);
+  --font-sans: 'Geist Sans', var(--font-system);
+  --font-mono: 'Geist Mono Variable', monospace;
 
   /* Evolved Radius Scale (Radix UI Alignment) */
   --radius-none: 0;

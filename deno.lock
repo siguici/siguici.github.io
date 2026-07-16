@@ -6,6 +6,9 @@
     "npm:@astrojs/sitemap@^3.7.3": "3.7.3",
     "npm:@astrojs/starlight-tailwind@5": "5.0.0_@astrojs+starlight@0.40.0__astro@6.4.8___@types+node@24.13.3__@types+node@24.13.3__typescript@5.9.3_tailwindcss@4.3.2",
     "npm:@astrojs/starlight@0.40": "0.40.0_astro@6.4.8__@types+node@24.13.3_@types+node@24.13.3_typescript@5.9.3",
+    "npm:@fontsource-variable/geist-mono@^5.2.8": "5.2.8",
+    "npm:@fontsource-variable/geist@^5.2.9": "5.2.9",
+    "npm:@fontsource/geist-sans@^5.2.5": "5.2.5",
     "npm:@tailwindcss/vite@^4.3.2": "4.3.2_vite@7.3.6__@types+node@24.13.3",
     "npm:@types/node@^24.13.3": "24.13.3",
     "npm:astro@*": "6.4.8_@types+node@24.13.3",
@@ -446,6 +449,15 @@
       "dependencies": [
         "@expressive-code/core"
       ]
+    },
+    "@fontsource-variable/geist-mono@5.2.8": {
+      "integrity": "sha512-KI5bj+hkkRiHttYHmccotUZ80ZuZyai+RwI1d7UId0clkx/jXxlo8qYK8j54WzmpBjtMoEMPyllV7faDcj+6RA=="
+    },
+    "@fontsource-variable/geist@5.2.9": {
+      "integrity": "sha512-TP+QSBG3wxKGPE33CbMy/L0Nu3qvJ6Fy81Yc4LnQ95xH+i+cfEp8fyU8/kfV14YwszxIFPhnoMTbjL71waVpyQ=="
+    },
+    "@fontsource/geist-sans@5.2.5": {
+      "integrity": "sha512-anllOHyJbElRs9fV15TeDRqAeb1IKm4bSknPl6ZMoyPTx1BBy7logudcUwpNjmQLkzn4Q0JGQLRCUKJYoyST6A=="
     },
     "@img/colour@1.1.0": {
       "integrity": "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="
@@ -3781,6 +3793,9 @@
         "npm:@astrojs/sitemap@^3.7.3",
         "npm:@astrojs/starlight-tailwind@5",
         "npm:@astrojs/starlight@0.40",
+        "npm:@fontsource-variable/geist-mono@^5.2.8",
+        "npm:@fontsource-variable/geist@^5.2.9",
+        "npm:@fontsource/geist-sans@^5.2.5",
         "npm:@tailwindcss/vite@^4.3.2",
         "npm:@types/node@^24.13.3",
         "npm:astro@^6.4.8",
