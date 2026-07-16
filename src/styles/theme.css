@@ -15,8 +15,8 @@
   --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
 
   /* --- Core Brand Palette --- */
-  --color-primary: #3cf2ff;    /* Cyan Light Engine */
-  --color-secondary: #a855f7;  /* High Contrast Purple */
+  --color-primary: #3cf2ff; /* Cyan Light Engine */
+  --color-secondary: #a855f7; /* High Contrast Purple */
   --color-brand: var(--color-primary-400);
   --color-accent: var(--color-primary-500);
 
@@ -34,7 +34,7 @@
   --color-primary-950: #083344;
 
   /* --- Cohesive Brand Gray Scale (Injected with #3cf2ff / Cyan undertones) --- */
-  --color-gray-50:  #f0fdfa; /* Mint Tint White - High contrast text on dark backgrounds */
+  --color-gray-50: #f0fdfa; /* Mint Tint White - High contrast text on dark backgrounds */
   --color-gray-100: #e0f2fe; /* Light Ice Blue - Secondary text / Clean light mode fields */
   --color-gray-200: #bae6fd; /* Light Cyan-Gray Border for light layouts */
   --color-gray-300: #7dd3fc; /* Muted Cyan-Gray for disabled elements on light mode */
@@ -191,21 +191,46 @@
    Keyframe Declarations
    ========================================================================== */
 @keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes slide-up {
-  from { transform: translateY(16px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 @keyframes pop {
-  from { transform: scale(0.96); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 @keyframes shimmer {
-  100% { transform: translateX(100%); }
+  100% {
+    transform: translateX(100%);
+  }
 }
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.04); }
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.04);
+  }
 }
