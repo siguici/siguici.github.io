@@ -4,6 +4,7 @@
     "npm:@astrojs/check@~0.9.9": "0.9.9_typescript@5.9.3",
     "npm:@astrojs/rss@^4.0.19": "4.0.19",
     "npm:@astrojs/sitemap@^3.7.3": "3.7.3",
+    "npm:@astrojs/starlight-tailwind@5": "5.0.0_@astrojs+starlight@0.40.0__astro@6.4.8___@types+node@24.13.3__@types+node@24.13.3__typescript@5.9.3_tailwindcss@4.3.2",
     "npm:@astrojs/starlight@0.40": "0.40.0_astro@6.4.8__@types+node@24.13.3_@types+node@24.13.3_typescript@5.9.3",
     "npm:@tailwindcss/vite@^4.3.2": "4.3.2_vite@7.3.6__@types+node@24.13.3",
     "npm:@types/node@^24.13.3": "24.13.3",
@@ -133,6 +134,13 @@
         "sitemap",
         "stream-replace-string",
         "zod"
+      ]
+    },
+    "@astrojs/starlight-tailwind@5.0.0_@astrojs+starlight@0.40.0__astro@6.4.8___@types+node@24.13.3__@types+node@24.13.3__typescript@5.9.3_tailwindcss@4.3.2": {
+      "integrity": "sha512-VivF+bWg++4ma/ffr5sgHsd/ONtGdVJIKAaRZ6jmL4yqxy7bviu59MGNi5aW3nd8psP9i/aivBTrpwGxRM1XyA==",
+      "dependencies": [
+        "@astrojs/starlight",
+        "tailwindcss"
       ]
     },
     "@astrojs/starlight@0.40.0_astro@6.4.8__@types+node@24.13.3_@types+node@24.13.3_typescript@5.9.3": {
@@ -3771,6 +3779,7 @@
         "npm:@astrojs/check@~0.9.9",
         "npm:@astrojs/rss@^4.0.19",
         "npm:@astrojs/sitemap@^3.7.3",
+        "npm:@astrojs/starlight-tailwind@5",
         "npm:@astrojs/starlight@0.40",
         "npm:@tailwindcss/vite@^4.3.2",
         "npm:@types/node@^24.13.3",

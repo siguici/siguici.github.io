@@ -27,6 +27,7 @@
     "@astrojs/check": "^0.9.9",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/starlight-tailwind": "^5.0.0",
     "@tailwindcss/vite": "^4.3.2",
     "@types/node": "^24.13.3",
     "astro": "^6.4.8",
