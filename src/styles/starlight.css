@@ -13,37 +13,6 @@
 /* --- Complex Framework Components Architecture --- */
 @import "./components.css";
 
-@theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: monospace;
-
-  /* Map Starlight's accent onto your primary brand color (#7878ff) */
-  --color-accent-50: #ecfeff;
-  --color-accent-100: #cffafe;
-  --color-accent-200: #a5f3fc;
-  --color-accent-300: #67e8f9;
-  --color-accent-400: #3cf2ff;
-  --color-accent-500: #7878ff;
-  --color-accent-600: #06b6d4;
-  --color-accent-700: #0891b2;
-  --color-accent-800: #155e75;
-  --color-accent-900: #164e63;
-  --color-accent-950: #083344;
-
-  /* Grayscale system linked to your dark mode configuration */
-  --color-gray-50: #f8fafc;
-  --color-gray-100: #f1f5f9;
-  --color-gray-200: #e2e8f0;
-  --color-gray-300: #cbd5e1;
-  --color-gray-400: #94a3b8;
-  --color-gray-500: #64748b;
-  --color-gray-600: #475569;
-  --color-gray-700: #334155;
-  --color-gray-800: #1e293b;
-  --color-gray-900: #0f172a;
-  --color-gray-950: #020617;
-}
-
 /* ==========================================================================
    Starlight Navigation & Layout Overrides
    ========================================================================== */

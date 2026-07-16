@@ -29,11 +29,46 @@
   --color-brand: var(--color-primary-400);
   --color-accent: var(--color-primary-500);
 
+  /* ==========================================================================
+     Cohesive Brand Gray Scale (Injected with #7878ff undertones)
+     ========================================================================== */
+  --color-gray-50:  #f8fafc; /* Ice White - Main text on dark / Base background on light */
+  --color-gray-100: #f1f3f9; /* Soft Slate White - Secondary text / Light surfaces */
+  --color-gray-200: #e2e7f3; /* Light Border / Muted elements on light mode */
+  --color-gray-300: #c5cee3; /* Muted Text on light mode */
+  --color-gray-400: #94a3b8; /* Balanced Slate Gray - Intermediate structural text */
+  --color-gray-500: #64748b; /* Deep Muted Gray - Subtitles and inactive tabs */
+  --color-gray-600: #475569; /* Dark Border on light mode */
+  --color-gray-700: #334155; /* Heavy Slate - Structural lines / Inactive borders */
+  --color-gray-800: #1e293b; /* Deep Charcoal Blue - Borders on dark mode */
+  --color-gray-900: #0f172a; /* Midnight Tint - Card backgrounds on dark mode */
+  --color-gray-950: #080a14; /* Deep Void - Main app background (perfect match for #7878ff) */
+
+  /* ==========================================================================
+     Realignment of Surfaces & Typography to the new Gray Scale
+     ========================================================================== */
   /* --- Base Surfaces (Dark Mode by Default) --- */
-  --color-background: #020617;
-  --color-surface: #0f172a;
-  --color-surface-2: #111827;
-  --color-elevated: #162033;
+  --color-background: var(--color-gray-950);
+  --color-surface: var(--color-gray-900);
+  --color-surface-2: #131b31; /* Slightly lighter tinted surface for elevation */
+  --color-elevated: #1a243f;
+
+  --color-overlay: rgb(8 10 20 / 0.8);
+  --color-backdrop: rgb(8 10 20 / 0.6);
+  --color-card: var(--color-surface);
+  --color-navbar: rgb(8 10 20 / 0.75);
+  --color-sidebar: var(--color-surface);
+  --color-footer: var(--color-navbar);
+
+  /* --- Typography Hierarchy --- */
+  --color-foreground: var(--color-gray-50);
+  --color-secondary: var(--color-gray-200);
+  --color-muted: var(--color-gray-400);
+  --color-subtle: var(--color-gray-500);
+
+  /* --- Structural Borders --- */
+  --color-border: var(--color-gray-800);
+  --color-border-hover: var(--color-gray-700);
 
   --color-overlay: rgb(2 6 23 / 0.75);
   --color-backdrop: rgb(2 6 23 / 0.55);
