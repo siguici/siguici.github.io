@@ -5,6 +5,10 @@
   background: var(--color-background);
 }
 
+@utility code-font {
+  font-family: var(--font-mono);
+}
+
 @utility container-app {
   width: 100%;
   max-width: var(--container-xl);

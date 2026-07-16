@@ -5,6 +5,11 @@
     --sab: env(safe-area-inset-bottom, 0px);
   }
 
+  html,
+  body {
+    @apply h-full overflow-x-hidden;
+  }
+
   html {
     scroll-behavior: smooth;
     color-scheme: inherit;
@@ -18,7 +23,7 @@
       radial-gradient(circle at 50% 80%, #ff4fd822, transparent 45%), var(--color-background);
     overflow-x: hidden;
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -48,6 +53,12 @@
     .border-adaptive { border-color: rgba(0, 0, 0, 0.06); }
     .input-bg { background: rgba(0, 0, 0, 0.02); }
     .quote-bg { background: radial-gradient(circle at top left, rgba(0, 202, 158, 0.04), transparent 70%); background-color: #ffffff; }
+  }
+
+  *,
+  *::after,
+  *::before {
+    @apply m-0 box-border;
   }
 
   * {
@@ -80,7 +91,44 @@
     padding: 80px 24px;
   }
 
-  .code-font {
-    font-family: var(--font-mono);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-semibold text-xl text-gray-950 dark:text-gray-50;
+    font-family: var(--font-brand);
+  }
+
+  h1 {
+    @apply text-7xl;
+  }
+
+  h2 {
+    @apply text-6xl;
+  }
+
+  h3 {
+    @apply text-5xl;
+  }
+
+  h4 {
+    @apply text-4xl;
+  }
+
+  h5 {
+    @apply text-3xl;
+  }
+
+  h6 {
+    @apply text-2xl;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  a {
+    color: var(--link-color);
   }
 }
