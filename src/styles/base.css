@@ -1,3 +1,11 @@
+/*
+|--------------------------------------------------------------------------
+| 5. GLOBAL BASE RULES
+|--------------------------------------------------------------------------
+| Custom generic rules for the application context.
+|
+*/
+
 @layer base {
   :root {
     color-scheme: dark;
