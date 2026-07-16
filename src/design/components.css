@@ -1,0 +1,83 @@
+@layer components {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .noise::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  .glow {
+    position: fixed;
+    inset: auto;
+    pointer-events: none;
+    border-radius: 9999px;
+    filter: blur(120px);
+    opacity: 0.25;
+  }
+
+  .glow-1 {
+    width: 500px;
+    height: 500px;
+    background: #7878ff;
+    top: -150px;
+    left: -100px;
+  }
+
+  .glow-2 {
+    width: 400px;
+    height: 400px;
+    background: #a855f7;
+    right: -100px;
+    top: 30%;
+  }
+
+  .fade-up {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease;
+  }
+
+  .fade-up.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .gradient {
+    background: linear-gradient(90deg, #7878ff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card {
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
+
+  .glass-effect {
+    background: rgba(22, 27, 34, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .dark .glass-effect {
+    background: rgba(22, 27, 34, 0.75);
+  }
+
+  .light .glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}

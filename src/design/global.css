@@ -1,188 +1,219 @@
 @import "tailwindcss";
-@import "./ui.css";
+
+/* --- Core Library and Token Manifest --- */
+@import "./theme.css";
+
+/* --- DOM Base Structural Elements --- */
+@import "./base.css";
+
+/* --- Atomic Functional Native Utilities --- */
+@import "./utilities.css";
+
+/* --- Complex Framework Components Architecture --- */
+@import "./components.css";
 
 @custom-variant dark (&:where(.theme-dark, .theme-dark *));
 
-/* ==========================================================================
-   Design System Tokens (Tailwind v4)
-   ========================================================================== */
-@theme {
-  --color-background: #050816;
-  --color-surface: #0b1020;
-  --color-primary: #7878ff;
-  --color-secondary: #a855f7;
-  --color-text: #f8fafc;
-  --color-muted: #94a3b8;
-
-  /* --- Raw Brand Scale --- */
-  --color-primary-50: #ecfeff;
-  --color-primary-100: #cffafe;
-  --color-primary-200: #a5f3fc;
-  --color-primary-300: #67e8f9;
-  --color-primary-400: #3cf2ff;
-  --color-primary-500: #22d3ee;
-  --color-primary-600: #06b6d4;
-  --color-primary-700: #0891b2;
-  --color-primary-800: #155e75;
-  --color-primary-900: #164e63;
-  --color-primary-950: #083344;
-
-  /* --- Brand Aliases --- */
-  --color-brand: var(--color-primary-400);
-  --color-accent: var(--color-primary-500);
-
-  /* --- Base Surfaces --- */
-  --color-background: #020617;
-  --color-surface: #0f172a;
-  --color-surface-2: #111827;
-  --color-elevated: #162033;
-
-  --color-overlay: rgb(2 6 23 / 0.75);
-  --color-backdrop: rgb(2 6 23 / 0.55);
-  --color-card: var(--color-surface);
-  --color-navbar: rgb(2 6 23 / 0.72);
-  --color-sidebar: var(--color-surface);
-  --color-footer: var(--color-navbar);
-
-  /* --- Typography Hierarchy --- */
-  --color-foreground: #f8fafc;
-  --color-secondary: #cbd5e1;
-  --color-muted: #94a3b8;
-  --color-subtle: #64748b;
-
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-brand: 'Inter', system-ui, sans-serif;
-  --font-mono: monospace;
-
-  /* --- Borders & Radii --- */
-  --color-border: #1e293b;
-  --color-border-hover: #334155;
-  --radius-xl: 1.75rem;
-  --radius-lg: 1.25rem;
-
-  /* --- Complete Shadow Architecture --- */
-  --shadow-sm: 0 4px 12px rgb(0 0 0 / 0.18);
-  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.22);
-  --shadow-lg: 0 16px 48px rgb(0 0 0 / 0.28);
-  --shadow-card: 0 10px 40px rgb(0 0 0 / 0.25);
-  --shadow-glow: 0 0 30px rgb(60 242 255 / 0.18);
-
-  /* --- Layout Engine Spacing --- */
-  --blur-lg: 24px;
-  --spacing-container: 1.5rem;
-  --spacing-section: 6rem;
-  --spacing-section-lg: 8rem;
-  --container-xl: 80rem;
-
-  /* --- Motion Physics --- */
-  --duration-normal: 250ms;
-  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-/* ==========================================================================
-   Theme Management (Manual Override & System Preferences)
-   ========================================================================== */
-@keyframes __light_theme_tokens {
-  from {
-    --color-background: #f8fafc;
-    --color-surface: #ffffff;
-    --color-surface-2: #f1f5f9;
-    --color-elevated: #ffffff;
-    --color-foreground: #020617;
-    --color-secondary: #334155;
-    --color-muted: #64748b;
-    --color-subtle: #94a3b8;
-    --color-border: #e2e8f0;
-    --color-border-hover: #cbd5e1;
-    --color-card: var(--color-surface);
-    --color-navbar: rgb(248 250 252 / 0.72);
-    --color-sidebar: var(--color-surface);
-    --color-footer: var(--color-navbar);
+@layer components {
+  .logo {
+    content: url("../assets/logo.svg");
   }
 }
 
-[data-theme=light] {
-  color-scheme: light;
-  animation: __light_theme_tokens 0s forwards;
+/* Global variables */
+:root {
+  /* Colors */
+  --gray-0: #090b11;
+  --gray-50: #141925;
+  --gray-100: #283044;
+  --gray-200: #3d4663;
+  --gray-300: #505d84;
+  --gray-400: #6474a2;
+  --gray-500: #8490b5;
+  --gray-600: #a3acc8;
+  --gray-700: #c3cadb;
+  --gray-800: #e3e6ee;
+  --gray-900: #f3f4f7;
+  --gray-999-basis: 0, 0%, 100%;
+  --gray-999_40: hsla(var(--gray-999-basis), 0.4);
+  --gray-999: #ffffff;
+
+  --accent-light: #c561f6;
+  --accent-regular: #7611a6;
+  --accent-dark: #1c0056;
+  --accent-overlay: hsla(280, 89%, 67%, 0.33);
+  --accent-subtle-overlay: var(--accent-overlay);
+  --accent-text-over: var(--gray-999);
+
+  --link-color: var(--accent-regular);
+
+  /* Gradients */
+  --gradient-stop-1: var(--accent-light);
+  --gradient-stop-2: var(--accent-regular);
+  --gradient-stop-3: var(--accent-dark);
+  --gradient-subtle: linear-gradient(
+		150deg,
+		var(--gray-900) 19%,
+		var(--gray-999) 150%
+	);
+  --gradient-accent: linear-gradient(
+		150deg,
+		var(--gradient-stop-1),
+		var(--gradient-stop-2),
+		var(--gradient-stop-3)
+	);
+  --gradient-accent-orange: linear-gradient(
+		150deg,
+		#ca7879,
+		var(--accent-regular),
+		var(--accent-dark)
+	);
+  --gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
+
+  /* Shadows */
+  --shadow-sm:
+    0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
+		0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03);
+  --shadow-md:
+    0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03),
+		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
+  --shadow-lg:
+    0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
+		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
+
+  /* Fonts */
+  --font-system:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-body: "Public Sans", var(--font-system);
+  --font-brand: Rubik, var(--font-system);
+
+  /* Transitions */
+  --theme-transition: 0.2s ease-in-out;
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    color-scheme: light;
-    animation: __light_theme_tokens 0s forwards;
-  }
+:root.theme-dark {
+  --gray-0: #ffffff;
+  --gray-50: #f3f4f7;
+  --gray-100: #e3e6ee;
+  --gray-200: #c3cadb;
+  --gray-300: #a3acc8;
+  --gray-400: #8490b5;
+  --gray-500: #6474a2;
+  --gray-600: #505d84;
+  --gray-700: #3d4663;
+  --gray-800: #283044;
+  --gray-900: #141925;
+  --gray-999-basis: 225, 31%, 5%;
+  --gray-999: #090b11;
+
+  --accent-light: #1c0056;
+  --accent-regular: #7611a6;
+  --accent-dark: #c561f6;
+  --accent-overlay: hsla(280, 89%, 67%, 0.33);
+  --accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
+  --accent-text-over: var(--gray-0);
+
+  --link-color: var(--accent-dark);
+
+  --gradient-stop-1: #4c11c6;
+  --gradient-subtle: linear-gradient(
+		150deg,
+		var(--gray-900) 19%,
+		var(--gray-999) 81%
+	);
+  --gradient-accent-orange: linear-gradient(
+		150deg,
+		#ca7879,
+		var(--accent-regular),
+		var(--accent-light)
+	);
+  --gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
+
+  --shadow-sm:
+    0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
+		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
+  --shadow-md:
+    0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(
+			255,
+			255,
+			255,
+			0.03
+		),
+		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
+  --shadow-lg:
+    0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(
+			255,
+			255,
+			255,
+			0.05
+		),
+		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(
+			255,
+			255,
+			255,
+			0.12
+		);
 }
 
-/* ==========================================================================
-   Global DOM Rules (Isolated from Starlight Layout)
-   ========================================================================== */
-@layer base {
-  :root {
-    color-scheme: dark;
-    --sat: env(safe-area-inset-top, 0px);
-    --sab: env(safe-area-inset-bottom, 0px);
-  }
-
-  html,
-  body {
-    @apply h-full overflow-x-hidden;
-    scroll-behavior: smooth;
-    color-scheme: inherit;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* Target body background only if outside Starlight docs interface */
-  html:not([data-has-sidebar]) body {
-    background:
-      radial-gradient(circle at 20% 20%, #7878ff33, transparent 40%),
-      radial-gradient(circle at 80% 30%, #00d4ff22, transparent 45%),
-      radial-gradient(circle at 50% 80%, #ff4fd822, transparent 45%), var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  *,
-  *::after,
-  *::before {
-    @apply m-0 box-border;
-    border-color: var(--color-border);
-  }
-
-  img {
-    @apply max-w-full h-auto;
-  }
-
-  a {
-    color: var(--color-primary);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold text-gray-950 dark:text-gray-50;
-    font-family: var(--font-brand);
-  }
-
-  h1 { @apply text-7xl; }
-  h2 { @apply text-6xl; }
-  h3 { @apply text-5xl; }
-  h4 { @apply text-4xl; }
-  h5 { @apply text-3xl; }
-  h6 { @apply text-2xl; }
-
-  ::selection {
-    background: var(--color-selection);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 2px;
-  }
+html,
+body {
+  @apply h-full overflow-x-hidden;
 }
 
-/* ==========================================================================
-   Original Structure & Utility Classes
-   ========================================================================== */
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  @apply bg-white text-black dark:bg-black dark:text-white text-base;
+}
+
+*,
+*::after,
+*::before {
+  @apply m-0 box-border;
+}
+
+img {
+  @apply max-w-full h-auto;
+}
+
+a {
+  color: var(--link-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply font-semibold text-xl text-gray-950 dark:text-gray-50;
+  font-family: var(--font-brand);
+}
+
+h1 {
+  @apply text-7xl;
+}
+
+h2 {
+  @apply text-6xl;
+}
+
+h3 {
+  @apply text-5xl;
+}
+
+h4 {
+  @apply text-4xl;
+}
+
+h5 {
+  @apply text-3xl;
+}
+
+h6 {
+  @apply text-2xl;
+}
+
 .wrapper {
   @apply w-full max-w-7xl;
   margin-inline: auto;
@@ -192,20 +223,3 @@
 .stack {
   @apply flex flex-col;
 }
-
-@layer components {
-  .logo {
-    content: url("../assets/logo.svg");
-  }
-  
-  .grid-bg {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-}
-
-/* Custom Native Utilities v4 */
-@utility page { min-height: 100vh; width: 100%; background: var(--color-background); }
-@utility card { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); }

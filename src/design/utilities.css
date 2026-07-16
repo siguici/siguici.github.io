@@ -1,0 +1,150 @@
+/* --- Structure & Core Layout Utilities --- */
+@utility page {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--color-background);
+}
+
+@utility container-app {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-container);
+  padding-right: var(--spacing-container);
+}
+
+@utility section {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+  @media (min-width: 1024px) {
+    padding-top: var(--spacing-section-lg);
+    padding-bottom: var(--spacing-section-lg);
+  }
+}
+
+/* --- Glassmorphic Surfaces & Overlays --- */
+@utility glass {
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.02));
+  backdrop-filter: blur(var(--blur-lg));
+  border: 1px solid rgb(255 255 255 / 0.08);
+  box-shadow: var(--shadow-card);
+}
+
+@utility glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+@utility navbar {
+  background: var(--color-navbar);
+  backdrop-filter: blur(var(--blur-lg));
+  border-bottom: 1px solid var(--color-border);
+}
+
+@utility surface { background: var(--color-surface); }
+@utility surface-2 { background: var(--color-surface-2); }
+@utility elevated { background: var(--color-elevated); }
+@utility background { background: var(--color-background); }
+@utility glow { box-shadow: var(--shadow-glow); }
+
+/* --- Integrated Form Field System --- */
+@utility input {
+  background: var(--color-input);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1rem;
+  color: var(--color-foreground);
+  transition: background var(--duration-normal) var(--ease-standard), border-color var(--duration-normal) var(--ease-standard);
+
+  &:hover {
+    background: var(--color-input-hover);
+    border-color: var(--color-border-hover);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--color-focus);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* --- Ergonomic Interactive Button Blueprint --- */
+@utility button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--duration-normal) var(--ease-standard),
+              border-color var(--duration-normal) var(--ease-standard),
+              box-shadow var(--duration-normal) var(--ease-standard),
+              transform var(--duration-normal) var(--ease-standard);
+
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: translateY(0); }
+}
+
+@utility button-primary {
+  background: var(--color-button-primary);
+  color: var(--color-button-primary-foreground);
+
+  &:hover {
+    background: var(--color-button-primary-hover);
+    box-shadow: var(--shadow-glow);
+  }
+  &:active {
+    background: var(--color-button-primary-active);
+  }
+}
+
+@utility button-secondary {
+  background: var(--color-button-secondary);
+  color: var(--color-button-secondary-foreground);
+  border: 1px solid var(--color-border);
+
+  &:hover {
+    background: var(--color-button-secondary-hover);
+    border-color: var(--color-border-hover);
+  }
+}
+
+/* --- Gestural Modifiers & Layout Enhancements --- */
+@utility interactive {
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+@utility touch {
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+}
+
+@utility touch-none {
+  touch-action: none;
+  user-select: none;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* --- Hardware Display Boundaries (Safe Areas) --- */
+@utility safe-top { padding-top: env(safe-area-inset-top); }
+@utility safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+@utility safe-left { padding-left: env(safe-area-inset-left); }
+@utility safe-right { padding-right: env(safe-area-inset-right); }
