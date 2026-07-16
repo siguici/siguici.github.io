@@ -37,7 +37,7 @@ export default defineConfig({
       title: 'Sigui Kessé Emmanuel',
       disable404Route: true,
       customCss: [
-        './src/design/starlight.css',
+        './src/styles/starlight.css',
       ],
       social: [
         {
