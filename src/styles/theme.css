@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:wght@100..900&family=Rubik:wght@300..900&display=swap');
 
 /* ==========================================================================
-   DESIGN SYSTEM (Tailwind CSS v4 Configuration)
+   SIGUICI DESIGN SYSTEM (SDS) — Tailwind CSS v4 Configuration
    ========================================================================== */
 
 @theme {
@@ -17,7 +17,12 @@
   --color-primary-400: #3CF2FF;
   --color-primary-700: #00A3B0;
 
-  /* --- Cold Slate Neutral Scale (Linear/Vercel Inspired) --- */
+  --brand-secondary-300: #C084FC;
+  --brand-secondary-400: #B566FF;
+  --brand-secondary-500: #A855F7;
+  --brand-secondary-600: #8B2CF5;
+
+  /* --- Cold Slate Neutral Scale (Siguici Signature) --- */
   --color-gray-50: #F8FBFC;
   --color-gray-100: #EDF3F5;
   --color-gray-200: #DCE6EA;
@@ -29,6 +34,12 @@
   --color-gray-800: #1C2A32;
   --color-gray-900: #101A20;
   --color-gray-950: #060C10;
+
+  /* --- Absolute Dark Progression Surface Foundations --- */
+  --surface-raw-background: #060C10;
+  --surface-raw-card: #101A20;
+  --surface-raw-elevated: #16252D;
+  --surface-raw-floating: #1C313B;
 
   /* --- Typography Base --- */
   --font-sans: 'Inter', 'Public Sans', system-ui, sans-serif;
@@ -71,8 +82,21 @@
   --animate-slide-up: slide-up var(--duration-slow) var(--ease-emphasized);
   --animate-pop: pop var(--duration-normal) var(--ease-standard);
 
-  /* --- Semantic Layout Variables --- */
+  /* --- Foundation Layout Layouts (Blur, Opacity, Stroke, Containers) --- */
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
   --blur-lg: 24px;
+  --blur-xl: 40px;
+
+  --opacity-disabled: 0.5;
+  --opacity-muted: 0.7;
+  --opacity-ghost: 0.08;
+
+  --stroke-thin: 1px;
+  --stroke-medium: 2px;
+  --stroke-thick: 4px;
+
   --spacing-container: 1.5rem;
   --spacing-card: 1.25rem;
   --spacing-section: 6rem;
@@ -92,16 +116,24 @@
   --z-toast: 500;
   --z-tooltip: 600;
 
+  /* --- Raw Gradient Scales (Foundation values to prevent circular referencing) --- */
+  --gradient-scale-brand: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-secondary) 100%);
+  --gradient-scale-brand-alt: linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-700) 100%);
+  --gradient-scale-surface: linear-gradient(180deg, var(--color-gray-900), var(--color-gray-950));
+  --gradient-scale-stroke: linear-gradient(180deg, #2A434F, #21343D);
+
   /* ------------------------------------------------------------------------
-     2. SEMANTIC TOKENS (To be consumed by modern components)
+     2. SEMANTIC TOKENS (Dark Mode Default Layouts)
      ------------------------------------------------------------------------ */
 
-  /* --- Surface Structural Hierarchy (Dark Mode Default) --- */
-  --color-background: var(--color-gray-950);
+  /* --- Surface Structural Hierarchy --- */
+  --color-background: var(--surface-raw-background);
+  --color-card: var(--surface-raw-card);
+  --color-popover: var(--surface-raw-elevated);
+  --color-surface-floating: var(--surface-raw-floating);
   --color-surface: var(--color-gray-900);
-  --color-surface-2: #16252D; /* Elevated Surface mapped directly */
-  --color-elevated: #16252D;
-  --color-card: var(--color-surface);
+  --color-surface-2: var(--surface-raw-elevated);
+  --color-elevated: var(--surface-raw-elevated);
 
   /* --- Text & Context Layout Hierarchy --- */
   --color-foreground: var(--color-gray-50);
@@ -112,6 +144,7 @@
   /* --- Borders & Separation Layouts --- */
   --color-border: #21343D;
   --color-border-hover: #2A434F;
+  --color-ring: var(--color-primary);
 
   /* --- Core Brand Action Mappings --- */
   --color-brand: var(--color-primary-400);
@@ -127,9 +160,23 @@
   --color-button-secondary-hover: var(--color-surface-2);
   --color-button-secondary-foreground: var(--color-foreground);
 
+  --color-action-ghost-bg: transparent;
+  --color-action-ghost-text: var(--color-gray-300);
+  --color-action-ghost-hover: rgba(255, 255, 255, var(--opacity-ghost));
+
+  --color-action-link-text: var(--color-primary-400);
+  --color-action-link-hover: var(--color-primary-300);
+
+  --color-action-danger-bg: #DC2626;
+  --color-action-danger-text: var(--color-gray-50);
+  --color-action-danger-hover: #EF4444;
+
   --color-input: var(--color-surface);
   --color-input-hover: var(--color-surface-2);
   --color-input-border: var(--color-border);
+  --color-input-focus: var(--color-primary);
+  --color-input-invalid: #EF4444;
+  --color-input-disabled: var(--color-gray-800);
 
   /* --- Overlays & Glassmorphism Handles --- */
   --color-overlay: color-mix(in oklab, var(--color-primary) 15%, transparent);
@@ -142,15 +189,118 @@
   --color-focus: var(--color-primary);
   --color-selection: color-mix(in oklab, var(--color-primary) 15%, transparent);
 
-  /* --- Functional Alert States --- */
+  /* --- Normalized Semantic Gradients --- */
+  --gradient-brand: var(--gradient-scale-brand);
+  --gradient-brand-alt: var(--gradient-scale-brand-alt);
+  --gradient-surface: var(--gradient-scale-surface);
+  --gradient-stroke: var(--gradient-scale-stroke);
+
+  /* --- Functional Alert & Application States --- */
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-danger: #EF4444;
   --color-info: #3B82F6;
+  --color-state-online: #4ADE80;
+  --color-state-offline: var(--color-gray-500);
+  --color-state-idle: var(--color-warning);
+  --color-state-loading: var(--color-primary-400);
 }
 
 /* ==========================================================================
-   3. LEGACY COMPATIBILITY LAYER (Astro Legacy API Mapping)
+   3. THEME OVERRIDES (Declarative Light Mode Injection)
+   ========================================================================== */
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* --- Inverse Light Layers --- */
+  --color-background: var(--color-gray-50);
+  --color-card: #FFFFFF;
+  --color-popover: var(--color-gray-100);
+  --color-surface-floating: var(--color-gray-200);
+  --color-surface: #FFFFFF;
+  --color-surface-2: var(--color-gray-100);
+  --color-elevated: #FFFFFF;
+  --color-overlay: rgba(248, 251, 252, 0.85);
+  --color-navbar: color-mix(in oklab, var(--color-gray-50) 72%, transparent);
+  --color-sidebar: var(--color-surface);
+  --color-footer: var(--color-navbar);
+
+  /* --- Light Typography --- */
+  --color-foreground: #020617;
+  --color-secondary: var(--color-gray-700);
+  --color-muted: var(--color-gray-500);
+  --color-subtle: var(--color-gray-400);
+
+  /* --- Light Outlines & Focus --- */
+  --color-border: var(--color-gray-200);
+  --color-border-hover: var(--color-gray-300);
+  --color-ring: var(--brand-secondary-500);
+
+  /* --- Inverse Light Actions --- */
+  --color-button-secondary: var(--color-surface);
+  --color-button-secondary-hover: var(--color-surface-2);
+  --color-button-secondary-foreground: var(--color-foreground);
+
+  --color-action-ghost-text: var(--color-gray-700);
+  --color-action-ghost-hover: rgba(0, 0, 0, var(--opacity-ghost));
+
+  --color-action-link-text: var(--brand-secondary-600);
+  --color-action-link-hover: var(--brand-secondary-500);
+
+  /* --- Light Inputs --- */
+  --color-input: var(--color-surface);
+  --color-input-hover: var(--color-surface-2);
+  --color-input-border: var(--color-border);
+  --color-input-focus: var(--brand-secondary-500);
+  --color-input-disabled: var(--color-gray-200);
+
+  /* --- Light Adaptive Gradients --- */
+  --gradient-surface: linear-gradient(180deg, var(--color-gray-100), var(--color-gray-50));
+  --gradient-stroke: linear-gradient(180deg, var(--color-gray-300), var(--color-gray-200));
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    /* Safe layout duplication for client system preferences routing */
+    color-scheme: light;
+    --color-background: var(--color-gray-50);
+    --color-card: #FFFFFF;
+    --color-popover: var(--color-gray-100);
+    --color-surface-floating: var(--color-gray-200);
+    --color-surface: #FFFFFF;
+    --color-surface-2: var(--color-gray-100);
+    --color-elevated: #FFFFFF;
+    --color-overlay: rgba(248, 251, 252, 0.85);
+    --color-navbar: color-mix(in oklab, var(--color-gray-50) 72%, transparent);
+    --color-sidebar: var(--color-surface);
+    --color-footer: var(--color-navbar);
+    --color-foreground: #020617;
+    --color-secondary: var(--color-gray-700);
+    --color-muted: var(--color-gray-500);
+    --color-subtle: var(--color-gray-400);
+    --color-border: var(--color-gray-200);
+    --color-border-hover: var(--color-gray-300);
+    --color-ring: var(--brand-secondary-500);
+    --color-button-secondary: var(--color-surface);
+    --color-button-secondary-hover: var(--color-surface-2);
+    --color-button-secondary-foreground: var(--color-foreground);
+    --color-action-ghost-text: var(--color-gray-700);
+    --color-action-ghost-hover: rgba(0, 0, 0, var(--opacity-ghost));
+    --color-action-link-text: var(--brand-secondary-600);
+    --color-action-link-hover: var(--brand-secondary-500);
+    --color-input: var(--color-surface);
+    --color-input-hover: var(--color-surface-2);
+    --color-input-border: var(--color-border);
+    --color-input-focus: var(--brand-secondary-500);
+    --color-input-disabled: var(--color-gray-200);
+    --gradient-surface: linear-gradient(180deg, var(--color-gray-100), var(--color-gray-50));
+    --gradient-stroke: linear-gradient(180deg, var(--color-gray-300), var(--color-gray-200));
+  }
+}
+
+/* ==========================================================================
+   4. LEGACY COMPATIBILITY LAYER (Astro Legacy API Mapping)
    ========================================================================== */
 
 :root {
@@ -199,31 +349,10 @@
   --gradient-stop-2: var(--color-primary);
   --gradient-stop-3: var(--color-secondary);
 
-  --gradient-accent: linear-gradient(
-    135deg,
-    var(--gradient-stop-1),
-    var(--gradient-stop-2),
-    var(--gradient-stop-3)
-  );
-
-  --gradient-accent-orange: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary),
-    #2563EB
-  );
-
-  --gradient-subtle: linear-gradient(
-    180deg,
-    var(--color-gray-900),
-    var(--color-gray-950)
-  );
-
-  --gradient-stroke: linear-gradient(
-    180deg,
-    var(--color-border-hover),
-    var(--color-border)
-  );
+  --gradient-accent: var(--gradient-brand);
+  --gradient-accent-orange: linear-gradient(135deg, var(--color-primary), var(--color-secondary), #2563EB);
+  --gradient-subtle: var(--gradient-surface);
+  --gradient-stroke: var(--gradient-stroke);
 }
 
 /* --- Inverse Legacy Context Preservation (.theme-dark handles native Astro states) --- */
@@ -256,7 +385,7 @@
 }
 
 /* ==========================================================================
-   GLOBAL BASE RULES
+   5. GLOBAL BASE RULES
    ========================================================================== */
 
 html,
@@ -326,53 +455,7 @@ h6 {
 }
 
 /* ==========================================================================
-   THEME SWITCHER ANIMATIONS (Native Fallbacks & Light Engine overrides)
-   ========================================================================== */
-
-@keyframes __light_theme_tokens {
-  from {
-    --color-background: var(--color-gray-50);
-    --color-surface: #FFFFFF;
-    --color-surface-2: var(--color-gray-100);
-    --color-elevated: #FFFFFF;
-
-    --color-foreground: #020617;
-    --color-secondary: var(--color-gray-700);
-    --color-muted: var(--color-gray-500);
-    --color-subtle: var(--color-gray-400);
-
-    --color-border: var(--color-gray-200);
-    --color-border-hover: var(--color-gray-300);
-
-    --color-card: var(--color-surface);
-    --color-navbar: color-mix(in oklab, var(--color-gray-50) 72%, transparent);
-    --color-sidebar: var(--color-surface);
-    --color-footer: var(--color-navbar);
-
-    --color-button-secondary: var(--color-surface);
-    --color-button-secondary-hover: var(--color-surface-2);
-    --color-button-secondary-foreground: var(--color-foreground);
-
-    --color-input: var(--color-surface);
-    --color-input-hover: var(--color-surface-2);
-    --color-input-border: var(--color-border);
-  }
-}
-
-[data-theme=light] {
-  color-scheme: light;
-  animation: __light_theme_tokens 0s forwards;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    color-scheme: light;
-    animation: __light_theme_tokens 0s forwards;
-  }
-}
-
-/* ==========================================================================
-   ATOMS KEYFRAMES DEFINITIONS
+   6. ATOMS KEYFRAMES DEFINITIONS
    ========================================================================== */
 @keyframes fade {
   from {
