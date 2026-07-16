@@ -14,12 +14,6 @@
 
 @custom-variant dark (&:where(.theme-dark, .theme-dark *));
 
-@layer components {
-  .logo {
-    content: url("../assets/logo.svg");
-  }
-}
-
 /* Global variables */
 :root {
   /* Colors */

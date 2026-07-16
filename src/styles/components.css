@@ -1,4 +1,8 @@
 @layer components {
+  .logo {
+    content: url("../assets/logo.svg");
+  }
+
   .wrapper {
     @apply w-full max-w-7xl;
     margin-inline: auto;
