@@ -1,119 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:wght@100..900&family=Rubik:wght@300..900&display=swap');
 
 /* ==========================================================================
-   Design System Tokens
+   DESIGN SYSTEM (Tailwind CSS v4 Configuration)
    ========================================================================== */
 
 @theme {
-  /* Fonts */
-  --font-system:
-    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-body: "Public Sans", var(--font-system);
-  --font-brand: Rubik, var(--font-system);
-  --font-sans: 'Geist', 'Inter', var(--font-system);
+  /* ------------------------------------------------------------------------
+     1. FOUNDATION LAYERS (Raw Atoms)
+     ------------------------------------------------------------------------ */
+
+  /* --- Brand Core --- */
+  --color-primary: #3CF2FF;
+  --color-secondary: #A855F7;
+
+  --color-primary-300: #6EE7FF;
+  --color-primary-400: #3CF2FF;
+  --color-primary-700: #00A3B0;
+
+  /* --- Cold Slate Neutral Scale (Linear/Vercel Inspired) --- */
+  --color-gray-50: #F8FBFC;
+  --color-gray-100: #EDF3F5;
+  --color-gray-200: #DCE6EA;
+  --color-gray-300: #BCCBD2;
+  --color-gray-400: #90A4AE;
+  --color-gray-500: #667985;
+  --color-gray-600: #4A5C67;
+  --color-gray-700: #33424B;
+  --color-gray-800: #1C2A32;
+  --color-gray-900: #101A20;
+  --color-gray-950: #060C10;
+
+  /* --- Typography Base --- */
+  --font-sans: 'Inter', 'Public Sans', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
 
-  /* --- Core Brand Palette --- */
-  --color-primary: #3cf2ff; /* Cyan Light Engine */
-  --color-secondary: #a855f7; /* High Contrast Purple */
-  --color-brand: var(--color-primary-400);
-  --color-accent: var(--color-primary-500);
-
-  /* --- Raw Brand Scale --- */
-  --color-primary-50: #ecfeff;
-  --color-primary-100: #cffafe;
-  --color-primary-200: #a5f3fc;
-  --color-primary-300: #67e8f9;
-  --color-primary-400: #3cf2ff;
-  --color-primary-500: #22d3ee;
-  --color-primary-600: #06b6d4;
-  --color-primary-700: #0891b2;
-  --color-primary-800: #155e75;
-  --color-primary-900: #164e63;
-  --color-primary-950: #083344;
-
-  /* --- Cohesive Brand Gray Scale (Injected with #3cf2ff / Cyan undertones) --- */
-  --color-gray-50: #f0fdfa; /* Mint Tint White - High contrast text on dark backgrounds */
-  --color-gray-100: #e0f2fe; /* Light Ice Blue - Secondary text / Clean light mode fields */
-  --color-gray-200: #bae6fd; /* Light Cyan-Gray Border for light layouts */
-  --color-gray-300: #7dd3fc; /* Muted Cyan-Gray for disabled elements on light mode */
-  --color-gray-400: #38bdf8; /* Vibrant Mid-scale for iconography bounds */
-  --color-gray-500: #0ea5e9; /* Deep Sky Anchor for secondary typography handles */
-  --color-gray-600: #0284c7; /* Dark Mode active border highlights */
-  --color-gray-700: #0369a1; /* Heavy Teal-Chalk - Structural separation rules */
-  --color-gray-800: #0c1a24; /* Deep Ocean Border - Default border lines on dark mode */
-  --color-gray-900: #060f14; /* Abyssal Card Background - Solid dark surfaces */
-  --color-gray-950: #02080c; /* Deep Void Core - Pure app viewport background */
-
-  /* --- Base Surfaces Alignment (Dark Mode by Default) --- */
-  --color-background: var(--color-gray-950);
-  --color-surface: var(--color-gray-900);
-  --color-surface-2: #09161f;
-  --color-elevated: #11232f;
-
-  --color-overlay: rgb(2 8 12 / 0.85);
-  --color-backdrop: rgb(2 8 12 / 0.6);
-  --color-card: var(--color-surface);
-  --color-navbar: rgb(2 8 12 / 0.75);
-  --color-sidebar: var(--color-surface);
-  --color-footer: var(--color-navbar);
-
-  /* --- Semantic Component Tokens --- */
-  --color-button-primary: var(--color-brand);
-  --color-button-primary-hover: var(--color-primary-500);
-  --color-button-primary-active: var(--color-primary-600);
-  --color-button-primary-foreground: #02080c;
-
-  --color-button-secondary: var(--color-surface);
-  --color-button-secondary-hover: var(--color-surface-2);
-  --color-button-secondary-foreground: var(--color-foreground);
-
-  --color-input: var(--color-surface);
-  --color-input-hover: var(--color-surface-2);
-  --color-input-border: var(--color-border);
-
-  /* --- Typography Hierarchy --- */
-  --color-foreground: var(--color-gray-50);
-  --color-secondary: var(--color-gray-100);
-  --color-muted: #64748b;
-  --color-subtle: #475569;
-
-  /* --- Structural Borders --- */
-  --color-border: var(--color-gray-800);
-  --color-border-hover: var(--color-gray-700);
-
-  /* --- Semantic States --- */
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-info: var(--color-primary-500);
-
-  --color-focus: var(--color-primary);
-  --color-selection: rgb(60 242 255 / 0.15);
-
-  /* --- Border Radius Scale --- */
-  --radius-xs: 0.375rem;
-  --radius-sm: 0.625rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.75rem;
+  /* --- Evolved Radius Scale (Radix UI Alignment) --- */
+  --radius-none: 0;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
   --radius-3xl: 2.5rem;
   --radius-full: 9999px;
 
-  /* --- Complete Shadow Architecture --- */
-  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.12);
-  --shadow-sm: 0 4px 12px rgb(0 0 0 / 0.18);
-  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.22);
-  --shadow-lg: 0 16px 48px rgb(0 0 0 / 0.28);
-  --shadow-card: 0 10px 40px rgb(0 0 0 / 0.25);
-  --shadow-glow: 0 0 30px rgb(60 242 255 / 0.15);
-  --shadow-glow-lg: 0 0 60px rgb(60 242 255 / 0.25);
+  /* --- Compact Technical Shadows Architecture --- */
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-sm: 0 4px 12px rgb(0 0 0 / 0.14);
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 0.18);
+  --shadow-lg: 0 20px 60px rgb(0 0 0 / 0.25);
+  --shadow-xl: 0 30px 90px rgb(0 0 0 / 0.35);
 
-  /* --- Blurs & Layout Engine Spacing --- */
+  /* --- Precise Volumetric Glow Engine --- */
+  --shadow-glow-xs: 0 0 8px rgb(60 242 255 / 0.08);
+  --shadow-glow-sm: 0 0 18px rgb(60 242 255 / 0.12);
+  --shadow-glow: 0 0 30px rgb(60 242 255 / 0.18);
+  --shadow-glow-lg: 0 0 60px rgb(60 242 255 / 0.24);
+  --shadow-glow-xl: 0 0 100px rgb(60 242 255 / 0.30);
+
+  /* --- Motion Physics Timings --- */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-fade: fade var(--duration-fast) ease;
+  --animate-slide-up: slide-up var(--duration-slow) var(--ease-emphasized);
+  --animate-pop: pop var(--duration-normal) var(--ease-standard);
+
+  /* --- Semantic Layout Variables --- */
   --blur-lg: 24px;
-
   --spacing-container: 1.5rem;
   --spacing-card: 1.25rem;
   --spacing-section: 6rem;
@@ -126,60 +85,285 @@
   --container-xl: 80rem;
   --container-2xl: 90rem;
 
-  /* --- Motion Physics & Timings --- */
-  --duration-normal: 250ms;
-  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
-
-  /* --- Evolved Animation Engine --- */
-  --animate-fade: fade 0.25s ease;
-  --animate-slide-up: slide-up 0.35s var(--ease-standard);
-  --animate-pop: pop 0.2s var(--ease-standard);
-
-  /* --- Layer Management (Z-Index) --- */
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-overlay: 300;
   --z-modal: 400;
   --z-toast: 500;
   --z-tooltip: 600;
+
+  /* ------------------------------------------------------------------------
+     2. SEMANTIC TOKENS (To be consumed by modern components)
+     ------------------------------------------------------------------------ */
+
+  /* --- Surface Structural Hierarchy (Dark Mode Default) --- */
+  --color-background: var(--color-gray-950);
+  --color-surface: var(--color-gray-900);
+  --color-surface-2: #16252D; /* Elevated Surface mapped directly */
+  --color-elevated: #16252D;
+  --color-card: var(--color-surface);
+
+  /* --- Text & Context Layout Hierarchy --- */
+  --color-foreground: var(--color-gray-50);
+  --color-secondary: var(--color-gray-300);
+  --color-muted: var(--color-gray-400);
+  --color-subtle: var(--color-gray-500);
+
+  /* --- Borders & Separation Layouts --- */
+  --color-border: #21343D;
+  --color-border-hover: #2A434F;
+
+  /* --- Core Brand Action Mappings --- */
+  --color-brand: var(--color-primary-400);
+  --color-accent: var(--color-secondary);
+
+  /* --- Interactive Components Mapping --- */
+  --color-button-primary: var(--color-brand);
+  --color-button-primary-hover: var(--color-primary-300);
+  --color-button-primary-active: var(--color-primary-700);
+  --color-button-primary-foreground: var(--color-gray-950);
+
+  --color-button-secondary: var(--color-surface);
+  --color-button-secondary-hover: var(--color-surface-2);
+  --color-button-secondary-foreground: var(--color-foreground);
+
+  --color-input: var(--color-surface);
+  --color-input-hover: var(--color-surface-2);
+  --color-input-border: var(--color-border);
+
+  /* --- Overlays & Glassmorphism Handles --- */
+  --color-overlay: color-mix(in oklab, var(--color-primary) 15%, transparent);
+  --color-backdrop: color-mix(in oklab, var(--color-gray-950) 65%, transparent);
+  --color-navbar: color-mix(in oklab, var(--color-gray-950) 75%, transparent);
+  --color-sidebar: var(--color-surface);
+  --color-footer: var(--color-navbar);
+
+  /* --- Structural Global Interactivity --- */
+  --color-focus: var(--color-primary);
+  --color-selection: color-mix(in oklab, var(--color-primary) 15%, transparent);
+
+  /* --- Functional Alert States --- */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-info: #3B82F6;
 }
 
 /* ==========================================================================
-   Theme Management (Manual Override & System Preferences)
+   3. LEGACY COMPATIBILITY LAYER (Astro Legacy API Mapping)
+   ========================================================================== */
+
+:root {
+  /* --- Fonts Back-Mapping --- */
+  --font-system: var(--font-sans);
+  --font-body: "Public Sans", var(--font-sans);
+  --font-brand: "Rubik", var(--font-sans);
+
+  /* --- Motion Back-Mapping --- */
+  --theme-transition: var(--duration-normal) var(--ease-standard);
+
+  /* --- Shadow Profiles Bridge --- */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  /* --- Astro Gray Scale API Mirroring --- */
+  --gray-0: var(--color-gray-950);
+  --gray-50: var(--color-gray-900);
+  --gray-100: var(--color-gray-800);
+  --gray-200: var(--color-gray-700);
+  --gray-300: var(--color-gray-600);
+  --gray-400: var(--color-gray-500);
+  --gray-500: var(--color-gray-400);
+  --gray-600: var(--color-gray-300);
+  --gray-700: var(--color-gray-200);
+  --gray-800: var(--color-gray-100);
+  --gray-900: var(--color-gray-50);
+
+  /* --- Gray Foundations Fallbacks --- */
+  --gray-999-basis: 180 12% 100%;
+  --gray-999_40: hsl(var(--gray-999-basis) / 0.4);
+  --gray-999: #ffffff;
+
+  /* --- Accents Profiles Bridge --- */
+  --accent-light: var(--color-primary-300);
+  --accent-regular: var(--color-primary);
+  --accent-dark: var(--color-primary-700);
+  --accent-overlay: color-mix(in oklab, var(--color-primary) 22%, transparent);
+  --accent-subtle-overlay: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  --accent-text-over: var(--color-gray-950);
+  --link-color: var(--color-primary);
+
+  /* --- Premium Gradient Configurations Pipeline --- */
+  --gradient-stop-1: var(--color-primary-300);
+  --gradient-stop-2: var(--color-primary);
+  --gradient-stop-3: var(--color-secondary);
+
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--gradient-stop-1),
+    var(--gradient-stop-2),
+    var(--gradient-stop-3)
+  );
+
+  --gradient-accent-orange: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary),
+    #2563EB
+  );
+
+  --gradient-subtle: linear-gradient(
+    180deg,
+    var(--color-gray-900),
+    var(--color-gray-950)
+  );
+
+  --gradient-stroke: linear-gradient(
+    180deg,
+    var(--color-border-hover),
+    var(--color-border)
+  );
+}
+
+/* --- Inverse Legacy Context Preservation (.theme-dark handles native Astro states) --- */
+:root.theme-dark {
+  --gray-0: var(--color-gray-50);
+  --gray-50: var(--color-gray-100);
+  --gray-100: var(--color-gray-200);
+  --gray-200: var(--color-gray-300);
+  --gray-300: var(--color-gray-400);
+  --gray-400: var(--color-gray-500);
+  --gray-500: var(--color-gray-600);
+  --gray-600: var(--color-gray-700);
+  --gray-700: var(--color-gray-800);
+  --gray-800: var(--color-gray-900);
+  --gray-900: var(--color-gray-950);
+  --gray-999: var(--color-gray-950);
+  --gray-999-basis: 204 22% 5%;
+
+  --accent-light: var(--color-primary-700);
+  --accent-regular: var(--color-primary);
+  --accent-dark: var(--color-primary-300);
+  --accent-overlay: color-mix(in oklab, var(--color-primary) 15%, transparent);
+  --accent-subtle-overlay: color-mix(in oklab, var(--color-secondary) 15%, transparent);
+  --accent-text-over: var(--color-gray-50);
+
+  --gradient-stop-1: #006877;
+  --gradient-subtle: linear-gradient(150deg, var(--color-gray-900) 19%, var(--color-gray-950) 81%);
+  --gradient-accent-orange: linear-gradient(150deg, #CA7879, var(--color-primary), var(--color-primary-300));
+  --gradient-stroke: linear-gradient(180deg, var(--color-border-hover), var(--color-border));
+}
+
+/* ==========================================================================
+   GLOBAL BASE RULES
+   ========================================================================== */
+
+html,
+body {
+  @apply h-full overflow-x-hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  @apply bg-background text-foreground text-base;
+}
+
+*,
+*::after,
+*::before {
+  @apply m-0 box-border;
+}
+
+img {
+  @apply max-w-full h-auto;
+}
+
+a {
+  color: var(--link-color);
+  transition: color var(--theme-transition);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold text-foreground;
+  font-family: var(--font-brand);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  @apply text-7xl;
+}
+h2 {
+  @apply text-6xl;
+}
+h3 {
+  @apply text-5xl;
+}
+h4 {
+  @apply text-4xl;
+}
+h5 {
+  @apply text-3xl;
+}
+h6 {
+  @apply text-2xl;
+}
+
+.wrapper {
+  @apply w-full max-w-7xl;
+  margin-inline: auto;
+  padding-inline: var(--spacing-container);
+}
+
+.stack {
+  @apply flex flex-col;
+}
+
+/* ==========================================================================
+   THEME SWITCHER ANIMATIONS (Native Fallbacks & Light Engine overrides)
    ========================================================================== */
 
 @keyframes __light_theme_tokens {
   from {
-    --color-background: #f8fafc;
-    --color-surface: #ffffff;
-    --color-surface-2: #f1f5f9;
-    --color-elevated: #ffffff;
+    --color-background: var(--color-gray-50);
+    --color-surface: #FFFFFF;
+    --color-surface-2: var(--color-gray-100);
+    --color-elevated: #FFFFFF;
+
     --color-foreground: #020617;
-    --color-secondary: #334155;
-    --color-muted: #64748b;
-    --color-subtle: #94a3b8;
-    --color-border: #e2e8f0;
-    --color-border-hover: #cbd5e1;
+    --color-secondary: var(--color-gray-700);
+    --color-muted: var(--color-gray-500);
+    --color-subtle: var(--color-gray-400);
+
+    --color-border: var(--color-gray-200);
+    --color-border-hover: var(--color-gray-300);
+
     --color-card: var(--color-surface);
-    --color-navbar: rgb(248 250 252 / 0.72);
+    --color-navbar: color-mix(in oklab, var(--color-gray-50) 72%, transparent);
+    --color-sidebar: var(--color-surface);
+    --color-footer: var(--color-navbar);
+
     --color-button-secondary: var(--color-surface);
     --color-button-secondary-hover: var(--color-surface-2);
     --color-button-secondary-foreground: var(--color-foreground);
+
     --color-input: var(--color-surface);
     --color-input-hover: var(--color-surface-2);
     --color-input-border: var(--color-border);
-    --color-sidebar: var(--color-surface);
-    --color-footer: var(--color-navbar);
   }
 }
 
-/* 1. Manual Activation via HTML Attribute */
 [data-theme=light] {
   color-scheme: light;
   animation: __light_theme_tokens 0s forwards;
 }
 
-/* 2. Automatic System Preference Activation */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
     color-scheme: light;
@@ -188,7 +372,7 @@
 }
 
 /* ==========================================================================
-   Keyframe Declarations
+   ATOMS KEYFRAMES DEFINITIONS
    ========================================================================== */
 @keyframes fade {
   from {
