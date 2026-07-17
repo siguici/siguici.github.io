@@ -1,15 +1,4 @@
 @import "tailwindcss";
-
-/* --- Core Library and Token Manifest --- */
-@import "./theme.css";
-
-/* --- DOM Base Structural Elements --- */
-@import "./base.css";
-
-/* --- Atomic Functional Native Utilities --- */
-@import "./utilities.css";
-
-/* --- Complex Framework Components Architecture --- */
-@import "./components.css";
+@import "./index.css";
 
 @custom-variant dark (&:where(.theme-dark, .theme-dark *));

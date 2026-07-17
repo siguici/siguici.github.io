@@ -1,0 +1,31 @@
+@layer base, theme, components, utilities;
+
+/*
+|--------------------------------------------------------------------------
+| SIGUICI DESIGN SYSTEM (SDS) — V1.0.0
+|--------------------------------------------------------------------------
+|
+| A production-grade, framework-agnostic architectural UI foundation.
+| Designed specifically for Tailwind CSS v4 spec.
+|
+| Architecture Hierarchy:
+| 1. @layer base       - Raw Design Atoms (Physical values, raw scales, fonts)
+| 2. @theme            - Semantic Engineering & Tailwind Utility Generation
+| 3. [data-theme]      - Direct Declarative Dynamic Theme Inversion
+| 4. Compatibility     - Retrofitting Layer for Legacy Astro Modules
+| 5. Global Base HTML  - Native document rules & typography overrides
+| 6. Keyframes         - Pure system animation structs
+|
+*/
+
+/* --- DOM Base Structural Elements --- */
+@import "./base.css";
+
+/* --- Core Library and Token Manifest --- */
+@import "./theme.css";
+
+/* --- Atomic Functional Native Utilities --- */
+@import "./utilities.css";
+
+/* --- Complex Framework Components Architecture --- */
+@import "./components.css";

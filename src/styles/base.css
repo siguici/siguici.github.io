@@ -1,18 +1,12 @@
 /*
 |--------------------------------------------------------------------------
-| 5. GLOBAL BASE RULES
+| GLOBAL BASE HTML RULES
 |--------------------------------------------------------------------------
-| Custom generic rules for the application context.
+| Core global resets using functional Tailwind mappings.
 |
 */
 
 @layer base {
-  :root {
-    color-scheme: dark;
-    --sat: env(safe-area-inset-top, 0px);
-    --sab: env(safe-area-inset-bottom, 0px);
-  }
-
   html,
   body {
     @apply h-full overflow-x-hidden;
@@ -30,97 +24,16 @@
       radial-gradient(circle at 80% 30%, #00d4ff22, transparent 45%),
       radial-gradient(circle at 50% 80%, #ff4fd822, transparent 45%),
       var(--color-background);
-    overflow-x: hidden;
     color: var(--color-foreground);
     font-family: var(--font-body);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-  }
-
-  /* --- Contextual Adaptive System Overrides --- */
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #0b0f14;
-      color: #f1f5f9;
-    }
-    .card-bg {
-      background: rgba(22, 27, 34, 0.8);
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-    .card-premium {
-      background: linear-gradient(135deg, rgba(22, 27, 34, 0.7) 0%, rgba(13, 17,
-        23, 0.8) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .card-premium:hover {
-      border-color: rgba(0, 202, 158, 0.2);
-    }
-    .nav-bg {
-      background: rgba(11, 15, 20, 0.75);
-    }
-    .text-invert {
-      color: #ffffff;
-    }
-    .text-muted {
-      color: #94a3b8;
-    }
-    .border-adaptive {
-      border-color: rgba(255, 255, 255, 0.06);
-    }
-    .input-bg {
-      background: rgba(255, 255, 255, 0.03);
-    }
-    .quote-bg {
-      background: radial-gradient(circle at top left, rgba(0, 202, 158, 0.06),
-        transparent 70%);
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    body {
-      background-color: #f6f8fa;
-      color: #0f172a;
-    }
-    .card-bg {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(0, 0, 0, 0.08);
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    }
-    .card-premium {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248,
-        250, 252, 0.8) 100%);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.02);
-    }
-    .card-premium:hover {
-      border-color: rgba(0, 202, 158, 0.3);
-      box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.04);
-    }
-    .nav-bg {
-      background: rgba(246, 248, 250, 0.8);
-    }
-    .text-invert {
-      color: #0f172a;
-    }
-    .text-muted {
-      color: #475569;
-    }
-    .border-adaptive {
-      border-color: rgba(0, 0, 0, 0.06);
-    }
-    .input-bg {
-      background: rgba(0, 0, 0, 0.02);
-    }
-    .quote-bg {
-      background: radial-gradient(circle at top left, rgba(0, 202, 158, 0.04),
-        transparent 70%);
-      background-color: #ffffff;
-    }
+    -moz-osx-font-smoothing: grayscale;
   }
 
   *,
-  *::after,
-  *::before {
+  *::before,
+  *::after {
     @apply m-0 box-border;
   }
 
@@ -137,15 +50,6 @@
     outline-offset: 2px;
   }
 
-  #glow {
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #7878ff55, transparent 60%);
-    transform: translate(-50%, -50%);
-    z-index: 0;
-  }
-
   section {
     min-height: 100vh;
     display: flex;
@@ -154,13 +58,45 @@
     padding: 80px 24px;
   }
 
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+    @apply max-w-full h-auto;
+  }
+
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color var(--theme-transition);
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
   h1,
   h2,
   h3,
   h4,
-  h5 {
-    @apply font-semibold text-xl text-gray-950 dark:text-gray-50;
-    font-family: var(--font-brand);
+  h5,
+  h6 {
+    @apply font-semibold text-xl text-foreground tracking-tight;
+    font: inherit;
+    color: inherit;
+    text-wrap: balance;
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
   }
 
   h1 {
@@ -187,11 +123,76 @@
     @apply text-2xl;
   }
 
-  img {
-    @apply max-w-full h-auto;
+  p,
+  li {
+    text-wrap: pretty;
   }
 
-  a {
-    color: var(--link-color);
+  #glow {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #7878ff55, transparent 60%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| ATOMS KEYFRAMES DEFINITIONS / COMPONENT ANIMATION STRUCTS
+|--------------------------------------------------------------------------
+| Pure keyframes definitions compiled directly out of the semantic layers.
+|
+*/
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: .15;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .3;
+    transform: scale(1.04);
   }
 }
