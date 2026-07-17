@@ -1,4 +1,2 @@
 @import "tailwindcss";
 @import "./index.css";
-
-@custom-variant dark (&:where(.theme-dark, .theme-dark *));

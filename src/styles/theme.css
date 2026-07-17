@@ -10,8 +10,7 @@
 @import "@fontsource/geist-sans/900.css";
 @import "@fontsource-variable/geist-mono/wght-italic.css";
 
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *,
-  .theme-dark, .theme-dark *));
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /*
 |--------------------------------------------------------------------------
@@ -171,7 +170,6 @@
     --gradient-accent: var(--raw-gradient-brand);
   }
 
-  :root.theme-dark,
   :root[data-theme="dark"] {
     --gray-0: var(--raw-gray-50);
     --gray-50: var(--raw-gray-100);
@@ -490,7 +488,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme], .theme-dark) {
+  :root:not([data-theme]) {
     color-scheme: light;
     --color-background: var(--raw-gray-50);
     --color-surface: #FFFFFF;
