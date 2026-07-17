@@ -10,7 +10,8 @@
 @import "@fontsource/geist-sans/900.css";
 @import "@fontsource-variable/geist-mono/wght-italic.css";
 
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *,
+  .theme-dark, .theme-dark *));
 
 /*
 |--------------------------------------------------------------------------
@@ -24,97 +25,108 @@
   :root {
     color-scheme: dark;
 
+    /* --- Safe Area Coordinate System --- */
+    --sat: env(safe-area-inset-top, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+
     /* --- Base Invariants --- */
     --raw-white: oklch(100% 0 0);
     --raw-black: oklch(0% 0 0);
     --raw-dark: oklch(14.12% 0.024 255);
 
-    /* --- Brand Core Palettes (Cyan & Purple Premium Transitions) --- */
-    --raw-primary-50: oklch(98.41% 0.016 200);
-    --raw-primary-100: oklch(95.63% 0.045 200);
-    --raw-primary-200: oklch(90.73% 0.089 200);
-    --raw-primary-300: oklch(84.34% 0.137 200);
-    --raw-primary-400: oklch(81.23% 0.182 195);
-    --raw-primary-500: oklch(77.25% 0.184 198);
-    --raw-primary-600: oklch(69.34% 0.176 202);
-    --raw-primary-700: oklch(58.32% 0.141 210);
-    --raw-primary-800: oklch(43.21% 0.098 215);
-    --raw-primary-900: oklch(36.15% 0.075 220);
-    --raw-primary-950: oklch(24.51% 0.053 222);
+    /* --- Brand Core Palettes (Cyan Siguici) --- */
+    --raw-primary-50: oklch(0.98 0.02 194.85);
+    --raw-primary-100: oklch(0.96 0.05 194.82);
+    --raw-primary-200: oklch(0.92 0.11 195.43);
+    --raw-primary-300: oklch(0.87 0.17 195.93);
+    --raw-primary-400: oklch(0.89 0.19 196.22); /* #3CF2FF */
+    --raw-primary-500: oklch(0.78 0.19 197.64);
+    --raw-primary-600: oklch(0.69 0.19 199.98);
+    --raw-primary-700: oklch(0.57 0.17 202.90);
+    --raw-primary-800: oklch(0.39 0.11 204.62);
+    --raw-primary-900: oklch(0.34 0.09 204.47);
+    --raw-primary-950: oklch(0.22 0.07 204.99);
     --raw-primary: var(--raw-primary-400);
 
-    --raw-secondary-50: oklch(98.11% 0.012 300);
-    --raw-secondary-100: oklch(94.22% 0.038 300);
-    --raw-secondary-200: oklch(88.45% 0.077 300);
-    --raw-secondary-300: oklch(80.12% 0.132 302);
-    --raw-secondary-400: oklch(70.53% 0.198 304);
-    --raw-secondary-500: oklch(61.32% 0.243 306);
-    --raw-secondary-600: oklch(52.14% 0.235 308);
-    --raw-secondary-700: oklch(43.55% 0.211 310);
-    --raw-secondary-800: oklch(37.12% 0.175 312);
-    --raw-secondary-900: oklch(31.05% 0.142 315);
-    --raw-secondary-950: oklch(18.23% 0.101 320);
+    /* --- Brand Secondary Palettes (Purple Bright) --- */
+    --raw-secondary-50: oklch(0.98 0.01 301.36);
+    --raw-secondary-100: oklch(0.95 0.03 301.36);
+    --raw-secondary-200: oklch(0.91 0.06 301.36);
+    --raw-secondary-300: oklch(0.84 0.11 301.36);
+    --raw-secondary-400: oklch(0.76 0.17 301.36);
+    --raw-secondary-500: oklch(0.57 0.29 301.36); /* #A855F7 */
+    --raw-secondary-600: oklch(0.49 0.26 301.36);
+    --raw-secondary-700: oklch(0.42 0.22 301.36);
+    --raw-secondary-800: oklch(0.35 0.18 301.36);
+    --raw-secondary-900: oklch(0.28 0.14 301.36);
+    --raw-secondary-950: oklch(0.18 0.11 301.36);
     --raw-secondary: var(--raw-secondary-500);
 
-    /* --- Cold Slate Neutral Scale (Signature Nord Ambience) --- */
-    --raw-gray-50: oklch(98.24% 0.004 220);
-    --raw-gray-100: oklch(95.31% 0.008 220);
-    --raw-gray-200: oklch(90.15% 0.013 222);
-    --raw-gray-300: oklch(81.42% 0.021 224);
-    --raw-gray-400: oklch(68.23% 0.028 226);
-    --raw-gray-500: oklch(53.15% 0.032 228);
-    --raw-gray-600: oklch(42.11% 0.029 230);
-    --raw-gray-700: oklch(31.52% 0.024 232);
-    --raw-gray-800: oklch(21.34% 0.018 235);
-    --raw-gray-900: oklch(16.12% 0.015 238);
-    --raw-gray-950: oklch(11.02% 0.011 240);
+    /* --- Cold Slate Neutral Scale (Siguici Signature) --- */
+    --raw-gray-50: oklch(0.98 0.01 200.0);
+    --raw-gray-100: oklch(0.95 0.01 200.0);
+    --raw-gray-200: oklch(0.91 0.02 200.0);
+    --raw-gray-300: oklch(0.81 0.02 200.0);
+    --raw-gray-400: oklch(0.68 0.03 200.0);
+    --raw-gray-500: oklch(0.53 0.03 200.0);
+    --raw-gray-600: oklch(0.42 0.03 200.0);
+    --raw-gray-700: oklch(0.33 0.02 200.0);
+    --raw-gray-800: oklch(0.24 0.02 200.0);
+    --raw-gray-900: oklch(0.18 0.02 200.0);
+    --raw-gray-950: oklch(0.12 0.02 200.0);
 
-    /* --- Extra Pipelines & Core Architectural Nodes --- */
-    --raw-blue-50: oklch(96.52% 0.018 245);
-    --raw-blue-500: oklch(60.12% 0.214 250);
-    --raw-blue-950: oklch(22.31% 0.095 258);
-    --raw-indigo-50: oklch(96.12% 0.015 270);
-    --raw-indigo-500: oklch(54.32% 0.221 275);
-    --raw-indigo-950: oklch(19.45% 0.102 282);
-    --raw-purple-50: oklch(97.82% 0.013 305);
-    --raw-purple-500: oklch(59.12% 0.231 312);
-    --raw-purple-950: oklch(18.92% 0.112 325);
+    /* --- Extended Functional Scales --- */
+    --raw-blue-50: oklch(0.97 0.02 243.69);
+    --raw-blue-500: oklch(0.54 0.21 247.46);
+    --raw-blue-950: oklch(0.20 0.09 251.16);
 
-    /* --- System State Scale (Ergonomics & Validation) --- */
-    --raw-success-50: oklch(97.84% 0.021 150);
-    --raw-success-400: oklch(82.13% 0.168 155);
-    --raw-success-500: oklch(72.54% 0.192 160);
-    --raw-success-700: oklch(51.23% 0.154 165);
-    --raw-danger-50: oklch(96.84% 0.025 25);
-    --raw-danger-500: oklch(62.31% 0.224 28);
-    --raw-danger-600: oklch(54.12% 0.218 26);
-    --raw-danger-700: oklch(45.34% 0.189 24);
-    --raw-warning-50: oklch(98.54% 0.028 85);
-    --raw-warning-400: oklch(84.12% 0.182 88);
-    --raw-warning-500: oklch(76.32% 0.195 82);
+    --raw-indigo-50: oklch(0.96 0.02 264.53);
+    --raw-indigo-500: oklch(0.51 0.23 266.38);
+    --raw-indigo-950: oklch(0.19 0.09 274.65);
 
-    /* --- Semantic Surfaces (Deep Dark Settings) --- */
-    --raw-surface-background: var(--raw-gray-950);
-    --raw-surface-surface: var(--raw-gray-900);
-    --raw-surface-elevated: oklch(19.24% 0.018 235);
-    --raw-surface-floating: oklch(24.12% 0.021 232);
+    --raw-purple-50: oklch(0.97 0.01 301.36);
+    --raw-purple-500: oklch(0.57 0.29 301.36);
+    --raw-purple-950: oklch(0.18 0.11 301.36);
 
-    /* --- Typography & Stack Identifiers --- */
-    --raw-font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    /* --- Alert Status Scales --- */
+    --raw-success-50: oklch(0.98 0.02 160.0);
+    --raw-success-400: oklch(0.82 0.17 155.0);
+    --raw-success-500: oklch(0.69 0.23 156.0); /* #10B981 */
+    --raw-success-700: oklch(0.48 0.16 160.0);
+    --raw-success-950: oklch(0.19 0.06 162.0);
+
+    --raw-danger-50: oklch(0.97 0.02 25.0);
+    --raw-danger-400: oklch(0.69 0.22 25.4);
+    --raw-danger-500: oklch(0.63 0.26 25.0); /* #EF4444 */
+    --raw-danger-600: oklch(0.54 0.24 25.0); /* #DC2626 */
+    --raw-danger-700: oklch(0.46 0.20 25.0);
+    --raw-danger-950: oklch(0.18 0.08 25.0);
+
+    --raw-warning-50: oklch(0.98 0.02 85.0);
+    --raw-warning-400: oklch(0.84 0.18 84.0);
+    --raw-warning-500: oklch(0.76 0.19 76.0); /* #F59E0B */
+    --raw-warning-950: oklch(0.21 0.07 70.0);
+
+    /* --- Absolute Deep Surface Progression --- */
+    --raw-surface-bg: var(--raw-gray-950);
+    --raw-surface-card: var(--raw-gray-900);
+    --raw-surface-elevated: oklch(0.22 0.02 200.0); /* Alignment with #16252D */
+    --raw-surface-floating: oklch(0.26 0.03 200.0); /* Alignment with #1C313B */
+
+    /* --- Typography & Layout Primitives --- */
+    --raw-font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --raw-font-body: 'Geist Variable', var(--raw-font-system);
     --raw-font-sans: 'Geist Sans', var(--raw-font-system);
-    --raw-font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --raw-font-mono: 'Geist Mono Variable', monospace;
 
-    /* --- Reintegrated Motion Blurs --- */
     --raw-blur-xs: 4px;
     --raw-blur-sm: 8px;
     --raw-blur-md: 12px;
     --raw-blur-lg: 24px;
     --raw-blur-xl: 40px;
-    --raw-blur-2xl: 64px;
 
-    --raw-opacity-disabled: 0.5;
-    --raw-opacity-muted: 0.7;
     --raw-opacity-ghost: 0.08;
 
     --raw-z-dropdown: 100;
@@ -124,25 +136,18 @@
     --raw-z-toast: 500;
     --raw-z-tooltip: 600;
 
-    /* --- Restored Original Gradients --- */
-    --raw-gradient-brand: linear-gradient(135deg, var(--raw-primary-400) 0%, var(--raw-secondary-500) 100%);
-    --raw-gradient-brand-alt: linear-gradient(135deg, var(--raw-primary-300) 0%, var(--raw-primary-700) 100%);
+    /* --- Restored Core Primitives Gradients --- */
+    --raw-gradient-brand: linear-gradient(135deg, oklch(0.89 0.19 196.22) 0%, oklch(0.57 0.29 301.36) 100%);
+    --raw-gradient-brand-alt: linear-gradient(135deg, oklch(0.87 0.17 195.93) 0%, oklch(0.57 0.17 202.90) 100%);
     --raw-gradient-surface: linear-gradient(180deg, var(--raw-gray-900), var(--raw-gray-950));
-    --raw-gradient-stroke: linear-gradient(180deg, oklch(31.52% 0.024 232), oklch(24.12% 0.021 232));
-    --raw-gradient-success: linear-gradient(135deg, var(--raw-success-500) 0%, var(--raw-success-700) 100%);
-    --raw-gradient-danger: linear-gradient(135deg, var(--raw-danger-500) 0%, var(--raw-danger-700) 100%);
+    --raw-gradient-stroke: linear-gradient(180deg, oklch(0.32 0.03 204.0), oklch(0.27 0.02 204.0));
+    --raw-gradient-success: linear-gradient(135deg, oklch(0.69 0.23 156.0) 0%, oklch(0.48 0.16 160.0) 100%);
+    --raw-gradient-danger: linear-gradient(135deg, oklch(0.63 0.26 25.0) 0%, oklch(0.46 0.20 25.0) 100%);
 
-    /* Safe Area Boundaries */
-    --sat: env(safe-area-inset-top, 0px);
-    --sar: env(safe-area-inset-right, 0px);
-    --sab: env(safe-area-inset-bottom, 0px);
-    --sal: env(safe-area-inset-left, 0px);
-
-    /* --- LEGACY COMPATIBILITY LAYER (ASTRO) --- */
-    --font-system: var(--raw-font-sans);
-    --font-body: var(--raw-font-body);
+    /* --- Legacy Astro API Compatibility Layer Proxies --- */
     --font-brand: var(--raw-font-body);
-    --theme-transition: var(--duration-normal) var(--ease-standard);
+    --theme-transition: 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
     --gray-0: var(--raw-gray-950);
     --gray-50: var(--raw-gray-900);
     --gray-100: var(--raw-gray-800);
@@ -154,30 +159,58 @@
     --gray-700: var(--raw-gray-200);
     --gray-800: var(--raw-gray-100);
     --gray-900: var(--raw-gray-50);
-    --gray-999: var(--raw-white);
-    --accent-light: var(--raw-primary-300);
-    --accent-regular: var(--raw-primary);
-    --accent-dark: var(--raw-primary-700);
-    --link-color: var(--raw-primary);
+    --gray-999: #ffffff;
+
+    --accent-light: oklch(0.87 0.17 195.93);
+    --accent-regular: oklch(0.89 0.19 196.22);
+    --accent-dark: oklch(0.57 0.17 202.90);
+    --link-color: oklch(0.89 0.19 196.22);
     --gradient-accent: var(--raw-gradient-brand);
+  }
+
+  :root.theme-dark,
+  :root[data-theme="dark"] {
+    --gray-0: var(--raw-gray-50);
+    --gray-50: var(--raw-gray-100);
+    --gray-100: var(--raw-gray-200);
+    --gray-200: var(--raw-gray-300);
+    --gray-300: var(--raw-gray-400);
+    --gray-400: var(--raw-gray-500);
+    --gray-500: var(--raw-gray-600);
+    --gray-600: var(--raw-gray-700);
+    --gray-700: var(--raw-gray-800);
+    --gray-800: var(--raw-gray-900);
+    --gray-900: var(--raw-gray-950);
+    --gray-999: var(--raw-gray-950);
+
+    --accent-light: oklch(0.57 0.17 202.90);
+    --accent-regular: oklch(0.89 0.19 196.22);
+    --accent-dark: oklch(0.87 0.17 195.93);
+
+    /* Strict CSS Fallbacks for Legacy color-mix elements */
+    --accent-overlay: rgba(60, 242, 255, 0.15);
+    --accent-overlay: color-mix(in oklch, oklch(0.89 0.19 196.22) 15%, transparent);
+    --accent-subtle-overlay: rgba(168, 85, 247, 0.15);
+    --accent-subtle-overlay: color-mix(in oklch, oklch(0.57 0.29 301.36) 15%, transparent);
+    --accent-text-over: var(--raw-gray-50);
+
+    --gradient-stop-1: oklch(0.45 0.12 215.0);
+    --gradient-subtle: linear-gradient(150deg, var(--raw-gray-900) 19%, var(--raw-gray-950) 81%);
+    --gradient-accent-orange: linear-gradient(150deg, oklch(0.62 0.12 25.0), oklch(0.89 0.19 196.22), oklch(0.87 0.17 195.93));
+    --gradient-stroke: linear-gradient(180deg, oklch(0.32 0.03 204.0), oklch(0.27 0.02 204.0));
   }
 }
 
 /*
 |--------------------------------------------------------------------------
-| 2. SEMANTIC TOKENS & MAPPINGS (TAILWIND v4 CONFIG)
+| 2. SEMANTIC TOKENS & UTILITY PIPELINE (TAILWIND v4 ENGINE)
 |--------------------------------------------------------------------------
-| Core layer mapping raw atoms to functional utility hooks.
-| Native dark-first implementation engine.
+| Maps architectural system definitions straight to Tailwind's classes.
+| Default configuration serves Dark Mode natively.
 |
 */
 @theme {
-  /* Global Structural Invariants (Fixed Cyclical Reference Bug) */
-  --color-white: var(--raw-white);
-  --color-black: var(--raw-black);
-  --color-dark: var(--raw-dark);
-
-  /* --- Primary Utility Mappings --- */
+  /* --- Primary Scaling Pipeline --- */
   --color-primary: var(--raw-primary);
   --color-primary-50: var(--raw-primary-50);
   --color-primary-100: var(--raw-primary-100);
@@ -191,7 +224,7 @@
   --color-primary-900: var(--raw-primary-900);
   --color-primary-950: var(--raw-primary-950);
 
-  /* --- Secondary Utility Mappings --- */
+  /* --- Secondary Scaling Pipeline --- */
   --color-secondary: var(--raw-secondary);
   --color-secondary-50: var(--raw-secondary-50);
   --color-secondary-100: var(--raw-secondary-100);
@@ -205,7 +238,7 @@
   --color-secondary-900: var(--raw-secondary-900);
   --color-secondary-950: var(--raw-secondary-950);
 
-  /* --- Refined Neutral Mappings --- */
+  /* --- Gray Scaling Pipeline --- */
   --color-gray-50: var(--raw-gray-50);
   --color-gray-100: var(--raw-gray-100);
   --color-gray-200: var(--raw-gray-200);
@@ -218,6 +251,7 @@
   --color-gray-900: var(--raw-gray-900);
   --color-gray-950: var(--raw-gray-950);
 
+  /* --- Mapped Extra Pipelines --- */
   --color-blue-50: var(--raw-blue-50);
   --color-blue-500: var(--raw-blue-500);
   --color-blue-950: var(--raw-blue-950);
@@ -228,73 +262,123 @@
   --color-purple-500: var(--raw-purple-500);
   --color-purple-950: var(--raw-purple-950);
 
-  /* --- Modern Radix-Style UI Surface Grid --- */
-  --color-background: var(--raw-surface-background);
-  --color-card: var(--raw-surface-surface);
-  --color-popover: var(--raw-surface-elevated);
+  /* --- Mapped Alert Status --- */
+  --color-success-50: var(--raw-success-50);
+  --color-success-400: var(--raw-success-400);
+  --color-success-500: var(--raw-success-500);
+  --color-success-700: var(--raw-success-700);
+  --color-success-950: var(--raw-success-950);
+
+  --color-danger-50: var(--raw-danger-50);
+  --color-danger-400: var(--raw-danger-400);
+  --color-danger-500: var(--raw-danger-500);
+  --color-danger-600: var(--raw-danger-600);
+  --color-danger-700: var(--raw-danger-700);
+  --color-danger-950: var(--raw-danger-950);
+
+  --color-warning-50: var(--raw-warning-50);
+  --color-warning-400: var(--raw-warning-400);
+  --color-warning-500: var(--raw-warning-500);
+  --color-warning-950: var(--raw-warning-950);
+
+  /* --- Structural Surfaces Layers --- */
+  --color-background: var(--raw-surface-bg);
+  --color-card: var(--raw-surface-card);
+  --color-popover: var(--raw-gray-800);
+  --color-surface: var(--raw-surface-card);
   --color-elevated: var(--raw-surface-elevated);
   --color-surface-floating: var(--raw-surface-floating);
 
-  /* --- Resilient Fallback Overlay Token --- */
-  --color-overlay: rgba(60, 242, 255, 0.15);
-  @supports (color: color-mix(in srgb, red, blue)) {
-    --color-overlay: color-mix(in srgb, var(--raw-primary) 15%, transparent);
-  }
-
-  /* --- Structural Typography Layouts --- */
-  --color-foreground: var(--raw-gray-50);
+  /* --- Text & Interface Typography --- */
+  --color-foreground: oklch(0.95 0.01 200.0);
   --color-muted: var(--raw-gray-400);
   --color-subtle: var(--raw-gray-500);
 
-  /* --- Boundaries & Outlines --- */
-  --color-border: oklch(27.42% 0.022 230);
-  --color-border-hover: oklch(34.15% 0.025 228);
+  /* --- Boundaries Borders & Rings --- */
+  --color-border: oklch(0.27 0.02 204.0);
+  --color-border-hover: oklch(0.32 0.03 204.0);
   --color-ring: var(--raw-primary);
 
-  /* --- Interactive Actions & Buttons --- */
+  /* --- Interactive Form Inputs Pipeline --- */
+  --color-input: var(--raw-surface-card);
+  --color-input-hover: var(--raw-surface-elevated);
+  --color-input-border: oklch(0.27 0.02 204.0);
+  --color-input-focus: var(--raw-primary);
+  --color-input-invalid: var(--raw-danger-500);
+  --color-input-disabled: var(--raw-gray-800);
+
+  /* --- Action Handlers Engines --- */
   --color-button-primary: var(--raw-primary-400);
   --color-button-primary-hover: var(--raw-primary-300);
   --color-button-primary-active: var(--raw-primary-600);
   --color-button-primary-foreground: var(--raw-gray-950);
 
-  --color-button-secondary: var(--color-card);
-  --color-button-secondary-hover: var(--color-elevated);
-  --color-button-secondary-foreground: var(--color-foreground);
+  --color-button-secondary: var(--raw-surface-card);
+  --color-button-secondary-hover: var(--raw-surface-elevated);
+  --color-button-secondary-foreground: oklch(0.95 0.01 200.0);
 
   --color-action-ghost-bg: transparent;
   --color-action-ghost-text: var(--raw-gray-300);
-  --color-action-ghost-hover: rgba(255, 255, 255, var(--raw-opacity-ghost));
+  --color-action-ghost-hover: rgba(255, 255, 255, 0.08);
 
   --color-action-link-text: var(--raw-primary-400);
   --color-action-link-hover: var(--raw-primary-300);
 
   --color-action-danger-bg: var(--raw-danger-600);
-  --color-action-danger-text: var(--color-white);
+  --color-action-danger-text: var(--raw-gray-50);
   --color-action-danger-hover: var(--raw-danger-500);
 
-  /* --- Professional Input Form Nodes --- */
-  --color-input: var(--color-card);
-  --color-input-hover: var(--color-elevated);
-  --color-input-border: var(--color-border);
-  --color-input-focus: var(--raw-primary);
-  --color-input-invalid: var(--raw-danger-500);
-  --color-input-disabled: var(--raw-gray-800);
-
-  /* --- App State Indication Nodes --- */
+  /* --- System Realtime Alerts States --- */
   --color-success: var(--raw-success-500);
   --color-warning: var(--raw-warning-500);
   --color-danger: var(--raw-danger-500);
   --color-info: var(--raw-blue-500);
-  --color-state-online: oklch(82.45% 0.194 145);
+  --color-pending: var(--raw-warning-400);
+  --color-offline: var(--raw-gray-500);
+  --color-online: var(--raw-success-400);
+  --color-state-online: var(--raw-success-400);
   --color-state-offline: var(--raw-gray-500);
   --color-state-idle: var(--raw-warning-500);
   --color-state-loading: var(--raw-primary-400);
 
-  /* --- Utility Metrics v4 Tokens --- */
+  /* --- Advanced Systems Color Mixing Layouts (With Secure Fallbacks) --- */
+  --color-glass-overlay: rgba(60, 242, 255, 0.15);
+  --color-glass-overlay: color-mix(in oklch, var(--color-primary) 15%, transparent);
+
+  --color-backdrop: rgba(12, 12, 12, 0.65);
+  --color-backdrop: color-mix(in oklch, var(--color-gray-950) 65%, transparent);
+
+  --color-navbar: rgba(12, 12, 12, 0.75);
+  --color-navbar: color-mix(in oklch, var(--color-gray-950) 75%, transparent);
+
+  --color-sidebar: var(--raw-surface-card);
+  --color-footer: var(--color-navbar);
+
+  --color-selection: rgba(60, 242, 255, 0.15);
+  --color-selection: color-mix(in oklch, var(--color-primary) 15%, transparent);
+
+  --color-overlay: rgba(60, 242, 255, 0.15);
+  --color-overlay: color-mix(in oklch, var(--color-primary) 15%, transparent);
+
+  /* --- Structural Linear Gradients Pipelines --- */
+  --gradient-brand: var(--raw-gradient-brand);
+  --gradient-brand-alt: var(--raw-gradient-brand-alt);
+  --gradient-surface: var(--raw-gradient-surface);
+  --gradient-stroke: var(--raw-gradient-stroke);
+  --gradient-success: var(--raw-gradient-success);
+  --gradient-danger: var(--raw-gradient-danger);
+  --gradient-premium: linear-gradient(135deg, oklch(0.85 0.19 85.0) 0%, oklch(0.73 0.22 56.0) 50%, oklch(0.58 0.23 33.0) 100%);
+  --gradient-prism: linear-gradient(90deg, oklch(0.60 0.31 0.0), oklch(0.47 0.29 295.0), oklch(0.84 0.19 196.0), oklch(0.85 0.25 145.0), oklch(0.85 0.19 85.0));
+  --gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+
+  /* --- Typography Font Stacks Configuration --- */
   --font-sans: var(--raw-font-sans);
+  --font-body: var(--raw-font-body);
   --font-mono: var(--raw-font-mono);
   --font-heading: var(--raw-font-body);
+  --font-ui: var(--raw-font-body);
 
+  /* --- Layout Radii Profiles --- */
   --radius-none: 0;
   --radius-xs: 0.25rem;
   --radius-sm: 0.5rem;
@@ -305,48 +389,25 @@
   --radius-3xl: 2.5rem;
   --radius-full: 9999px;
 
-  --blur-xs: var(--raw-blur-xs);
-  --blur-sm: var(--raw-blur-sm);
-  --blur-md: var(--raw-blur-md);
-  --blur-lg: var(--raw-blur-lg);
-  --blur-xl: var(--raw-blur-xl);
-  --blur-2xl: var(--raw-blur-2xl);
+  /* --- Volumetric Shadow Structures --- */
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-sm: 0 4px 12px rgb(0 0 0 / 0.14);
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 0.18);
+  --shadow-lg: 0 20px 60px rgb(0 0 0 / 0.25);
+  --shadow-xl: 0 30px 90px rgb(0 0 0 / 0.35);
 
-  --z-dropdown: var(--raw-z-dropdown);
-  --z-sticky: var(--raw-z-sticky);
-  --z-overlay: var(--raw-z-overlay);
-  --z-modal: var(--raw-z-modal);
-  --z-toast: var(--raw-z-toast);
-  --z-tooltip: var(--raw-z-tooltip);
+  /* --- Precise Volumetric Signature Glow Engine --- */
+  --shadow-glow-xs: 0 0 8px rgb(60 242 255 / 0.08);
+  --shadow-glow-sm: 0 0 18px rgb(60 242 255 / 0.12);
+  --shadow-glow: 0 0 30px rgb(60 242 255 / 0.18);
+  --shadow-glow-lg: 0 0 60px rgb(60 242 255 / 0.24);
+  --shadow-glow-xl: 0 0 100px rgb(60 242 255 / 0.30);
 
-  /* --- Mathematical Shadows & Depth Layers --- */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.15);
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
-  --shadow-xl: 0 30px 90px rgba(0, 0, 0, 0.55);
-
-  /* Signature Glow Layers */
-  --shadow-glow-xs: 0 0 8px oklch(81.23% 0.182 195 / 0.1);
-  --shadow-glow-sm: 0 0 18px oklch(81.23% 0.182 195 / 0.15);
-  --shadow-glow: 0 0 30px oklch(81.23% 0.182 195 / 0.2);
-  --shadow-glow-lg: 0 0 60px oklch(81.23% 0.182 195 / 0.28);
-  --shadow-glow-xl: 0 0 100px oklch(81.23% 0.182 195 / 0.35);
-
-  /* --- Advanced Gradient Frameworks --- */
-  --gradient-brand: var(--raw-gradient-brand);
-  --gradient-brand-alt: var(--raw-gradient-brand-alt);
-  --gradient-surface: var(--raw-gradient-surface);
-  --gradient-stroke: var(--raw-gradient-stroke);
-  --gradient-success: var(--raw-gradient-success);
-  --gradient-danger: var(--raw-gradient-danger);
-  --gradient-premium: linear-gradient(135deg, oklch(85.34% 0.198 85) 0%, oklch(72.12% 0.211 65) 50%, oklch(58.45% 0.232 40) 100%);
-  --gradient-prism: linear-gradient(90deg, oklch(62.31% 0.254 5), oklch(48.12% 0.284 310), oklch(74.32% 0.198 200), oklch(84.15% 0.221 140), oklch(88.24% 0.189 90));
-
-  /* --- Motion Transition Timing Controls --- */
+  /* --- Physics Transitions Curves & Timings --- */
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-slow: 400ms;
+
   --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -354,116 +415,123 @@
   --animate-slide-up: slide-up var(--duration-slow) var(--ease-emphasized);
   --animate-pop: pop var(--duration-normal) var(--ease-standard);
 
-  /* Additional Layout Structural Metrics */
-  --spacing-container: 1.5rem;
-  --spacing-card: 1.25rem;
-  --spacing-section: 6rem;
-  --spacing-section-lg: 8rem;
-  --container-xl: 80rem;
+  /* --- Layout Structural Dimensions --- */
+  --blur-xs: var(--raw-blur-xs);
+  --blur-sm: var(--raw-blur-sm);
+  --blur-md: var(--raw-blur-md);
+  --blur-lg: var(--raw-blur-lg);
+  --blur-xl: var(--raw-blur-xl);
+
+  --z-dropdown: var(--raw-z-dropdown);
+  --z-sticky: var(--raw-z-sticky);
+  --z-overlay: var(--raw-z-overlay);
+  --z-modal: var(--raw-z-modal);
+  --z-toast: var(--raw-z-toast);
+  --z-tooltip: var(--raw-z-tooltip);
 }
 
 /*
 |--------------------------------------------------------------------------
-| 3. THEME OVERRIDES (INVERSE LIGHT MODE MUTATION)
+| 3. THEME MUTATIONS OVERRIDES (DETERMINISTIC LIGHT MODE)
 |--------------------------------------------------------------------------
-| Re-routing layout pointers via light token overrides.
-| Strictly processing OKLCH mappings for light variations.
+| Swaps layout definitions seamlessly on dedicated selector query injection.
+| Strictly avoids keyframe disruptions.
 |
 */
 [data-theme="light"] {
   color-scheme: light;
-
-  /* Inverted Light Core Surfaces */
   --color-background: var(--raw-gray-50);
-  --color-card: var(--color-white);
-  --color-surface: var(--color-white);
-  --color-popover: var(--raw-gray-100);
+  --color-surface: #FFFFFF;
+  --color-card: #FFFFFF;
   --color-elevated: var(--raw-gray-100);
   --color-surface-floating: var(--raw-gray-200);
+  --color-popover: var(--raw-gray-100);
 
-  /* Secondary Overlay Light Fallback Adjustments */
+  /* Fallbacks for Light Mode Overlay mixes */
   --color-overlay: rgba(168, 85, 247, 0.12);
-  @supports (color: color-mix(in srgb, red, blue)) {
-    --color-overlay: color-mix(in srgb, var(--raw-secondary-500) 12%, transparent);
-  }
+  --color-overlay: color-mix(in oklch, var(--raw-secondary-500) 12%, transparent);
 
-  /* High Contrast Typography */
-  --color-foreground: oklch(12.05% 0.011 240);
+  --color-navbar: rgba(248, 251, 252, 0.72);
+  --color-navbar: color-mix(in oklch, var(--raw-gray-50) 72%, transparent);
+
+  --color-sidebar: var(--color-surface);
+  --color-footer: var(--color-navbar);
+
+  --color-foreground: #020617;
   --color-secondary: var(--raw-gray-700);
   --color-muted: var(--raw-gray-500);
   --color-subtle: var(--raw-gray-400);
 
-  /* Light Border Limits */
   --color-border: var(--raw-gray-200);
   --color-border-hover: var(--raw-gray-300);
   --color-ring: var(--raw-secondary-500);
 
-  /* Light Form Context Fields */
-  --color-input: var(--color-white);
-  --color-input-hover: var(--raw-gray-100);
-  --color-input-border: var(--raw-gray-200);
+  --color-input: var(--color-surface);
+  --color-input-hover: var(--color-elevated);
+  --color-input-border: var(--color-border);
   --color-input-focus: var(--raw-secondary-500);
   --color-input-disabled: var(--raw-gray-200);
 
-  /* Purple Secondary Shift for Light Actions */
-  --color-button-primary: var(--raw-secondary-500);
-  --color-button-primary-hover: var(--raw-secondary-400);
-  --color-button-primary-active: var(--raw-secondary-600);
-  --color-button-primary-foreground: var(--color-white);
-
-  --color-button-secondary: var(--color-white);
-  --color-button-secondary-hover: var(--raw-gray-100);
-  --color-button-secondary-foreground: oklch(12.05% 0.011 240);
+  --color-action-primary: var(--raw-secondary-500);
+  --color-action-primary-hover: var(--raw-secondary-400);
+  --color-action-primary-active: var(--raw-secondary-600);
+  --color-action-primary-foreground: #FFFFFF;
 
   --color-action-ghost-text: var(--raw-gray-700);
   --color-action-ghost-hover: rgba(0, 0, 0, 0.06);
-  --color-action-link-text: var(--raw-secondary-600);
+  --color-action-link: var(--raw-secondary-600);
   --color-action-link-hover: var(--raw-secondary-500);
 
-  /* Harmonized Light Surface Gradients */
   --gradient-surface: linear-gradient(180deg, var(--raw-gray-100), var(--raw-gray-50));
   --gradient-stroke: linear-gradient(180deg, var(--raw-gray-300), var(--raw-gray-200));
 }
 
-/* Fallback Media Query Engine targeting strict System Theme Choices */
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
+  :root:not([data-theme], .theme-dark) {
     color-scheme: light;
     --color-background: var(--raw-gray-50);
-    --color-card: var(--color-white);
-    --color-surface: var(--color-white);
-    --color-popover: var(--raw-gray-100);
+    --color-surface: #FFFFFF;
+    --color-card: #FFFFFF;
     --color-elevated: var(--raw-gray-100);
     --color-surface-floating: var(--raw-gray-200);
-    --color-foreground: oklch(12.05% 0.011 240);
+    --color-popover: var(--raw-gray-100);
+
+    /* Fallbacks for System Preferred Light Mode Overlay mixes */
+    --color-overlay: rgba(168, 85, 247, 0.12);
+    --color-overlay: color-mix(in oklch, var(--raw-secondary-500) 12%, transparent);
+
+    --color-navbar: rgba(248, 251, 252, 0.72);
+    --color-navbar: color-mix(in oklch, var(--raw-gray-50) 72%, transparent);
+
+    --color-sidebar: var(--color-surface);
+    --color-footer: var(--color-navbar);
+
+    --color-foreground: #020617;
     --color-secondary: var(--raw-gray-700);
     --color-muted: var(--raw-gray-500);
     --color-subtle: var(--raw-gray-400);
+
     --color-border: var(--raw-gray-200);
     --color-border-hover: var(--raw-gray-300);
     --color-ring: var(--raw-secondary-500);
-    --color-input: var(--color-white);
-    --color-input-hover: var(--raw-gray-100);
-    --color-input-border: var(--raw-gray-200);
+
+    --color-input: var(--color-surface);
+    --color-input-hover: var(--color-elevated);
+    --color-input-border: var(--color-border);
     --color-input-focus: var(--raw-secondary-500);
     --color-input-disabled: var(--raw-gray-200);
-    --color-button-primary: var(--raw-secondary-500);
-    --color-button-primary-hover: var(--raw-secondary-400);
-    --color-button-primary-active: var(--raw-secondary-600);
-    --color-button-primary-foreground: var(--color-white);
-    --color-button-secondary: var(--color-white);
-    --color-button-secondary-hover: var(--raw-gray-100);
-    --color-button-secondary-foreground: oklch(12.05% 0.011 240);
+
+    --color-action-primary: var(--raw-secondary-500);
+    --color-action-primary-hover: var(--raw-secondary-400);
+    --color-action-primary-active: var(--raw-secondary-600);
+    --color-action-primary-foreground: #FFFFFF;
+
     --color-action-ghost-text: var(--raw-gray-700);
     --color-action-ghost-hover: rgba(0, 0, 0, 0.06);
-    --color-action-link-text: var(--raw-secondary-600);
+    --color-action-link: var(--raw-secondary-600);
     --color-action-link-hover: var(--raw-secondary-500);
+
     --gradient-surface: linear-gradient(180deg, var(--raw-gray-100), var(--raw-gray-50));
     --gradient-stroke: linear-gradient(180deg, var(--raw-gray-300), var(--raw-gray-200));
-
-    --color-overlay: rgba(168, 85, 247, 0.12);
-    @supports (color: color-mix(in srgb, red, blue)) {
-      --color-overlay: color-mix(in srgb, var(--raw-secondary-500) 12%, transparent);
-    }
   }
 }
