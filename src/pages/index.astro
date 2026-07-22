@@ -5,7 +5,7 @@ import AppFooter from '../partials/AppFooter.astro';
 ---
 <AppLayout
   title="Senior Software Engineer & Platform Architect"
-  cssClass="bg-slate-50 text-slate-900 dark:bg-[#0d1117] dark:text-slate-100 antialiased selection:bg-[#00ca9e]/30 transition-colors duration-300"
+  cssClass="bg-slate-50 text-slate-900 dark:bg-[#0d1117] dark:text-slate-100 antialiased selection:bg-primary/30 transition-colors duration-300"
 >
   <AppHeader />
 
@@ -14,17 +14,17 @@ import AppFooter from '../partials/AppFooter.astro';
     <!-- HERO SECTION -->
     <section class="py-20 lg:py-32 flex flex-col items-center text-center relative">
       <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-20 pointer-events-none">
-        <div class="h-96 w-96 rounded-full bg-[#00ca9e] blur-3xl"></div>
+        <div class="h-96 w-96 rounded-full bg-primary blur-3xl"></div>
       </div>
 
       <!-- Availability Badge -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-[#00ca9e]/30 bg-[#00ca9e]/10 px-4 py-1.5 text-xs text-[#00ca9e] mb-6 animate-pulse">
-        <span class="h-2 w-2 rounded-full bg-[#00ca9e]"></span>
+      <div class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs text-primary mb-6 animate-pulse">
+        <span class="h-2 w-2 rounded-full bg-primary"></span>
         Available for strategic missions & high-end consulting
       </div>
 
       <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl max-w-4xl leading-tight">
-        Building <span class="text-[#00ca9e]">robust</span> and future-proof software architectures.
+        Building <span class="text-primary">robust</span> and future-proof software architectures.
       </h1>
 
       <p class="mt-6 text-lg max-w-2xl opacity-80">
@@ -32,7 +32,7 @@ import AppFooter from '../partials/AppFooter.astro';
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4 justify-center">
-        <a href="#contact" class="rounded-xl bg-[#00ca9e] px-6 py-3 text-sm font-semibold text-[#0d1117] hover:bg-[#00ca9e]/90 transition-all shadow-lg shadow-[#00ca9e]/20">
+        <a href="#contact" class="rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-[#0d1117] hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
           Start a project
         </a>
         <a href="/shared/cv-emmanuel-sigui.pdf" download class="rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 px-6 py-3 text-sm font-semibold hover:bg-black/10 dark:hover:bg-white/10 transition-all">
@@ -45,7 +45,7 @@ import AppFooter from '../partials/AppFooter.astro';
     <section id="vision" class="py-20 border-t border-black/5 dark:border-white/5">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div>
-          <h2 class="text-xs font-bold tracking-wider text-[#00ca9e] uppercase font-mono">01 / Philosophy</h2>
+          <h2 class="text-xs font-bold tracking-wider text-primary uppercase font-mono">01 / Philosophy</h2>
           <p class="mt-4 text-3xl font-bold tracking-tight">Engineering Vision</p>
           <p class="mt-4 opacity-75 text-sm leading-relaxed">
             I don't just write code that works. I build autonomous, decoupled, and scalable systems backed by strict industrial principles. Cloud-Native and Edge-First approaches drive every technical decision I make.
@@ -66,13 +66,13 @@ import AppFooter from '../partials/AppFooter.astro';
 
     <!-- REAL-WORLD ACHIEVEMENTS -->
     <section id="projects" class="py-20 border-t border-black/5 dark:border-white/5">
-      <h2 class="text-xs font-bold tracking-wider text-[#00ca9e] uppercase font-mono">02 / Field Experience</h2>
+      <h2 class="text-xs font-bold tracking-wider text-primary uppercase font-mono">02 / Field Experience</h2>
       <p class="mt-2 text-3xl font-bold tracking-tight mb-12">Critical Systems Deployed</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Project 1 -->
-        <div class="rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-8 hover:border-[#00ca9e]/40 transition-all">
-          <span class="text-xs font-mono text-[#00ca9e]">E-Commerce & Logistics</span>
+        <div class="rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-8 hover:border-primary/40 transition-all">
+          <span class="text-xs font-mono text-primary">E-Commerce & Logistics</span>
           <h3 class="text-2xl font-bold mt-2">Mélanoderme</h3>
           <p class="mt-4 text-sm opacity-75 leading-relaxed">
             Large-scale multi-vendor e-commerce platform. Full integration of complex merchant ecosystems and automated orchestration of global logistics workflows.
@@ -84,8 +84,8 @@ import AppFooter from '../partials/AppFooter.astro';
         </div>
 
         <!-- Project 2 -->
-        <div class="rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-8 hover:border-[#00ca9e]/40 transition-all">
-          <span class="text-xs font-mono text-[#00ca9e]">ERP / Infrastructure Management</span>
+        <div class="rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-8 hover:border-primary/40 transition-all">
+          <span class="text-xs font-mono text-primary">ERP / Infrastructure Management</span>
           <h3 class="text-2xl font-bold mt-2">Mawla Kiélé Hotel Complex</h3>
           <p class="mt-4 text-sm opacity-75 leading-relaxed">
             Architecture and technical specifications for a high-end modular hotel management system covering accommodation, catering, transport logistics, and an integrated educational farm.
@@ -101,18 +101,18 @@ import AppFooter from '../partials/AppFooter.astro';
     <!-- BACKGROUND & EDUCATION -->
     <section id="background" class="py-20 border-t border-black/5 dark:border-white/5">
       <div class="max-w-3xl">
-        <h2 class="text-xs font-bold tracking-wider text-[#00ca9e] uppercase font-mono">03 / Education & Background</h2>
+        <h2 class="text-xs font-bold tracking-wider text-primary uppercase font-mono">03 / Education & Background</h2>
         <p class="mt-2 text-3xl font-bold tracking-tight mb-12">A Dual Data & Business Intelligence Profile</p>
 
         <div class="space-y-8 relative before:absolute before:inset-y-0 before:left-4 before:w-0.5 before:bg-black/10 dark:before:bg-white/10">
           <div class="relative pl-12 group">
-            <span class="absolute left-2.5 top-2 h-3.5 w-3.5 rounded-full border-4 border-slate-50 dark:border-[#0d1117] bg-[#00ca9e] group-hover:scale-125 transition-transform"></span>
-            <span class="text-xs font-mono text-[#00ca9e]">Master 1 Level</span>
+            <span class="absolute left-2.5 top-2 h-3.5 w-3.5 rounded-full border-4 border-slate-50 dark:border-[#0d1117] bg-primary group-hover:scale-125 transition-transform"></span>
+            <span class="text-xs font-mono text-primary">Master 1 Level</span>
             <h3 class="text-lg font-bold mt-1">Big Data & Data Science</h3>
             <p class="text-sm opacity-75 mt-1">Mastery of massive data volumes, analytical models, and software high availability.</p>
           </div>
           <div class="relative pl-12 group">
-            <span class="absolute left-2.5 top-2 h-3.5 w-3.5 rounded-full border-4 border-slate-50 dark:border-[#0d1117] bg-black/20 dark:bg-white/20 group-hover:bg-[#00ca9e] transition-all"></span>
+            <span class="absolute left-2.5 top-2 h-3.5 w-3.5 rounded-full border-4 border-slate-50 dark:border-[#0d1117] bg-black/20 dark:bg-white/20 group-hover:bg-primary transition-all"></span>
             <span class="text-xs font-mono opacity-60">Bachelor's Degree</span>
             <h3 class="text-lg font-bold mt-1">Business Intelligence (BI)</h3>
             <p class="text-sm opacity-75 mt-1">Decision-making data modeling, data warehouses, and analytical performance metrics.</p>
@@ -123,7 +123,7 @@ import AppFooter from '../partials/AppFooter.astro';
 
     <!-- MENTORSHIP & COURSES -->
     <section id="courses" class="py-20 border-t border-black/5 dark:border-white/5">
-      <h2 class="text-xs font-bold tracking-wider text-[#00ca9e] uppercase font-mono">04 / Knowledge Sharing</h2>
+      <h2 class="text-xs font-bold tracking-wider text-primary uppercase font-mono">04 / Knowledge Sharing</h2>
       <p class="mt-2 text-3xl font-bold tracking-tight mb-12">Excellence Mentorship & Training</p>
 
       <div class="p-8 rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] flex flex-col md:flex-row gap-8 items-center justify-between">
@@ -134,7 +134,7 @@ import AppFooter from '../partials/AppFooter.astro';
             I am preparing a comprehensive software engineering curriculum focused on the Deno ecosystem, Clean Architecture, and Edge deployment (Deno Deploy). No fluff, purely industrial practice.
           </p>
         </div>
-        <a href="#contact" class="w-full md:w-auto text-center rounded-xl border border-[#00ca9e] px-6 py-3 text-sm font-semibold text-[#00ca9e] hover:bg-[#00ca9e]/10 transition-all whitespace-nowrap">
+        <a href="#contact" class="w-full md:w-auto text-center rounded-xl border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/10 transition-all whitespace-nowrap">
           Join the waitlist
         </a>
       </div>
@@ -144,14 +144,14 @@ import AppFooter from '../partials/AppFooter.astro';
     <section id="contact" class="py-20 border-t border-black/5 dark:border-white/5 mb-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 class="text-xs font-bold tracking-wider text-[#00ca9e] uppercase font-mono">05 / Get in Touch</h2>
+          <h2 class="text-xs font-bold tracking-wider text-primary uppercase font-mono">05 / Get in Touch</h2>
           <p class="mt-2 text-3xl font-bold tracking-tight">Let's discuss your challenges</p>
           <p class="mt-4 opacity-75 text-sm leading-relaxed">
             Need an architecture session, a performance audit on your TypeScript applications, or senior engineering backup for a strategic mission? Drop me a message here.
           </p>
           <div class="mt-6 space-y-2 text-sm font-mono opacity-80">
             <p>🌐 Web Projects: <span class="text-slate-900 dark:text-white">siguici.sikessem.com</span></p>
-            <p>📧 Direct: <a href="mailto:siguici@proton.me" class="text-[#00ca9e] hover:underline">siguici@proton.me</a></p>
+            <p>📧 Direct: <a href="mailto:siguici@proton.me" class="text-primary hover:underline">siguici@proton.me</a></p>
           </div>
         </div>
 
@@ -159,13 +159,13 @@ import AppFooter from '../partials/AppFooter.astro';
         <form class="space-y-4 rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-6">
           <div>
             <label for="name" class="block text-xs font-medium opacity-70 uppercase mb-1">Your Name / Company</label>
-            <input type="text" id="name" required class="w-full rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm focus:outline-none focus:border-[#00ca9e]" />
+            <input type="text" id="name" required class="w-full rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm focus:outline-none focus:border-primary" />
           </div>
           <div>
             <label for="message" class="block text-xs font-medium opacity-70 uppercase mb-1">Your Message</label>
-            <textarea id="message" required rows="4" placeholder="Describe your needs or project scope..." class="w-full rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm focus:outline-none focus:border-[#00ca9e]"></textarea>
+            <textarea id="message" required rows="4" placeholder="Describe your needs or project scope..." class="w-full rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm focus:outline-none focus:border-primary"></textarea>
           </div>
-          <button type="submit" class="w-full rounded-xl bg-[#00ca9e] py-3 text-sm font-semibold text-[#0d1117] hover:bg-[#00ca9e]/90 transition-all font-medium">
+          <button type="submit" class="w-full rounded-xl bg-primary py-3 text-sm font-semibold text-[#0d1117] hover:bg-primary/90 transition-all font-medium">
             Send my request
           </button>
         </form>
@@ -202,9 +202,9 @@ import AppFooter from '../partials/AppFooter.astro';
       buttons.forEach((btn) => {
         const btnTheme = btn.getAttribute('data-theme-btn');
         if (btnTheme === mode) {
-          btn.classList.add('text-[#00ca9e]');
+          btn.classList.add('text-primary');
         } else {
-          btn.classList.remove('text-[#00ca9e]');
+          btn.classList.remove('text-primary');
         }
       });
     }

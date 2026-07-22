@@ -25,7 +25,7 @@
 
   --color-background: #050816;
   --color-surface: #0b1020;
-  --color-primary: #7878ff;
+  --color-primary: #00ca9e;
   --color-secondary: #a855f7;
   --color-text: #f8fafc;
   --color-muted: #94a3b8;
@@ -46,14 +46,14 @@
   --color-brand-500: #0ea5e9;
   --color-brand-600: #0284c7;
 
-  --color-brand-400: #a78bfa;
-  --color-brand-500: #6D28D9;
-  --color-brand-600: #5B21B6;
-  --color-brand-700: #4C1D95;
+  --color-accent-400: #a78bfa;
+  --color-accent-500: #6D28D9;
+  --color-accent-600: #5B21B6;
+  --color-accent-700: #4C1D95;
 
   /* --- Brand Aliases --- */
-  --color-brand: var(--color-primary-400);
-  --color-accent: var(--color-primary-500);
+  --color-brand: var(--color-brand-500);
+  --color-accent: var(--color-accent-500);
 
   /* --- Base Surfaces (Dark Mode by default) --- */
   --color-background: #020617;
