@@ -440,9 +440,18 @@ import AppLayout from '../layouts/AppLayout.astro';
      STRICT A4 PRINT STYLES WITH PRESERVED COLORS
      ========================================================= */
   @media print {
-    @page { 
-      size: A4; 
-      margin: 10mm 12mm; 
+     @page {
+      size: A4;
+      margin: 0; /* Full bleed layout with custom padding inside body for precision */
+      @bottom-right {
+        content: "Page " counter(page) " / " counter(pages);
+        font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+        font-size: 7.5pt;
+        font-weight: 600;
+        color: #94a3b8;
+        padding-right: 20mm;
+        padding-bottom: 10mm;
+      }
     }
 
     * {
