@@ -137,46 +137,54 @@ import AppLayout from '../layouts/AppLayout.astro';
         <h2 class="section-title">Technical Ecosystem</h2>
         <div class="eco-group">
           <strong>Backend & Architecture:</strong>
-          <span class="tag">PHP (Laravel/Symfony)</span>
-          <span class="tag">TypeScript / Deno / Bun</span>
-          <span class="tag">Vlang</span>
-          <span class="tag">DDD</span>
-          <span class="tag">Hexagonal Architecture</span>
-          <span class="tag">REST / gRPC API</span>
+          <div class="tags-container">
+            <span class="tag">PHP (Laravel/Symfony)</span>
+            <span class="tag">TypeScript / Deno / Bun</span>
+            <span class="tag">Vlang</span>
+            <span class="tag">DDD</span>
+            <span class="tag">Hexagonal Architecture</span>
+            <span class="tag">REST / gRPC API</span>
+          </div>
         </div>
         <div class="eco-group">
           <strong>Frontend & UIs:</strong>
-          <span class="tag">Vue.js / Inertia.js</span>
-          <span class="tag">Astro</span>
-          <span class="tag">Livewire / Alpine.js</span>
-          <span class="tag">TailwindCSS</span>
-          <span class="tag">Design Systems</span>
+          <div class="tags-container">
+            <span class="tag">Vue.js / Inertia.js</span>
+            <span class="tag">Astro</span>
+            <span class="tag">Livewire / Alpine.js</span>
+            <span class="tag">TailwindCSS</span>
+            <span class="tag">Design Systems</span>
+          </div>
         </div>
         <div class="eco-group">
           <strong>Data, AI & DevOps:</strong>
-          <span class="tag">PostgreSQL / MySQL</span>
-          <span class="tag">BI & Data Pipelines</span>
-          <span class="tag">AI Integration & RAG</span>
-          <span class="tag">Docker</span>
-          <span class="tag">GitHub Actions CI/CD</span>
-          <span class="tag">Linux VPS / Caddy</span>
+          <div class="tags-container">
+            <span class="tag">PostgreSQL / MySQL</span>
+            <span class="tag">BI & Data Pipelines</span>
+            <span class="tag">AI Integration & RAG</span>
+            <span class="tag">Docker</span>
+            <span class="tag">GitHub Actions CI/CD</span>
+            <span class="tag">Linux VPS / Caddy</span>
+          </div>
         </div>
       </section>
 
       <section>
         <h2 class="section-title">Education & Languages</h2>
-        <div class="edu-item">
-          <div class="edu-deg">Master 1 in Big Data & Data Science</div>
-          <div class="edu-inst">Leaders University</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-deg">Bachelor's Degree in Business Intelligence (BI)</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-deg">High School Diploma (Baccalauréat Series D)</div>
-        </div>
-        <div class="lang-box">
-          <strong>Languages:</strong> French (Native) · English (Professional)
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-deg">Master 1 in Big Data & Data Science</div>
+            <div class="edu-inst">Leaders University</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-deg">Bachelor's Degree in Business Intelligence (BI)</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-deg">High School Diploma (Baccalauréat Series D)</div>
+          </div>
+          <div class="lang-box">
+            <strong>Languages:</strong> French (Native) · English (Professional)
+          </div>
         </div>
       </section>
     </div>
@@ -204,34 +212,34 @@ import AppLayout from '../layouts/AppLayout.astro';
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font);
-    line-height: 1.35;
-    font-size: 12px;
-    padding: 16px 10px;
+    line-height: 1.45;
+    font-size: 13px;
+    padding: 24px 12px;
   }
 
   a { color: var(--accent-light); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  .container, .actions { max-width: 820px; margin: 0 auto; }
+  .container, .actions { max-width: 840px; margin: 0 auto; }
 
   .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
-  .back-link { color: var(--muted); font-size: 12px; }
+  .back-link { color: var(--muted); font-size: 13px; }
 
   .btn-print {
     background: var(--accent);
     color: #ffffff;
     border: none;
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 11.5px;
+    font-size: 12px;
     transition: background 0.2s;
   }
   .btn-print:hover { opacity: 0.9; }
@@ -240,184 +248,245 @@ import AppLayout from '../layouts/AppLayout.astro';
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 22px 26px;
+    padding: 32px 36px;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
   }
 
   /* HEADER */
   .header {
     border-bottom: 1.5px solid var(--border);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .header-main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
   }
 
-  h1 { font-size: 22px; font-weight: 800; color: var(--text-white); letter-spacing: -0.4px; line-height: 1.1; }
+  h1 { font-size: 24px; font-weight: 800; color: var(--text-white); letter-spacing: -0.4px; line-height: 1.15; }
 
-  .subtitle { color: var(--accent-light); font-weight: 700; font-size: 12.5px; margin-top: 2px; }
+  .subtitle { color: var(--accent-light); font-weight: 700; font-size: 13.5px; margin-top: 4px; }
 
   .location-tag {
     background: #1e1b4b;
     color: #c4b5fd;
     border: 1px solid #4338ca;
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 9999px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     white-space: nowrap;
   }
 
   .tagline {
-    font-size: 11px;
+    font-size: 11.5px;
     color: #e2e8f0;
     font-style: italic;
-    margin-top: 6px;
-    border-left: 2px solid var(--accent);
-    padding-left: 8px;
+    margin-top: 10px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    line-height: 1.4;
   }
 
   .contact-bar {
     display: flex;
     justify-content: space-between;
-    gap: 6px;
+    gap: 8px;
     background-color: var(--bg);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 5px 10px;
-    margin-top: 8px;
-    font-size: 10.5px;
+    padding: 8px 12px;
+    margin-top: 12px;
+    font-size: 11px;
     color: var(--muted);
   }
 
   /* SECTIONS */
-  .section { margin-bottom: 10px; }
+  .section { margin-bottom: 18px; }
 
   .section-title {
     color: #c4b5fd;
-    font-size: 10.5px;
+    font-size: 11.5px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-left: 3px solid var(--accent);
-    padding-left: 6px;
-    margin-bottom: 5px;
+    padding-left: 8px;
+    margin-bottom: 10px;
   }
 
-  .summary-text { font-size: 11px; color: var(--text); line-height: 1.35; }
+  .summary-text { font-size: 11.5px; color: var(--text); line-height: 1.45; }
   .summary-text strong { color: var(--text-white); }
 
   /* CAPABILITIES GRID */
   .capabilities-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    gap: 10px;
   }
 
   .cap-card {
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 6px 8px;
+    padding: 10px 12px;
   }
 
   .cap-title {
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #38bdf8;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
 
-  .cap-desc { font-size: 10.5px; color: var(--muted); line-height: 1.25; }
+  .cap-desc { font-size: 11px; color: var(--muted); line-height: 1.35; }
 
   /* EXPERIENCE ITEMS */
-  .item { margin-bottom: 8px; }
+  .item { margin-bottom: 14px; }
 
   .item-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-bottom: 2px;
   }
 
-  .item-title { font-size: 12.5px; font-weight: 700; color: var(--text-white); }
+  .item-title { font-size: 13.5px; font-weight: 700; color: var(--text-white); }
   .company { color: var(--accent-light); font-weight: 600; }
-  .item-date { font-size: 10.5px; color: var(--muted); font-family: var(--mono); font-weight: 600; }
-  .item-subtitle { font-size: 10.5px; color: var(--muted); font-style: italic; margin-bottom: 3px; }
+  .item-date { font-size: 11px; color: var(--muted); font-family: var(--mono); font-weight: 600; }
+  .item-subtitle { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
 
-  .impact-list { margin: 2px 0 4px 14px; color: var(--text); }
-  .impact-list li { margin-bottom: 1.5px; font-size: 10.8px; line-height: 1.3; }
+  .impact-list { margin: 4px 0 6px 16px; color: var(--text); }
+  .impact-list li { margin-bottom: 3px; font-size: 11px; line-height: 1.4; }
   .impact-list li strong { color: var(--text-white); }
 
   /* TWO COLUMNS (ECOSYSTEM & EDUCATION) */
   .two-col-grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 10px;
-    margin-top: 2px;
+    gap: 16px;
+    margin-top: 4px;
   }
 
-  .eco-group { margin-bottom: 3px; font-size: 10.5px; color: var(--muted); }
-  .eco-group strong { color: var(--text-white); display: block; margin-bottom: 1px; }
+  .eco-group { margin-bottom: 8px; font-size: 11px; color: var(--muted); }
+  .eco-group strong { color: var(--text-white); display: block; margin-bottom: 4px; }
+  .tags-container { display: flex; flex-wrap: wrap; gap: 4px; }
 
   .tag {
     display: inline-block;
     background: #1e293b;
     color: #e2e8f0;
     border: 1px solid #334155;
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
     font-family: var(--mono);
-    margin-right: 2px;
-    margin-bottom: 2px;
   }
 
-  .edu-item { margin-bottom: 4px; }
-  .edu-deg { font-weight: 700; color: var(--text-white); font-size: 10.5px; }
-  .edu-inst { color: var(--muted); font-size: 10px; }
-  .lang-box { font-size: 10.5px; color: var(--accent-light); margin-top: 4px; }
+  .edu-list { display: flex; flex-direction: column; gap: 6px; }
+  .edu-item { margin-bottom: 2px; }
+  .edu-deg { font-weight: 700; color: var(--text-white); font-size: 11px; }
+  .edu-inst { color: var(--muted); font-size: 10.5px; }
+  .lang-box { font-size: 11px; color: var(--accent-light); margin-top: 4px; }
   .lang-box strong { color: var(--text-white); }
 
   /* RESPONSIVE MOBILE */
   @media (max-width: 650px) {
-    .cv { padding: 14px; }
+    .cv { padding: 18px; }
     .header-main, .contact-bar, .item-header { flex-direction: column; }
     .capabilities-grid, .two-col-grid { grid-template-columns: 1fr; }
   }
 
   /* =========================================================
-     STRICT SINGLE-PAGE A4 PRINT STYLES
+     STRICT A4 PRINT STYLES WITH PRESERVED COLORS
      ========================================================= */
   @media print {
-    @page { size: A4; margin: 6mm 8mm; }
-    html, body { height: 100%; background: white !important; color: black !important; padding: 0 !important; font-size: 8.2pt !important; }
+    @page { 
+      size: A4; 
+      margin: 10mm 12mm; 
+    }
+
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body { 
+      height: 100%; 
+      background: white !important; 
+      color: #1e293b !important; 
+      padding: 0 !important; 
+      font-size: 8.5pt !important; 
+    }
+
     .actions { display: none !important; }
     .cv { border: 0 !important; background: white !important; padding: 0 !important; box-shadow: none !important; }
     
-    h1 { color: black !important; font-size: 16pt !important; }
-    .subtitle { color: #222 !important; font-size: 9pt !important; }
-    .location-tag { background: none !important; border: none !important; color: #333 !important; padding: 0 !important; font-size: 7.5pt !important; }
-    .tagline { color: #222 !important; border-left-color: black !important; font-size: 8pt !important; margin-top: 4pt !important; }
-    .contact-bar { background: none !important; border: none !important; border-top: 1pt solid #ccc !important; border-bottom: 1pt solid #ccc !important; padding: 2pt 0 !important; color: #222 !important; font-size: 7.5pt !important; }
+    h1 { color: #0f172a !important; font-size: 17pt !important; }
+    .subtitle { color: #6d28d9 !important; font-size: 9.5pt !important; }
     
-    .section { margin-bottom: 6pt !important; }
-    .section-title { color: black !important; border-left: 2pt solid black !important; font-size: 8pt !important; padding-left: 4pt !important; margin-bottom: 2pt !important; }
-    p, li, .summary-text, .cap-desc, .item-subtitle { color: #111 !important; line-height: 1.2 !important; }
+    .location-tag { 
+      background: #f3e8ff !important; 
+      border: 1pt solid #c084fc !important; 
+      color: #6d28d9 !important; 
+      padding: 1pt 6pt !important; 
+      font-size: 7.5pt !important; 
+    }
+
+    .tagline { 
+      color: #334155 !important; 
+      border-left: 2pt solid #7c3aed !important; 
+      font-size: 8pt !important; 
+      margin-top: 6pt !important; 
+      padding-left: 6pt !important;
+    }
+
+    .contact-bar { 
+      background: #f8fafc !important; 
+      border: 1pt solid #e2e8f0 !important; 
+      padding: 4pt 8pt !important; 
+      color: #334155 !important; 
+      font-size: 7.5pt !important; 
+      margin-top: 8pt !important;
+    }
+
+    .contact-bar a { color: #6d28d9 !important; }
     
-    .cap-card { background: white !important; border: 1pt solid #ddd !important; padding: 3pt 5pt !important; }
-    .cap-title { color: black !important; font-size: 8pt !important; }
+    .section { margin-bottom: 8pt !important; }
+    .section-title { 
+      color: #5b21b6 !important; 
+      border-left: 2.5pt solid #7c3aed !important; 
+      font-size: 8.5pt !important; 
+      padding-left: 5pt !important; 
+      margin-bottom: 4pt !important; 
+    }
+
+    p, li, .summary-text, .cap-desc, .item-subtitle { color: #334155 !important; line-height: 1.3 !important; }
+    .summary-text strong, .impact-list li strong, .eco-group strong, .edu-deg { color: #0f172a !important; }
     
-    .item { margin-bottom: 5pt !important; }
-    .item-title { color: black !important; font-size: 8.5pt !important; }
-    .company { color: #111 !important; }
-    .item-date { color: #333 !important; font-size: 7.5pt !important; }
+    .capabilities-grid { gap: 6pt !important; }
+    .cap-card { 
+      background: #faf5ff !important; 
+      border: 1pt solid #e9d5ff !important; 
+      padding: 5pt 7pt !important; 
+    }
+    .cap-title { color: #0369a1 !important; font-size: 8pt !important; }
     
-    .tag { border: 1pt solid #bbb !important; background: #f8f8f8 !important; color: black !important; font-size: 7pt !important; padding: 0.5pt 3pt !important; }
+    .item { margin-bottom: 7pt !important; }
+    .item-title { color: #0f172a !important; font-size: 8.5pt !important; }
+    .company { color: #6d28d9 !important; }
+    .item-date { color: #64748b !important; font-size: 7.5pt !important; }
+    
+    .tag { 
+      border: 1pt solid #cbd5e1 !important; 
+      background: #f1f5f9 !important; 
+      color: #0f172a !important; 
+      font-size: 7pt !important; 
+      padding: 1pt 4pt !important; 
+    }
     
     .item, .cap-card, .section { break-inside: avoid !important; }
   }
