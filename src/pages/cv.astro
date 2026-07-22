@@ -3,22 +3,24 @@ import AppLayout from '../layouts/AppLayout.astro';
 ---
 
 <AppLayout
-  title="Emmanuel SIGUI — Software Architect & Platform Engineer"
+  title="Emmanuel SIGUI — Senior Software Architect & Product Engineer"
   cssClass="bg-slate-950 text-slate-100 antialiased selection:bg-purple-500/30 transition-colors duration-300"
 >
-  <meta name="description" content="Emmanuel SIGUI is a Senior Software Architect and Platform Engineer building scalable systems, developer tools, and open-source software." />
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Emmanuel SIGUI is a Senior Software Architect and Product Engineer with 10+ years of experience building scalable platforms, modernizing legacy systems, and delivering end-to-end digital products." />
   <meta name="author" content="Emmanuel SIGUI" />
 
-  <meta property="og:title" content="Emmanuel SIGUI — Software Architect" />
-  <meta property="og:description" content="Senior Software Architect & Platform Engineer with 10+ years of experience in high-performance backends, developer tooling, and open source." />
+  <meta property="og:title" content="Emmanuel SIGUI — Senior Software Architect & Product Engineer" />
+  <meta property="og:description" content="Building digital products end-to-end — from business ideas and system architecture to scalable software, intelligent data solutions, cloud infrastructure, and long-term evolution." />
   <meta property="og:type" content="profile" />
 
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Emmanuel Kessé SIGUI",
-    "jobTitle": "Software Architect & Platform Engineer",
+    "jobTitle": "Senior Software Architect & Product Engineer",
     "url": "https://siguici.sikessem.com",
     "sameAs": [
       "https://github.com/siguici",
@@ -27,120 +29,65 @@ import AppLayout from '../layouts/AppLayout.astro';
   }
   </script>
 
-  <!-- ACTIONS BAR -->
+  <!-- ACTION BAR (HIDDEN IN PRINT) -->
   <div class="actions">
     <a href="/" class="back-link">← Back to website</a>
-    <button onclick="window.print()" class="btn-print">Download PDF / Print</button>
+    <button onclick="window.print()" class="btn-print">Download PDF / Print A4</button>
   </div>
 
   <main class="container cv">
 
-    <!-- HEADER / CONTACT -->
+    <!-- HEADER & CONTACT -->
     <header class="header">
       <div class="header-main">
-        <div class="header-left">
+        <div>
           <h1>Emmanuel SIGUI</h1>
-          <div class="subtitle">Software Architect · Platform Engineer · Open Source Founder</div>
+          <div class="subtitle">Senior Software Architect · Product Engineer · Platform Builder</div>
         </div>
-        <div class="header-right">
+        <div class="header-badge">
           <span class="location-tag">Abidjan, Côte d'Ivoire · Remote</span>
         </div>
       </div>
 
+      <p class="tagline">
+        "Building digital products end-to-end — from business ideas and system architecture to scalable software, intelligent data solutions, deployment infrastructure, and long-term evolution."
+      </p>
+
       <div class="contact-bar">
-        <div class="contact-cell">
-          <span class="contact-label">Email:</span>
-          <a href="mailto:siguici@proton.me">siguici@proton.me</a> / <a href="mailto:contact@sikessem.com">contact</a>
-        </div>
-        <div class="contact-cell">
-          <span class="contact-label">Web:</span>
-          <a href="https://siguici.sikessem.com">siguici.sikessem.com</a>
-        </div>
-        <div class="contact-cell">
-          <span class="contact-label">GitHub:</span>
-          <a href="https://github.com/siguici">github.com/siguici</a>
-        </div>
-        <div class="contact-cell">
-          <span class="contact-label">LinkedIn:</span>
-          <a href="https://linkedin.com/in/siguici">in/siguici</a>
-        </div>
+        <span><strong>Email:</strong> <a href="mailto:siguici@proton.me">siguici@proton.me</a> / <a href="mailto:contact@sikessem.com">contact@sikessem.com</a></span>
+        <span><strong>Web:</strong> <a href="https://siguici.sikessem.com">siguici.sikessem.com</a></span>
+        <span><strong>GitHub:</strong> <a href="https://github.com/siguici">github.com/siguici</a></span>
+        <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/siguici">linkedin.com/in/siguici</a></span>
       </div>
     </header>
 
-    <!-- EXECUTIVE SUMMARY -->
+    <!-- EXECUTIVE PROFILE -->
     <section class="section">
-      <h2 class="section-title">Executive Summary</h2>
-      <p>
-        Senior Software Architect and Platform Engineer with 10+ years of professional experience designing scalable backend systems, developer tooling, and high-performance web platforms. Founder of <strong>SikessemHQ</strong>, specializing in open-source rendering engines, compiler systems, and modular infrastructure. Master's degree background in Big Data & Data Science with deep mastery across PHP ecosystems, TypeScript, Vlang, and cloud automation.
+      <h2 class="section-title">Executive Profile</h2>
+      <p class="summary-text">
+        Senior Software Engineer & Software Architect with <strong>10+ years of experience</strong> engineering complex digital platforms. Specialized in bridging business requirements with resilient technical architectures, driving projects across their entire lifecycle: business analysis, system design (DDD, Hexagonal), data modeling, full-stack development, automated CI/CD, cloud/VPS infrastructure, and AI-augmented features. Proven expertise in greenfield product execution and zero-downtime legacy system modernization.
       </p>
     </section>
 
-    <!-- IMPACT & CORE STRENGTHS -->
+    <!-- CORE CAPABILITIES & METHODOLOGY -->
     <section class="section">
-      <h2 class="section-title">Impact & Core Strengths</h2>
-      <ul>
-        <li>Engineered enterprise-grade backend architectures using Domain-Driven Design (DDD) and Hexagonal patterns.</li>
-        <li>Built open-source compilers, template engines, and developer tools focused on static analysis and developer experience (DX).</li>
-        <li>Applied Big Data and Business Intelligence methodology to structure complex data models and analytical pipelines.</li>
-        <li>Automated end-to-end continuous integration and deployment (CI/CD) pipelines using Docker, GitHub Actions, and Linux VPS environments.</li>
-      </ul>
-    </section>
-
-    <!-- TECHNICAL EXPERTISE -->
-    <section class="section">
-      <h2 class="section-title">Technical Expertise</h2>
-      <div class="skills-grid">
-        <div class="skills-card">
-          <div class="skills-card-title">Backend & Systems Architecture</div>
-          <div class="tags-wrapper">
-            <span class="tag">DDD</span>
-            <span class="tag">Hexagonal Architecture</span>
-            <span class="tag">PHP (Laravel/Symfony)</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Vlang</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">gRPC</span>
-            <span class="tag">Protobuf</span>
-          </div>
+      <h2 class="section-title">Core Engineering Capabilities</h2>
+      <div class="capabilities-grid">
+        <div class="cap-card">
+          <div class="cap-title">End-to-End Product Engineering</div>
+          <p class="cap-desc">From idea discovery to live production. Functional analysis, domain modeling, API design, frontend/backend delivery, automated testing, quality assurance, and ongoing maintenance.</p>
         </div>
-
-        <div class="skills-card">
-          <div class="skills-card-title">Frontend & DX Tools</div>
-          <div class="tags-wrapper">
-            <span class="tag">Astro</span>
-            <span class="tag">Deno</span>
-            <span class="tag">Vue.js</span>
-            <span class="tag">TailwindCSS</span>
-            <span class="tag">Alpine.js</span>
-            <span class="tag">Compilers</span>
-            <span class="tag">Template Engines</span>
-            <span class="tag">CLI Utilities</span>
-          </div>
+        <div class="cap-card">
+          <div class="cap-title">Software Architecture & Refactoring</div>
+          <p class="cap-desc">Domain-Driven Design (DDD), Clean & Hexagonal Architecture, Modular Monoliths. Expertise in technical audits, debt reduction, and progressive legacy modernization without service disruption.</p>
         </div>
-
-        <div class="skills-card">
-          <div class="skills-card-title">Cloud & Infrastructure</div>
-          <div class="tags-wrapper">
-            <span class="tag">Docker</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">Linux VPS</span>
-            <span class="tag">Caddy Server</span>
-            <span class="tag">Nginx</span>
-            <span class="tag">Performance Tuning</span>
-          </div>
+        <div class="cap-card">
+          <div class="cap-title">Data Intelligence & AI Integration</div>
+          <p class="cap-desc">Leveraging a Master's background in Big Data & BI to design analytics dashboards, reporting pipelines, RAG systems, AI agents, and intelligent workflow automation into core software.</p>
         </div>
-
-        <div class="skills-card">
-          <div class="skills-card-title">Data & Analytics</div>
-          <div class="tags-wrapper">
-            <span class="tag">Big Data</span>
-            <span class="tag">Business Intelligence</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Data Modeling</span>
-            <span class="tag">Query Optimization</span>
-          </div>
+        <div class="cap-card">
+          <div class="cap-title">DevOps, Cloud & Infrastructure</div>
+          <p class="cap-desc">Pragmatic delivery pipelines: Linux VPS, Docker containerization, Caddy/Nginx, GitHub Actions CI/CD. Tailored infrastructure optimization matching business scale and budget constraints.</p>
         </div>
       </div>
     </section>
@@ -149,80 +96,87 @@ import AppLayout from '../layouts/AppLayout.astro';
     <section class="section">
       <h2 class="section-title">Professional Experience</h2>
 
+      <!-- SikessemHQ -->
       <div class="item">
         <div class="item-header">
           <div class="item-title">
-            Founder & Lead Software Architect — <span class="item-company">SikessemHQ</span>
+            Founder & Lead Software Architect — <span class="company">SikessemHQ</span>
           </div>
           <div class="item-date">2024 — Present</div>
         </div>
-        <div class="item-desc">Architecting an open-source software ecosystem focused on compilers, modular backends, and developer experience.</div>
-        <ul>
-          <li>Architected <strong>Phi</strong>, a statically-typed language project enabling native PHP interoperability and modern developer ergonomics.</li>
-          <li>Developed <strong>Cup Engine</strong>, a high-speed template compiler processing HTML and Markdown via CSS-like syntax for Deno/TypeScript.</li>
-          <li>Designed <strong>Loom</strong>, a decoupled, modular architecture for enterprise-grade backend microservices and business software.</li>
-          <li>Engineered open-source serialization frameworks, CLI utilities, and gRPC services in Vlang and TypeScript.</li>
-          <li>Configured automated CI/CD pipelines via GitHub Actions and orchestrated Linux VPS deployments.</li>
+        <div class="item-subtitle">Technical Entrepreneurship & Modular Software Platform Ecosystem</div>
+        <ul class="impact-list">
+          <li><strong>Product Architecture:</strong> Conceived and architected <strong>Loom</strong>, a decoupled modular backend framework, enabling rapid assembly of microservices and enterprise business applications.</li>
+          <li><strong>High-Performance Engine:</strong> Engineered <strong>Cup Engine</strong>, a high-speed template compiler processing HTML/Markdown via CSS-like selector logic for Deno/TypeScript environments.</li>
+          <li><strong>Language & Tooling R&D:</strong> Designed <strong>Phi</strong>, a statically-typed language project enhancing PHP interoperability, static analysis, and developer experience (DX).</li>
+          <li><strong>Platform Automation:</strong> Orchestrated multi-environment CI/CD workflows (GitHub Actions), Docker containers, and Caddy reverse proxies on Linux VPS infrastructure.</li>
         </ul>
       </div>
 
+      <!-- Freelance -->
       <div class="item">
         <div class="item-header">
           <div class="item-title">
-            Senior Software Engineer & Consultant — <span class="item-company">Freelance</span>
+            Senior Software Engineer & Architecture Consultant — <span class="company">Freelance</span>
           </div>
           <div class="item-date">2016 — Present</div>
         </div>
-        <div class="item-desc">Delivering custom high-scale web platforms, SaaS applications, LMS systems, e-commerce marketplaces, and enterprise software for global clients.</div>
-        <ul>
-          <li>Built high-throughput REST APIs and backend platforms using Laravel, Symfony, and PostgreSQL.</li>
-          <li>Constructed modern, responsive frontend user interfaces leveraging Astro, Vue.js, TypeScript, and TailwindCSS.</li>
-          <li>Structured analytical dashboards and decision-support systems applying Business Intelligence models.</li>
-          <li>Managed server operations, Caddy/Nginx servers, Docker containerization, security policies, and zero-downtime deployments on Linux VPS.</li>
+        <div class="item-subtitle">Custom SaaS, Enterprise Web Platforms, E-Commerce & BI Analytics Systems</div>
+        <ul class="impact-list">
+          <li><strong>Legacy Refactoring & Modernization:</strong> Audited and refactored monolithic legacy platforms for international clients, introducing DDD principles and improving system throughput while preserving uptime.</li>
+          <li><strong>Full-Stack Product Delivery:</strong> Built scalable REST/gRPC backend APIs (Laravel, Symfony, PostgreSQL) integrated with modern reactive UIs (Vue.js, Inertia.js, Astro, TailwindCSS).</li>
+          <li><strong>Data & Analytics Pipelines:</strong> Structured decision-support systems and executive dashboards applying Business Intelligence models to process complex operational data.</li>
+          <li><strong>Infrastructure & Cost Optimization:</strong> Migrated client hosting to automated Linux VPS and Docker environments, reducing infrastructure overhead while ensuring high availability.</li>
         </ul>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    <section class="section">
-      <h2 class="section-title">Featured Projects & Open Source</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-name">Phi Language & Cup Engine</div>
-          <p class="project-desc">Advanced developer tooling (compilers, lexers, template engines) bringing modern static typing, CSS-like selector logic, and static analysis to Deno, TypeScript, and PHP ecosystems.</p>
+    <!-- TECHNICAL ECOSYSTEM GRID & EDUCATION -->
+    <div class="two-col-grid">
+      <section>
+        <h2 class="section-title">Technical Ecosystem</h2>
+        <div class="eco-group">
+          <strong>Backend & Architecture:</strong>
+          <span class="tag">PHP (Laravel/Symfony)</span>
+          <span class="tag">TypeScript / Deno / Bun</span>
+          <span class="tag">Vlang</span>
+          <span class="tag">DDD</span>
+          <span class="tag">Hexagonal Architecture</span>
+          <span class="tag">REST / gRPC API</span>
         </div>
-        <div class="project-card">
-          <div class="project-name">Loom Platform</div>
-          <p class="project-desc">Modular backend architecture engineered for decoupled business software, microservices, and high-scalability enterprise platforms.</p>
+        <div class="eco-group">
+          <strong>Frontend & UIs:</strong>
+          <span class="tag">Vue.js / Inertia.js</span>
+          <span class="tag">Astro</span>
+          <span class="tag">Livewire / Alpine.js</span>
+          <span class="tag">TailwindCSS</span>
+          <span class="tag">Design Systems</span>
         </div>
-        <div class="project-card">
-          <div class="project-name">Colorwind & SigUI</div>
-          <p class="project-desc">Design system architecture and custom chromatic management utilities tailored for modern TailwindCSS frontend workflows.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION & LANGUAGES -->
-    <div class="two-col-layout">
-      <section class="col-left">
-        <h2 class="section-title">Education</h2>
-        <div class="edu-item">
-          <div class="edu-title">Master 1 in Big Data & Data Science</div>
-          <div class="edu-school">Leaders University</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-title">Bachelor's Degree in Business Intelligence (BI)</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-title">High School Diploma (Baccalauréat Series D)</div>
+        <div class="eco-group">
+          <strong>Data, AI & DevOps:</strong>
+          <span class="tag">PostgreSQL / MySQL</span>
+          <span class="tag">BI & Data Pipelines</span>
+          <span class="tag">AI Integration & RAG</span>
+          <span class="tag">Docker</span>
+          <span class="tag">GitHub Actions CI/CD</span>
+          <span class="tag">Linux VPS / Caddy</span>
         </div>
       </section>
 
-      <section class="col-right">
-        <h2 class="section-title">Languages</h2>
+      <section>
+        <h2 class="section-title">Education & Languages</h2>
+        <div class="edu-item">
+          <div class="edu-deg">Master 1 in Big Data & Data Science</div>
+          <div class="edu-inst">Leaders University</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-deg">Bachelor's Degree in Business Intelligence (BI)</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-deg">High School Diploma (Baccalauréat Series D)</div>
+        </div>
         <div class="lang-box">
-          <div><strong>French:</strong> Native</div>
-          <div><strong>English:</strong> Professional</div>
+          <strong>Languages:</strong> French (Native) · English (Professional)
         </div>
       </section>
     </div>
@@ -232,7 +186,7 @@ import AppLayout from '../layouts/AppLayout.astro';
 
 <style>
   :root {
-    --bg: #0b0f19;
+    --bg: #090d16;
     --card: #0f172a;
     --text: #cbd5e1;
     --text-white: #f8fafc;
@@ -241,7 +195,7 @@ import AppLayout from '../layouts/AppLayout.astro';
     --accent-light: #a78bfa;
     --border: #1e293b;
     --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --mono: "JetBrains Mono", SFMono-Regular, Consolas, "Courier New", monospace;
+    --mono: "JetBrains Mono", SFMono-Regular, Consolas, monospace;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -250,226 +204,221 @@ import AppLayout from '../layouts/AppLayout.astro';
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font);
-    line-height: 1.5;
-    font-size: 14px;
-    padding: 32px 16px;
+    line-height: 1.35;
+    font-size: 12px;
+    padding: 16px 10px;
   }
 
-  a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
-  a:hover { color: #c4b5fd; text-decoration: underline; }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-  .container, .actions { max-width: 850px; margin: 0 auto; }
+  .container, .actions { max-width: 820px; margin: 0 auto; }
 
   .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
-  .back-link { color: var(--muted); font-size: 14px; }
-  .back-link:hover { color: var(--text-white); }
+  .back-link { color: var(--muted); font-size: 12px; }
 
   .btn-print {
     background: var(--accent);
     color: #ffffff;
     border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
+    padding: 6px 14px;
+    border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: opacity 0.2s;
+    font-size: 11.5px;
+    transition: background 0.2s;
   }
   .btn-print:hover { opacity: 0.9; }
 
   .cv {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 22px 26px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
   }
 
   /* HEADER */
   .header {
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 16px;
-    margin-bottom: 20px;
+    border-bottom: 1.5px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .header-main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 8px;
+    gap: 8px;
   }
 
-  h1 { font-size: 28px; font-weight: 800; color: var(--text-white); letter-spacing: -0.5px; }
+  h1 { font-size: 22px; font-weight: 800; color: var(--text-white); letter-spacing: -0.4px; line-height: 1.1; }
 
-  .subtitle { color: var(--accent-light); font-weight: 700; font-size: 15px; margin-top: 2px; }
+  .subtitle { color: var(--accent-light); font-weight: 700; font-size: 12.5px; margin-top: 2px; }
 
   .location-tag {
-    display: inline-block;
     background: #1e1b4b;
     color: #c4b5fd;
     border: 1px solid #4338ca;
-    padding: 4px 12px;
+    padding: 2px 8px;
     border-radius: 9999px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .tagline {
+    font-size: 11px;
+    color: #e2e8f0;
+    font-style: italic;
+    margin-top: 6px;
+    border-left: 2px solid var(--accent);
+    padding-left: 8px;
   }
 
   .contact-bar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 8px 16px;
+    gap: 6px;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 16px;
-    margin-top: 12px;
-    font-size: 13px;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-top: 8px;
+    font-size: 10.5px;
     color: var(--muted);
   }
 
-  .contact-label { color: #64748b; font-weight: 600; margin-right: 4px; }
-
   /* SECTIONS */
-  .section { margin-bottom: 24px; }
+  .section { margin-bottom: 10px; }
 
   .section-title {
     color: #c4b5fd;
-    font-size: 13px;
+    font-size: 10.5px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     border-left: 3px solid var(--accent);
-    padding-left: 10px;
-    margin-bottom: 12px;
+    padding-left: 6px;
+    margin-bottom: 5px;
   }
 
-  p { color: var(--text); margin-bottom: 8px; }
+  .summary-text { font-size: 11px; color: var(--text); line-height: 1.35; }
+  .summary-text strong { color: var(--text-white); }
 
-  ul { margin: 6px 0 12px 20px; color: var(--text); }
-  li { margin-bottom: 4px; }
-  li strong { color: var(--text-white); }
-
-  /* SKILLS & PROJECTS GRID */
-  .skills-grid, .projects-grid {
+  /* CAPABILITIES GRID */
+  .capabilities-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 6px;
   }
 
-  .skills-card, .project-card {
+  .cap-card {
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 14px;
+    border-radius: 6px;
+    padding: 6px 8px;
   }
 
-  .skills-card-title {
-    font-size: 12px;
+  .cap-title {
+    font-size: 11px;
     font-weight: 700;
     color: #38bdf8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
 
-  .tags-wrapper { display: flex; flex-wrap: wrap; gap: 4px; }
+  .cap-desc { font-size: 10.5px; color: var(--muted); line-height: 1.25; }
+
+  /* EXPERIENCE ITEMS */
+  .item { margin-bottom: 8px; }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .item-title { font-size: 12.5px; font-weight: 700; color: var(--text-white); }
+  .company { color: var(--accent-light); font-weight: 600; }
+  .item-date { font-size: 10.5px; color: var(--muted); font-family: var(--mono); font-weight: 600; }
+  .item-subtitle { font-size: 10.5px; color: var(--muted); font-style: italic; margin-bottom: 3px; }
+
+  .impact-list { margin: 2px 0 4px 14px; color: var(--text); }
+  .impact-list li { margin-bottom: 1.5px; font-size: 10.8px; line-height: 1.3; }
+  .impact-list li strong { color: var(--text-white); }
+
+  /* TWO COLUMNS (ECOSYSTEM & EDUCATION) */
+  .two-col-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 10px;
+    margin-top: 2px;
+  }
+
+  .eco-group { margin-bottom: 3px; font-size: 10.5px; color: var(--muted); }
+  .eco-group strong { color: var(--text-white); display: block; margin-bottom: 1px; }
 
   .tag {
     display: inline-block;
     background: #1e293b;
     color: #e2e8f0;
     border: 1px solid #334155;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 11px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 9.5px;
     font-family: var(--mono);
+    margin-right: 2px;
+    margin-bottom: 2px;
   }
 
-  .project-name { font-size: 14px; font-weight: 700; color: var(--text-white); }
-  .project-desc { font-size: 12.5px; color: var(--muted); margin-top: 4px; margin-bottom: 0; }
+  .edu-item { margin-bottom: 4px; }
+  .edu-deg { font-weight: 700; color: var(--text-white); font-size: 10.5px; }
+  .edu-inst { color: var(--muted); font-size: 10px; }
+  .lang-box { font-size: 10.5px; color: var(--accent-light); margin-top: 4px; }
+  .lang-box strong { color: var(--text-white); }
 
-  /* EXPERIENCE ITEMS */
-  .item { margin-bottom: 16px; break-inside: avoid; }
-
-  .item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 4px;
-  }
-
-  .item-title { font-size: 15px; font-weight: 700; color: var(--text-white); }
-  .item-company { color: var(--accent-light); font-weight: 600; }
-  .item-date { font-size: 13px; color: var(--muted); font-family: var(--mono); font-weight: 600; }
-  .item-desc { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
-
-  /* TWO COLUMNS (EDUCATION / LANGUAGES) */
-  .two-col-layout {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    gap: 16px;
-    margin-top: 8px;
-  }
-
-  .edu-item { margin-bottom: 8px; }
-  .edu-title { font-weight: 700; color: var(--text-white); font-size: 13.5px; }
-  .edu-school { color: var(--muted); font-size: 12.5px; }
-
-  .lang-box {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  /* MOBILE RESPONSIVE */
-  @media (max-width: 700px) {
-    .cv { padding: 20px; }
-    .header-main { flex-direction: column; }
-    .contact-bar { flex-direction: column; gap: 4px; }
-    .skills-grid, .projects-grid, .two-col-layout { grid-template-columns: 1fr; }
-    .item-header { flex-direction: column; }
-    .item-date { margin-top: 2px; }
+  /* RESPONSIVE MOBILE */
+  @media (max-width: 650px) {
+    .cv { padding: 14px; }
+    .header-main, .contact-bar, .item-header { flex-direction: column; }
+    .capabilities-grid, .two-col-grid { grid-template-columns: 1fr; }
   }
 
   /* =========================================================
-     PRINT & ATS OPTIMIZED STYLES (A4 Page Fit)
+     STRICT SINGLE-PAGE A4 PRINT STYLES
      ========================================================= */
   @media print {
-    @page { size: A4; margin: 10mm 12mm; }
-    body { background: white !important; color: black !important; padding: 0 !important; font-size: 9.5pt !important; }
+    @page { size: A4; margin: 6mm 8mm; }
+    html, body { height: 100%; background: white !important; color: black !important; padding: 0 !important; font-size: 8.2pt !important; }
     .actions { display: none !important; }
     .cv { border: 0 !important; background: white !important; padding: 0 !important; box-shadow: none !important; }
     
-    h1 { color: black !important; font-size: 20pt !important; }
-    .subtitle { color: #333333 !important; font-size: 10.5pt !important; }
-    .location-tag { background: none !important; border: none !important; color: #444 !important; padding: 0 !important; }
-    .contact-bar { background: none !important; border: none !important; border-top: 1pt solid #ccc !important; border-bottom: 1pt solid #ccc !important; padding: 4pt 0 !important; color: #333 !important; }
+    h1 { color: black !important; font-size: 16pt !important; }
+    .subtitle { color: #222 !important; font-size: 9pt !important; }
+    .location-tag { background: none !important; border: none !important; color: #333 !important; padding: 0 !important; font-size: 7.5pt !important; }
+    .tagline { color: #222 !important; border-left-color: black !important; font-size: 8pt !important; margin-top: 4pt !important; }
+    .contact-bar { background: none !important; border: none !important; border-top: 1pt solid #ccc !important; border-bottom: 1pt solid #ccc !important; padding: 2pt 0 !important; color: #222 !important; font-size: 7.5pt !important; }
     
-    .section-title { color: black !important; border-left: 2pt solid black !important; font-size: 10pt !important; padding-left: 6pt !important; }
-    p, li, .item-desc, .project-desc, .edu-school { color: #222222 !important; }
+    .section { margin-bottom: 6pt !important; }
+    .section-title { color: black !important; border-left: 2pt solid black !important; font-size: 8pt !important; padding-left: 4pt !important; margin-bottom: 2pt !important; }
+    p, li, .summary-text, .cap-desc, .item-subtitle { color: #111 !important; line-height: 1.2 !important; }
     
-    .item-title { color: black !important; font-size: 10pt !important; }
-    .item-company { color: #111111 !important; }
-    .item-date { color: #444444 !important; font-size: 8.5pt !important; }
+    .cap-card { background: white !important; border: 1pt solid #ddd !important; padding: 3pt 5pt !important; }
+    .cap-title { color: black !important; font-size: 8pt !important; }
     
-    .skills-card, .project-card, .lang-box { background: white !important; border: 1pt solid #ddd !important; }
-    .skills-card-title { color: black !important; }
-    .tag { border: 1pt solid #ccc !important; background: #f5f5f5 !important; color: black !important; }
+    .item { margin-bottom: 5pt !important; }
+    .item-title { color: black !important; font-size: 8.5pt !important; }
+    .company { color: #111 !important; }
+    .item-date { color: #333 !important; font-size: 7.5pt !important; }
     
-    .item, .skills-card, .project-card { break-inside: avoid !important; }
+    .tag { border: 1pt solid #bbb !important; background: #f8f8f8 !important; color: black !important; font-size: 7pt !important; padding: 0.5pt 3pt !important; }
+    
+    .item, .cap-card, .section { break-inside: avoid !important; }
   }
 </style>
