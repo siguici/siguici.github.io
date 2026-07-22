@@ -1,38 +1,65 @@
 ---
 import AppLayout from '../layouts/AppLayout.astro';
+import getCV, { type Locale } from '../data/cv';
+
+const url = new URL(Astro.request.url);
+const currentLang = (url.searchParams.get('lang') as Locale) || 'fr';
+
+const cv = getCV(currentLang);
 ---
 
 <AppLayout
-  title="Emmanuel SIGUI — Senior Software Architect & Product Engineer"
+  title={cv.title}
   cssClass="bg-slate-950 text-slate-100 antialiased selection:bg-purple-500/30 transition-colors duration-300"
 >
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Emmanuel SIGUI is a Senior Software Architect and Product Engineer with 10+ years of experience building scalable platforms, modernizing legacy systems, and delivering end-to-end digital products." />
-  <meta name="author" content="Emmanuel SIGUI" />
+  <meta name="description" content={cv.tagline} />
+  <meta name="author" content={cv.identity.name} />
 
-  <meta property="og:title" content="Emmanuel SIGUI — Senior Software Architect & Product Engineer" />
-  <meta property="og:description" content="Building digital products end-to-end — from business ideas and system architecture to scalable software, intelligent data solutions, cloud infrastructure, and long-term evolution." />
+  <meta property="og:title" content={cv.title} />
+  <meta property="og:description" content={cv.tagline} />
   <meta property="og:type" content="profile" />
 
   <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Emmanuel Kessé SIGUI",
-    "jobTitle": "Senior Software Architect & Product Engineer",
-    "url": "https://siguici.sikessem.com",
+    "name": cv.identity.name,
+    "jobTitle": cv.subtitle,
+    "url": cv.contact.webUrl,
     "sameAs": [
-      "https://github.com/siguici",
-      "https://linkedin.com/in/siguici"
+      cv.contact.githubUrl,
+      cv.contact.linkedinUrl
     ]
-  }
-  </script>
+  })} />
 
   <!-- ACTION BAR (HIDDEN IN PRINT) -->
   <div class="actions">
-    <a href="/" class="back-link">← Back to website</a>
-    <button onclick="window.print()" class="btn-print">Download PDF / Print A4</button>
+    <a href="/" class="back-link">
+      {currentLang === 'fr' ? '← Retour au site' : '← Back to website'}
+    </a>
+
+    <div class="right-actions">
+      <div class="lang-switcher">
+        <a
+          href="?lang=fr"
+          class:list={['lang-btn', { active: currentLang === 'fr' }]}
+        >
+          FR
+        </a>
+        <span class="divider">|</span>
+        <a
+          href="?lang=en"
+          class:list={['lang-btn', { active: currentLang === 'en' }]}
+        >
+          EN
+        </a>
+      </div>
+
+      <button onclick="window.print()" class="btn-print">
+        {currentLang === 'fr' ? 'Télécharger PDF / Imprimer' : 'Download PDF / Print A4'}
+      </button>
+    </div>
   </div>
 
   <main class="container cv">
@@ -41,149 +68,92 @@ import AppLayout from '../layouts/AppLayout.astro';
     <header class="header">
       <div class="header-main">
         <div>
-          <h1>Emmanuel SIGUI</h1>
-          <div class="subtitle">Senior Software Architect · Product Engineer · Platform Builder</div>
+          <h1>{cv.identity.name}</h1>
+          <div class="subtitle">{cv.subtitle}</div>
         </div>
         <div class="header-badge">
-          <span class="location-tag">Abidjan, Côte d'Ivoire · Remote</span>
+          <span class="location-tag">{cv.location}</span>
         </div>
       </div>
 
-      <p class="tagline">
-        "Building digital products end-to-end — from business ideas and system architecture to scalable software, intelligent data solutions, deployment infrastructure, and long-term evolution."
-      </p>
+      <p class="tagline">"{cv.tagline}"</p>
 
       <div class="contact-bar">
-        <span><strong>Email:</strong> <a href="mailto:siguici@proton.me">siguici@proton.me</a> / <a href="mailto:contact@sikessem.com">contact@sikessem.com</a></span>
-        <span><strong>Web:</strong> <a href="https://siguici.sikessem.com">siguici.sikessem.com</a></span>
-        <span><strong>GitHub:</strong> <a href="https://github.com/siguici">github.com/siguici</a></span>
-        <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/siguici">linkedin.com/in/siguici</a></span>
+        <span><strong>Email:</strong> <a href={`mailto:${cv.contact.email}`}>{cv.contact.email}</a> / <a href={`mailto:${cv.contact.emailSecondary}`}>{cv.contact.emailSecondary}</a></span>
+        <span><strong>Web:</strong> <a href={cv.contact.webUrl}>{cv.contact.web}</a></span>
+        <span><strong>GitHub:</strong> <a href={cv.contact.githubUrl}>{cv.contact.github}</a></span>
+        <span><strong>LinkedIn:</strong> <a href={cv.contact.linkedinUrl}>{cv.contact.linkedin}</a></span>
       </div>
     </header>
 
     <!-- EXECUTIVE PROFILE -->
     <section class="section">
-      <h2 class="section-title">Executive Profile</h2>
-      <p class="summary-text">
-        Senior Software Engineer & Software Architect with <strong>10+ years of experience</strong> engineering complex digital platforms. Specialized in bridging business requirements with resilient technical architectures, driving projects across their entire lifecycle: business analysis, system design (DDD, Hexagonal), data modeling, full-stack development, automated CI/CD, cloud/VPS infrastructure, and AI-augmented features. Proven expertise in greenfield product execution and zero-downtime legacy system modernization.
-      </p>
+      <h2 class="section-title">{cv.sections.profile}</h2>
+      <p class="summary-text" set:html={cv.summary} />
     </section>
 
     <!-- CORE CAPABILITIES & METHODOLOGY -->
     <section class="section">
-      <h2 class="section-title">Core Engineering Capabilities</h2>
+      <h2 class="section-title">{cv.sections.capabilities}</h2>
       <div class="capabilities-grid">
-        <div class="cap-card">
-          <div class="cap-title">End-to-End Product Engineering</div>
-          <p class="cap-desc">From idea discovery to live production. Functional analysis, domain modeling, API design, frontend/backend delivery, automated testing, quality assurance, and ongoing maintenance.</p>
-        </div>
-        <div class="cap-card">
-          <div class="cap-title">Software Architecture & Refactoring</div>
-          <p class="cap-desc">Domain-Driven Design (DDD), Clean & Hexagonal Architecture, Modular Monoliths. Expertise in technical audits, debt reduction, and progressive legacy modernization without service disruption.</p>
-        </div>
-        <div class="cap-card">
-          <div class="cap-title">Data Intelligence & AI Integration</div>
-          <p class="cap-desc">Leveraging a Master's background in Big Data & BI to design analytics dashboards, reporting pipelines, RAG systems, AI agents, and intelligent workflow automation into core software.</p>
-        </div>
-        <div class="cap-card">
-          <div class="cap-title">DevOps, Cloud & Infrastructure</div>
-          <p class="cap-desc">Pragmatic delivery pipelines: Linux VPS, Docker containerization, Caddy/Nginx, GitHub Actions CI/CD. Tailored infrastructure optimization matching business scale and budget constraints.</p>
-        </div>
+        {cv.capabilities.map((cap) => (
+          <div class="cap-card">
+            <div class="cap-title">{cap.title}</div>
+            <p class="cap-desc">{cap.description}</p>
+          </div>
+        ))}
       </div>
     </section>
 
     <!-- PROFESSIONAL EXPERIENCE -->
     <section class="section">
-      <h2 class="section-title">Professional Experience</h2>
+      <h2 class="section-title">{cv.sections.experience}</h2>
 
-      <!-- SikessemHQ -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">
-            Founder & Lead Software Architect — <span class="company">SikessemHQ</span>
+      {cv.experiences.map((exp) => (
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              {exp.role} — <span class="company">{exp.company}</span>
+            </div>
+            <div class="item-date">{exp.period}</div>
           </div>
-          <div class="item-date">2024 — Present</div>
+          <div class="item-subtitle">{exp.subtitle}</div>
+          <ul class="impact-list">
+            {exp.impacts.map((impact) => (
+              <li set:html={impact} />
+            ))}
+          </ul>
         </div>
-        <div class="item-subtitle">Technical Entrepreneurship & Modular Software Platform Ecosystem</div>
-        <ul class="impact-list">
-          <li><strong>Product Architecture:</strong> Conceived and architected <strong>Loom</strong>, a decoupled modular backend framework, enabling rapid assembly of microservices and enterprise business applications.</li>
-          <li><strong>High-Performance Engine:</strong> Engineered <strong>Cup Engine</strong>, a high-speed template compiler processing HTML/Markdown via CSS-like selector logic for Deno/TypeScript environments.</li>
-          <li><strong>Language & Tooling R&D:</strong> Designed <strong>Phi</strong>, a statically-typed language project enhancing PHP interoperability, static analysis, and developer experience (DX).</li>
-          <li><strong>Platform Automation:</strong> Orchestrated multi-environment CI/CD workflows (GitHub Actions), Docker containers, and Caddy reverse proxies on Linux VPS infrastructure.</li>
-        </ul>
-      </div>
-
-      <!-- Freelance -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">
-            Senior Software Engineer & Architecture Consultant — <span class="company">Freelance</span>
-          </div>
-          <div class="item-date">2016 — Present</div>
-        </div>
-        <div class="item-subtitle">Custom SaaS, Enterprise Web Platforms, E-Commerce & BI Analytics Systems</div>
-        <ul class="impact-list">
-          <li><strong>Legacy Refactoring & Modernization:</strong> Audited and refactored monolithic legacy platforms for international clients, introducing DDD principles and improving system throughput while preserving uptime.</li>
-          <li><strong>Full-Stack Product Delivery:</strong> Built scalable REST/gRPC backend APIs (Laravel, Symfony, PostgreSQL) integrated with modern reactive UIs (Vue.js, Inertia.js, Astro, TailwindCSS).</li>
-          <li><strong>Data & Analytics Pipelines:</strong> Structured decision-support systems and executive dashboards applying Business Intelligence models to process complex operational data.</li>
-          <li><strong>Infrastructure & Cost Optimization:</strong> Migrated client hosting to automated Linux VPS and Docker environments, reducing infrastructure overhead while ensuring high availability.</li>
-        </ul>
-      </div>
+      ))}
     </section>
 
     <!-- TECHNICAL ECOSYSTEM GRID & EDUCATION -->
     <div class="two-col-grid">
       <section>
-        <h2 class="section-title">Technical Ecosystem</h2>
-        <div class="eco-group">
-          <strong>Backend & Architecture:</strong>
-          <div class="tags-container">
-            <span class="tag">PHP (Laravel/Symfony)</span>
-            <span class="tag">TypeScript / Deno / Bun</span>
-            <span class="tag">Vlang</span>
-            <span class="tag">DDD</span>
-            <span class="tag">Hexagonal Architecture</span>
-            <span class="tag">REST / gRPC API</span>
+        <h2 class="section-title">{cv.sections.ecosystem}</h2>
+        {cv.ecosystem.map((group) => (
+          <div class="eco-group">
+            <strong>{cv.categories[group.categoryId as keyof typeof cv.categories]}:</strong>
+            <div class="tags-container">
+              {group.skills.map((skill) => (
+                <span class="tag">{skill}</span>
+              ))}
+            </div>
           </div>
-        </div>
-        <div class="eco-group">
-          <strong>Frontend & UIs:</strong>
-          <div class="tags-container">
-            <span class="tag">Vue.js / Inertia.js</span>
-            <span class="tag">Astro</span>
-            <span class="tag">Livewire / Alpine.js</span>
-            <span class="tag">TailwindCSS</span>
-            <span class="tag">Design Systems</span>
-          </div>
-        </div>
-        <div class="eco-group">
-          <strong>Data, AI & DevOps:</strong>
-          <div class="tags-container">
-            <span class="tag">PostgreSQL / MySQL</span>
-            <span class="tag">BI & Data Pipelines</span>
-            <span class="tag">AI Integration & RAG</span>
-            <span class="tag">Docker</span>
-            <span class="tag">GitHub Actions CI/CD</span>
-            <span class="tag">Linux VPS / Caddy</span>
-          </div>
-        </div>
+        ))}
       </section>
 
       <section>
-        <h2 class="section-title">Education & Languages</h2>
+        <h2 class="section-title">{cv.sections.education}</h2>
         <div class="edu-list">
-          <div class="edu-item">
-            <div class="edu-deg">Master 1 in Big Data & Data Science</div>
-            <div class="edu-inst">Leaders University</div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-deg">Bachelor's Degree in Business Intelligence (BI)</div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-deg">High School Diploma (Baccalauréat Series D)</div>
-          </div>
+          {cv.education.map((edu) => (
+            <div class="edu-item">
+              <div class="edu-deg">{edu.degree}</div>
+              {edu.institution && <div class="edu-inst">{edu.institution}</div>}
+            </div>
+          ))}
           <div class="lang-box">
-            <strong>Languages:</strong> French (Native) · English (Professional)
+            <strong>{currentLang === 'fr' ? 'Langues :' : 'Languages:'}</strong> {cv.languages}
           </div>
         </div>
       </section>
@@ -240,6 +210,38 @@ import AppLayout from '../layouts/AppLayout.astro';
     margin-bottom: 16px;
   }
 
+  .right-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--card);
+    border: 1px solid #334155;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .lang-btn {
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .lang-btn.active {
+    color: var(--accent-light);
+    text-decoration: underline;
+  }
+
+  .divider {
+    color: #475569;
+  }
+
   .back-link { color: var(--muted); font-size: 13px; }
 
   .btn-print {
@@ -267,17 +269,12 @@ import AppLayout from '../layouts/AppLayout.astro';
   .cv.container {
     display: table;
     width: 100%;
-    /*
-    padding: 0 15mm;
-    margin-top: 10mm;
-    */
   }
 
   /* Header Styling */
   .header {
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     color: #ffffff;
-    border-bottom: 1.5px solid var(--border);
     padding: 0 8px 16px;
     margin-bottom: 20px;
     position: relative;
@@ -355,7 +352,7 @@ import AppLayout from '../layouts/AppLayout.astro';
   }
 
   .summary-text { font-size: 11.5px; color: var(--text); line-height: 1.45; }
-  .summary-text strong { color: var(--text-white); }
+  .summary-text :global(strong) { color: var(--text-white); }
 
   /* CAPABILITIES GRID */
   .capabilities-grid {
@@ -397,7 +394,7 @@ import AppLayout from '../layouts/AppLayout.astro';
 
   .impact-list { margin: 4px 0 6px 16px; color: var(--text); }
   .impact-list li { margin-bottom: 3px; font-size: 11px; line-height: 1.4; }
-  .impact-list li strong { color: var(--text-white); }
+  .impact-list li :global(strong) { color: var(--text-white); }
 
   /* TWO COLUMNS (ECOSYSTEM & EDUCATION) */
   .two-col-grid {
@@ -434,15 +431,17 @@ import AppLayout from '../layouts/AppLayout.astro';
     .cv { padding: 18px; }
     .header-main, .contact-bar, .item-header { flex-direction: column; }
     .capabilities-grid, .two-col-grid { grid-template-columns: 1fr; }
+    .actions { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .right-actions { width: 100%; justify-content: space-between; }
   }
 
   /* =========================================================
      STRICT A4 PRINT STYLES WITH PRESERVED COLORS
      ========================================================= */
   @media print {
-     @page {
+    @page {
       size: A4;
-      margin: 0; /* Full bleed layout with custom padding inside body for precision */
+      margin: 0;
       @bottom-right {
         content: "Page " counter(page) " / " counter(pages);
         font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
@@ -459,80 +458,80 @@ import AppLayout from '../layouts/AppLayout.astro';
       print-color-adjust: exact !important;
     }
 
-    html, body { 
-      height: 100%; 
-      background: white !important; 
-      color: #1e293b !important; 
-      padding: 0 !important; 
-      font-size: 8.5pt !important; 
+    html, body {
+      height: 100%;
+      background: white !important;
+      color: #1e293b !important;
+      padding: 0 !important;
+      font-size: 8.5pt !important;
     }
 
     .actions { display: none !important; }
     .cv { border: 0 !important; background: white !important; padding: 0 !important; box-shadow: none !important; }
-    
+
     h1 { color: white !important; font-size: 17pt !important; }
     .subtitle { color: #6d28d9 !important; font-size: 9.5pt !important; }
-    
-    .location-tag { 
-      background: #f3e8ff !important; 
-      border: 1pt solid #c084fc !important; 
-      color: #6d28d9 !important; 
-      padding: 1pt 6pt !important; 
-      font-size: 7.5pt !important; 
+
+    .location-tag {
+      background: #f3e8ff !important;
+      border: 1pt solid #c084fc !important;
+      color: #6d28d9 !important;
+      padding: 1pt 6pt !important;
+      font-size: 7.5pt !important;
     }
 
-    .tagline { 
-      color: #f3e8ff !important; 
-      border-left: 2pt solid #7c3aed !important; 
-      font-size: 8pt !important; 
-      margin-top: 6pt !important; 
+    .tagline {
+      color: #f3e8ff !important;
+      border-left: 2pt solid #7c3aed !important;
+      font-size: 8pt !important;
+      margin-top: 6pt !important;
       padding-left: 6pt !important;
     }
 
-    .contact-bar { 
-      background: #f8fafc !important; 
-      border: 1pt solid #e2e8f0 !important; 
-      padding: 4pt 8pt !important; 
-      color: #334155 !important; 
-      font-size: 7.5pt !important; 
+    .contact-bar {
+      background: #f8fafc !important;
+      border: 1pt solid #e2e8f0 !important;
+      padding: 4pt 8pt !important;
+      color: #334155 !important;
+      font-size: 7.5pt !important;
       margin-top: 8pt !important;
     }
 
     .contact-bar a { color: #6d28d9 !important; }
-    
+
     .section { margin-bottom: 8pt !important; }
-    .section-title { 
-      color: #5b21b6 !important; 
-      border-left: 2.5pt solid #7c3aed !important; 
-      font-size: 8.5pt !important; 
-      padding-left: 5pt !important; 
-      margin-bottom: 4pt !important; 
+    .section-title {
+      color: #5b21b6 !important;
+      border-left: 2.5pt solid #7c3aed !important;
+      font-size: 8.5pt !important;
+      padding-left: 5pt !important;
+      margin-bottom: 4pt !important;
     }
 
     p, li, .summary-text, .cap-desc, .item-subtitle { color: #334155 !important; line-height: 1.3 !important; }
-    .summary-text strong, .impact-list li strong, .eco-group strong, .edu-deg { color: #0f172a !important; }
-    
+    .summary-text :global(strong), .impact-list li :global(strong), .eco-group strong, .edu-deg { color: #0f172a !important; }
+
     .capabilities-grid { gap: 6pt !important; }
-    .cap-card { 
-      background: #faf5ff !important; 
-      border: 1pt solid #e9d5ff !important; 
-      padding: 5pt 7pt !important; 
+    .cap-card {
+      background: #faf5ff !important;
+      border: 1pt solid #e9d5ff !important;
+      padding: 5pt 7pt !important;
     }
     .cap-title { color: #0369a1 !important; font-size: 8pt !important; }
-    
+
     .item { margin-bottom: 7pt !important; }
     .item-title { color: #0f172a !important; font-size: 8.5pt !important; }
     .company { color: #6d28d9 !important; }
     .item-date { color: #64748b !important; font-size: 7.5pt !important; }
-    
-    .tag { 
-      border: 1pt solid #cbd5e1 !important; 
-      background: #f1f5f9 !important; 
-      color: #0f172a !important; 
-      font-size: 7pt !important; 
-      padding: 1pt 4pt !important; 
+
+    .tag {
+      border: 1pt solid #cbd5e1 !important;
+      background: #f1f5f9 !important;
+      color: #0f172a !important;
+      font-size: 7pt !important;
+      padding: 1pt 4pt !important;
     }
-    
+
     .item, .cap-card, .section { break-inside: avoid !important; }
   }
 </style>
