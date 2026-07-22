@@ -18,10 +18,10 @@
 
 @theme {
   /* --- Typography & Layout Primitives --- */
-  --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-body: 'Geist Variable', var(--font-system);
-  --font-sans: 'Geist Sans', var(--foun-system);
-  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-body: Geist, 'Geist Variable', var(--font-system);
+  --font-sans: 'Geist Sans', Inter, var(--foun-system);
+  --font-mono: 'Geist Mono', 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --color-background: #050816;
   --color-surface: #0b1020;
