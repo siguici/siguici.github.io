@@ -1,11 +1,21 @@
 ---
-import AppLayout from '../layouts/AppLayout.astro';
-import getCV, { type Locale } from '../data/cv';
+import AppLayout from '../../layouts/AppLayout.astro';
+import getCV, { type Locale } from '../../data/cv';
 
-const url = new URL(Astro.request.url);
-const currentLang = (url.searchParams.get('lang') as Locale) || 'fr';
+interface Props {
+	lang: Locale;
+}
 
-const cv = getCV(currentLang);
+export function getStaticPaths() {
+  return [
+    { params: { lang: undefined }, props: { lang: 'fr' } },
+    { params: { lang: 'fr' }, props: { lang: 'fr' } },
+    { params: { lang: 'en' }, props: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.props as { lang: Locale };
+const cv = getCV(lang);
 ---
 
 <AppLayout
@@ -36,28 +46,28 @@ const cv = getCV(currentLang);
   <!-- ACTION BAR (HIDDEN IN PRINT) -->
   <div class="actions">
     <a href="/" class="back-link">
-      {currentLang === 'fr' ? '← Retour au site' : '← Back to website'}
+      {lang === 'fr' ? '← Retour au site' : '← Back to website'}
     </a>
 
     <div class="right-actions">
       <div class="lang-switcher">
         <a
-          href="?lang=fr"
-          class:list={['lang-btn', { active: currentLang === 'fr' }]}
+          href="/cv/fr"
+          class:list={['lang-btn', { active: lang === 'fr' }]}
         >
           FR
         </a>
         <span class="divider">|</span>
         <a
-          href="?lang=en"
-          class:list={['lang-btn', { active: currentLang === 'en' }]}
+          href="/cv/en"
+          class:list={['lang-btn', { active: lang === 'en' }]}
         >
           EN
         </a>
       </div>
 
       <button onclick="window.print()" class="btn-print">
-        {currentLang === 'fr' ? 'Télécharger PDF / Imprimer' : 'Download PDF / Print A4'}
+        {lang === 'fr' ? 'Télécharger PDF / Imprimer' : 'Download PDF / Print A4'}
       </button>
     </div>
   </div>
@@ -153,7 +163,7 @@ const cv = getCV(currentLang);
             </div>
           ))}
           <div class="lang-box">
-            <strong>{currentLang === 'fr' ? 'Langues :' : 'Languages:'}</strong> {cv.languages}
+            <strong>{lang === 'fr' ? 'Langues :' : 'Languages:'}</strong> {cv.languages}
           </div>
         </div>
       </section>
