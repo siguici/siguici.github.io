@@ -160,10 +160,11 @@ const cv = getCV(lang);
             <div class="edu-item">
               <div class="edu-deg">{edu.degree}</div>
               {edu.institution && <div class="edu-inst">{edu.institution}</div>}
+              <div class="item-date">{edu.period}</div>
             </div>
           ))}
           <div class="lang-box">
-            <strong>{lang === 'fr' ? 'Langues :' : 'Languages:'}</strong> {cv.languages}
+            <strong class="font-bold">{lang === 'fr' ? 'Langues :' : 'Languages:'}</strong> {cv.languages}
           </div>
         </div>
       </section>
@@ -519,7 +520,7 @@ const cv = getCV(lang);
     }
 
     p, li, .summary-text, .cap-desc, .item-subtitle { color: #334155 !important; line-height: 1.3 !important; }
-    .summary-text :global(strong), .impact-list li :global(strong), .eco-group strong, .edu-deg { color: #0f172a !important; }
+    .summary-text :global(strong), .impact-list li :global(strong), .eco-group strong, .edu-deg, .lang-box strong { color: #0f172a !important; }
 
     .capabilities-grid { gap: 6pt !important; }
     .cap-card {

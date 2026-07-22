@@ -80,15 +80,18 @@ export default {
   education: [
     {
       degree: 'Master 1 en Big Data & Data Science',
-      institution: 'Leaders University',
+      institution: 'Leaders University (Nabeul, Tunisie)',
+      period: '2022 — 2023',
     },
     {
       degree: 'Licence en Business Intelligence (BI)',
-      institution: '',
+      institution: 'Mediterranean Institute of Tunisia (MIT Nabeul)',
+      period: '2019 — 2022',
     },
     {
       degree: 'Baccalauréat Série D',
-      institution: '',
+      institution: "Lycée Classique d'Abidjan (Côte d'Ivoire)",
+      period: '2011 — 2014',
     },
   ],
   languages: 'Français (Langue maternelle) · Anglais (Professionnel)',
