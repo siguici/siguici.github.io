@@ -87,6 +87,8 @@ data = data ? `{ transitioning: false, ' ${data.replace('{', '')}` : '{ transiti
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
 		</script>
 
+    <script is:inline type="ts" src="../assets/preloader.ts" defer></script>
+
     <script is:inline>
       // This code is inlined in the head to make dark mode instant & blocking.
       const getThemePreference = () => {
@@ -113,6 +115,7 @@ data = data ? `{ transitioning: false, ' ${data.replace('{', '')}` : '{ transiti
     :class="{ 'transitioning': transitioning }"
     class={cssClass}
     >
+    <div id="preloader"></div>
     <slot />
   </body>
 </html>
