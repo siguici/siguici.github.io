@@ -1,0 +1,53 @@
+<style>
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f172a;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #38bdf8;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+
+<div id="preloader" class="preloader">
+  <div class="spinner"></div>
+</div>
+
+<script>
+  const initPreloader = () => {
+    const preloader = document.getElementById('preloader');
+
+    if (!preloader) return;
+
+    window.addEventListener('load', () => {
+      preloader.classList.add('hidden');
+
+      setTimeout(() => {
+        preloader.remove();
+      }, 500);
+    });
+  };
+
+  initPreloader();
+</script>

@@ -2,6 +2,7 @@
 import '../styles/app.css';
 import { app } from '../config';
 import ClientRouter from 'astro/components/ClientRouter.astro';
+import Preloader from '../components/Preloader.astro';
 
 interface Props {
 	title?: string | undefined;
@@ -87,8 +88,6 @@ data = data ? `{ transitioning: false, ' ${data.replace('{', '')}` : '{ transiti
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
 		</script>
 
-    <script is:inline type="ts" src="../assets/preloader.ts" defer></script>
-
     <script is:inline>
       // This code is inlined in the head to make dark mode instant & blocking.
       const getThemePreference = () => {
@@ -115,7 +114,7 @@ data = data ? `{ transitioning: false, ' ${data.replace('{', '')}` : '{ transiti
     :class="{ 'transitioning': transitioning }"
     class={cssClass}
     >
-    <div id="preloader"></div>
+    <Preloader />
     <slot />
   </body>
 </html>
