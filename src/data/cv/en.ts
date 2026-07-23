@@ -45,8 +45,8 @@ export default {
   experiences: [
     {
       role: 'Founder & Lead Software Architect',
-      company: 'SikessemHQ',
-      period: '2024 — Present',
+      company: 'Sikessem',
+      period: '2020 — Present',
       subtitle:
         'Technical Entrepreneurship & Modular Software Platform Ecosystem',
       impacts: [

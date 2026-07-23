@@ -46,8 +46,8 @@ export default {
   experiences: [
     {
       role: 'Fondateur & Architecte Logiciel Principal',
-      company: 'SikessemHQ',
-      period: '2024 — Présent',
+      company: 'Sikessem',
+      period: '2020 — Présent',
       subtitle:
         'Entrepreneuriat Technique & Écosystème de Plateformes Modulaires',
       impacts: [
