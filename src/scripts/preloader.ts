@@ -1,8 +1,8 @@
 // src/scripts/preloader.ts
 export class Preloader {
   private destroyed = false;
-  private timeoutId?: ReturnType<typeof setTimeout>;
-  private loadListener?: () => void;
+  private timeoutId: ReturnType<typeof setTimeout> | undefined;
+  private loadListener: (() => void) | undefined;
 
   readonly element: HTMLElement;
 
