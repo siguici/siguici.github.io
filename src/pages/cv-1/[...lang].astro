@@ -215,7 +215,7 @@ const cv = getCV(lang);
           {cv.ecosystem.map((group) => (
             <div class="space-y-1.5">
               <strong class="font-mono text-xs text-slate-200 block">
-                {cv.categories[group.categoryId as keyof typeof cv.categories]}:
+                {cv.categories[group.category as keyof typeof cv.categories]}:
               </strong>
               <div class="flex flex-wrap gap-1.5">
                 {group.skills.map((skill) => (

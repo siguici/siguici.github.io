@@ -13,7 +13,7 @@ export default {
   },
   ecosystem: [
     {
-      categoryId: 'backend',
+      category: 'backend',
       skills: [
         'PHP (Laravel / Symfony)',
         'TypeScript (Deno / Bun / Node)',
@@ -26,7 +26,7 @@ export default {
       ],
     },
     {
-      categoryId: 'frontend',
+      category: 'frontend',
       skills: [
         'Vue.js / Inertia.js',
         'Livewire / Alpine.js',
@@ -36,7 +36,7 @@ export default {
       ],
     },
     {
-      categoryId: 'infra_data',
+      category: 'infra_data',
       skills: [
         'PostgreSQL / MySQL',
         'BI & Analytics Dashboards',

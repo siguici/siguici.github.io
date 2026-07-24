@@ -1,6 +1,6 @@
 export default {
   lang: 'en',
-  title: 'Emmanuel SIGUI — Senior Software Architect & Product Engineer',
+  title: 'Kessé Emmanuel SIGUI — Senior Software Architect & Product Engineer',
   subtitle: 'Senior Software Architect · Product Engineer · Platform Builder',
   location: "Abidjan, Côte d'Ivoire · Remote",
   tagline:
@@ -9,7 +9,7 @@ export default {
     profile: 'Executive Profile',
     capabilities: 'Core Engineering Capabilities',
     experience: 'Professional Experience',
-    openSource: 'Open Source & Developer Ecosystem',
+    opensource: 'Open Source & Developer Ecosystem',
     ecosystem: 'Technical Ecosystem',
     education: 'Education & Languages',
   },
@@ -72,7 +72,7 @@ export default {
       ],
     },
   ],
-  openSource: [
+  opensource: [
     '<strong>Ecosystem Contributions:</strong> Contributor to open-web tooling and modern web frameworks (Qwik, Astro ecosystem).',
     '<strong>Developer Experience (DX):</strong> Author of open-source utilities and libraries focused on improving developer productivity and code maintainability.',
   ],

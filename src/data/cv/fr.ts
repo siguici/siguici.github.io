@@ -1,6 +1,6 @@
 export default {
   lang: 'fr',
-  title: 'Emmanuel SIGUI — Architecte Logiciel Senior & Product Engineer',
+  title: 'SIGUI Kessé Emmanuel — Architecte Logiciel Senior & Product Engineer',
   subtitle:
     'Architecte Logiciel Senior · Product Engineer · Concepteur de Plateformes',
   location: "Abidjan, Côte d'Ivoire · Distanciel",
@@ -10,7 +10,7 @@ export default {
     profile: 'Profil Exécutif',
     capabilities: 'Compétences Clés en Ingénierie',
     experience: 'Parcours Professionnel',
-    openSource: 'Open Source & Écosystème Développeur',
+    opensource: 'Open Source & Écosystème Développeur',
     ecosystem: 'Écosystème Technique',
     education: 'Formation & Langues',
   },
@@ -73,7 +73,7 @@ export default {
       ],
     },
   ],
-  openSource: [
+  opensource: [
     '<strong>Contributions Écosystème :</strong> Contributeur aux outils du web moderne et aux frameworks récents (écosystème Qwik, Astro).',
     "<strong>Developer Experience (DX) :</strong> Auteur de bibliothèques et d'outils open-source axés sur l'amélioration de la productivité des développeurs et la maintenabilité du code.",
   ],

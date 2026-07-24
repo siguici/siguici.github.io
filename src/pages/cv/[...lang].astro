@@ -143,7 +143,7 @@ const cv = getCV(lang);
         <h2 class="section-title">{cv.sections.ecosystem}</h2>
         {cv.ecosystem.map((group) => (
           <div class="eco-group">
-            <strong>{cv.categories[group.categoryId as keyof typeof cv.categories]}:</strong>
+            <strong>{cv.categories[group.category as keyof typeof cv.categories]}:</strong>
             <div class="tags-container">
               {group.skills.map((skill) => (
                 <span class="tag">{skill}</span>
