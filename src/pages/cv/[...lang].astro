@@ -164,7 +164,12 @@ const cv = getCV(lang);
             </div>
           ))}
           <div class="lang-box">
-            <strong class="font-bold">{lang === 'fr' ? 'Langues :' : 'Languages:'}</strong> {cv.languages}
+            {cv.languages.map((l) => (
+            <div>
+              <strong class="font-bold">{l.name} :</strong>
+              <span>{l.level}</span>
+            </div>
+            ))}
           </div>
         </div>
       </section>

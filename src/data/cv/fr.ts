@@ -1,23 +1,30 @@
 export default {
   lang: 'fr',
-  title: 'SIGUI Kessé Emmanuel — Architecte Logiciel Senior & Product Engineer',
+  title:
+    'SIGUI Kessé Emmanuel — Architecte Logiciel Senior & Ingénieur Plateforme',
   subtitle:
     'Architecte Logiciel Senior · Product Engineer · Concepteur de Plateformes',
   location: "Abidjan, Côte d'Ivoire · Distanciel",
   tagline:
-    'Je conçois et construis des plateformes numériques en combinant architecture logicielle, ingénierie full-stack, intelligence des données, infrastructure cloud et technologies IA émergentes.',
+    'Je conçois des architectures distribuées hautement résilientes et des outils de performance critiques en combinant architecture logicielle, ingénierie full-stack, intelligence des données, infrastructure cloud et technologies IA émergentes.',
   sections: {
-    profile: 'Profil Exécutif',
+    profile: 'Profil Professionnel Exécutif',
     capabilities: 'Compétences Clés en Ingénierie',
     experience: 'Parcours Professionnel',
+    projects: 'Réalisations & Projets',
     opensource: 'Open Source & Écosystème Développeur',
-    ecosystem: 'Écosystème Technique',
-    education: 'Formation & Langues',
+    ecosystem: 'Expertise Technique',
+    education: 'Cursus Éducatif & Langues',
   },
   categories: {
     backend: 'Backend & Architecture Système',
     frontend: 'Frontend & Interfaces',
     infra_data: 'Data, IA & Infrastructure',
+
+    architectures: 'Architectures',
+    runtimes_languages: 'Runtimes & Langages',
+    frontend_ui: 'Front-end & UI',
+    automation_infra: 'Automation & DevOps',
   },
   summary:
     "Ingénieur logiciel senior et architecte logiciel avec plus de <strong>10 ans d'expérience</strong> dans la création de plateformes numériques complexes. Spécialisé dans l'alignement des exigences métier avec des architectures techniques solides et scalables. Il maîtrise tout le cycle de vie produit : analyse du besoin, modélisation domaine, architecture système, développement full-stack, tests automatisés, déploiement et maintenance évolutive. Expertise confirmée dans la création de produits ex nihilo, la refonte d'applications legacy sans interruption de service et l'intégration de solutions IA/Data.",
@@ -45,6 +52,18 @@ export default {
   ],
   experiences: [
     {
+      role: 'Co-fondateur & Lead Developer',
+      company: 'Glaxuss Tech',
+      period: 'Depuis 2024',
+      subtitle:
+        'Entrepreneuriat Technique & Modélisation d’Architectures Cross-Runtime',
+      impacts: [
+        '<strong>Arbitrage & Modélisation :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
+        '<strong>Cross-Runtime Native :</strong> Développement d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
+        '<strong>Orchestration Infra :</strong> Mise en place d’infrastructures cloud haute disponibilité et automatisation des pipelines CI/CD.',
+      ],
+    },
+    {
       role: 'Fondateur & Architecte Logiciel Principal',
       company: 'Sikessem',
       period: '2020 — Présent',
@@ -63,14 +82,35 @@ export default {
       company: 'Indépendant',
       period: '2016 — Présent',
       subtitle:
-        'SaaS Sur Mesure, Plateformes Web Entreprise, E-Commerce & Systèmes Décisionnels',
+        'SaaS Sur Mesure, Intégrations Financières, Plateformes Web Entreprise, E-Commerce & Systèmes Décisionnels',
       impacts: [
         '<strong>Refactoring & Modernisation Legacy :</strong> Audit et refonte de systèmes monolithiques existants pour des clients internationaux, intégration de la Clean Architecture et du DDD pour booster les performances et réduire la dette technique sans interruption de service.',
         "<strong>Développement Produit Full-Stack :</strong> Construction d'architectures backend robustes (Laravel, Symfony, PostgreSQL) couplées à des interfaces réactives modernes (Vue.js, Inertia.js, Astro, Tailwind CSS).",
+        '<strong>APIs Financières :</strong> Intégration d’APIs de paiement et synchronisation sécurisée de flux transactionnels (Moov Money).',
         '<strong>Business Intelligence & Analytics :</strong> Conception de tableaux de bord décisionnels, pipelines de données et outils de reporting sur mesure transformant la donnée brute en leviers stratégiques.',
         "<strong>Intégration IA & Automatisation :</strong> Intégration de LLMs, d'architectures RAG et d'agents IA dans les workflows clients pour la recherche augmentée, le reporting automatique et l'optimisation des processus internes.",
         "<strong>Assurance Qualité & Infrastructure :</strong> Normalisation des stratégies de tests automatisés, revues de code, analyse statique et mise en place d'hébergements VPS Linux/Docker automatisés et économiques.",
       ],
+    },
+  ],
+  projects: [
+    {
+      name: 'Phi',
+      tagline: 'Langage de Programmation & Superset PHP',
+      description:
+        'Conception d’un superset de PHP écrit en Vlang. Spécification de la grammaire, REPL interactif et gestion stricte des erreurs via l’usage exclusif de blocs natifs <code>or</code>.',
+    },
+    {
+      name: 'Mélanoderme',
+      tagline: 'Écosystème Multi-Vendeur',
+      description:
+        'Plateforme e-commerce d’envergure gérant des flux de distribution complexes, des architectures de données multi-boutiques et des paiements automatisés.',
+    },
+    {
+      name: 'Complexe Hôtelier Mawla Kiélé',
+      tagline: 'Système de Gestion & PWA',
+      description:
+        'Spécifications techniques et numérisation d’un domaine de 4 hectares avec Progressive Web App (PWA) iOS hautement optimisée pour Safari.',
     },
   ],
   opensource: [
@@ -94,5 +134,8 @@ export default {
       period: '2011 — 2014',
     },
   ],
-  languages: 'Français (Langue maternelle) · Anglais (Professionnel)',
+  languages: [
+    { name: 'Français', level: 'Langue maternelle / Bilingue' },
+    { name: 'Anglais', level: 'Technique & Professionnel' },
+  ],
 };

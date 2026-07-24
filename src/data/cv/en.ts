@@ -1,22 +1,28 @@
 export default {
   lang: 'en',
-  title: 'Kessé Emmanuel SIGUI — Senior Software Architect & Product Engineer',
+  title: 'Kessé Emmanuel SIGUI — Senior Software Architect & Platform Engineer',
   subtitle: 'Senior Software Architect · Product Engineer · Platform Builder',
   location: "Abidjan, Côte d'Ivoire · Remote",
   tagline:
-    'I design and build digital platforms by combining software architecture, full-stack engineering, data intelligence, cloud infrastructure, and emerging AI technologies.',
+    'I design highly resilient distributed architectures and critical cross-runtime performance tooling by combining software architecture, full-stack engineering, data intelligence, cloud infrastructure, and emerging AI technologies.',
   sections: {
-    profile: 'Executive Profile',
+    profile: 'Executive Professional Profile',
     capabilities: 'Core Engineering Capabilities',
     experience: 'Professional Experience',
+    projects: 'Key Projects & Achievements',
     opensource: 'Open Source & Developer Ecosystem',
-    ecosystem: 'Technical Ecosystem',
+    ecosystem: 'Technical Expertise',
     education: 'Education & Languages',
   },
   categories: {
     backend: 'Backend & System Architecture',
     frontend: 'Frontend & Interfaces',
     infra_data: 'Data, AI & Infrastructure',
+
+    architectures: 'Architectures',
+    runtimes_languages: 'Runtimes & Languages',
+    frontend_ui: 'Front-end & UI',
+    automation_infra: 'Automation & DevOps',
   },
   summary:
     'Senior Software Engineer & Software Architect with <strong>10+ years of experience</strong> engineering complex digital platforms. Specialized in bridging business goals with resilient, scalable technical architectures. Covers the entire product lifecycle: requirement analysis, domain modeling, system architecture, full-stack development, automated testing, deployment, and long-term evolutionary maintenance. Proven track record in greenfield product execution, zero-downtime legacy modernization, and AI/Data-driven solutions.',
@@ -44,6 +50,18 @@ export default {
   ],
   experiences: [
     {
+      role: 'Co-Founder & Lead Developer',
+      company: 'Glaxuss Tech',
+      period: '2024 — Present',
+      subtitle:
+        'Technical Entrepreneurship & Cross-Runtime Architecture Design',
+      impacts: [
+        '<strong>Architecture & Domain Modeling:</strong> Architected complex decoupled systems based on SOLID principles and Domain-Driven Design (DDD).',
+        '<strong>Native Cross-Runtime Tools:</strong> Engineered cross-runtime software foundations unifying Node.js, Deno, and Bun environments.',
+        '<strong>Infra Orchestration:</strong> Orchestrated high-availability cloud setups and automated multi-environment CI/CD deployment pipelines.',
+      ],
+    },
+    {
       role: 'Founder & Lead Software Architect',
       company: 'Sikessem',
       period: '2020 — Present',
@@ -62,14 +80,35 @@ export default {
       company: 'Freelance',
       period: '2016 — Present',
       subtitle:
-        'Custom SaaS, Enterprise Web Platforms, E-Commerce & Decision-Support Systems',
+        'Custom SaaS, Financial Integrations, Enterprise Web Platforms, E-Commerce & Decision-Support Systems',
       impacts: [
         '<strong>Legacy System Modernization:</strong> Audited and refactored monolithic legacy codebases for international clients, introducing Clean Architecture and Domain-Driven Design (DDD) to boost performance and reduce technical debt without service interruption.',
         '<strong>Full-Stack Product Development:</strong> Engineered resilient backend architectures (Laravel, Symfony, PostgreSQL) paired with modern reactive frontends (Vue.js, Inertia.js, Astro, Tailwind CSS).',
+        '<strong>Financial APIs:</strong> Integrated payment gateways and synchronized transactional data streams (Moov Money).',
         '<strong>Business Intelligence & Analytics:</strong> Designed custom executive dashboards, data pipelines, and reporting tools transforming raw operational data into actionable strategic insights.',
         '<strong>AI Integration & Automation:</strong> Integrated LLMs, RAG architectures, and AI agents into client workflows, enabling intelligent search, automated reporting, and internal process optimization.',
         '<strong>Quality Assurance & Infrastructure:</strong> Standardized automated testing strategies, code reviews, static analysis, and deployed cost-effective Linux VPS/Docker hosting setups.',
       ],
+    },
+  ],
+  projects: [
+    {
+      name: 'Phi',
+      tagline: 'Programming Language & PHP Superset',
+      description:
+        'Design of a PHP superset written in Vlang. Grammar specification, interactive REPL, and strict error handling using native <code>or</code> blocks.',
+    },
+    {
+      name: 'Mélanoderme',
+      tagline: 'Multi-Vendor E-Commerce Ecosystem',
+      description:
+        'Large-scale e-commerce platform managing complex distribution workflows, multi-store data architectures, and automated payments.',
+    },
+    {
+      name: 'Mawla Kiélé Hotel Complex',
+      tagline: 'Management System & PWA',
+      description:
+        'Technical specifications and digitalization of a 4-hectare resort, featuring an iOS PWA optimized for Safari.',
     },
   ],
   opensource: [
@@ -93,5 +132,8 @@ export default {
       period: '2011 — 2014',
     },
   ],
-  languages: 'French (Native) · English (Professional)',
+  languages: [
+    { name: 'French', level: 'Native / Bilingual' },
+    { name: 'English', level: 'Technical & Professional' },
+  ],
 };

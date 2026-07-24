@@ -180,8 +180,12 @@ const cv = getCV(lang);
             </div>
           ))}
           <div class="lang-box">
-            <span class="eco-label">{lang === 'fr' ? 'LANGUES :' : 'LANGUAGES:'}</span>
-            <span class="lang-text">{cv.languages}</span>
+            {cv.languages.map((l) => (
+            <div>
+              <strong class="eco-label">{l.name} :</strong>
+              <span>{l.level}</span>
+            </div>
+            ))}
           </div>
         </div>
       </div>

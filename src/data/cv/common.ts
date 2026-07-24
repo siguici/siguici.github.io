@@ -46,5 +46,46 @@ export default {
         'GitHub Actions CI/CD',
       ],
     },
+
+    {
+      category: 'architectures',
+      skills: [
+        'DDD',
+        'Clean Architecture',
+        'Hexagonal Architecture',
+        'SOLID',
+        'Modular Monoliths',
+        'REST / gRPC APIs',
+      ],
+    },
+    {
+      category: 'runtimes_languages',
+      skills: [
+        'TypeScript (Node.js / Deno / Bun)',
+        'Vlang',
+        'PHP (Laravel / Symfony)',
+        'SQL (PostgreSQL / MySQL)',
+      ],
+    },
+    {
+      category: 'frontend_ui',
+      skills: [
+        'TALL Stack (TailwindCSS, Alpine.js, Livewire, Laravel)',
+        'Astro',
+        'Qwik',
+        'Vue.js / Inertia.js',
+        'htmx',
+      ],
+    },
+    {
+      category: 'automation_infra',
+      skills: [
+        'GitHub Actions CI/CD',
+        'Just (Runner)',
+        'Typst',
+        'Docker',
+        'Linux VPS / Caddy / Nginx',
+      ],
+    },
   ],
 };
