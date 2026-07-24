@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap"
+      rel="stylesheet">
+    <style>
+    body {
+      font-family: 'Geist', sans-serif;
+    }
+    .font-mono {
+      font-family: 'Geist Mono', monospace;
+    }
+    .bg-grid {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent
+        1px);
+      background-size: 24px 24px;
+    }
+
+    @media print {
+      /* 1. Forcer le moteur d'impression du navigateur à préserver les couleurs & fonds */
+      html,
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        background-color: #080B11 !important;
+      }
+
+      /* 2. Fixer la taille de la page A4 sans marges blanches parasites du navigateur */
+      @page {
+        size: A4 portrait;
+        margin: 10mm;
+        background-color: #080B11 !important;
+      }
+
+      /* 3. Masquer les en-têtes et pieds de page par défaut du navigateur (date, URL, etc.) */
+      body {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    }
+    </style>
+  </head>
+  <body
+    class="bg-[#080B11] text-slate-300 bg-grid min-h-screen p-6 md:p-12 lg:p-20 selection:bg-cyan-500 selection:text-black">
+    <main class="max-w-6xl mx-auto space-y-6">
+      <!-- HERO / HEADER SECTION -->
+      <header
+        class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-8 md:p-12 backdrop-blur-xl">
+        <div
+          class="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div
+          class="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+          <div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-mono text-xs mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            DISPONIBLE POUR CHALLENGES COMPLEXES
+          </div>
+            <h1
+              class="text-4xl md:text-6xl font-black tracking-tight text-white mb-2">
+            SIGUI KESSÉ <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">EMMANUEL</span>
+          </h1>
+            <p class="font-mono text-sm md:text-base text-slate-400">
+            Architecte Logiciel // Senior Platform & Backend Engineer
+          </p>
+          </div>
+
+          <!-- Quick Specs Grid -->
+          <div
+            class="grid grid-cols-2 gap-3 font-mono text-xs w-full md:w-auto">
+            <div class="p-3 rounded-xl border border-white/5 bg-white/[0.02]">
+              <span class="text-slate-500 block">Expérience</span>
+              <span class="text-slate-100 font-bold text-sm">10+ Années</span>
+            </div>
+            <div class="p-3 rounded-xl border border-white/5 bg-white/[0.02]">
+              <span class="text-slate-500 block">Core Stack</span>
+              <span
+                class="text-cyan-400 font-bold text-sm">Vlang / PHP / Astro</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- BENTO GRID SYSTEM -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <!-- COL 1: ARCHITECTURE & SYSTEMS (8 cols) -->
+        <section
+          class="md:col-span-8 rounded-3xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl space-y-8">
+          <div
+            class="flex items-center justify-between border-b border-white/10 pb-4">
+            <h2
+              class="font-mono text-xs uppercase tracking-widest text-cyan-400 flex items-center gap-2">
+            <span class="text-slate-600">//</span> Parcours & Réalisations Majeures
+          </h2>
+            <span class="font-mono text-xs text-slate-500">01.EXPERIENCE</span>
+          </div>
+
+          <!-- Item 1 -->
+          <div class="relative pl-6 border-l border-white/10 space-y-2 group">
+            <div
+              class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-150 transition-transform"></div>
+            <div class="flex justify-between items-baseline">
+              <h3
+                class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Fondateur & Architecte en Chef</h3>
+              <span
+                class="font-mono text-xs text-slate-500">2024 — PRÉSENT</span>
+            </div>
+            <p class="font-mono text-xs text-slate-400">Sikessem Ecosystem</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-2">
+            Conception d'un écosystème numérique open-source haute performance. Élaboration du langage fort typé <span class="text-violet-400 font-mono">Phi</span> et du moteur de rendu <span class="text-violet-400 font-mono">Cup Engine</span> compilé en Vlang.
+          </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="relative pl-6 border-l border-white/10 space-y-2 group">
+            <div
+              class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-slate-600 group-hover:bg-cyan-400 transition-colors"></div>
+            <div class="flex justify-between items-baseline">
+              <h3
+                class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Co-fondateur & Lead Developer</h3>
+              <span
+                class="font-mono text-xs text-slate-500">2024 — PRÉSENT</span>
+            </div>
+            <p class="font-mono text-xs text-slate-400">Glaxuss Tech</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-2">
+            Direction technique et architecture de plateformes sur-mesure. Implémentation d'infrastructures résilientes, optimisations bas niveau et outillage développeur interne.
+          </p>
+          </div>
+        </section>
+
+        <!-- COL 2: SIDEBAR METRICS & TOOLS (4 cols) -->
+        <aside class="md:col-span-4 space-y-6">
+          <!-- Core Stack Box -->
+          <div
+            class="rounded-3xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl space-y-4">
+            <h2
+              class="font-mono text-xs uppercase tracking-widest text-violet-400 flex items-center justify-between">
+              <span>// Arsenal Technique</span>
+              <span>02.STACK</span>
+            </h2>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">Vlang</span>
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">PHP / Laravel</span>
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">TypeScript</span>
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">Deno / Astro</span>
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">TailwindCSS</span>
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">System Design</span>
+              <span
+                class="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 font-mono text-xs text-slate-200">Compilateurs & Grammaires</span>
+            </div>
+          </div>
+
+          <!-- Académique & Vision -->
+          <div
+            class="rounded-3xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl space-y-4">
+            <h2
+              class="font-mono text-xs uppercase tracking-widest text-cyan-400 flex items-center justify-between">
+              <span>// Académie & Data</span>
+              <span>03.EDU</span>
+            </h2>
+            <div class="space-y-3 font-mono text-xs">
+              <div>
+                <p
+                  class="text-white font-bold">Master 1 Big Data & Data Science</p>
+                <p class="text-slate-500">Ingénierie des données complexes</p>
+              </div>
+              <div class="border-t border-white/5 pt-2">
+                <p
+                  class="text-white font-bold">Licence Business Intelligence</p>
+                <p class="text-slate-500">Analyse & Décisionnel</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

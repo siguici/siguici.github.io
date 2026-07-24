@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGUI KESSÉ EMMANUEL — ARCHITECTURAL MANIFESTO & EOS RUNTIME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
+
+    <style>
+    /* ==========================================================================
+       0x01. DESIGN TOKENS & SYSTEM VARIABLES
+       ========================================================================== */
+    :root {
+      /* Palette */
+      --surface-canvas: #0D0E11;
+      --surface-module: #13151A;
+      --surface-module-hover: #1A1D24;
+      --border-grid: rgba(255, 255, 255, 0.08);
+      --border-grid-strong: rgba(255, 255, 255, 0.20);
+
+      --text-primary: #F2F4F8;
+      --text-secondary: #8A91A0;
+      --text-tertiary: #4E5460;
+
+      --accent-system: #00FF66;
+      --accent-warn: #FFB800;
+
+      /* Typography Families */
+      --font-mono: 'Fira Code', monospace;
+      --font-sans: 'Inter', sans-serif;
+
+      /* Spatial Grid Multiples (1U = 4px) */
+      --u1: 4px;
+      --u2: 8px;
+      --u3: 12px;
+      --u4: 16px;
+      --u6: 24px;
+      --u8: 32px;
+      --u12: 48px;
+      --u16: 64px;
+    }
+
+    /* ==========================================================================
+       0x02. CORE RESET & BASE STYLES
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--surface-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Architectural Grid Canvas Texture */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image:
+        linear-gradient(to right, var(--border-grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border-grid) 1px, transparent 1px);
+      background-size: var(--u8) var(--u8);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       0x03. LAYOUT ARCHITECTURE & CONTAINER
+       ========================================================================== */
+    .eos-viewport {
+      position: relative;
+      z-index: 1;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: var(--u12);
+      display: flex;
+      flex-direction: column;
+      gap: var(--u12);
+    }
+
+    /* System Header Bar */
+    .sys-header {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--u6);
+      border-bottom: 1px solid var(--border-grid-strong);
+      padding-bottom: var(--u6);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sys-header .node-identity {
+      grid-column: span 4;
+      color: var(--text-primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: var(--u2);
+    }
+
+    .sys-header .node-status {
+      grid-column: span 4;
+      display: flex;
+      align-items: center;
+      gap: var(--u2);
+    }
+
+    .sys-header .node-meta {
+      grid-column: span 4;
+      text-align: right;
+    }
+
+    .status-pulse {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-system);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-system);
+    }
+
+    /* ==========================================================================
+       0x04. EDITORIAL PRIMITIVES & MODULES
+       ========================================================================== */
+
+    /* Grid Row Shell */
+    .eos-row {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--u6);
+      position: relative;
+    }
+
+    /* Module Primitive */
+    .eos-module {
+      background: var(--surface-module);
+      border: 1px solid var(--border-grid);
+      padding: var(--u8);
+      position: relative;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .eos-module:hover {
+      border-color: var(--border-grid-strong);
+      background: var(--surface-module-hover);
+    }
+
+    /* Crosshair Structural Coordinates */
+    .eos-module::before {
+      content: "+";
+      position: absolute;
+      top: -7px;
+      left: -5px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-tertiary);
+    }
+
+    .module-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--u4);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* System Landmark (Hero Block) */
+    .landmark-title {
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: var(--u6);
+    }
+
+    .landmark-subtitle {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    /* Numeric Landmark Primitives */
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: var(--u2);
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Graph / Relational Topology System */
+    .topology-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--u4);
+      margin-top: var(--u4);
+    }
+
+    .node-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 120px;
+      align-items: center;
+      padding: var(--u3) var(--u4);
+      background: var(--surface-canvas);
+      border: 1px solid var(--border-grid);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .node-name {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .node-connections {
+      color: var(--text-tertiary);
+      font-size: 11px;
+      padding: 0 var(--u4);
+    }
+
+    .node-type {
+      text-align: right;
+      color: var(--accent-system);
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    /* Chapter / Ecosystem Blocks */
+    .system-title {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: var(--u2);
+    }
+
+    .system-prose {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: var(--u4);
+    }
+
+    .spec-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--u2);
+    }
+
+    .spec-item {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--surface-canvas);
+      border: 1px solid var(--border-grid);
+      padding: var(--u1) var(--u2);
+      color: var(--text-secondary);
+    }
+
+    /* Decorative Layout Utility Classes */
+    .col-12 {
+      grid-column: span 12;
+    }
+    .col-8 {
+      grid-column: span 8;
+    }
+    .col-6 {
+      grid-column: span 6;
+    }
+    .col-4 {
+      grid-column: span 4;
+    }
+    .col-3 {
+      grid-column: span 3;
+    }
+
+    /* ==========================================================================
+       0x05. PRINT & EXECUTION SNAPSHOT MEDIA RULES
+       ========================================================================== */
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+      }
+      body::before {
+        display: none;
+      }
+      .eos-viewport {
+        padding: 0;
+        max-width: 100%;
+      }
+      .eos-module {
+        background: #FFFFFF !important;
+        border: 1px solid #CCCCCC !important;
+      }
+      .landmark-title,
+      .system-title,
+      .metric-value,
+      .node-name {
+        color: #000000 !important;
+      }
+      .landmark-subtitle,
+      .system-prose,
+      .metric-label,
+      .spec-item {
+        color: #333333 !important;
+      }
+      .status-pulse {
+        background-color: #000000 !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .eos-viewport {
+        padding: var(--u4);
+        gap: var(--u4);
+      }
+      .eos-row {
+        grid-template-columns: 1fr;
+      }
+      .col-12,
+      .col-8,
+      .col-6,
+      .col-4,
+      .col-3 {
+        grid-column: span 1;
+      }
+      .node-row {
+        grid-template-columns: 1fr;
+        gap: var(--u2);
+      }
+      .node-type {
+        text-align: left;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="eos-viewport">
+      <!-- 0x01. SYSTEM HEADER -->
+      <header class="sys-header col-12">
+        <div class="node-identity">
+          <div class="status-pulse"></div>
+          <span>SIGUI KESSÉ EMMANUEL</span>
+        </div>
+        <div class="node-status">
+          <span>EOS_RUNTIME: ONLINE (v1.0.0)</span>
+        </div>
+        <div class="node-meta">
+          <span>LOC: 05°20'11"N 04°01'36"W</span>
+        </div>
+      </header>
+
+      <!-- 0x02. LANDMARK / IDENTITY MANIFESTO -->
+      <section class="eos-row">
+        <div class="eos-module col-8">
+          <div class="module-tag">
+            <span>MODULE_01 // ARCHITECTURAL INTENT</span>
+            <span>SYS_REF: 0x00A1</span>
+          </div>
+          <h1
+            class="landmark-title">I design software systems, invent language abstractions, and engineer operating ecosystems.</h1>
+          <p class="landmark-subtitle">
+          Senior Software Engineer & Platform Architect. Over a decade of engineering high-concurrency systems, programming language lexers, custom render engines, and foundational developer toolchains.
+        </p>
+        </div>
+
+        <div class="eos-module col-4">
+          <div class="module-tag">
+            <span>MODULE_02 // SYSTEM CAPACITY</span>
+            <span>METRICS</span>
+          </div>
+          <div
+            style="display: flex; flex-direction: column; gap: var(--u6); height: 100%; justify-content: center;">
+            <div>
+              <div class="metric-value">10+ YEARS</div>
+              <div class="metric-label">Production Architecture Experience</div>
+            </div>
+            <div>
+              <div class="metric-value">03 SYSTEMS</div>
+              <div
+                class="metric-label">Proprietary Languages & Engines Built</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 0x03. SYSTEM TOPOLOGY (REPLACING TECHNICAL SKILLS LIST) -->
+      <section class="eos-row">
+        <div class="eos-module col-12">
+          <div class="module-tag">
+            <span>MODULE_03 // TECHNICAL TOPOLOGY & RELATIONAL GRAPH</span>
+            <span>GRAPH_EXEC</span>
+          </div>
+          <p class="system-prose">
+          Technologies are not listed as static badges; they are mapped as operational dependencies within constructed architecture domains.
+        </p>
+
+          <div class="topology-container">
+            <div class="node-row">
+              <span class="node-name">SYSTEMS & KERNEL</span>
+              <span
+                class="node-connections">Vlang &rarr; Memory Safety &rarr; Native Compilers</span>
+              <span class="node-type">CORE_DOMAIN</span>
+            </div>
+            <div class="node-row">
+              <span class="node-name">LANGUAGE COMPILERS</span>
+              <span
+                class="node-connections">Phi Language &rarr; Phix Engine &rarr; EBNF Lexer</span>
+              <span class="node-type">ABSTRACT_LAYER</span>
+            </div>
+            <div class="node-row">
+              <span class="node-name">WEB RUNTIMES</span>
+              <span
+                class="node-connections">Deno &rarr; TypeScript &rarr; Astro &rarr; TailwindCSS</span>
+              <span class="node-type">PLATFORM_LAYER</span>
+            </div>
+            <div class="node-row">
+              <span class="node-name">DATA ARCHITECTURE</span>
+              <span
+                class="node-connections">Big Data Pipelines &rarr; Business Intelligence &rarr; PHP/Laravel</span>
+              <span class="node-type">STORAGE_DOMAIN</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 0x04. ECOSYSTEMS & ARCHITECTURAL CHAPTERS -->
+      <section class="eos-row">
+        <!-- Ecosystem 01 -->
+        <div class="eos-module col-6">
+          <div class="module-tag">
+            <span>ECOSYSTEM_01 // COMPILER & TEMPLATING</span>
+            <span>STATUS: ACTIVE</span>
+          </div>
+          <h2 class="system-title">Phi Language & Phix Templating Engine</h2>
+          <p class="system-prose">
+          Designed and implemented a strongly typed programming language expanding PHP syntax rules. Built the complete lexical analyzer and parser in Vlang, enforcing strict type boundaries and removing legacy scripting runtime compromises.
+        </p>
+          <ul class="spec-list">
+            <li class="spec-item">Vlang</li>
+            <li class="spec-item">EBNF Grammar</li>
+            <li class="spec-item">Lexical Analysis</li>
+            <li class="spec-item">Compiler Design</li>
+          </ul>
+        </div>
+
+        <!-- Ecosystem 02 -->
+        <div class="eos-module col-6">
+          <div class="module-tag">
+            <span>ECOSYSTEM_02 // RENDER CORE</span>
+            <span>STATUS: ACTIVE</span>
+          </div>
+          <h2 class="system-title">Cup Engine</h2>
+          <p class="system-prose">
+          A high-performance template rendering engine written entirely in Vlang. Engineered for zero-allocation String compilation, fast AST generation, and direct execution within high-concurrency server pipelines.
+        </p>
+          <ul class="spec-list">
+            <li class="spec-item">Vlang</li>
+            <li class="spec-item">AST Processing</li>
+            <li class="spec-item">Template Compilation</li>
+            <li class="spec-item">Zero-Alloc Memory</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 0x05. OPERATIONAL FOUNDATIONS & ORGANIZATIONS -->
+      <section class="eos-row">
+        <div class="eos-module col-8">
+          <div class="module-tag">
+            <span>ORGANIZATIONAL_NODES // LEADERSHIP & PLATFORMS</span>
+            <span>HISTORY</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--u6);">
+            <div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: var(--u1);">
+                <span
+                  style="font-weight: 600; color: var(--text-primary);">SIKESSEM</span>
+                <span
+                  style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);">2024 &mdash; PRESENT</span>
+              </div>
+              <div
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-system); margin-bottom: var(--u2);">FOUNDER & LEAD SYSTEM ARCHITECT</div>
+              <p class="system-prose" style="font-size: 13px;">
+              Architecting an open-source digital operating ecosystem, developer tooling suite, and modular platform architecture.
+            </p>
+            </div>
+
+            <div
+              style="border-top: 1px solid var(--border-grid); padding-top: var(--u4);">
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: var(--u1);">
+                <span
+                  style="font-weight: 600; color: var(--text-primary);">GLAXUSS TECH</span>
+                <span
+                  style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);">2024 &mdash; PRESENT</span>
+              </div>
+              <div
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); margin-bottom: var(--u2);">CO-FOUNDER & LEAD DEVELOPER</div>
+              <p class="system-prose" style="font-size: 13px;">
+              Directing technical strategy, system infrastructure design, and platform engineering for enterprise client solutions.
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="eos-module col-4">
+          <div class="module-tag">
+            <span>ACADEMIC_FOUNDATION // CREDENTIALS</span>
+            <span>VERIFIED</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: var(--u4);">
+            <div>
+              <div
+                style="font-size: 14px; font-weight: 600; color: var(--text-primary);">MASTER 1</div>
+              <div
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Big Data & Data Science</div>
+            </div>
+            <div
+              style="border-top: 1px solid var(--border-grid); padding-top: var(--u2);">
+              <div
+                style="font-size: 14px; font-weight: 600; color: var(--text-primary);">LICENCE DEGREE</div>
+              <div
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Business Intelligence</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 0x06. SYSTEM FOOTER / RUNTIME TERMINATION -->
+      <footer
+        style="border-top: 1px solid var(--border-grid); padding-top: var(--u6); font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); display: flex; justify-content: space-between;">
+        <span>EOS_EXECUTION_COMPLETE // NO_ERRORS_DETECTED</span>
+        <span>CANONICAL URI: SIKESSEM.COM</span>
+      </footer>
+    </div>
+  </body>
+</html>
