@@ -1,0 +1,233 @@
+---
+import AppLayout from '../../layouts/AppLayout.astro';
+import getCV, { type Locale } from '../../data/cv';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: undefined }, props: { lang: 'fr' } },
+    { params: { lang: 'fr' }, props: { lang: 'fr' } },
+    { params: { lang: 'en' }, props: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.props as { lang: Locale };
+const cv = getCV(lang);
+---
+
+<AppLayout
+  title={cv.title}
+  cssClass="bg-slate-950 text-slate-100 antialiased selection:bg-purple-500/30 transition-colors duration-300"
+>
+  <meta name="description" content={cv.tagline} />
+  <meta name="author" content={cv.identity.name} />
+
+  <!-- ACTION BAR -->
+  <div class="actions">
+    <a href="/" class="back-link">
+      {lang === 'fr' ? '← Retour au site' : '← Back to website'}
+    </a>
+
+    <div class="right-actions">
+      <div class="lang-switcher">
+        <a href="/cv" class:list={['lang-btn', { active: lang === 'fr' }]}>FR</a>
+        <span class="divider">|</span>
+        <a href="/cv/en" class:list={['lang-btn', { active: lang === 'en' }]}>EN</a>
+      </div>
+
+      <button onclick="window.print()" class="btn-print">
+        {lang === 'fr' ? 'Télécharger PDF / Imprimer' : 'Download PDF / Print A4'}
+      </button>
+    </div>
+  </div>
+
+  <main class="container cv">
+
+    <!-- HEADER & CONTACT -->
+    <header class="header">
+      <div class="header-main">
+        <div>
+          <h1>{cv.identity.name}</h1>
+          <div class="subtitle">{cv.subtitle}</div>
+        </div>
+        <div class="header-badge">
+          <span class="location-tag">{cv.location}</span>
+        </div>
+      </div>
+
+      <p class="tagline">"{cv.tagline}"</p>
+
+      <div class="contact-bar">
+        <span><strong>Email:</strong> <a href={`mailto:${cv.contact.emailPrimary}`}>{cv.contact.emailPrimary}</a></span>
+        <span><strong>Web:</strong> <a href={cv.contact.webUrl}>{cv.contact.web}</a></span>
+        <span><strong>GitHub:</strong> <a href={cv.contact.githubUrl}>{cv.contact.github}</a></span>
+        <span><strong>LinkedIn:</strong> <a href={cv.contact.linkedinUrl}>{cv.contact.linkedin}</a></span>
+      </div>
+    </header>
+
+    <!-- PROFIL PROFESSIONNEL -->
+    <section class="section">
+      <h2 class="section-title">{cv.sections.profile}</h2>
+      <p class="summary-text" set:html={cv.summary} />
+    </section>
+
+    <!-- EXPÉRIENCES CLÉS -->
+    <section class="section">
+      <h2 class="section-title">{cv.sections.experience}</h2>
+
+      {cv.experiences.map((exp) => (
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              {exp.role} — <span class="company">{exp.company}</span>
+            </div>
+            <div class="item-date">{exp.period}</div>
+          </div>
+          <div class="item-subtitle">{exp.subtitle}</div>
+          <ul class="impact-list">
+            {exp.impacts.map((impact) => (
+              <li set:html={impact} />
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <!-- RÉALISATIONS & PROJETS -->
+    <section class="section">
+      <h2 class="section-title">{cv.sections.projects}</h2>
+      <div class="capabilities-grid">
+        {cv.projects.map((proj) => (
+          <div class="cap-card">
+            <div class="cap-title">{proj.name} — <span class="proj-tag">{proj.tagline}</span></div>
+            <p class="cap-desc" set:html={proj.description}></p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- EXPERTISE TECHNIQUE & EDUCATION -->
+    <div class="two-col-grid">
+      <section>
+        <h2 class="section-title">{cv.sections.ecosystem}</h2>
+        {cv.ecosystem.map((group) => (
+          <div class="eco-group">
+            <strong>{cv.categories[group.category as keyof typeof cv.categories]}:</strong>
+            <div class="tags-container">
+              {group.skills.map((skill) => (
+                <span class="tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section>
+        <h2 class="section-title">{cv.sections.education}</h2>
+        <div class="edu-list">
+          {cv.education.map((edu) => (
+            <div class="edu-item">
+              <div class="edu-header">
+                <span class="edu-deg">{edu.degree}</span>
+                {edu.period && <span class="edu-date">{edu.period}</span>}
+              </div>
+              {edu.institution && <div class="edu-inst">{edu.institution}</div>}
+            </div>
+          ))}
+
+          <div class="lang-box">
+            {cv.languages.map((l) => (
+            <div>
+              <strong class="eco-label">{l.name} :</strong>
+              <span>{l.level}</span>
+            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+</AppLayout>
+
+<style>
+  /* Même bloc CSS conservé pour la compatibilité A4 et écran */
+  :root {
+    --bg: #090d16;
+    --card: #0f172a;
+    --text: #cbd5e1;
+    --text-white: #f8fafc;
+    --muted: #94a3b8;
+    --accent: #7c3aed;
+    --accent-light: #a78bfa;
+    --border: #3b82f6;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.45; font-size: 13px; padding: 24px 12px; }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container, .actions { max-width: 840px; margin: 0 auto; }
+  .actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .right-actions { display: flex; align-items: center; gap: 16px; }
+  .lang-switcher { display: flex; gap: 6px; background: var(--card); border: 1px solid #334155; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+  .lang-btn { color: var(--muted); }
+  .lang-btn.active { color: var(--accent-light); text-decoration: underline; }
+  .btn-print { background: var(--accent); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 12px; }
+
+  .cv { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px 36px; }
+  .header { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color: #fff; padding: 0 8px 16px; margin-bottom: 20px; border-bottom: 5px solid #6366f1; }
+  .header-main { display: flex; justify-content: space-between; align-items: flex-start; }
+  h1 { font-size: 24px; font-weight: 800; color: var(--text-white); }
+  .subtitle { color: var(--accent-light); font-weight: 700; font-size: 13.5px; margin-top: 4px; }
+  .location-tag { background: #1e1b4b; color: #c4b5fd; border: 1px solid #4338ca; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+  .tagline { font-size: 11.5px; color: #e2e8f0; font-style: italic; margin-top: 10px; border-left: 3px solid var(--accent); padding-left: 10px; }
+  .contact-bar { display: flex; justify-content: space-between; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; margin-top: 12px; font-size: 11px; color: var(--muted); }
+
+  .section { margin-bottom: 18px; }
+  .section-title { color: #c4b5fd; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--accent); padding-left: 8px; margin-bottom: 10px; }
+  .summary-text { font-size: 11.5px; color: var(--text); line-height: 1.45; }
+  .summary-text :global(strong) { color: var(--text-white); }
+
+  .capabilities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .cap-card { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; }
+  .cap-title { font-size: 11.5px; font-weight: 700; color: #38bdf8; margin-bottom: 4px; }
+  .proj-tag { color: var(--accent-light); font-weight: 400; font-style: italic; }
+  .cap-desc { font-size: 11px; color: var(--muted); line-height: 1.35; }
+  .cap-desc :global(code) { font-family: var(--mono); color: #38bdf8; }
+
+  .item { margin-bottom: 14px; }
+  .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .item-title { font-size: 13.5px; font-weight: 700; color: var(--text-white); }
+  .company { color: var(--accent-light); font-weight: 600; }
+  .item-date { font-size: 11px; color: var(--muted); font-family: var(--mono); font-weight: 600; }
+  .item-subtitle { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+  .impact-list { margin: 4px 0 6px 16px; color: var(--text); }
+  .impact-list li { margin-bottom: 3px; font-size: 11px; line-height: 1.4; }
+  .impact-list li :global(strong) { color: var(--text-white); }
+  .impact-list li :global(code) { font-family: var(--mono); color: #38bdf8; }
+
+  .two-col-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin-top: 4px; }
+  .eco-group { margin-bottom: 8px; font-size: 11px; color: var(--muted); }
+  .eco-group strong { color: var(--text-white); display: block; margin-bottom: 4px; }
+  .tags-container { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-family: var(--mono); }
+
+  .edu-list { display: flex; flex-direction: column; gap: 8px; }
+  .edu-header { display: flex; justify-content: space-between; }
+  .edu-deg { font-weight: 700; color: var(--text-white); font-size: 11px; }
+  .edu-date { font-size: 10.5px; color: var(--muted); font-family: var(--mono); }
+  .edu-inst { color: var(--muted); font-size: 10.5px; }
+  .lang-box { font-size: 11px; color: var(--accent-light); margin-top: 6px; border-top: 1px dashed #334155; padding-top: 6px; }
+  .lang-box strong { color: var(--text-white); }
+
+  @media print {
+    .actions { display: none !important; }
+    .cv { border: 0 !important; background: white !important; padding: 0 !important; }
+    h1, .summary-text :global(strong), .impact-list li :global(strong), .eco-group strong, .edu-deg { color: #0f172a !important; }
+    p, li, .summary-text, .cap-desc, .item-subtitle { color: #334155 !important; }
+    .item, .cap-card, .section { break-inside: avoid !important; }
+  }
+</style>
