@@ -54,29 +54,34 @@ export default {
   ],
   experiences: [
     {
-      role: 'Co-Founder & Lead Developer',
+      role: 'Co-Founder & CTO',
       company: 'Glaxuss Tech',
       period: '2024 — Present',
       subtitle:
-        'Technical Entrepreneurship & Cross-Runtime Architecture Design',
+        'Technical Entrepreneurship, Native Cross-Runtime Architecture Modeling & High-Availability Infrastructure',
       impacts: [
         '<strong>Architecture & Domain Modeling:</strong> Architected complex decoupled systems based on SOLID principles and Domain-Driven Design (DDD).',
         '<strong>Native Cross-Runtime Tools:</strong> Engineered cross-runtime software foundations unifying Node.js, Deno, and Bun environments.',
         '<strong>Infra Orchestration:</strong> Orchestrated high-availability cloud setups and automated multi-environment CI/CD deployment pipelines.',
+        '<strong>Architecture & Scoping:</strong> Modeled complex decoupled system architectures built on SOLID principles and Domain-Driven Design (DDD).',
+        '<strong>Native Cross-Runtime Tools:</strong> Engineered native software foundations unifying Node.js, Deno, and Bun runtime environments.',
+        '<strong>Cloud Orchestration & CI/CD:</strong> Orchestrated high-availability cloud infrastructure and automated deployment workflows.',
       ],
     },
     {
       role: 'Founder & Lead Software Architect',
-      company: 'Sikessem',
+      company: 'Sikessem (Digital Operating Ecosystem)',
       period: '2020 — Present',
       subtitle:
-        'Technical Entrepreneurship & Modular Software Platform Ecosystem',
+        'Modular Digital Operating Ecosystem & Developer Experience Tooling',
       impacts: [
         '<strong>Ecosystem Architecture:</strong> Designed and implemented a unified digital ecosystem, orchestrating interconnected software components with a product-first approach.',
         '<strong>Modular Framework (Loom):</strong> Architected a decoupled, high-performance backend framework simplifying enterprise microservices and complex domain logic.',
         '<strong>Template Engine (Cup):</strong> Engineered a fast HTML/Markdown template compiler leveraging selector-driven transformations for modern TypeScript/Deno runtimes.',
         '<strong>Language & DX Tooling (Phi):</strong> Created language specifications (grammar, lexer, parser) and static analysis tools to enhance type safety and developer productivity.',
         '<strong>Production Delivery Pipeline:</strong> Automated multi-environment CI/CD workflows (GitHub Actions), Docker container deployments, and Caddy reverse proxy routing on Linux VPS infrastructure.',
+        '<strong>Ecosystem Vision (Sikessem & Spacux):</strong> Designed and built a modular Digital Operating System (DOS) serving as a shared foundation for next-generation social and enterprise web applications.',
+        '<strong>DX Tooling & Language R&D (Phi & Cup):</strong> Authored language specifications (Phi), template compilers (Cup), and the Loom framework to maximize developer velocity and type safety.',
       ],
     },
     {
@@ -92,10 +97,38 @@ export default {
         '<strong>Business Intelligence & Analytics:</strong> Designed custom executive dashboards, data pipelines, and reporting tools transforming raw operational data into actionable strategic insights.',
         '<strong>AI Integration & Automation:</strong> Integrated LLMs, RAG architectures, and AI agents into client workflows, enabling intelligent search, automated reporting, and internal process optimization.',
         '<strong>Quality Assurance & Infrastructure:</strong> Standardized automated testing strategies, code reviews, static analysis, and deployed cost-effective Linux VPS/Docker hosting setups.',
+        '<strong>Enterprise Systems & Fintech:</strong> Built complex digital products (Studium LMS, Melanoderme marketplace, Shub messaging, Spring Boot/Angular split-payment microservices, and management software for the Tunisian Post).',
+        '<strong>Financial APIs & Payment Streams:</strong> Integrated payment gateways and synchronized real-time transactional data flows (Moov Money).',
+        '<strong>Open Source Contributions (Since 2020, highly active since 2022):</strong> Active maintainer and contributor to major modern web ecosystems (Qwik, Astro).',
+        '<strong>Legacy Modernization:</strong> Executed technical audits and zero-downtime refactoring of legacy monoliths into Clean/DDD modular architectures.',
       ],
     },
   ],
   projects: [
+    {
+      name: 'Sikessem & Spacux',
+      tagline: 'Digital Operating Ecosystem (DOS)',
+      description:
+        'Modular underlying foundation and next-gen social web platform engineered for high-performance applications.',
+    },
+    {
+      name: 'Melanoderme & Studium',
+      tagline: 'Marketplace & LMS Platform',
+      description:
+        'Multi-vendor e-commerce platform (Laravel, Livewire, Alpine, PostgreSQL) and dedicated online learning management system.',
+    },
+    {
+      name: 'Enterprise & Postal Systems',
+      tagline: 'Fintech, Government & Logistics',
+      description:
+        'Management software for the Tunisian Post, split-payment management tools (Spring Boot / Angular), and custom enterprise apps (PDC, TSA).',
+    },
+    {
+      name: 'Mawla Kiélé Hotel Complex',
+      tagline: 'Corporate Platform & Digitalization',
+      description:
+        'Web platform and service digitalization for a 4-hectare resort with mobile-optimized user experience.',
+    },
     {
       name: 'Phi',
       tagline: 'Programming Language & PHP Superset',

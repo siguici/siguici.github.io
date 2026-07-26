@@ -56,29 +56,33 @@ export default {
   ],
   experiences: [
     {
-      role: 'Co-fondateur & Lead Developer',
+      role: 'Co-fondateur & CTO',
       company: 'Glaxuss Tech',
       period: 'Depuis 2024',
       subtitle:
-        'Entrepreneuriat Technique & Modélisation d’Architectures Cross-Runtime',
+        'Entrepreneuriat Technique, Modélisation d’Architectures Cross-Runtime Native & Infrastructures Cloud',
       impacts: [
         '<strong>Arbitrage & Modélisation :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
         '<strong>Cross-Runtime Native :</strong> Développement d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
         '<strong>Orchestration Infra :</strong> Mise en place d’infrastructures cloud haute disponibilité et automatisation des pipelines CI/CD.',
+        '<strong>Modélisation & Arbitrage :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
+        '<strong>Cross-Runtime Native :</strong> Ingénierie d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
+        '<strong>Orchestration Cloud & CI/CD :</strong> Orchestration d’infrastructures cloud haute disponibilité et automatisation avancée des workflows de déploiement.',
       ],
     },
     {
       role: 'Fondateur & Architecte Logiciel Principal',
-      company: 'Sikessem',
+      company: 'Sikessem (Digital Operating Ecosystem)',
       period: '2020 — Présent',
-      subtitle:
-        'Entrepreneuriat Technique & Écosystème de Plateformes Modulaires',
+      subtitle: 'Conception d’un Écosystème Numérique Modulaire & Outillage DX',
       impacts: [
         "<strong>Architecture d'Écosystème :</strong> Conception et implémentation d'un écosystème numérique unifié, orchestrant des composants logiciels interconnectés selon une vision produit forte.",
         "<strong>Framework Modulaire (Loom) :</strong> Conception d'un framework backend découplé et performant pour simplifier le développement de microservices et de logiques métier complexes.",
         "<strong>Moteur de Templates (Cup) :</strong> Développement d'un compilateur rapide HTML/Markdown exploitant des transformations basées sur des sélecteurs pour les environnements TypeScript/Deno.",
         "<strong>R&D Langages & Outillage DX (Phi) :</strong> Création des spécifications de langage (grammaire, lexeur, parseur) et d'outils d'analyse statique visant à renforcer le typage et la productivité.",
         '<strong>Pipeline de Déploiement :</strong> Automatisation des workflows CI/CD multi-environnements (GitHub Actions), déploiements Docker et routage Caddy sur VPS Linux.',
+        '<strong>Vision Écosystème (Sikessem & Spacux) :</strong> Modélisation et développement d’un Digital Operating System (DOS) modulaire servant de socle commun pour des plateformes sociales et applicatives de nouvelle génération.',
+        '<strong>Outillage DX & R&D (Phi & Cup) :</strong> Création de spécifications de langage (Phi), de compilateurs de templates (Cup) et du framework modulaire Loom pour optimiser la productivité et le typage.',
       ],
     },
     {
@@ -94,10 +98,38 @@ export default {
         '<strong>Business Intelligence & Analytics :</strong> Conception de tableaux de bord décisionnels, pipelines de données et outils de reporting sur mesure transformant la donnée brute en leviers stratégiques.',
         "<strong>Intégration IA & Automatisation :</strong> Intégration de LLMs, d'architectures RAG et d'agents IA dans les workflows clients pour la recherche augmentée, le reporting automatique et l'optimisation des processus internes.",
         "<strong>Assurance Qualité & Infrastructure :</strong> Normalisation des stratégies de tests automatisés, revues de code, analyse statique et mise en place d'hébergements VPS Linux/Docker automatisés et économiques.",
+        '<strong>Systèmes Métier & Fintech :</strong> Déploiement de plateformes complexes (LMS Studium, marketplace Melanoderme, messagerie Shub, microservices de paiement fractionné Spring Boot/Angular, applications d’administration et gestion pour la Poste Tunisienne).',
+        '<strong>APIs Financières & Flux Transactionnels :</strong> Intégration d’APIs de paiement et synchronisation sécurisée de flux transactionnels (Moov Money).',
+        '<strong>Contributions Open Source (depuis 2020, très actif dès 2022) :</strong> Mainteneur et contributeur reconnu des écosystèmes majeurs du web moderne (Qwik, Astro).',
+        '<strong>Refactoring & Modernisation Legacy :</strong> Audits techniques et migration progressive d’applications monolithiques vers des architectures modulaires Clean/DDD sans interruption de service.',
       ],
     },
   ],
   projects: [
+    {
+      name: 'Sikessem & Spacux',
+      tagline: 'Digital Operating Ecosystem (DOS)',
+      description:
+        'Socle modulaire commun et plateforme sociale de nouvelle génération conçus pour propulser des applications web haute performance.',
+    },
+    {
+      name: 'Melanoderme & Studium',
+      tagline: 'Marketplace & Platform LMS',
+      description:
+        'Marketplace multi-vendeurs d’envergure (Laravel, Livewire, Alpine, PostgreSQL) et plateforme d’apprentissage en ligne pour la formation.',
+    },
+    {
+      name: 'Plateformes Métier & Gestion',
+      tagline: 'Fintech, Administration & Postes',
+      description:
+        'Conception de logiciels de gestion pour la poste tunisienne, gestionnaire de paiement fractionné (Spring Boot / Angular) et applications d’administration (PDC, TSA).',
+    },
+    {
+      name: 'Complexe Hôtelier Mawla Kiélé',
+      tagline: 'Site Institutionnel & Numérisation',
+      description:
+        'Plateforme web et numérisation des services d’un complexe de 4 hectares avec expérience mobile optimisée.',
+    },
     {
       name: 'Phi',
       tagline: 'Langage de Programmation & Superset PHP',
