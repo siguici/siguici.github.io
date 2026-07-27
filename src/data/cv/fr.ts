@@ -5,10 +5,14 @@ export default {
   subtitle:
     'Architecte Logiciel Senior · Product Engineer · Concepteur de Plateformes',
   location: "Abidjan, Côte d'Ivoire · Distanciel",
+  availability: 'Disponible pour opportunités remote et internationales',
   tagline:
     'Je conçois des architectures distribuées hautement résilientes et des outils de performance critiques en combinant architecture logicielle, ingénierie full-stack, intelligence des données, infrastructure cloud et technologies IA émergentes.',
+  headline:
+    'Software Engineer · Platform Engineer · Open Source Maintainer · Software Architect',
   sections: {
     profile: 'Profil Professionnel Exécutif',
+    strengths: 'Points Forts & Dominantes',
     capabilities: 'Compétences Clés en Ingénierie',
     experience: 'Parcours Professionnel',
     projects: 'Réalisations & Projets',
@@ -16,6 +20,16 @@ export default {
     ecosystem: 'Expertise Technique',
     education: 'Cursus Éducatif & Langues',
   },
+  strengths: [
+    'Architecture logicielle (DDD, Clean, Hexagonale, Monolithe Modulaire)',
+    'Platform Engineering, Multi-tenancy & API Design',
+    'Developer Experience (DX) & Outillage de développement',
+    'Open Source & Maintenance d’écosystèmes web',
+    'Full-stack Engineering (PHP, TypeScript, Vlang, Go)',
+    'CI/CD & Automatisation de Pipelines (GitHub Actions, Just)',
+    'Design Systems & Bibliothèques UI (SigUI)',
+    'Testing, QA & Analyse Statique (Pest, PHPStan, Psalm, Rector)',
+  ],
   categories: {
     infra_data: 'Data, AI & Infrastructure',
 
@@ -23,6 +37,7 @@ export default {
     backend: 'Backend & Runtimes',
     frontend: 'Front-end & UI',
     databases: 'Bases de Données & Stockage',
+    testing_qa: 'Testing, QA & Analyse Statique',
     ai_data: 'IA & Intelligence des Données',
     infra_devops: 'Infrastructure & DevOps',
     tools_dx: 'Outillage & Developer Experience (DX)',
@@ -61,13 +76,23 @@ export default {
       period: 'Depuis 2024',
       subtitle:
         'Entrepreneuriat Technique, Modélisation d’Architectures Cross-Runtime Native & Infrastructures Cloud',
+      description:
+        'Arbitrage et modélisation d’architectures découplées complexes pour des produits entreprise.',
       impacts: [
+        '<strong>Modélisation & Arbitrage :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
+        '<strong>Cross-Runtime Native :</strong> Ingénierie d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
+        '<strong>Orchestration Cloud & CI/CD :</strong> Orchestration d’infrastructures cloud haute disponibilité et automatisation avancée des workflows de déploiement.',
         '<strong>Arbitrage & Modélisation :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
         '<strong>Cross-Runtime Native :</strong> Développement d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
         '<strong>Orchestration Infra :</strong> Mise en place d’infrastructures cloud haute disponibilité et automatisation des pipelines CI/CD.',
         '<strong>Modélisation & Arbitrage :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
         '<strong>Cross-Runtime Native :</strong> Ingénierie d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
         '<strong>Orchestration Cloud & CI/CD :</strong> Orchestration d’infrastructures cloud haute disponibilité et automatisation avancée des workflows de déploiement.',
+      ],
+      achievements: [
+        'Conception d’architectures applicatives fondées sur les principes SOLID et DDD.',
+        'Ingénierie d’architectures logicielles cross-runtime natives unifiant Node.js, Deno et Bun.',
+        'Orchestration d’infrastructures cloud haute disponibilité et automatisation CI/CD.',
       ],
     },
     {
@@ -76,6 +101,9 @@ export default {
       period: '2020 — Présent',
       subtitle: 'Conception d’un Écosystème Numérique Modulaire & Outillage DX',
       impacts: [
+        '<strong>Vision Écosystème (Sikessem & Spacux) :</strong> Modélisation et développement d’un Digital Operating System (DOS) modulaire servant de socle commun pour des plateformes sociales et applicatives de nouvelle génération.',
+        '<strong>Architecture Modulaire & Multi-Tenant :</strong> Conception basée sur DDD, Clean Architecture et motifs Hexagonaux, intégrant une approche multi-tenant orientée organisations.',
+        '<strong>Modules Core & Outillage DX :</strong> Implémentation des modules Core, Auth, Marketplace, CMS, Learning (Studium) et Communication (Shub), ainsi que du Design System SigUI, du moteur Cup et du framework Loom.',
         "<strong>Architecture d'Écosystème :</strong> Conception et implémentation d'un écosystème numérique unifié, orchestrant des composants logiciels interconnectés selon une vision produit forte.",
         "<strong>Framework Modulaire (Loom) :</strong> Conception d'un framework backend découplé et performant pour simplifier le développement de microservices et de logiques métier complexes.",
         "<strong>Moteur de Templates (Cup) :</strong> Développement d'un compilateur rapide HTML/Markdown exploitant des transformations basées sur des sélecteurs pour les environnements TypeScript/Deno.",
@@ -84,13 +112,40 @@ export default {
         '<strong>Vision Écosystème (Sikessem & Spacux) :</strong> Modélisation et développement d’un Digital Operating System (DOS) modulaire servant de socle commun pour des plateformes sociales et applicatives de nouvelle génération.',
         '<strong>Outillage DX & R&D (Phi & Cup) :</strong> Création de spécifications de langage (Phi), de compilateurs de templates (Cup) et du framework modulaire Loom pour optimiser la productivité et le typage.',
       ],
+      achievements: [
+        'Conception d’une architecture modulaire basée sur DDD, Hexagonal et Clean Architecture.',
+        'Développement des modules Core, Auth, Marketplace, CMS, Learning et Communication.',
+        'Mise en place d’une approche multi-tenant orientée organisations.',
+        'Création du Design System SigUI et de composants UI réutilisables.',
+      ],
+    },
+    {
+      company: 'Open Source Contributions',
+      role: 'Maintainer · Active Contributor',
+      period: '2020 — Présent (Intensifié dès 2022)',
+      subtitle: 'Outillage Web Moderne, Frameworks & Automation Tools',
+      description:
+        'Contribution active à des projets open source et à l’écosystème des outils modernes de développement web.',
+      impacts: [
+        '<strong>Core Ecosystems :</strong> Contributions reconnues aux frameworks majeurs du web moderne, notamment à l’intégration Astro / Qwik.',
+        '<strong>CI/CD & Outillage DX :</strong> Création de la GitHub Action Setup JS, de bibliothèques d’extension Tailwind (colorwind, plugwind.js) et amélioration des workflows d’intégration continue.',
+        '<strong>Maintenance Open Source :</strong> Développement et maintenance continue de projets open source personnels autour de JavaScript, TypeScript, PHP et Vlang.',
+      ],
+      achievements: [
+        'Contributions à l’intégration Astro/Qwik.',
+        'Création de la Setup JS GitHub Action pour l’automatisation d’environnements JS.',
+        'Développement des outils colorwind et plugwind.js pour TailwindCSS.',
+        'Maintenance continue de bibliothèques et projets open source personnels.',
+      ],
     },
     {
       role: 'Ingénieur Logiciel Senior & Consultant en Architecture',
-      company: 'Indépendant',
+      company: 'Consulting Indépendant, Entreprises & Clients',
       period: '2016 — Présent',
       subtitle:
         'SaaS Sur Mesure, Intégrations Financières, Plateformes Web Entreprise, E-Commerce & Systèmes Décisionnels',
+      description:
+        'Développement de solutions web professionnelles d’envergure pour différents clients et institutions.',
       impacts: [
         '<strong>Refactoring & Modernisation Legacy :</strong> Audit et refonte de systèmes monolithiques existants pour des clients internationaux, intégration de la Clean Architecture et du DDD pour booster les performances et réduire la dette technique sans interruption de service.',
         "<strong>Développement Produit Full-Stack :</strong> Construction d'architectures backend robustes (Laravel, Symfony, PostgreSQL) couplées à des interfaces réactives modernes (Vue.js, Inertia.js, Astro, Tailwind CSS).",
@@ -102,6 +157,17 @@ export default {
         '<strong>APIs Financières & Flux Transactionnels :</strong> Intégration d’APIs de paiement et synchronisation sécurisée de flux transactionnels (Moov Money).',
         '<strong>Contributions Open Source (depuis 2020, très actif dès 2022) :</strong> Mainteneur et contributeur reconnu des écosystèmes majeurs du web moderne (Qwik, Astro).',
         '<strong>Refactoring & Modernisation Legacy :</strong> Audits techniques et migration progressive d’applications monolithiques vers des architectures modulaires Clean/DDD sans interruption de service.',
+      ],
+      projects: [
+        'Melanoderme',
+        'Ahlabik',
+        'TSA',
+        'PDC',
+        'Studium LMS',
+        'Shub Messaging',
+        'Gestion Poste Tunisienne',
+        'Paiement Fractionné (Spring Boot / Angular)',
+        'Mawla Kiélé',
       ],
     },
   ],
@@ -150,6 +216,9 @@ export default {
     },
   ],
   opensource: [
+    '<strong>Core Ecosystems :</strong> Contributions actives aux outils du web moderne et aux frameworks majeurs (intégration Astro / Qwik).',
+    '<strong>Developer Experience (DX) :</strong> Auteur du Design System SigUI, de colorwind/plugwind.js et de la Setup JS GitHub Action.',
+    '<strong>Outillage & Langages :</strong> Spécification du langage Phi, compilateur Cup et framework backend Loom.',
     '<strong>Contributions Écosystème :</strong> Contributeur aux outils du web moderne et aux frameworks récents (écosystème Qwik, Astro).',
     "<strong>Developer Experience (DX) :</strong> Auteur de bibliothèques et d'outils open-source axés sur l'amélioration de la productivité des développeurs et la maintenabilité du code.",
   ],

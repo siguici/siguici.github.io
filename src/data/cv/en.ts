@@ -2,11 +2,15 @@ export default {
   lang: 'en',
   title: 'Kessé Emmanuel SIGUI — Senior Software Architect & Platform Engineer',
   subtitle: 'Senior Software Architect · Product Engineer · Platform Builder',
-  location: "Abidjan, Côte d'Ivoire · Remote",
+  location: 'Abidjan, Ivory Coast · Remote',
+  availability: 'Available for remote and international opportunities',
   tagline:
     'I design highly resilient distributed architectures and critical cross-runtime performance tooling by combining software architecture, full-stack engineering, data intelligence, cloud infrastructure, and emerging AI technologies.',
+  headline:
+    'Software Engineer · Platform Engineer · Open Source Maintainer · Software Architect',
   sections: {
     profile: 'Executive Professional Profile',
+    strengths: 'Core Strengths & Highlights',
     capabilities: 'Core Engineering Capabilities',
     experience: 'Professional Experience',
     projects: 'Key Projects & Achievements',
@@ -14,6 +18,16 @@ export default {
     ecosystem: 'Technical Expertise',
     education: 'Education & Languages',
   },
+  strengths: [
+    'Software Architecture (DDD, Clean, Hexagonal, Modular Monolith)',
+    'Platform Engineering, Multi-tenancy & API Design',
+    'Developer Experience (DX) & Developer Tooling',
+    'Open Source Maintenance & Web Ecosystems',
+    'Full-stack Engineering (PHP, TypeScript, Vlang, Go)',
+    'CI/CD & Pipeline Automation (GitHub Actions, Just)',
+    'Design Systems & UI Component Libraries (SigUI)',
+    'Testing, QA & Static Analysis (Pest, PHPStan, Psalm, Rector)',
+  ],
   categories: {
     infra_data: 'Data, AI & Infrastructure',
 
@@ -21,6 +35,7 @@ export default {
     backend: 'Backend & Runtimes',
     frontend: 'Frontend & UI',
     databases: 'Databases & Storage',
+    testing_qa: 'Testing, QA & Static Analysis',
     ai_data: 'AI & Data Intelligence',
     infra_devops: 'Infrastructure & DevOps',
     tools_dx: 'Tooling & Developer Experience (DX)',
@@ -59,13 +74,23 @@ export default {
       period: '2024 — Present',
       subtitle:
         'Technical Entrepreneurship, Native Cross-Runtime Architecture Modeling & High-Availability Infrastructure',
+      description:
+        'Architecting and modeling complex decoupled software foundations for enterprise products.',
       impacts: [
+        '<strong>Architecture & Scoping:</strong> Modeled complex decoupled system architectures built on SOLID principles and Domain-Driven Design (DDD).',
+        '<strong>Native Cross-Runtime Tools:</strong> Engineered native software foundations unifying Node.js, Deno, and Bun runtime environments.',
+        '<strong>Cloud Orchestration & CI/CD:</strong> Orchestrated high-availability cloud infrastructure and automated deployment workflows.',
         '<strong>Architecture & Domain Modeling:</strong> Architected complex decoupled systems based on SOLID principles and Domain-Driven Design (DDD).',
         '<strong>Native Cross-Runtime Tools:</strong> Engineered cross-runtime software foundations unifying Node.js, Deno, and Bun environments.',
         '<strong>Infra Orchestration:</strong> Orchestrated high-availability cloud setups and automated multi-environment CI/CD deployment pipelines.',
         '<strong>Architecture & Scoping:</strong> Modeled complex decoupled system architectures built on SOLID principles and Domain-Driven Design (DDD).',
         '<strong>Native Cross-Runtime Tools:</strong> Engineered native software foundations unifying Node.js, Deno, and Bun runtime environments.',
         '<strong>Cloud Orchestration & CI/CD:</strong> Orchestrated high-availability cloud infrastructure and automated deployment workflows.',
+      ],
+      achievements: [
+        'Modeled complex decoupled system architectures built on SOLID principles and DDD.',
+        'Engineered native cross-runtime software patterns unifying Node.js, Deno, and Bun.',
+        'Orchestrated high-availability cloud infrastructure and automated CI/CD pipelines.',
       ],
     },
     {
@@ -74,7 +99,12 @@ export default {
       period: '2020 — Present',
       subtitle:
         'Modular Digital Operating Ecosystem & Developer Experience Tooling',
+      description:
+        'Designed and built a modular digital platform ecosystem providing foundations for modern digital services.',
       impacts: [
+        '<strong>Ecosystem Vision (Sikessem & Spacux):</strong> Designed and built a modular Digital Operating System (DOS) serving as a shared foundation for next-generation social and enterprise web applications.',
+        '<strong>Modular Architecture & Multi-Tenancy:</strong> Engineered core platform foundations based on DDD, Hexagonal, and Clean Architecture with an organization-based multi-tenant design.',
+        '<strong>Core Modules & DX Tooling:</strong> Built Core, Auth, Marketplace, CMS, Learning (Studium), and Communication (Shub) modules, along with the SigUI Design System, Cup compiler, and Loom framework.',
         '<strong>Ecosystem Architecture:</strong> Designed and implemented a unified digital ecosystem, orchestrating interconnected software components with a product-first approach.',
         '<strong>Modular Framework (Loom):</strong> Architected a decoupled, high-performance backend framework simplifying enterprise microservices and complex domain logic.',
         '<strong>Template Engine (Cup):</strong> Engineered a fast HTML/Markdown template compiler leveraging selector-driven transformations for modern TypeScript/Deno runtimes.',
@@ -83,14 +113,45 @@ export default {
         '<strong>Ecosystem Vision (Sikessem & Spacux):</strong> Designed and built a modular Digital Operating System (DOS) serving as a shared foundation for next-generation social and enterprise web applications.',
         '<strong>DX Tooling & Language R&D (Phi & Cup):</strong> Authored language specifications (Phi), template compilers (Cup), and the Loom framework to maximize developer velocity and type safety.',
       ],
+      achievements: [
+        'Designed architecture based on DDD, Hexagonal Architecture, and Clean Architecture principles.',
+        'Built reusable modules including Core, Auth, Marketplace, CMS, Learning, and Communication.',
+        'Designed organization-based multi-tenant foundations.',
+        'Created the SigUI Design System and reusable component library.',
+      ],
+    },
+    {
+      company: 'Open Source Contributions',
+      role: 'Maintainer · Active Contributor',
+      period: '2020 — Present (Active since 2022)',
+      subtitle: 'Modern Web Tooling, Frameworks & Automation Tools',
+      description:
+        'Active contributor to open-source projects and modern web development ecosystems.',
+      impacts: [
+        '<strong>Core Ecosystems:</strong> Recognized contributions to major web frameworks, specifically Astro / Qwik integration efforts.',
+        '<strong>CI/CD & DX Tooling:</strong> Created the Setup JS GitHub Action, Tailwind extension tools (colorwind, plugwind.js), and enhanced continuous integration workflows.',
+        '<strong>Open Source Maintenance:</strong> Authored and maintained personal open-source libraries around JavaScript, TypeScript, PHP, and Vlang.',
+      ],
+      achievements: [
+        'Contributed to Astro/Qwik integration efforts.',
+        'Created the Setup JS GitHub Action for JS environment automation.',
+        'Developed colorwind and plugwind.js tools for TailwindCSS.',
+        'Maintained personal open-source projects and developer libraries.',
+      ],
     },
     {
       role: 'Senior Software Engineer & Architecture Consultant',
-      company: 'Freelance',
+      company: 'Independent Consulting, Enterprise Clients & Products',
       period: '2016 — Present',
       subtitle:
         'Custom SaaS, Financial Integrations, Enterprise Web Platforms, E-Commerce & Decision-Support Systems',
+      description:
+        'Built professional web solutions for multiple organizations and institutional clients.',
       impacts: [
+        '<strong>Melanoderme Marketplace:</strong> Built a modern marketplace platform with a complete full-stack architecture (Laravel, Livewire, Alpine.js, TailwindCSS, PostgreSQL, Docker, GitHub Actions).',
+        '<strong>Enterprise Systems & Fintech:</strong> Developed Studium LMS, Shub messaging platform, Spring Boot/Angular split-payment microservices, and mobile financial payment APIs (Moov Money).',
+        '<strong>Institutional Systems:</strong> Built management software for the Tunisian Post, custom enterprise applications (PDC, TSA, Ahlabik), and the Mawla Kiélé hotel resort corporate platform.',
+        '<strong>Quality, Testing & Legacy:</strong> Executed zero-downtime refactoring of legacy monoliths and introduced automated testing/static analysis suites (Pest, PHPStan, Psalm, Rector).',
         '<strong>Legacy System Modernization:</strong> Audited and refactored monolithic legacy codebases for international clients, introducing Clean Architecture and Domain-Driven Design (DDD) to boost performance and reduce technical debt without service interruption.',
         '<strong>Full-Stack Product Development:</strong> Engineered resilient backend architectures (Laravel, Symfony, PostgreSQL) paired with modern reactive frontends (Vue.js, Inertia.js, Astro, Tailwind CSS).',
         '<strong>Financial APIs:</strong> Integrated payment gateways and synchronized transactional data streams (Moov Money).',
@@ -101,6 +162,17 @@ export default {
         '<strong>Financial APIs & Payment Streams:</strong> Integrated payment gateways and synchronized real-time transactional data flows (Moov Money).',
         '<strong>Open Source Contributions (Since 2020, highly active since 2022):</strong> Active maintainer and contributor to major modern web ecosystems (Qwik, Astro).',
         '<strong>Legacy Modernization:</strong> Executed technical audits and zero-downtime refactoring of legacy monoliths into Clean/DDD modular architectures.',
+      ],
+      projects: [
+        'Melanoderme',
+        'Ahlabik',
+        'TSA',
+        'PDC',
+        'Studium LMS',
+        'Shub Messaging',
+        'Tunisian Post Management',
+        'Split Payment Microservice (Spring Boot / Angular)',
+        'Mawla Kiélé',
       ],
     },
   ],
@@ -151,6 +223,9 @@ export default {
   opensource: [
     '<strong>Ecosystem Contributions:</strong> Contributor to open-web tooling and modern web frameworks (Qwik, Astro ecosystem).',
     '<strong>Developer Experience (DX):</strong> Author of open-source utilities and libraries focused on improving developer productivity and code maintainability.',
+    '<strong>Core Ecosystems:</strong> Active contributions to modern web tools and major frameworks (Astro / Qwik integration).',
+    '<strong>Developer Experience (DX):</strong> Author of SigUI Design System, colorwind/plugwind.js, and Setup JS GitHub Action.',
+    '<strong>Tooling & Language R&D:</strong> Phi language specifications, Cup template compiler, and Loom backend framework.',
   ],
   education: [
     {
