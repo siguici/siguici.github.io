@@ -1,6 +1,7 @@
 ---
 import AppLayout from '../../layouts/AppLayout.astro';
 import getCV, { type Locale } from '../../data/cv';
+import Icon from '../../components/Icon.astro';
 
 interface Props {
 	lang: Locale;
@@ -44,7 +45,7 @@ const cv = getCV(lang);
   })} />
 
   <!-- ACTION BAR (HIDDEN IN PRINT) -->
-  <div class="actions">
+  <nav class="actions">
     <a href="/" class="back-link">
       {lang === 'fr' ? '← Retour au site' : '← Back to website'}
     </a>
@@ -55,14 +56,14 @@ const cv = getCV(lang);
           href="/cv/fr"
           class:list={['lang-btn', { active: lang === 'fr' }]}
         >
-          FR
+          Français 🇫🇷
         </a>
         <span class="divider">|</span>
         <a
           href="/cv/en"
           class:list={['lang-btn', { active: lang === 'en' }]}
         >
-          EN
+          English 🇺🇸
         </a>
       </div>
 
@@ -70,7 +71,20 @@ const cv = getCV(lang);
         {lang === 'fr' ? 'Télécharger PDF / Imprimer' : 'Download PDF / Print A4'}
       </button>
     </div>
-  </div>
+
+    <div>
+      <a
+        href={cv.contact.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cursor-pointer p-1.5 text-xs font-semibold text-white bg-slate-950 dark:bg-slate-50 dark:text-slate-900 rounded-md hover:opacity-90 transition"
+        title="GitHub"
+        aria-label="GitHub"
+      >
+        <Icon icon='github-logo' />
+      </a>
+    </div>
+  </nav>
 
   <main class="container cv">
 
