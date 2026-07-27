@@ -152,14 +152,17 @@ const cv = getCV(lang);
         <div class="item">
           <div class="item-header">
             <div class="item-title">
-              {exp.role} — <span class="company">{exp.company}</span>
+              {exp.role} <span class="text-indigo-600 dark:text-indigo-400">@ {exp.company}</span>
             </div>
             <div class="item-date">{exp.period}</div>
           </div>
           <div class="item-subtitle">{exp.subtitle}</div>
           <ul class="impact-list">
             {exp.impacts.map((impact) => (
-              <li set:html={impact} />
+            <li>
+              <span class="text-indigo-500 mt-1">▸</span>
+              <span set:html={impact} />
+            </li>
             ))}
           </ul>
         </div>
