@@ -149,40 +149,53 @@ export default {
   ],
   projects: [
     {
-      name: 'Phi & Phix',
-      tagline: 'Langage de Programmation & Superset PHP (écrit en Vlang)',
-      description:
-        'Conception et spécification complète d’un langage superset de PHP. Implémentation du lexeur/parseur en Vlang, REPL interactif et gestion d’erreurs explicite par blocs natifs `or`.',
-    },
-    {
-      name: 'Sikessem & Spacux',
+      name: 'Sikessem',
+      type: 'Digital Platform',
       tagline: 'Digital Operating System (DOS) & Socle Applicatif',
       description:
         'Socle modulaire commun multi-tenant et plateforme sociale conçus pour propulser des applications web d’entreprise à haute performance.',
     },
     {
       name: 'Melanoderme',
+      type: 'Marketplace',
       tagline: 'Plateforme E-Commerce & Marketplace Multi-Vendeurs',
       description:
         'Marketplace d’envergure gérant des architectures de données multi-boutiques, des flux de distribution complexes et la synchronisation automatisée des paiements.',
     },
     {
-      name: 'Studium LMS & Shub',
-      tagline: 'Plateforme d’Apprentissage & Messagerie Unifiée',
-      description:
-        'Système de gestion de la formation en ligne (LMS) complet couplé à un module de messagerie réactive temps réel.',
-    },
-    {
       name: 'Systèmes Métier & Poste Tunisienne',
+      type: 'Enterprise Solutions',
       tagline: 'Fintech, Administration & Logistique',
       description:
         'Conception d’outils de gestion pour la poste tunisienne, microservice de paiement fractionné (Spring Boot / Angular) et applications d’administration (PDC, TSA).',
     },
     {
       name: 'Complexe Hôtelier Mawla Kiélé',
+      type: 'Corporate Web Platform',
       tagline: 'Système de Gestion & PWA',
       description:
         'Numérisation globale des services d’un domaine de 4 hectares avec Progressive Web App (PWA) iOS hautement optimisée pour Safari.',
+    },
+    {
+      name: 'Phi & Phix',
+      type: 'Programming Language',
+      tagline: 'Langage de Programmation & Superset PHP (écrit en Vlang)',
+      description:
+        'Conception et spécification complète d’un langage superset de PHP. Implémentation du lexeur/parseur en Vlang, REPL interactif et gestion d’erreurs explicite par blocs natifs `or`.',
+    },
+    {
+      name: 'colorwind / plugwind.js',
+      type: 'Developer Tools',
+      tagline: 'Developer Tools for TailwindCSS',
+      description:
+        'Outils d’extension pour TailwindCSS et génération dynamique de systèmes de couleurs.',
+    },
+    {
+      name: 'Setup JS GitHub Action',
+      type: 'CI/CD Tooling',
+      tagline: 'CI/CD Automation Tool',
+      description:
+        'Automatisation et configuration d’environnements de développement et d’intégration continue JavaScript/TypeScript.',
     },
   ],
   opensource: [

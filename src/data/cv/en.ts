@@ -149,40 +149,53 @@ export default {
   ],
   projects: [
     {
-      name: 'Phi & Phix',
-      tagline: 'Programming Language & PHP Superset (written in Vlang)',
-      description:
-        'Design and grammar specification of a PHP superset written in Vlang. Features custom lexer/parser, interactive REPL, and strict error handling using native `or` blocks.',
-    },
-    {
-      name: 'Sikessem & Spacux',
+      name: 'Sikessem',
+      type: 'Digital Platform',
       tagline: 'Digital Operating System (DOS) & Multi-Tenant Core',
       description:
         'Modular multi-tenant foundation and next-gen social web application platform engineered for enterprise performance.',
     },
     {
       name: 'Melanoderme',
+      type: 'Marketplace',
       tagline: 'Multi-Vendor E-Commerce Marketplace',
       description:
         'Large-scale e-commerce platform managing multi-store data architectures, distribution workflows, and automated payment integrations.',
     },
     {
-      name: 'Studium LMS & Shub',
-      tagline: 'E-Learning Platform & Real-Time Messaging',
-      description:
-        'Comprehensive Learning Management System (LMS) coupled with a decoupled real-time messaging platform.',
-    },
-    {
       name: 'Enterprise & Postal Systems',
+      type: 'Enterprise Solutions',
       tagline: 'Fintech, Administration & Logistics',
       description:
         'Management software for the Tunisian Post, split-payment microservices (Spring Boot / Angular), and custom enterprise portals (PDC, TSA).',
     },
     {
       name: 'Mawla Kiélé Hotel Complex',
+      type: 'Corporate Web Platform',
       tagline: 'Management System & Mobile PWA',
       description:
         'Complete service digitalization for a 4-hectare resort, featuring a high-performance Safari-optimized iOS Progressive Web App.',
+    },
+    {
+      name: 'Phi & Phix',
+      type: 'Programming Language',
+      tagline: 'Programming Language & PHP Superset (written in Vlang)',
+      description:
+        'Design and grammar specification of a PHP superset written in Vlang. Features custom lexer/parser, interactive REPL, and strict error handling using native `or` blocks.',
+    },
+    {
+      name: 'colorwind / plugwind.js',
+      type: 'Developer Tools',
+      tagline: 'Developer Tools for TailwindCSS',
+      description:
+        'Tools focused on TailwindCSS customization and color system generation.',
+    },
+    {
+      name: 'Setup JS GitHub Action',
+      type: 'CI/CD Tooling',
+      tagline: 'CI/CD Automation Tool',
+      description:
+        'Automation tooling for JavaScript/TypeScript development environments and CI workflows.',
     },
   ],
   opensource: [

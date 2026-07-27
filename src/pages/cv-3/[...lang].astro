@@ -194,7 +194,7 @@ const cv = getCV(lang);
         {common.ecosystem.map((cat) => (
           <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 space-y-2">
             <h3 class="text-xs font-bold text-slate-900 dark:text-slate-200 capitalize">
-              {cv.categories[cat.categoryId as keyof typeof cv.categories] || cat.categoryId}
+              {cv.categories[cat.category as keyof typeof cv.categories] || cat.category}
             </h3>
             <ul class="space-y-1">
               {cat.skills.map((skill) => (
