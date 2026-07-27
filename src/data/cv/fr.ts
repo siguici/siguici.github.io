@@ -1,226 +1,195 @@
 export default {
   lang: 'fr',
   title:
-    'SIGUI Kessé Emmanuel — Architecte Logiciel Senior & Ingénieur Plateforme',
+    'Kessé Emmanuel SIGUI — Architecte Logiciel Senior & Ingénieur Plateforme',
   subtitle:
-    'Architecte Logiciel Senior · Product Engineer · Concepteur de Plateformes',
-  location: "Abidjan, Côte d'Ivoire · Distanciel",
-  availability: 'Disponible pour opportunités remote et internationales',
+    'Architecte Logiciel Senior · Ingénieur Plateforme · Maintainer Open Source',
+  location: "Abidjan, Côte d'Ivoire · Remote / Distanciel",
+  availability: 'Disponible pour opportunités remote & internationales',
   tagline:
-    'Je conçois des architectures distribuées hautement résilientes et des outils de performance critiques en combinant architecture logicielle, ingénierie full-stack, intelligence des données, infrastructure cloud et technologies IA émergentes.',
+    'Je conçois des architectures distribuées hautement résilientes, des systèmes multi-locataires et des outils de performance critiques en combinant architecture logicielle, ingénierie full-stack, intelligence des données (BI/IA) et infrastructure cloud.',
   headline:
-    'Software Engineer · Platform Engineer · Open Source Maintainer · Software Architect',
+    'Software Architect · Platform Engineer · Senior Full-Stack Engineer · Open Source Maintainer',
   sections: {
     profile: 'Profil Professionnel Exécutif',
     strengths: 'Points Forts & Dominantes',
     capabilities: 'Compétences Clés en Ingénierie',
     experience: 'Parcours Professionnel',
-    projects: 'Réalisations & Projets',
+    projects: 'Réalisations & Projets Phares',
     opensource: 'Open Source & Écosystème Développeur',
-    ecosystem: 'Expertise Technique',
+    ecosystem: 'Expertise Technique & Stack',
     education: 'Cursus Éducatif & Langues',
   },
   strengths: [
-    'Architecture logicielle (DDD, Clean, Hexagonale, Monolithe Modulaire)',
-    'Platform Engineering, Multi-tenancy & API Design',
-    'Developer Experience (DX) & Outillage de développement',
-    'Open Source & Maintenance d’écosystèmes web',
-    'Full-stack Engineering (PHP, TypeScript, Vlang, Go)',
-    'CI/CD & Automatisation de Pipelines (GitHub Actions, Just)',
-    'Design Systems & Bibliothèques UI (SigUI)',
-    'Testing, QA & Analyse Statique (Pest, PHPStan, Psalm, Rector)',
+    'Architecture Logicielle Pragmatique (DDD, Clean, Hexagonale, Monolithe Modulaire)',
+    'Platform Engineering, Multi-tenancy & Design d’APIs (REST, GraphQL, gRPC)',
+    'Ingénierie Cross-Runtime (Node.js, Deno, Bun) & Systèmes Vlang',
+    'Developer Experience (DX) & Concepteur d’Outils de Développement',
+    'Intelligence des Données & Intégration IA (BI, Dashboards, RAG, Agents LLM)',
+    'CI/CD, Automatisation & Orchestration Infra (GitHub Actions, Docker, VPS Linux)',
+    'Design Systems & Bibliothèques UI (SigUI, Tailwind Extensions)',
+    'Testing, QA & Analyse Statique Avancée (Pest, PHPStan, Psalm, Rector)',
   ],
   categories: {
-    infra_data: 'Data, AI & Infrastructure',
-
     architecture: 'Architecture & Modélisation',
     backend: 'Backend & Runtimes',
     frontend: 'Front-end & UI',
     databases: 'Bases de Données & Stockage',
     testing_qa: 'Testing, QA & Analyse Statique',
     ai_data: 'IA & Intelligence des Données',
-    infra_devops: 'Infrastructure & DevOps',
+    devops_infra: 'Infrastructure & DevOps',
     tools_dx: 'Outillage & Developer Experience (DX)',
-
-    runtimes_languages: 'Runtimes & Languages',
-    automation_infra: 'Automation & DevOps',
   },
   summary:
-    "Ingénieur logiciel senior et architecte logiciel avec plus de <strong>10 ans d'expérience</strong> dans la création de plateformes numériques complexes. Spécialisé dans l'alignement des exigences métier avec des architectures techniques solides et scalables. Il maîtrise tout le cycle de vie produit : analyse du besoin, modélisation domaine, architecture système, développement full-stack, tests automatisés, déploiement et maintenance évolutive. Expertise confirmée dans la création de produits ex nihilo, la refonte d'applications legacy sans interruption de service et l'intégration de solutions IA/Data.",
+    "Ingénieur logiciel senior et architecte logiciel avec plus de <strong>10 ans d'expérience</strong> dans la création de plateformes numériques complexes. Spécialisé dans l'alignement des exigences métier avec des architectures techniques solides, hautement scalables et pérennes. Je maîtrise l'ensemble du cycle de vie produit : analyse fonctionnelle, modélisation de domaine (DDD), conception système, développement full-stack, assurance qualité automatisée et infrastructure cloud. Fort d'une double expertise en ingénierie logicielle et en intelligence des données (Big Data & BI), j'interviens aussi bien sur la création de produits ex nihilo que sur la modernisation progressive de systèmes legacy complexes sans interruption de service.",
   capabilities: [
     {
       title: 'Ingénierie Produit de Bout en Bout',
       description:
-        "De l'idée métier au produit en production : cadrage fonctionnel, modélisation du domaine, conception d'APIs scalables, développement full-stack, assurance qualité et évolutions.",
+        "De l'idée stratégique au déploiement en production : cadrage fonctionnel, modélisation DDD, conception d'APIs résilientes, développement full-stack réactif et assurance qualité.",
     },
     {
-      title: 'Architecture Logicielle & Modernisation',
+      title: 'Architecture Logicielle & Modernisation Legacy',
       description:
-        'Conception pragmatique basée sur DDD, Clean Architecture, motifs Hexagonaux et Monolithes Modulaires. Audits techniques, réduction de dette et refactoring progressif zéro downtime.',
+        'Conception basée sur DDD, Clean Architecture, motifs Hexagonaux et Monolithes Modulaires. Audits techniques approfondis, réduction de dette technique et refactoring progressif zéro downtime.',
     },
     {
-      title: 'Intelligence des Données & Intégration IA',
+      title: 'Intelligence des Données, BI & Intégration IA',
       description:
-        "Exploitation d'un background en Big Data & BI pour intégrer des tableaux de bord décisionnels, des pipelines de données, des systèmes RAG, des agents IA et des automatisations métiers.",
+        "Exploitation d'un cursus solide en Big Data & BI (M1) pour concevoir des pipelines de données, des tableaux de bord décisionnels et intégrer des briques IA (LLM, RAG, agents intelligents).",
     },
     {
-      title: 'DevOps, Cloud & Infrastructure',
+      title: 'DevOps, Cloud & Outillage DX',
       description:
-        "Pipelines de livraison pragmatiques adaptées à l'échelle : VPS Linux, conteneurisation Docker, reverse proxies Caddy/Nginx, CI/CD GitHub Actions et maîtrise des coûts d'infrastructure.",
+        "Infrastructure pragmatique et automatisée : conteneurisation Docker, reverse proxies (Caddy/Nginx), pipelines CI/CD complexes (GitHub Actions) et création d'outils sur mesure pour booster la productivité des équipes.",
     },
   ],
   experiences: [
     {
       role: 'Co-fondateur & CTO',
       company: 'Glaxuss Tech',
-      period: 'Depuis 2024',
+      period: '2024 — Présent',
       subtitle:
-        'Entrepreneuriat Technique, Modélisation d’Architectures Cross-Runtime Native & Infrastructures Cloud',
+        'Direction Technique, Architectures Cross-Runtime Native & Infrastructures Cloud',
       description:
-        'Arbitrage et modélisation d’architectures découplées complexes pour des produits entreprise.',
+        'Arbitrage stratégique et modélisation d’architectures découplées à haute disponibilité pour des produits d’entreprise.',
       impacts: [
-        '<strong>Modélisation & Arbitrage :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
-        '<strong>Cross-Runtime Native :</strong> Ingénierie d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
-        '<strong>Orchestration Cloud & CI/CD :</strong> Orchestration d’infrastructures cloud haute disponibilité et automatisation avancée des workflows de déploiement.',
-        '<strong>Arbitrage & Modélisation :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
-        '<strong>Cross-Runtime Native :</strong> Développement d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
-        '<strong>Orchestration Infra :</strong> Mise en place d’infrastructures cloud haute disponibilité et automatisation des pipelines CI/CD.',
-        '<strong>Modélisation & Arbitrage :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
-        '<strong>Cross-Runtime Native :</strong> Ingénierie d’architectures logicielles natives unifiant les environnements Node.js, Deno et Bun.',
-        '<strong>Orchestration Cloud & CI/CD :</strong> Orchestration d’infrastructures cloud haute disponibilité et automatisation avancée des workflows de déploiement.',
+        '<strong>Modélisation & Architecture :</strong> Conception d’architectures découplées complexes fondées sur les principes SOLID et le Domain-Driven Design (DDD).',
+        '<strong>Ingénierie Cross-Runtime :</strong> Conception et mise en œuvre d’architectures natives unifiant et optimisant les exécutions sous Node.js, Deno et Bun.',
+        '<strong>Orchestration Cloud & CI/CD :</strong> Déploiement d’infrastructures cloud haute disponibilité et automatisation avancée des pipelines de livraison continue.',
       ],
       achievements: [
-        'Conception d’architectures applicatives fondées sur les principes SOLID et DDD.',
-        'Ingénierie d’architectures logicielles cross-runtime natives unifiant Node.js, Deno et Bun.',
-        'Orchestration d’infrastructures cloud haute disponibilité et automatisation CI/CD.',
+        'Conception d’architectures applicatives d’entreprise modulaires et découplées.',
+        'Normalisation des standards de développement cross-runtime (Node.js/Deno/Bun).',
+        'Mise en place de chaînes CI/CD automatisées garantissant zéro régression au déploiement.',
       ],
     },
     {
       role: 'Fondateur & Architecte Logiciel Principal',
       company: 'Sikessem (Digital Operating Ecosystem)',
       period: '2020 — Présent',
-      subtitle: 'Conception d’un Écosystème Numérique Modulaire & Outillage DX',
-      impacts: [
-        '<strong>Vision Écosystème (Sikessem & Spacux) :</strong> Modélisation et développement d’un Digital Operating System (DOS) modulaire servant de socle commun pour des plateformes sociales et applicatives de nouvelle génération.',
-        '<strong>Architecture Modulaire & Multi-Tenant :</strong> Conception basée sur DDD, Clean Architecture et motifs Hexagonaux, intégrant une approche multi-tenant orientée organisations.',
-        '<strong>Modules Core & Outillage DX :</strong> Implémentation des modules Core, Auth, Marketplace, CMS, Learning (Studium) et Communication (Shub), ainsi que du Design System SigUI, du moteur Cup et du framework Loom.',
-        "<strong>Architecture d'Écosystème :</strong> Conception et implémentation d'un écosystème numérique unifié, orchestrant des composants logiciels interconnectés selon une vision produit forte.",
-        "<strong>Framework Modulaire (Loom) :</strong> Conception d'un framework backend découplé et performant pour simplifier le développement de microservices et de logiques métier complexes.",
-        "<strong>Moteur de Templates (Cup) :</strong> Développement d'un compilateur rapide HTML/Markdown exploitant des transformations basées sur des sélecteurs pour les environnements TypeScript/Deno.",
-        "<strong>R&D Langages & Outillage DX (Phi) :</strong> Création des spécifications de langage (grammaire, lexeur, parseur) et d'outils d'analyse statique visant à renforcer le typage et la productivité.",
-        '<strong>Pipeline de Déploiement :</strong> Automatisation des workflows CI/CD multi-environnements (GitHub Actions), déploiements Docker et routage Caddy sur VPS Linux.',
-        '<strong>Vision Écosystème (Sikessem & Spacux) :</strong> Modélisation et développement d’un Digital Operating System (DOS) modulaire servant de socle commun pour des plateformes sociales et applicatives de nouvelle génération.',
-        '<strong>Outillage DX & R&D (Phi & Cup) :</strong> Création de spécifications de langage (Phi), de compilateurs de templates (Cup) et du framework modulaire Loom pour optimiser la productivité et le typage.',
-      ],
-      achievements: [
-        'Conception d’une architecture modulaire basée sur DDD, Hexagonal et Clean Architecture.',
-        'Développement des modules Core, Auth, Marketplace, CMS, Learning et Communication.',
-        'Mise en place d’une approche multi-tenant orientée organisations.',
-        'Création du Design System SigUI et de composants UI réutilisables.',
-      ],
-    },
-    {
-      company: 'Open Source Contributions',
-      role: 'Maintainer · Active Contributor',
-      period: '2020 — Présent (Intensifié dès 2022)',
-      subtitle: 'Outillage Web Moderne, Frameworks & Automation Tools',
+      subtitle: 'Conception d’un Écosystème Numérique Modulaire & Multi-Tenant',
       description:
-        'Contribution active à des projets open source et à l’écosystème des outils modernes de développement web.',
+        'Modélisation et maintenance de Sikessem, un Digital Operating System (DOS) modulaire servant de socle applicatif unifié.',
       impacts: [
-        '<strong>Core Ecosystems :</strong> Contributions reconnues aux frameworks majeurs du web moderne, notamment à l’intégration Astro / Qwik.',
-        '<strong>CI/CD & Outillage DX :</strong> Création de la GitHub Action Setup JS, de bibliothèques d’extension Tailwind (colorwind, plugwind.js) et amélioration des workflows d’intégration continue.',
-        '<strong>Maintenance Open Source :</strong> Développement et maintenance continue de projets open source personnels autour de JavaScript, TypeScript, PHP et Vlang.',
+        '<strong>Vision Écosystème (DOS) :</strong> Conception d’un socle applicatif modulaire intégrant une gestion multi-tenant stricte orientée organisations.',
+        '<strong>Ingénierie de Composants :</strong> Développement des briques fondamentales : Core, Auth, Marketplace, CMS, Learning (Studium), Communication (Shub) et du Design System SigUI.',
+        '<strong>Outillage Écosystème :</strong> Création du moteur de templates réactif Cup (compilateur HTML/Markdown pour Deno/TypeScript) et du framework backend Loom.',
+        '<strong>Automation & Déploiements :</strong> Mise en place des workflows CI/CD multi-environnements via GitHub Actions, conteneurisation Docker et routage Caddy sur VPS Linux.',
       ],
       achievements: [
-        'Contributions à l’intégration Astro/Qwik.',
-        'Création de la Setup JS GitHub Action pour l’automatisation d’environnements JS.',
-        'Développement des outils colorwind et plugwind.js pour TailwindCSS.',
-        'Maintenance continue de bibliothèques et projets open source personnels.',
+        'Création d’un écosystème logiciel complet et interconnecté selon une vision produit unifiée.',
+        'Architecture multi-tenant isolée et hautement sécurisée pour les sous-systèmes applicatifs.',
+        'Implémentation du Design System SigUI et de ses composants UI hautement réutilisables.',
       ],
     },
     {
       role: 'Ingénieur Logiciel Senior & Consultant en Architecture',
-      company: 'Consulting Indépendant, Entreprises & Clients',
-      period: '2016 — Présent',
+      company: 'Consulting Indépendant & Prestations Entreprises',
+      period: '2016 — 2024',
       subtitle:
-        'SaaS Sur Mesure, Intégrations Financières, Plateformes Web Entreprise, E-Commerce & Systèmes Décisionnels',
+        'SaaS Sur Mesure, Fintech, Systèmes Décisionnels, E-Commerce & Refonte Legacy',
       description:
-        'Développement de solutions web professionnelles d’envergure pour différents clients et institutions.',
+        'Accompagnement d’entreprises et d’institutions dans la conception de plateformes web critiques et la modernisation de leur SI.',
       impacts: [
-        '<strong>Refactoring & Modernisation Legacy :</strong> Audit et refonte de systèmes monolithiques existants pour des clients internationaux, intégration de la Clean Architecture et du DDD pour booster les performances et réduire la dette technique sans interruption de service.',
-        "<strong>Développement Produit Full-Stack :</strong> Construction d'architectures backend robustes (Laravel, Symfony, PostgreSQL) couplées à des interfaces réactives modernes (Vue.js, Inertia.js, Astro, Tailwind CSS).",
-        '<strong>APIs Financières :</strong> Intégration d’APIs de paiement et synchronisation sécurisée de flux transactionnels (Moov Money).',
-        '<strong>Business Intelligence & Analytics :</strong> Conception de tableaux de bord décisionnels, pipelines de données et outils de reporting sur mesure transformant la donnée brute en leviers stratégiques.',
-        "<strong>Intégration IA & Automatisation :</strong> Intégration de LLMs, d'architectures RAG et d'agents IA dans les workflows clients pour la recherche augmentée, le reporting automatique et l'optimisation des processus internes.",
-        "<strong>Assurance Qualité & Infrastructure :</strong> Normalisation des stratégies de tests automatisés, revues de code, analyse statique et mise en place d'hébergements VPS Linux/Docker automatisés et économiques.",
-        '<strong>Systèmes Métier & Fintech :</strong> Déploiement de plateformes complexes (LMS Studium, marketplace Melanoderme, messagerie Shub, microservices de paiement fractionné Spring Boot/Angular, applications d’administration et gestion pour la Poste Tunisienne).',
-        '<strong>APIs Financières & Flux Transactionnels :</strong> Intégration d’APIs de paiement et synchronisation sécurisée de flux transactionnels (Moov Money).',
-        '<strong>Contributions Open Source (depuis 2020, très actif dès 2022) :</strong> Mainteneur et contributeur reconnu des écosystèmes majeurs du web moderne (Qwik, Astro).',
-        '<strong>Refactoring & Modernisation Legacy :</strong> Audits techniques et migration progressive d’applications monolithiques vers des architectures modulaires Clean/DDD sans interruption de service.',
+        '<strong>Modernisation Legacy & Refactoring :</strong> Audits d’architectures monolithiques et migration progressive vers Clean Architecture / DDD sans interruption de service.',
+        '<strong>Développement Produit Full-Stack :</strong> Construction de backends hautement performants (Laravel, Symfony, PostgreSQL, Go) couplés à des interfaces réactives modernes (Astro, Vue.js, Inertia.js, Livewire, Alpine.js, Tailwind CSS).',
+        '<strong>Fintech & Flux Financiers :</strong> Intégration d’APIs de paiement sécurisées (Moov Money, cartes) et gestion de microservices transactionnels (Spring Boot / Angular).',
+        '<strong>Business Intelligence & AI Agents :</strong> Création de tableaux de bord analytics, pipelines ETL et intégration d’architectures RAG avec LLMs pour la recherche augmentée et la génération de rapports.',
+        '<strong>Projets Métier d’Envergure :</strong> Conception de logiciels de gestion pour la Poste Tunisienne, de marketplaces multi-vendeurs (Melanoderme), de plateformes LMS (Studium) et de numérisation de complexes (Mawla Kiélé).',
       ],
       projects: [
-        'Melanoderme',
-        'Ahlabik',
-        'TSA',
-        'PDC',
-        'Studium LMS',
-        'Shub Messaging',
-        'Gestion Poste Tunisienne',
-        'Paiement Fractionné (Spring Boot / Angular)',
-        'Mawla Kiélé',
+        'Melanoderme (Marketplace E-commerce Multi-vendeur)',
+        'Gestion Poste Tunisienne (Logiciels Métier & Administration)',
+        'Système de Paiement Fractionné (Spring Boot / Angular)',
+        'Complexe Hôtelier Mawla Kiélé (Numérisation & PWA)',
+        'Studium (Plateforme LMS & E-learning)',
+        'Shub (Messagerie & Communication unifiée)',
+        'Plateformes d’Administration (PDC, TSA, Ahlabik)',
+      ],
+    },
+    {
+      role: 'Maintainer & Active Contributor',
+      company: 'Open Source Community',
+      period: '2020 — Présent (Intensifié depuis 2022)',
+      subtitle: 'Langages, Outillage DX, Frameworks & Automation',
+      description:
+        'Conception de projets open source indépendants et contributions actives à l’écosystème web moderne.',
+      impacts: [
+        '<strong>Contributions Core :</strong> Contributions reconnues aux frameworks majeurs de l’écosystème web moderne (notamment l’intégration Astro / Qwik).',
+        '<strong>Conception de Langage & Compilation (Phi) :</strong> Création des spécifications du langage Phi (superset PHP développé en Vlang) : grammaire EBNF, lexeur, parseur, REPL interactif et gestion stricte d’erreurs via le bloc native `or`.',
+        '<strong>Outillage CI/CD & Developer Experience :</strong> Auteur de la GitHub Action <code>Setup JS</code>, et de bibliothèques d’extension Tailwind CSS (colorwind, plugwind.js).',
+      ],
+      achievements: [
+        'Maintainer actif de multiples outils et bibliothèques sur GitHub.',
+        'Contributions au code source d’Astro et Qwik.',
+        'Création de la Setup JS GitHub Action adoptée pour l’automatisation d’environnements JavaScript/Node.',
       ],
     },
   ],
   projects: [
     {
+      name: 'Phi & Phix',
+      tagline: 'Langage de Programmation & Superset PHP (écrit en Vlang)',
+      description:
+        'Conception et spécification complète d’un langage superset de PHP. Implémentation du lexeur/parseur en Vlang, REPL interactif et gestion d’erreurs explicite par blocs natifs `or`.',
+    },
+    {
       name: 'Sikessem & Spacux',
-      tagline: 'Digital Operating Ecosystem (DOS)',
+      tagline: 'Digital Operating System (DOS) & Socle Applicatif',
       description:
-        'Socle modulaire commun et plateforme sociale de nouvelle génération conçus pour propulser des applications web haute performance.',
+        'Socle modulaire commun multi-tenant et plateforme sociale conçus pour propulser des applications web d’entreprise à haute performance.',
     },
     {
-      name: 'Melanoderme & Studium',
-      tagline: 'Marketplace & Platform LMS',
+      name: 'Melanoderme',
+      tagline: 'Plateforme E-Commerce & Marketplace Multi-Vendeurs',
       description:
-        'Marketplace multi-vendeurs d’envergure (Laravel, Livewire, Alpine, PostgreSQL) et plateforme d’apprentissage en ligne pour la formation.',
+        'Marketplace d’envergure gérant des architectures de données multi-boutiques, des flux de distribution complexes et la synchronisation automatisée des paiements.',
     },
     {
-      name: 'Plateformes Métier & Gestion',
-      tagline: 'Fintech, Administration & Postes',
+      name: 'Studium LMS & Shub',
+      tagline: 'Plateforme d’Apprentissage & Messagerie Unifiée',
       description:
-        'Conception de logiciels de gestion pour la poste tunisienne, gestionnaire de paiement fractionné (Spring Boot / Angular) et applications d’administration (PDC, TSA).',
+        'Système de gestion de la formation en ligne (LMS) complet couplé à un module de messagerie réactive temps réel.',
     },
     {
-      name: 'Complexe Hôtelier Mawla Kiélé',
-      tagline: 'Site Institutionnel & Numérisation',
+      name: 'Systèmes Métier & Poste Tunisienne',
+      tagline: 'Fintech, Administration & Logistique',
       description:
-        'Plateforme web et numérisation des services d’un complexe de 4 hectares avec expérience mobile optimisée.',
-    },
-    {
-      name: 'Phi',
-      tagline: 'Langage de Programmation & Superset PHP',
-      description:
-        'Conception d’un superset de PHP écrit en Vlang. Spécification de la grammaire, REPL interactif et gestion stricte des erreurs via l’usage exclusif de blocs natifs <code>or</code>.',
-    },
-    {
-      name: 'Mélanoderme',
-      tagline: 'Écosystème Multi-Vendeur',
-      description:
-        'Plateforme e-commerce d’envergure gérant des flux de distribution complexes, des architectures de données multi-boutiques et des paiements automatisés.',
+        'Conception d’outils de gestion pour la poste tunisienne, microservice de paiement fractionné (Spring Boot / Angular) et applications d’administration (PDC, TSA).',
     },
     {
       name: 'Complexe Hôtelier Mawla Kiélé',
       tagline: 'Système de Gestion & PWA',
       description:
-        'Spécifications techniques et numérisation d’un domaine de 4 hectares avec Progressive Web App (PWA) iOS hautement optimisée pour Safari.',
+        'Numérisation globale des services d’un domaine de 4 hectares avec Progressive Web App (PWA) iOS hautement optimisée pour Safari.',
     },
   ],
   opensource: [
-    '<strong>Core Ecosystems :</strong> Contributions actives aux outils du web moderne et aux frameworks majeurs (intégration Astro / Qwik).',
-    '<strong>Developer Experience (DX) :</strong> Auteur du Design System SigUI, de colorwind/plugwind.js et de la Setup JS GitHub Action.',
-    '<strong>Outillage & Langages :</strong> Spécification du langage Phi, compilateur Cup et framework backend Loom.',
-    '<strong>Contributions Écosystème :</strong> Contributeur aux outils du web moderne et aux frameworks récents (écosystème Qwik, Astro).',
-    "<strong>Developer Experience (DX) :</strong> Auteur de bibliothèques et d'outils open-source axés sur l'amélioration de la productivité des développeurs et la maintenabilité du code.",
+    '<strong>Contributions aux Frameworks Web :</strong> Contributeur actif aux écosystèmes modernes (Astro, Qwik).',
+    '<strong>R&D Langages & Outillage (Phi) :</strong> Spécification du langage Phi en Vlang, moteur de templates Cup et framework Loom.',
+    '<strong>Developer Experience (DX) & CI/CD :</strong> Créateur de la GitHub Action <code>Setup JS</code>, de bibliothèques UI et des utilitaires Tailwind (colorwind, plugwind.js).',
+    '<strong>Design Systems :</strong> Créateur et maintainer du Design System SigUI.',
   ],
   education: [
     {
@@ -243,4 +212,4 @@ export default {
     { name: 'Français', level: 'Langue maternelle / Bilingue' },
     { name: 'Anglais', level: 'Technique & Professionnel' },
   ],
-};
+} as const;
