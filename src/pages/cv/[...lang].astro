@@ -116,6 +116,21 @@ const cv = getCV(lang);
       <p class="summary-text" set:html={cv.summary} />
     </section>
 
+    <section class="section">
+      <h2 class="section-title">
+        {cv.sections.strengths}
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {cv.strengths.map((strength) => (
+          <span class="px-3 py-1 text-xs font-medium rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-900">
+            {strength}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
+
     <!-- CORE CAPABILITIES & METHODOLOGY -->
     <section class="section">
       <h2 class="section-title">{cv.sections.capabilities}</h2>
