@@ -203,9 +203,11 @@ const cv = getCV(lang);
         <div class="edu-list">
           {cv.education.map((edu) => (
             <div class="edu-item">
-              <div class="edu-deg">{edu.degree}</div>
+              <div class="edu-header">
+                <span class="edu-deg">{edu.degree}</span>
+                {edu.period && <span class="edu-date">{edu.period}</span>}
+              </div>
               {edu.institution && <div class="edu-inst">{edu.institution}</div>}
-              <div class="item-date">{edu.period}</div>
             </div>
           ))}
           <div class="lang-box">
@@ -482,8 +484,10 @@ const cv = getCV(lang);
 
   .edu-list { display: flex; flex-direction: column; gap: 6px; }
   .edu-item { margin-bottom: 2px; }
+  .edu-header { display: flex; justify-content: space-between; }
   .edu-deg { font-weight: 700; color: var(--text-white); font-size: 11px; }
   .edu-inst { color: var(--muted); font-size: 10.5px; }
+  .edu-date { font-size: 10.5px; color: var(--muted); font-family: var(--mono); }
   .lang-box { font-size: 11px; color: var(--accent-light); margin-top: 6px; border-top: 1px dashed #334155; padding-top: 6px; }
   .lang-box strong { color: var(--text-white); }
 
