@@ -170,13 +170,6 @@ export default {
         'Management software for the Tunisian Post, split-payment microservices (Spring Boot / Angular), and custom enterprise portals (PDC, TSA).',
     },
     {
-      name: 'Mawla Kiélé Hotel Complex',
-      type: 'Corporate Web Platform',
-      tagline: 'Management System & Mobile PWA',
-      description:
-        'Complete service digitalization for a 4-hectare resort, featuring a high-performance Safari-optimized iOS Progressive Web App.',
-    },
-    {
       name: 'Phi & Phix',
       type: 'Programming Language',
       tagline: 'Programming Language & PHP Superset (written in Vlang)',

@@ -170,13 +170,6 @@ export default {
         'Conception d’outils de gestion pour la poste tunisienne, microservice de paiement fractionné (Spring Boot / Angular) et applications d’administration (PDC, TSA).',
     },
     {
-      name: 'Complexe Hôtelier Mawla Kiélé',
-      type: 'Corporate Web Platform',
-      tagline: 'Système de Gestion & PWA',
-      description:
-        'Numérisation globale des services d’un domaine de 4 hectares avec Progressive Web App (PWA) iOS hautement optimisée pour Safari.',
-    },
-    {
       name: 'Phi & Phix',
       type: 'Programming Language',
       tagline: 'Langage de Programmation & Superset PHP (écrit en Vlang)',
