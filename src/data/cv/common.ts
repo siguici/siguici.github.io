@@ -13,10 +13,21 @@ export default {
   },
   ecosystem: [
     {
+      category: 'architecture',
+      skills: [
+        'Domain-Driven Design (DDD)',
+        'Clean Architecture',
+        'Hexagonal Architecture',
+        'SOLID',
+        'Modular Monoliths',
+        'REST / GraphQL / gRPC APIs',
+      ],
+    },
+    {
       category: 'backend',
       skills: [
         'PHP (Laravel / Symfony)',
-        'TypeScript (Deno / Bun / Node)',
+        'TypeScript (Deno / Bun / Node.js)',
         'Vlang',
         'DDD',
         'Clean Architecture',
@@ -28,11 +39,49 @@ export default {
     {
       category: 'frontend',
       skills: [
+        'Astro',
+        'Qwik',
         'Vue.js / Inertia.js',
         'Livewire / Alpine.js',
-        'Astro',
+        'htmx',
         'Tailwind CSS',
         'Design Systems',
+      ],
+    },
+    {
+      category: 'databases',
+      skills: [
+        'PostgreSQL',
+        'MySQL',
+        'Redis',
+        'ORM / Query Builders (Prisma, Eloquent, Kysely)',
+      ],
+    },
+    {
+      category: 'ai_data',
+      skills: [
+        'BI & Analytics Dashboards',
+        'AI Agents & LLMs',
+        'RAG Architectures',
+        'Data Pipelines',
+      ],
+    },
+    {
+      category: 'infra_devops',
+      skills: [
+        'Docker',
+        'Linux VPS',
+        'Caddy / Nginx',
+        'GitHub Actions CI/CD',
+      ],
+    },
+    {
+      category: 'tools_dx',
+      skills: [
+        'Just (Runner)',
+        'Typst',
+        'Git & GitHub',
+        'Static Analysis & Linters',
       ],
     },
     {
@@ -46,18 +95,6 @@ export default {
         'GitHub Actions CI/CD',
       ],
     },
-
-    {
-      category: 'architectures',
-      skills: [
-        'DDD',
-        'Clean Architecture',
-        'Hexagonal Architecture',
-        'SOLID',
-        'Modular Monoliths',
-        'REST / gRPC APIs',
-      ],
-    },
     {
       category: 'runtimes_languages',
       skills: [
@@ -68,23 +105,13 @@ export default {
       ],
     },
     {
-      category: 'frontend_ui',
-      skills: [
-        'TALL Stack (TailwindCSS, Alpine.js, Livewire, Laravel)',
-        'Astro',
-        'Qwik',
-        'Vue.js / Inertia.js',
-        'htmx',
-      ],
-    },
-    {
       category: 'automation_infra',
       skills: [
         'GitHub Actions CI/CD',
         'Just (Runner)',
         'Typst',
         'Docker',
-        'Linux VPS / Caddy / Nginx',
+        'Linux VPS / Caddy / Nginx / Apache',
       ],
     },
   ],

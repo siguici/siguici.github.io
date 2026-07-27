@@ -15,13 +15,17 @@ export default {
     education: 'Education & Languages',
   },
   categories: {
-    backend: 'Backend & System Architecture',
-    frontend: 'Frontend & Interfaces',
     infra_data: 'Data, AI & Infrastructure',
 
-    architectures: 'Architectures',
+    architecture: 'Architecture & Modeling',
+    backend: 'Backend & Runtimes',
+    frontend: 'Frontend & UI',
+    databases: 'Databases & Storage',
+    ai_data: 'AI & Data Intelligence',
+    infra_devops: 'Infrastructure & DevOps',
+    tools_dx: 'Tooling & Developer Experience (DX)',
+
     runtimes_languages: 'Runtimes & Languages',
-    frontend_ui: 'Front-end & UI',
     automation_infra: 'Automation & DevOps',
   },
   summary:

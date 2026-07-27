@@ -17,13 +17,17 @@ export default {
     education: 'Cursus Éducatif & Langues',
   },
   categories: {
-    backend: 'Backend & Architecture Système',
-    frontend: 'Frontend & Interfaces',
-    infra_data: 'Data, IA & Infrastructure',
+    infra_data: 'Data, AI & Infrastructure',
 
-    architectures: 'Architectures',
-    runtimes_languages: 'Runtimes & Langages',
-    frontend_ui: 'Front-end & UI',
+    architecture: 'Architecture & Modélisation',
+    backend: 'Backend & Runtimes',
+    frontend: 'Front-end & UI',
+    databases: 'Bases de Données & Stockage',
+    ai_data: 'IA & Intelligence des Données',
+    infra_devops: 'Infrastructure & DevOps',
+    tools_dx: 'Outillage & Developer Experience (DX)',
+
+    runtimes_languages: 'Runtimes & Languages',
     automation_infra: 'Automation & DevOps',
   },
   summary:
