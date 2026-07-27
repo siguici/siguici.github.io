@@ -71,6 +71,8 @@ const cv = getCV(lang);
       </div>
     </header>
 
+    <hr class="border-slate-200 dark:border-slate-800" />
+
     <section class="space-y-3">
       <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase text-xs font-semibold tracking-wider text-indigo-600 dark:text-indigo-400">
         {cv.sections.profile}
@@ -80,6 +82,8 @@ const cv = getCV(lang);
         set:html={cv.summary}
       />
     </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
 
     <section class="space-y-4">
       <h2 class="text-xs font-semibold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
@@ -114,11 +118,13 @@ const cv = getCV(lang);
       </div>
     </section>
 
+    <hr class="border-slate-200 dark:border-slate-800" />
+
     <section class="space-y-6">
       <h2 class="text-xs font-semibold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
         {cv.sections.experience}
       </h2>
-      
+
       <div class="space-y-8">
         {cv.experiences.map((exp) => (
           <article class="relative pl-4 border-l-2 border-indigo-500/30 space-y-2">
@@ -185,11 +191,13 @@ const cv = getCV(lang);
       </div>
     </section>
 
+    <hr class="border-slate-200 dark:border-slate-800" />
+
     <section class="space-y-4">
       <h2 class="text-xs font-semibold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
         {cv.sections.ecosystem}
       </h2>
-      
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {common.ecosystem.map((cat) => (
           <div class="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 space-y-2">
@@ -208,6 +216,8 @@ const cv = getCV(lang);
         ))}
       </div>
     </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
 
     <section class="space-y-4">
       <h2 class="text-xs font-semibold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">

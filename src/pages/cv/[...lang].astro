@@ -110,11 +110,15 @@ const cv = getCV(lang);
       </div>
     </header>
 
+    <hr class="border-slate-200 dark:border-slate-800" />
+
     <!-- EXECUTIVE PROFILE -->
     <section class="section">
       <h2 class="section-title">{cv.sections.profile}</h2>
       <p class="summary-text" set:html={cv.summary} />
     </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
 
     <section class="section">
       <h2 class="section-title">
@@ -143,6 +147,8 @@ const cv = getCV(lang);
         ))}
       </div>
     </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
 
     <!-- PROFESSIONAL EXPERIENCE -->
     <section class="section">
@@ -173,6 +179,8 @@ const cv = getCV(lang);
         </article>
       ))}
     </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
 
     <!-- TECHNICAL ECOSYSTEM GRID & EDUCATION -->
     <div class="two-col-grid">
