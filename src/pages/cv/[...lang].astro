@@ -149,14 +149,19 @@ const cv = getCV(lang);
       <h2 class="section-title">{cv.sections.experience}</h2>
 
       {cv.experiences.map((exp) => (
-        <article class="item">
+        <article class="item relative pl-4 border-l-2 border-indigo-500/30 space-y-2">
           <div class="item-header">
             <h3 class="item-title">
               {exp.role} <span class="text-indigo-600 dark:text-indigo-400">@ {exp.company}</span>
             </h3>
             <div class="item-date text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded w-fit">{exp.period}</div>
           </div>
-          <div class="item-subtitle">{exp.subtitle}</div>
+          <p class="item-subtitle">{exp.subtitle}</p>
+          {exp.description && (
+            <p class="text-sm text-slate-700 dark:text-slate-300">
+              {exp.description}
+            </p>
+          )}
           <ul class="impact-list">
             {exp.impacts.map((impact) => (
             <li>
