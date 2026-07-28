@@ -169,7 +169,7 @@
 @keyframes pop {
   from {
     opacity: 0;
-    transform: scale(.96);
+    transform: scale(0.96);
   }
 
   to {
@@ -187,12 +187,12 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    opacity: .15;
+    opacity: 0.15;
     transform: scale(1);
   }
 
   50% {
-    opacity: .3;
+    opacity: 0.3;
     transform: scale(1.04);
   }
 }

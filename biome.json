@@ -20,10 +20,21 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "preset": "recommended",
       "style": {
         "useNamingConvention": "off"
+      },
+      "complexity": {
+        "noImportantStyles": "off"
+      },
+      "suspicious": {
+        "noDuplicateCustomProperties": "warn"
+      },
+      "correctness": {
+        "noUnusedImports": "warn"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
       }
     }
   },
@@ -39,6 +50,9 @@
   "css": {
     "formatter": {
       "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "html": {

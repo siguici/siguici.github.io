@@ -46,7 +46,7 @@
     --foundation-primary-400: oklch(0.89 0.19 196.22); /* #3CF2FF */
     --foundation-primary-500: oklch(0.78 0.19 197.64);
     --foundation-primary-600: oklch(0.69 0.19 199.98);
-    --foundation-primary-700: oklch(0.57 0.17 202.90);
+    --foundation-primary-700: oklch(0.57 0.17 202.9);
     --foundation-primary-800: oklch(0.39 0.11 204.62);
     --foundation-primary-900: oklch(0.34 0.09 204.47);
     --foundation-primary-950: oklch(0.22 0.07 204.99);
@@ -67,22 +67,22 @@
     --foundation-secondary: var(--foundation-secondary-500);
 
     /* --- Cold Slate Neutral Scale (Siguici Signature) --- */
-    --foundation-gray-50: oklch(0.98 0.01 200.0);
-    --foundation-gray-100: oklch(0.95 0.01 200.0);
-    --foundation-gray-200: oklch(0.91 0.02 200.0);
-    --foundation-gray-300: oklch(0.81 0.02 200.0);
-    --foundation-gray-400: oklch(0.68 0.03 200.0);
-    --foundation-gray-500: oklch(0.53 0.03 200.0);
-    --foundation-gray-600: oklch(0.42 0.03 200.0);
-    --foundation-gray-700: oklch(0.33 0.02 200.0);
-    --foundation-gray-800: oklch(0.24 0.02 200.0);
-    --foundation-gray-900: oklch(0.18 0.02 200.0);
-    --foundation-gray-950: oklch(0.12 0.02 200.0);
+    --foundation-gray-50: oklch(0.98 0.01 200);
+    --foundation-gray-100: oklch(0.95 0.01 200);
+    --foundation-gray-200: oklch(0.91 0.02 200);
+    --foundation-gray-300: oklch(0.81 0.02 200);
+    --foundation-gray-400: oklch(0.68 0.03 200);
+    --foundation-gray-500: oklch(0.53 0.03 200);
+    --foundation-gray-600: oklch(0.42 0.03 200);
+    --foundation-gray-700: oklch(0.33 0.02 200);
+    --foundation-gray-800: oklch(0.24 0.02 200);
+    --foundation-gray-900: oklch(0.18 0.02 200);
+    --foundation-gray-950: oklch(0.12 0.02 200);
 
     /* --- Extended Functional Scales --- */
     --foundation-blue-50: oklch(0.97 0.02 243.69);
     --foundation-blue-500: oklch(0.54 0.21 247.46);
-    --foundation-blue-950: oklch(0.20 0.09 251.16);
+    --foundation-blue-950: oklch(0.2 0.09 251.16);
 
     --foundation-indigo-50: oklch(0.96 0.02 264.53);
     --foundation-indigo-500: oklch(0.51 0.23 266.38);
@@ -93,35 +93,43 @@
     --foundation-purple-950: oklch(0.18 0.11 301.36);
 
     /* --- Alert Status Scales --- */
-    --foundation-success-50: oklch(0.98 0.02 160.0);
-    --foundation-success-400: oklch(0.82 0.17 155.0);
-    --foundation-success-500: oklch(0.69 0.23 156.0); /* #10B981 */
-    --foundation-success-700: oklch(0.48 0.16 160.0);
-    --foundation-success-950: oklch(0.19 0.06 162.0);
+    --foundation-success-50: oklch(0.98 0.02 160);
+    --foundation-success-400: oklch(0.82 0.17 155);
+    --foundation-success-500: oklch(0.69 0.23 156); /* #10B981 */
+    --foundation-success-700: oklch(0.48 0.16 160);
+    --foundation-success-950: oklch(0.19 0.06 162);
 
-    --foundation-danger-50: oklch(0.97 0.02 25.0);
+    --foundation-danger-50: oklch(0.97 0.02 25);
     --foundation-danger-400: oklch(0.69 0.22 25.4);
-    --foundation-danger-500: oklch(0.63 0.26 25.0); /* #EF4444 */
-    --foundation-danger-600: oklch(0.54 0.24 25.0); /* #DC2626 */
-    --foundation-danger-700: oklch(0.46 0.20 25.0);
-    --foundation-danger-950: oklch(0.18 0.08 25.0);
+    --foundation-danger-500: oklch(0.63 0.26 25); /* #EF4444 */
+    --foundation-danger-600: oklch(0.54 0.24 25); /* #DC2626 */
+    --foundation-danger-700: oklch(0.46 0.2 25);
+    --foundation-danger-950: oklch(0.18 0.08 25);
 
-    --foundation-warning-50: oklch(0.98 0.02 85.0);
-    --foundation-warning-400: oklch(0.84 0.18 84.0);
-    --foundation-warning-500: oklch(0.76 0.19 76.0); /* #F59E0B */
-    --foundation-warning-950: oklch(0.21 0.07 70.0);
+    --foundation-warning-50: oklch(0.98 0.02 85);
+    --foundation-warning-400: oklch(0.84 0.18 84);
+    --foundation-warning-500: oklch(0.76 0.19 76); /* #F59E0B */
+    --foundation-warning-950: oklch(0.21 0.07 70);
 
     /* --- Absolute Deep Surface Progression --- */
     --foundation-surface-bg: var(--foundation-gray-950);
     --foundation-surface-card: var(--foundation-gray-900);
-    --foundation-surface-elevated: oklch(0.22 0.02 200.0); /* Alignment with #16252D */
-    --foundation-surface-floating: oklch(0.26 0.03 200.0); /* Alignment with #1C313B */
+    --foundation-surface-elevated: oklch(
+      0.22 0.02 200
+    ); /* Alignment with #16252D */
+    --foundation-surface-floating: oklch(
+      0.26 0.03 200
+    ); /* Alignment with #1C313B */
 
     /* --- Typography & Layout Primitives --- */
-    --foundation-font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    --foundation-font-body: 'Geist Variable', var(--foundation-font-system);
-    --foundation-font-sans: 'Geist Sans', var(--foundation-font-system);
-    --foundation-font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --foundation-font-system:
+      system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --foundation-font-body: "Geist Variable", var(--foundation-font-system);
+    --foundation-font-sans: "Geist Sans", var(--foundation-font-system);
+    --foundation-font-mono:
+      "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, monospace;
 
     --foundation-blur-xs: 4px;
     --foundation-blur-sm: 8px;
@@ -139,12 +147,36 @@
     --foundation-z-tooltip: 600;
 
     /* --- Restored Core Primitives Gradients --- */
-    --foundation-gradient-brand: linear-gradient(135deg, oklch(0.89 0.19 196.22) 0%, oklch(0.57 0.29 301.36) 100%);
-    --foundation-gradient-brand-alt: linear-gradient(135deg, oklch(0.87 0.17 195.93) 0%, oklch(0.57 0.17 202.90) 100%);
-    --foundation-gradient-surface: linear-gradient(180deg, var(--foundation-gray-900), var(--foundation-gray-950));
-    --foundation-gradient-stroke: linear-gradient(180deg, oklch(0.32 0.03 204.0), oklch(0.27 0.02 204.0));
-    --foundation-gradient-success: linear-gradient(135deg, oklch(0.69 0.23 156.0) 0%, oklch(0.48 0.16 160.0) 100%);
-    --foundation-gradient-danger: linear-gradient(135deg, oklch(0.63 0.26 25.0) 0%, oklch(0.46 0.20 25.0) 100%);
+    --foundation-gradient-brand: linear-gradient(
+      135deg,
+      oklch(0.89 0.19 196.22) 0%,
+      oklch(0.57 0.29 301.36) 100%
+    );
+    --foundation-gradient-brand-alt: linear-gradient(
+      135deg,
+      oklch(0.87 0.17 195.93) 0%,
+      oklch(0.57 0.17 202.9) 100%
+    );
+    --foundation-gradient-surface: linear-gradient(
+      180deg,
+      var(--foundation-gray-900),
+      var(--foundation-gray-950)
+    );
+    --foundation-gradient-stroke: linear-gradient(
+      180deg,
+      oklch(0.32 0.03 204),
+      oklch(0.27 0.02 204)
+    );
+    --foundation-gradient-success: linear-gradient(
+      135deg,
+      oklch(0.69 0.23 156) 0%,
+      oklch(0.48 0.16 160) 100%
+    );
+    --foundation-gradient-danger: linear-gradient(
+      135deg,
+      oklch(0.63 0.26 25) 0%,
+      oklch(0.46 0.2 25) 100%
+    );
 
     /* --- Legacy Astro API Compatibility Layer Proxies --- */
     --font-brand: var(--foundation-font-body);
@@ -165,7 +197,7 @@
 
     --accent-light: oklch(0.87 0.17 195.93);
     --accent-regular: oklch(0.89 0.19 196.22);
-    --accent-dark: oklch(0.57 0.17 202.90);
+    --accent-dark: oklch(0.57 0.17 202.9);
     --link-color: oklch(0.89 0.19 196.22);
     --gradient-accent: var(--foundation-gradient-brand);
   }
@@ -184,21 +216,42 @@
     --gray-900: var(--foundation-gray-950);
     --gray-999: var(--foundation-gray-950);
 
-    --accent-light: oklch(0.57 0.17 202.90);
+    --accent-light: oklch(0.57 0.17 202.9);
     --accent-regular: oklch(0.89 0.19 196.22);
     --accent-dark: oklch(0.87 0.17 195.93);
 
     /* Strict CSS Fallbacks for Legacy color-mix elements */
     --accent-overlay: rgba(60, 242, 255, 0.15);
-    --accent-overlay: color-mix(in oklch, oklch(0.89 0.19 196.22) 15%, transparent);
+    --accent-overlay: color-mix(
+      in oklch,
+      oklch(0.89 0.19 196.22) 15%,
+      transparent
+    );
     --accent-subtle-overlay: rgba(168, 85, 247, 0.15);
-    --accent-subtle-overlay: color-mix(in oklch, oklch(0.57 0.29 301.36) 15%, transparent);
+    --accent-subtle-overlay: color-mix(
+      in oklch,
+      oklch(0.57 0.29 301.36) 15%,
+      transparent
+    );
     --accent-text-over: var(--foundation-gray-50);
 
-    --gradient-stop-1: oklch(0.45 0.12 215.0);
-    --gradient-subtle: linear-gradient(150deg, var(--foundation-gray-900) 19%, var(--foundation-gray-950) 81%);
-    --gradient-accent-orange: linear-gradient(150deg, oklch(0.62 0.12 25.0), oklch(0.89 0.19 196.22), oklch(0.87 0.17 195.93));
-    --gradient-stroke: linear-gradient(180deg, oklch(0.32 0.03 204.0), oklch(0.27 0.02 204.0));
+    --gradient-stop-1: oklch(0.45 0.12 215);
+    --gradient-subtle: linear-gradient(
+      150deg,
+      var(--foundation-gray-900) 19%,
+      var(--foundation-gray-950) 81%
+    );
+    --gradient-accent-orange: linear-gradient(
+      150deg,
+      oklch(0.62 0.12 25),
+      oklch(0.89 0.19 196.22),
+      oklch(0.87 0.17 195.93)
+    );
+    --gradient-stroke: linear-gradient(
+      180deg,
+      oklch(0.32 0.03 204),
+      oklch(0.27 0.02 204)
+    );
   }
 }
 
@@ -291,19 +344,19 @@
   --color-surface-floating: var(--foundation-surface-floating);
 
   /* --- Text & Interface Typography --- */
-  --color-foreground: oklch(0.95 0.01 200.0);
+  --color-foreground: oklch(0.95 0.01 200);
   --color-muted: var(--foundation-gray-400);
   --color-subtle: var(--foundation-gray-500);
 
   /* --- Boundaries Borders & Rings --- */
-  --color-border: oklch(0.27 0.02 204.0);
-  --color-border-hover: oklch(0.32 0.03 204.0);
+  --color-border: oklch(0.27 0.02 204);
+  --color-border-hover: oklch(0.32 0.03 204);
   --color-ring: var(--foundation-primary);
 
   /* --- Interactive Form Inputs Pipeline --- */
   --color-input: var(--foundation-surface-card);
   --color-input-hover: var(--foundation-surface-elevated);
-  --color-input-border: oklch(0.27 0.02 204.0);
+  --color-input-border: oklch(0.27 0.02 204);
   --color-input-focus: var(--foundation-primary);
   --color-input-invalid: var(--foundation-danger-500);
   --color-input-disabled: var(--foundation-gray-800);
@@ -316,7 +369,7 @@
 
   --color-button-secondary: var(--foundation-surface-card);
   --color-button-secondary-hover: var(--foundation-surface-elevated);
-  --color-button-secondary-foreground: oklch(0.95 0.01 200.0);
+  --color-button-secondary-foreground: oklch(0.95 0.01 200);
 
   --color-action-ghost-bg: transparent;
   --color-action-ghost-text: var(--foundation-gray-300);
@@ -344,7 +397,11 @@
 
   /* --- Advanced Systems Color Mixing Layouts (With Secure Fallbacks) --- */
   --color-glass-overlay: rgba(60, 242, 255, 0.15);
-  --color-glass-overlay: color-mix(in oklch, var(--color-primary) 15%, transparent);
+  --color-glass-overlay: color-mix(
+    in oklch,
+    var(--color-primary) 15%,
+    transparent
+  );
 
   --color-backdrop: rgba(12, 12, 12, 0.65);
   --color-backdrop: color-mix(in oklch, var(--color-gray-950) 65%, transparent);
@@ -368,9 +425,25 @@
   --gradient-stroke: var(--foundation-gradient-stroke);
   --gradient-success: var(--foundation-gradient-success);
   --gradient-danger: var(--foundation-gradient-danger);
-  --gradient-premium: linear-gradient(135deg, oklch(0.85 0.19 85.0) 0%, oklch(0.73 0.22 56.0) 50%, oklch(0.58 0.23 33.0) 100%);
-  --gradient-prism: linear-gradient(90deg, oklch(0.60 0.31 0.0), oklch(0.47 0.29 295.0), oklch(0.84 0.19 196.0), oklch(0.85 0.25 145.0), oklch(0.85 0.19 85.0));
-  --gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+  --gradient-premium: linear-gradient(
+    135deg,
+    oklch(0.85 0.19 85) 0%,
+    oklch(0.73 0.22 56) 50%,
+    oklch(0.58 0.23 33) 100%
+  );
+  --gradient-prism: linear-gradient(
+    90deg,
+    oklch(0.6 0.31 0),
+    oklch(0.47 0.29 295),
+    oklch(0.84 0.19 196),
+    oklch(0.85 0.25 145),
+    oklch(0.85 0.19 85)
+  );
+  --gradient-subtle: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 100%
+  );
 
   /* --- Typography Font Stacks Configuration --- */
   --font-sans: var(--foundation-font-sans);
@@ -402,7 +475,7 @@
   --shadow-glow-sm: 0 0 18px rgb(60 242 255 / 0.12);
   --shadow-glow: 0 0 30px rgb(60 242 255 / 0.18);
   --shadow-glow-lg: 0 0 60px rgb(60 242 255 / 0.24);
-  --shadow-glow-xl: 0 0 100px rgb(60 242 255 / 0.30);
+  --shadow-glow-xl: 0 0 100px rgb(60 242 255 / 0.3);
 
   /* --- Physics Transitions Curves & Timings --- */
   --duration-fast: 150ms;
@@ -450,10 +523,18 @@
 
   /* Fallbacks for Light Mode Overlay mixes */
   --color-overlay: rgba(168, 85, 247, 0.12);
-  --color-overlay: color-mix(in oklch, var(--foundation-secondary-500) 12%, transparent);
+  --color-overlay: color-mix(
+    in oklch,
+    var(--foundation-secondary-500) 12%,
+    transparent
+  );
 
   --color-navbar: rgba(248, 251, 252, 0.72);
-  --color-navbar: color-mix(in oklch, var(--foundation-gray-50) 72%, transparent);
+  --color-navbar: color-mix(
+    in oklch,
+    var(--foundation-gray-50) 72%,
+    transparent
+  );
 
   --color-sidebar: var(--color-surface);
   --color-footer: var(--color-navbar);
@@ -483,8 +564,16 @@
   --color-action-link: var(--foundation-secondary-600);
   --color-action-link-hover: var(--foundation-secondary-500);
 
-  --gradient-surface: linear-gradient(180deg, var(--foundation-gray-100), var(--foundation-gray-50));
-  --gradient-stroke: linear-gradient(180deg, var(--foundation-gray-300), var(--foundation-gray-200));
+  --gradient-surface: linear-gradient(
+    180deg,
+    var(--foundation-gray-100),
+    var(--foundation-gray-50)
+  );
+  --gradient-stroke: linear-gradient(
+    180deg,
+    var(--foundation-gray-300),
+    var(--foundation-gray-200)
+  );
 }
 
 @media (prefers-color-scheme: light) {
@@ -499,10 +588,18 @@
 
     /* Fallbacks for System Preferred Light Mode Overlay mixes */
     --color-overlay: rgba(168, 85, 247, 0.12);
-    --color-overlay: color-mix(in oklch, var(--foundation-secondary-500) 12%, transparent);
+    --color-overlay: color-mix(
+      in oklch,
+      var(--foundation-secondary-500) 12%,
+      transparent
+    );
 
     --color-navbar: rgba(248, 251, 252, 0.72);
-    --color-navbar: color-mix(in oklch, var(--foundation-gray-50) 72%, transparent);
+    --color-navbar: color-mix(
+      in oklch,
+      var(--foundation-gray-50) 72%,
+      transparent
+    );
 
     --color-sidebar: var(--color-surface);
     --color-footer: var(--color-navbar);
@@ -532,7 +629,15 @@
     --color-action-link: var(--foundation-secondary-600);
     --color-action-link-hover: var(--foundation-secondary-500);
 
-    --gradient-surface: linear-gradient(180deg, var(--foundation-gray-100), var(--foundation-gray-50));
-    --gradient-stroke: linear-gradient(180deg, var(--foundation-gray-300), var(--foundation-gray-200));
+    --gradient-surface: linear-gradient(
+      180deg,
+      var(--foundation-gray-100),
+      var(--foundation-gray-50)
+    );
+    --gradient-stroke: linear-gradient(
+      180deg,
+      var(--foundation-gray-300),
+      var(--foundation-gray-200)
+    );
   }
 }

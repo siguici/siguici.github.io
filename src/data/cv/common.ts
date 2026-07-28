@@ -116,11 +116,7 @@ const commonData = {
     },
     {
       category: 'tools_dx',
-      skills: [
-        'Just (Command Runner)',
-        'Typst',
-        'Git & GitHub Workflows',
-      ],
+      skills: ['Just (Command Runner)', 'Typst', 'Git & GitHub Workflows'],
     },
   ],
 } as const satisfies CVCommonData;

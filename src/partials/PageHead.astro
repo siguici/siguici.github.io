@@ -4,15 +4,15 @@ import '../styles/global.css';
 import { app } from '../config';
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-	transitions?: 'animate' | 'swap' | 'none';
+  title?: string | undefined;
+  description?: string | undefined;
+  transitions?: 'animate' | 'swap' | 'none';
 }
 
 const {
-	title,
-	description = 'The personal website of Sigui Kessé Emmanuel',
-	transitions = 'animate',
+  title,
+  description = 'The personal website of Sigui Kessé Emmanuel',
+  transitions = 'animate',
 } = Astro.props;
 ---
 

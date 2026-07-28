@@ -18,10 +18,14 @@
 
 @theme {
   /* --- Typography & Layout Primitives --- */
-  --font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-body: Geist, 'Geist Variable', var(--font-system);
-  --font-sans: 'Geist Sans', Inter, var(--foun-system);
-  --font-mono: 'Geist Mono', 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-system:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-body: Geist, "Geist Variable", var(--font-system);
+  --font-sans: "Geist Sans", Inter, var(--foun-system);
+  --font-mono:
+    "Geist Mono", "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, monospace;
 
   --color-background: #050816;
   --color-surface: #0b1020;
@@ -47,9 +51,9 @@
   --color-brand-600: #0284c7;
 
   --color-accent-400: #a78bfa;
-  --color-accent-500: #6D28D9;
-  --color-accent-600: #5B21B6;
-  --color-accent-700: #4C1D95;
+  --color-accent-500: #6d28d9;
+  --color-accent-600: #5b21b6;
+  --color-accent-700: #4c1d95;
 
   /* --- Brand Aliases --- */
   --color-brand: var(--color-brand-500);
@@ -88,8 +92,8 @@
   --color-muted: #94a3b8;
   --color-subtle: #64748b;
 
-  --font-sans: 'Geist', Inter, system-ui, sans-serif;
-  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+  --font-sans: "Geist", Inter, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
 
   /* --- Borders --- */
   --color-border: #1e293b;
@@ -187,7 +191,7 @@
 }
 
 /* 1. Manual Activation via HTML Attribute */
-[data-theme=light] {
+[data-theme="light"] {
   color-scheme: light;
   animation: __light_theme_tokens 0s forwards;
 }
@@ -240,8 +244,11 @@
       border-color: rgba(255, 255, 255, 0.08);
     }
     .card-premium {
-      background: linear-gradient(135deg, rgba(22, 27, 34, 0.7) 0%, rgba(13, 17,
-        23, 0.8) 100%);
+      background: linear-gradient(
+        135deg,
+        rgba(22, 27, 34, 0.7) 0%,
+        rgba(13, 17, 23, 0.8) 100%
+      );
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
     .card-premium:hover {
@@ -263,8 +270,11 @@
       background: rgba(255, 255, 255, 0.03);
     }
     .quote-bg {
-      background: radial-gradient(circle at top left, rgba(0, 202, 158, 0.06),
-        transparent 70%);
+      background: radial-gradient(
+        circle at top left,
+        rgba(0, 202, 158, 0.06),
+        transparent 70%
+      );
     }
   }
   @media (prefers-color-scheme: light) {
@@ -275,11 +285,14 @@
     .card-bg {
       background: rgba(255, 255, 255, 0.9);
       border-color: rgba(0, 0, 0, 0.08);
-      shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
     .card-premium {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248,
-        250, 252, 0.8) 100%);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(248, 250, 252, 0.8) 100%
+      );
       border: 1px solid rgba(0, 0, 0, 0.04);
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.02);
     }
@@ -303,8 +316,11 @@
       background: rgba(0, 0, 0, 0.02);
     }
     .quote-bg {
-      background: radial-gradient(circle at top left, rgba(0, 202, 158, 0.04),
-        transparent 70%);
+      background: radial-gradient(
+        circle at top left,
+        rgba(0, 202, 158, 0.04),
+        transparent 70%
+      );
       background-color: #ffffff;
     }
   }
@@ -443,16 +459,22 @@
 
 /* Glassmorphic Surfaces & Overlays */
 @utility glass {
-  background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 /
-    0.02));
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.06),
+    rgb(255 255 255 / 0.02)
+  );
   backdrop-filter: blur(var(--blur-lg));
   border: 1px solid rgb(255 255 255 / 0.08);
   box-shadow: var(--shadow-card);
 }
 
 @utility glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255,
-    255, 255, 0.01) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -493,7 +515,8 @@
   border-radius: var(--radius-lg);
   padding: 0.85rem 1rem;
   color: var(--color-foreground);
-  transition: background var(--duration-normal) var(--ease-standard),
+  transition:
+    background var(--duration-normal) var(--ease-standard),
     border-color var(--duration-normal) var(--ease-standard);
 
   &:hover {
@@ -520,7 +543,8 @@
   cursor: pointer;
 
   /* Rich Interaction Motion Physics */
-  transition: background var(--duration-normal) var(--ease-standard),
+  transition:
+    background var(--duration-normal) var(--ease-standard),
     border-color var(--duration-normal) var(--ease-standard),
     box-shadow var(--duration-normal) var(--ease-standard),
     transform var(--duration-normal) var(--ease-standard);

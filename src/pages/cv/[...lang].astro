@@ -1,10 +1,10 @@
 ---
-import AppLayout from '../../layouts/AppLayout.astro';
-import getCV, { type Locale } from '../../data/cv';
 import Icon from '../../components/Icon.astro';
+import getCV, { type Locale } from '../../data/cv';
+import AppLayout from '../../layouts/AppLayout.astro';
 
 interface Props {
-	lang: Locale;
+  lang: Locale;
 }
 
 export function getStaticPaths() {

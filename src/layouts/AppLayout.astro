@@ -1,25 +1,25 @@
 ---
 import '../styles/app.css';
-import { app } from '../config';
 import ClientRouter from 'astro/components/ClientRouter.astro';
 import Preloader from '../components/Preloader.astro';
+import { app } from '../config';
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-	animate?: 'fade' | 'initial' | 'slide' | 'none';
-	transitions?: 'animate' | 'swap' | 'none';
+  title?: string | undefined;
+  description?: string | undefined;
+  animate?: 'fade' | 'initial' | 'slide' | 'none';
+  transitions?: 'animate' | 'swap' | 'none';
   cssClass?: string | undefined;
   data?: string | undefined;
-  rootId ?: string | undefined;
-  bodyId ?: string | undefined;
+  rootId?: string | undefined;
+  bodyId?: string | undefined;
 }
 
 const {
-	title,
+  title,
   description = 'The personal website of Sigui Kessé Emmanuel',
   animate = 'fade',
-	transitions = 'animate',
+  transitions = 'animate',
   rootId = 'root',
   bodyId = 'app',
 } = Astro.props;
@@ -29,7 +29,9 @@ let {
   data,
 } = Astro.props;
 
-data = data ? `{ transitioning: false, ' ${data.replace('{', '')}` : '{ transitioning: false }';
+data = data
+  ? `{ transitioning: false, ' ${data.replace('{', '')}`
+  : '{ transitioning: false }';
 ---
 
 <!DOCTYPE html>

@@ -8,30 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet">
+      rel="stylesheet"
+    >
 
     <style>
     /* ==========================================================================
-       0x01. DESIGN TOKENS & SYSTEM VARIABLES
-       ========================================================================== */
+                   0x01. DESIGN TOKENS & SYSTEM VARIABLES
+                   ========================================================================== */
     :root {
       /* Palette */
-      --surface-canvas: #0D0E11;
-      --surface-module: #13151A;
-      --surface-module-hover: #1A1D24;
+      --surface-canvas: #0d0e11;
+      --surface-module: #13151a;
+      --surface-module-hover: #1a1d24;
       --border-grid: rgba(255, 255, 255, 0.08);
-      --border-grid-strong: rgba(255, 255, 255, 0.20);
+      --border-grid-strong: rgba(255, 255, 255, 0.2);
 
-      --text-primary: #F2F4F8;
-      --text-secondary: #8A91A0;
-      --text-tertiary: #4E5460;
+      --text-primary: #f2f4f8;
+      --text-secondary: #8a91a0;
+      --text-tertiary: #4e5460;
 
-      --accent-system: #00FF66;
-      --accent-warn: #FFB800;
+      --accent-system: #00ff66;
+      --accent-warn: #ffb800;
 
       /* Typography Families */
-      --font-mono: 'Fira Code', monospace;
-      --font-sans: 'Inter', sans-serif;
+      --font-mono: "Fira Code", monospace;
+      --font-sans: "Inter", sans-serif;
 
       /* Spatial Grid Multiples (1U = 4px) */
       --u1: 4px;
@@ -45,8 +46,8 @@
     }
 
     /* ==========================================================================
-       0x02. CORE RESET & BASE STYLES
-       ========================================================================== */
+                   0x02. CORE RESET & BASE STYLES
+                   ========================================================================== */
     *,
     *::before,
     *::after {
@@ -89,8 +90,8 @@
     }
 
     /* ==========================================================================
-       0x03. LAYOUT ARCHITECTURE & CONTAINER
-       ========================================================================== */
+                   0x03. LAYOUT ARCHITECTURE & CONTAINER
+                   ========================================================================== */
     .eos-viewport {
       position: relative;
       z-index: 1;
@@ -146,8 +147,8 @@
     }
 
     /* ==========================================================================
-       0x04. EDITORIAL PRIMITIVES & MODULES
-       ========================================================================== */
+                   0x04. EDITORIAL PRIMITIVES & MODULES
+                   ========================================================================== */
 
     /* Grid Row Shell */
     .eos-row {
@@ -163,7 +164,9 @@
       border: 1px solid var(--border-grid);
       padding: var(--u8);
       position: relative;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
+      transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
     }
 
     .eos-module:hover {
@@ -315,11 +318,11 @@
     }
 
     /* ==========================================================================
-       0x05. PRINT & EXECUTION SNAPSHOT MEDIA RULES
-       ========================================================================== */
+                   0x05. PRINT & EXECUTION SNAPSHOT MEDIA RULES
+                   ========================================================================== */
     @media print {
       body {
-        background-color: #FFFFFF !important;
+        background-color: #ffffff !important;
         color: #000000 !important;
       }
       body::before {
@@ -330,8 +333,8 @@
         max-width: 100%;
       }
       .eos-module {
-        background: #FFFFFF !important;
-        border: 1px solid #CCCCCC !important;
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
       }
       .landmark-title,
       .system-title,
@@ -398,11 +401,15 @@
             <span>MODULE_01 // ARCHITECTURAL INTENT</span>
             <span>SYS_REF: 0x00A1</span>
           </div>
-          <h1
-            class="landmark-title">I design software systems, invent language abstractions, and engineer operating ecosystems.</h1>
+          <h1 class="landmark-title">
+            I design software systems, invent language abstractions, and
+            engineer operating ecosystems.
+          </h1>
           <p class="landmark-subtitle">
-          Senior Software Engineer & Platform Architect. Over a decade of engineering high-concurrency systems, programming language lexers, custom render engines, and foundational developer toolchains.
-        </p>
+            Senior Software Engineer & Platform Architect. Over a decade of
+            engineering high-concurrency systems, programming language lexers,
+            custom render engines, and foundational developer toolchains.
+          </p>
         </div>
 
         <div class="eos-module col-4">
@@ -411,15 +418,17 @@
             <span>METRICS</span>
           </div>
           <div
-            style="display: flex; flex-direction: column; gap: var(--u6); height: 100%; justify-content: center;">
+            style="display: flex; flex-direction: column; gap: var(--u6); height: 100%; justify-content: center;"
+          >
             <div>
               <div class="metric-value">10+ YEARS</div>
               <div class="metric-label">Production Architecture Experience</div>
             </div>
             <div>
               <div class="metric-value">03 SYSTEMS</div>
-              <div
-                class="metric-label">Proprietary Languages & Engines Built</div>
+              <div class="metric-label">
+                Proprietary Languages & Engines Built
+              </div>
             </div>
           </div>
         </div>
@@ -433,32 +442,34 @@
             <span>GRAPH_EXEC</span>
           </div>
           <p class="system-prose">
-          Technologies are not listed as static badges; they are mapped as operational dependencies within constructed architecture domains.
-        </p>
+            Technologies are not listed as static badges; they are mapped as
+            operational dependencies within constructed architecture domains.
+          </p>
 
           <div class="topology-container">
             <div class="node-row">
               <span class="node-name">SYSTEMS & KERNEL</span>
-              <span
-                class="node-connections">Vlang &rarr; Memory Safety &rarr; Native Compilers</span>
+              <span class="node-connections"
+              >Vlang &rarr; Memory Safety &rarr; Native Compilers</span>
               <span class="node-type">CORE_DOMAIN</span>
             </div>
             <div class="node-row">
               <span class="node-name">LANGUAGE COMPILERS</span>
-              <span
-                class="node-connections">Phi Language &rarr; Phix Engine &rarr; EBNF Lexer</span>
+              <span class="node-connections"
+              >Phi Language &rarr; Phix Engine &rarr; EBNF Lexer</span>
               <span class="node-type">ABSTRACT_LAYER</span>
             </div>
             <div class="node-row">
               <span class="node-name">WEB RUNTIMES</span>
-              <span
-                class="node-connections">Deno &rarr; TypeScript &rarr; Astro &rarr; TailwindCSS</span>
+              <span class="node-connections"
+              >Deno &rarr; TypeScript &rarr; Astro &rarr; TailwindCSS</span>
               <span class="node-type">PLATFORM_LAYER</span>
             </div>
             <div class="node-row">
               <span class="node-name">DATA ARCHITECTURE</span>
-              <span
-                class="node-connections">Big Data Pipelines &rarr; Business Intelligence &rarr; PHP/Laravel</span>
+              <span class="node-connections"
+              >Big Data Pipelines &rarr; Business Intelligence &rarr;
+                PHP/Laravel</span>
               <span class="node-type">STORAGE_DOMAIN</span>
             </div>
           </div>
@@ -475,8 +486,11 @@
           </div>
           <h2 class="system-title">Phi Language & Phix Templating Engine</h2>
           <p class="system-prose">
-          Designed and implemented a strongly typed programming language expanding PHP syntax rules. Built the complete lexical analyzer and parser in Vlang, enforcing strict type boundaries and removing legacy scripting runtime compromises.
-        </p>
+            Designed and implemented a strongly typed programming language
+            expanding PHP syntax rules. Built the complete lexical analyzer and
+            parser in Vlang, enforcing strict type boundaries and removing
+            legacy scripting runtime compromises.
+          </p>
           <ul class="spec-list">
             <li class="spec-item">Vlang</li>
             <li class="spec-item">EBNF Grammar</li>
@@ -493,8 +507,11 @@
           </div>
           <h2 class="system-title">Cup Engine</h2>
           <p class="system-prose">
-          A high-performance template rendering engine written entirely in Vlang. Engineered for zero-allocation String compilation, fast AST generation, and direct execution within high-concurrency server pipelines.
-        </p>
+            A high-performance template rendering engine written entirely in
+            Vlang. Engineered for zero-allocation String compilation, fast AST
+            generation, and direct execution within high-concurrency server
+            pipelines.
+          </p>
           <ul class="spec-list">
             <li class="spec-item">Vlang</li>
             <li class="spec-item">AST Processing</li>
@@ -515,33 +532,46 @@
           <div style="display: flex; flex-direction: column; gap: var(--u6);">
             <div>
               <div
-                style="display: flex; justify-content: space-between; margin-bottom: var(--u1);">
+                style="display: flex; justify-content: space-between; margin-bottom: var(--u1);"
+              >
+                <span style="font-weight: 600; color: var(--text-primary);"
+                >SIKESSEM</span>
                 <span
-                  style="font-weight: 600; color: var(--text-primary);">SIKESSEM</span>
-                <span
-                  style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);">2024 &mdash; PRESENT</span>
+                  style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);"
+                >2024 &mdash; PRESENT</span>
               </div>
               <div
-                style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-system); margin-bottom: var(--u2);">FOUNDER & LEAD SYSTEM ARCHITECT</div>
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-system); margin-bottom: var(--u2);"
+              >
+                FOUNDER & LEAD SYSTEM ARCHITECT
+              </div>
               <p class="system-prose" style="font-size: 13px;">
-              Architecting an open-source digital operating ecosystem, developer tooling suite, and modular platform architecture.
-            </p>
+                Architecting an open-source digital operating ecosystem,
+                developer tooling suite, and modular platform architecture.
+              </p>
             </div>
 
             <div
-              style="border-top: 1px solid var(--border-grid); padding-top: var(--u4);">
+              style="border-top: 1px solid var(--border-grid); padding-top: var(--u4);"
+            >
               <div
-                style="display: flex; justify-content: space-between; margin-bottom: var(--u1);">
+                style="display: flex; justify-content: space-between; margin-bottom: var(--u1);"
+              >
+                <span style="font-weight: 600; color: var(--text-primary);"
+                >GLAXUSS TECH</span>
                 <span
-                  style="font-weight: 600; color: var(--text-primary);">GLAXUSS TECH</span>
-                <span
-                  style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);">2024 &mdash; PRESENT</span>
+                  style="font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);"
+                >2024 &mdash; PRESENT</span>
               </div>
               <div
-                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); margin-bottom: var(--u2);">CO-FOUNDER & LEAD DEVELOPER</div>
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); margin-bottom: var(--u2);"
+              >
+                CO-FOUNDER & LEAD DEVELOPER
+              </div>
               <p class="system-prose" style="font-size: 13px;">
-              Directing technical strategy, system infrastructure design, and platform engineering for enterprise client solutions.
-            </p>
+                Directing technical strategy, system infrastructure design, and
+                platform engineering for enterprise client solutions.
+              </p>
             </div>
           </div>
         </div>
@@ -554,16 +584,29 @@
           <div style="display: flex; flex-direction: column; gap: var(--u4);">
             <div>
               <div
-                style="font-size: 14px; font-weight: 600; color: var(--text-primary);">MASTER 1</div>
+                style="font-size: 14px; font-weight: 600; color: var(--text-primary);"
+              >
+                MASTER 1
+              </div>
               <div
-                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Big Data & Data Science</div>
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);"
+              >
+                Big Data & Data Science
+              </div>
             </div>
             <div
-              style="border-top: 1px solid var(--border-grid); padding-top: var(--u2);">
+              style="border-top: 1px solid var(--border-grid); padding-top: var(--u2);"
+            >
               <div
-                style="font-size: 14px; font-weight: 600; color: var(--text-primary);">LICENCE DEGREE</div>
+                style="font-size: 14px; font-weight: 600; color: var(--text-primary);"
+              >
+                LICENCE DEGREE
+              </div>
               <div
-                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Business Intelligence</div>
+                style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);"
+              >
+                Business Intelligence
+              </div>
             </div>
           </div>
         </div>
@@ -571,7 +614,8 @@
 
       <!-- 0x06. SYSTEM FOOTER / RUNTIME TERMINATION -->
       <footer
-        style="border-top: 1px solid var(--border-grid); padding-top: var(--u6); font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); display: flex; justify-content: space-between;">
+        style="border-top: 1px solid var(--border-grid); padding-top: var(--u6); font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); display: flex; justify-content: space-between;"
+      >
         <span>EOS_EXECUTION_COMPLETE // NO_ERRORS_DETECTED</span>
         <span>CANONICAL URI: SIKESSEM.COM</span>
       </footer>

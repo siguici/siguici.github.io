@@ -1,10 +1,10 @@
 ---
-import AppLayout from '../../layouts/AppLayout.astro';
-import common from '../../data/cv/common';
 import getCV, { type Locale } from '../../data/cv';
+import common from '../../data/cv/common';
+import AppLayout from '../../layouts/AppLayout.astro';
 
 interface Props {
-	lang: Locale;
+  lang: Locale;
 }
 
 export function getStaticPaths() {

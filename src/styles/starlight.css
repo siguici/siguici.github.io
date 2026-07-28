@@ -1,8 +1,8 @@
 @layer base, starlight, theme, components, utilities;
 
-@import '@astrojs/starlight-tailwind';
-@import 'tailwindcss/theme.css' layer(theme);
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 
 /* --- Core Library and Token Manifest --- */
 @import "./theme.css";
@@ -32,7 +32,7 @@
 }
 
 /* Light mode colors */
-:root[data-theme='light'] {
+:root[data-theme="light"] {
   --sl-color-accent-low: #e0e0ff;
   --sl-color-accent: #7878ff;
   --sl-color-accent-high: #1c0056;

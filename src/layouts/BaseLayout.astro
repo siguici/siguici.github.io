@@ -8,9 +8,9 @@ import PageHead from '../partials/PageHead.astro';
 // https://docs.astro.build/en/core-concepts/layouts/
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-	animate?: 'fade' | 'initial' | 'slide' | 'none';
+  title?: string | undefined;
+  description?: string | undefined;
+  animate?: 'fade' | 'initial' | 'slide' | 'none';
 }
 
 const { title, description, animate = 'fade' } = Astro.props;
