@@ -20,11 +20,7 @@
     "~/": "./",
     "@/": "./src/"
   },
-  "exclude": [
-    "**/dist/**",
-    "**/.astro/**",
-    "**/pagefind/**"
-  ],
+  "exclude": ["**/dist/**", "**/.astro/**", "**/pagefind/**"],
   "lint": {
     "rules": { "tags": ["recommended"] }
   },
@@ -38,10 +34,10 @@
   },
   "tasks": {
     "build": "deno run -A npm:astro build",
-    "check": "deno run -A npm:astro check && deno fmt --check && deno check --sloppy-imports && deno lint",
+    "check": "deno run -A npm:astro check && deno run -A npm:@biomejs/biome ci . && deno fmt --check && deno check --sloppy-imports && deno lint",
     "deploy": "deno deploy app --org=sigui --app=emmanuel --prod",
     "dev": "deno run -A npm:astro dev",
-    "fix": "./run sync && deno lint --fix && deno fmt",
+    "fix": "./run sync && biome check --write . && biome format --write . && deno lint --fix && deno fmt",
     "preview": "deno run -A npm:astro preview",
     "prod": "./run check && ./run build",
     "serve": "deno run -A dist/server/entry.mjs",
