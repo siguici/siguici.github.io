@@ -14,6 +14,8 @@ export interface SkillCategory {
 export interface CVCommonData {
   identity: {
     name: string;
+    firstname: string;
+    lastname: string;
   };
   contact: {
     email: string;
@@ -27,9 +29,11 @@ export interface CVCommonData {
   ecosystem: readonly SkillCategory[];
 }
 
-const commonData = {
+const commonData: CVCommonData = {
   identity: {
     name: 'Kessé Emmanuel SIGUI',
+    firstname: 'Kessé Emmanuel',
+    lastname: 'SIGUI',
   },
   contact: {
     email: 'siguici@proton.me',
