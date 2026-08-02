@@ -19,27 +19,27 @@
     "url": "https://github.com/siguici/siguici"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.40.0",
-    "astro": "^6.4.8",
-    "sharp": "^0.34.5"
+    "@astrojs/starlight": "^0.41.6",
+    "astro": "^7.1.6",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.10",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/starlight-tailwind": "^5.0.0",
-    "@biomejs/biome": "^2.5.5",
-    "@fontsource-variable/geist": "^5.2.9",
-    "@fontsource-variable/geist-mono": "^5.2.8",
-    "@fontsource/geist-sans": "^5.2.5",
-    "@tailwindcss/vite": "^4.3.2",
-    "@types/node": "^24.13.3",
-    "astro": "^6.4.8",
-    "autoprefixer": "^10.5.2",
-    "tailwindcss": "^4.3.2",
+    "@biomejs/biome": "^2.5.6",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource/geist-sans": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.1.2",
+    "astro": "^7.1.6",
+    "autoprefixer": "^10.5.4",
+    "tailwindcss": "^4.3.3",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "trustedDependencies": [
     "sharp"
