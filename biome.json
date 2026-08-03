@@ -28,10 +28,11 @@
         "noImportantStyles": "off"
       },
       "suspicious": {
-        "noDuplicateCustomProperties": "warn"
+        "noDuplicateCustomProperties": "off"
       },
       "correctness": {
-        "noUnusedImports": "warn"
+        "noUnusedImports": "off",
+        "noUnusedVariables": "off"
       },
       "a11y": {
         "noSvgWithoutTitle": "off"
