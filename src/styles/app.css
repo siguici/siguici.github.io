@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+@import "@fontsource-variable/geist/wght.css";
 @import "@fontsource-variable/geist/wght-italic.css";
 @import "@fontsource/geist-sans/100.css";
 @import "@fontsource/geist-sans/200.css";
@@ -10,6 +11,7 @@
 @import "@fontsource/geist-sans/700.css";
 @import "@fontsource/geist-sans/800.css";
 @import "@fontsource/geist-sans/900.css";
+@import "@fontsource-variable/geist-mono/wght.css";
 @import "@fontsource-variable/geist-mono/wght-italic.css";
 
 /* ==========================================================================
@@ -229,7 +231,7 @@
       var(--color-background);
     overflow-x: hidden;
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
