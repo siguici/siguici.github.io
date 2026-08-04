@@ -3,7 +3,7 @@ import AppLayout from '../layouts/AppLayout.astro';
 ---
 <AppLayout
   title="CV"
-  cssClass="bg-[#080B11] text-slate-300 bg-grid min-h-screen p-4 sm:p-8 md:p-12 selection:bg-cyan-500 selection:text-black"
+  cssClass="bg-[#080B11] text-slate-300 bg-grid min-h-screen p-4 sm:p-8 md:p-12 lg:p-20 selection:bg-cyan-500 selection:text-black"
   >
   <style>
   /* Texture d'arrière-plan avec grille discrète */
@@ -17,31 +17,36 @@ import AppLayout from '../layouts/AppLayout.astro';
 
   /* DIRECTIVES CRITIQUES POUR L'IMPRESSION & EXPORT PDF (A4) */
   @media print {
-    @page {
-      size: A4 portrait;
-      margin: 10mm;
-    }
-
+    /* 1. Forcer le moteur d'impression du navigateur à préserver les couleurs & fonds */
     html,
     body {
-      background-color: #080b11 !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
       color-adjust: exact !important;
+      background-color: #080b11 !important;
     }
 
+    /* 2. Fixer la taille de la page A4 sans marges blanches parasites du navigateur */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+      padding: 0;
+      background-color: #080b11 !important;
+    }
+
+    /* 3. Masquer les en-têtes et pieds de page par défaut du navigateur (date, URL, etc.) */
     body {
       padding: 0 !important;
       margin: 0 !important;
     }
 
-    /* Empêcher les coupures de cartes au milieu d'une page */
+    /* 4. Empêcher les coupures de cartes au milieu d'une page */
     .bento-card {
       break-inside: avoid !important;
       page-break-inside: avoid !important;
     }
 
-    /* Désactiver la grille interactive à l'impression pour garder un fond pur */
+    /* 5. Désactiver la grille interactive à l'impression pour garder un fond pur */
     .bg-grid {
       background-image: none !important;
     }
@@ -77,15 +82,15 @@ import AppLayout from '../layouts/AppLayout.astro';
           <h1
             class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-2"
           >
-            SIGUI KESSÉ
+            SIGUI
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400"
-              >EMMANUEL</span
+              >Kessé Emmanuel</span
             >
           </h1>
 
           <p class="font-mono text-xs sm:text-sm text-slate-400">
-            // ARCHITECTE LOGICIEL &bull; SENIOR PLATFORM ENGINEER
+            // Architecte Logiciel &bull; Senior Platform & Backend Engineer
           </p>
         </div>
 
@@ -101,7 +106,8 @@ import AppLayout from '../layouts/AppLayout.astro';
           <div class="p-3 rounded-2xl border border-white/10 bg-white/[0.02]">
             <span class="text-slate-500 block text-[10px] uppercase"
             >Core Stack</span>
-            <span class="text-cyan-400 font-bold text-sm">Vlang / PHP</span>
+            <span class="text-cyan-400 font-bold text-sm"
+            >Vlang / PHP / Astro</span>
           </div>
         </div>
       </div>
@@ -128,7 +134,10 @@ import AppLayout from '../layouts/AppLayout.astro';
           </div>
 
           <!-- Item 1 -->
-          <div class="relative pl-5 border-l-2 border-cyan-500/40 space-y-1">
+          <div class="relative pl-5 border-l border-cyan-500/40 space-y-1 group">
+            <div
+              class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-150 transition-transform"
+            ></div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1"
             >
@@ -156,7 +165,10 @@ import AppLayout from '../layouts/AppLayout.astro';
           </div>
 
           <!-- Item 2 -->
-          <div class="relative pl-5 border-l-2 border-white/10 space-y-1">
+          <div class="relative pl-5 border-l border-white/10 space-y-1 group">
+            <div
+              class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-slate-600 group-hover:bg-cyan-400 transition-colors"
+            ></div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1"
             >
@@ -176,7 +188,10 @@ import AppLayout from '../layouts/AppLayout.astro';
           </div>
 
           <!-- Item 3 -->
-          <div class="relative pl-5 border-l-2 border-white/10 space-y-1">
+          <div class="relative pl-5 border-l border-white/10 space-y-1 group">
+            <div
+              class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-slate-600 group-hover:bg-cyan-400 transition-colors"
+            ></div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1"
             >
