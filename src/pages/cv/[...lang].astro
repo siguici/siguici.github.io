@@ -23,6 +23,7 @@ const cv = getCV(lang);
   title={cv.title}
   cssClass="bg-slate-950 text-slate-100 antialiased selection:bg-purple-500/30 transition-colors duration-300"
 >
+  <Fragment slot="head">
   <!-- SEO & Open Graph Meta Tags -->
   <meta name="description" content={cv.tagline} />
   <meta name="author" content={cv.identity.name} />
@@ -43,6 +44,7 @@ const cv = getCV(lang);
       cv.contact.linkedinUrl
     ]
   })} />
+  </Fragment>
 
   <!-- ACTION BAR (HIDDEN IN PRINT) -->
   <nav class="actions">

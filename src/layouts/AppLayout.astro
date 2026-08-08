@@ -110,6 +110,8 @@ data = data
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
       }
     </script>
+
+    {Astro.slots.has('head') && <slot name="head" />}
 	</head>
   <body x-data={ data }
     id={bodyId}

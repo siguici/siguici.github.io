@@ -19,9 +19,11 @@ const cv = getCV(lang);
 ---
 
 <AppLayout title={cv.title} cssClass="bg-[#0D0E11] text-[#F2F4F8]">
+  <Fragment slot="head">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </Fragment>
 
   <!-- ACTION BAR (HIDDEN IN PRINT) -->
   <div class="actions-bar print:hidden">

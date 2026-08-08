@@ -12,6 +12,7 @@
     "npm:@fontsource/geist-sans@^5.3.0": "5.3.0",
     "npm:@tailwindcss/vite@^4.3.3": "4.3.3_vite@8.2.0__@types+node@26.1.2__esbuild@0.28.1_@types+node@26.1.2",
     "npm:@types/node@^26.1.2": "26.1.2",
+    "npm:astro@*": "7.2.0_@astrojs+markdown-remark@7.2.2_@types+node@26.1.2",
     "npm:astro@^7.2.0": "7.2.0_@astrojs+markdown-remark@7.2.2_@types+node@26.1.2",
     "npm:autoprefixer@^10.5.4": "10.5.4_postcss@8.5.25",
     "npm:sharp@~0.35.3": "0.35.3",
