@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVs Complètes - Kessé Emmanuel SIGUI</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @page { size: A4 portrait; margin: 0; }
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .cv-card {
+        display: none !important;
+      }
+      .cv-card.active {
+        display: flex !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+      }
+      .no-print { display: none !important; }
+    }
+    body { font-family: 'Inter', sans-serif; }
+    .print-avoid { break-inside: avoid; page-break-inside: avoid; }
+    .cv-card { display: none; }
+    .cv-card.active { display: flex; }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-slate-100 antialiased min-h-screen flex flex-col items-center p-0 sm:p-6 print:p-0">
+
+  <!-- BARRE DE NAVIGATION & IMPRESSION (Masquée à l'impression) -->
+  <header class="no-print mb-6 w-full max-w-[210mm] bg-slate-800/90 backdrop-blur border border-slate-700/80 rounded-xl p-3 flex flex-wrap justify-between items-center gap-3 shadow-xl sticky top-4 z-50">
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Version :</span>
+      <select id="versionSelect" onchange="switchVersion(this.value)" class="bg-slate-900 text-slate-200 text-xs font-semibold py-1.5 px-3 rounded border border-slate-700 focus:outline-none focus:border-indigo-500">
+        <option value="cv-laravel">1. Développeur PHP / Laravel / Fullstack</option>
+        <option value="cv-architect">2. Architecte Logiciel Backend & DDD</option>
+        <option value="cv-devops">3. Ingénieur DevOps, Cloud & Infra</option>
+        <option value="cv-dataengineer">4. Data Engineer & BDD Architect</option>
+        <option value="cv-datascientist">5. Data Scientist & Data Analyst</option>
+        <option value="cv-leadtech">6. Tech Lead & Co-Fondateur</option>
+      </select>
+    </div>
+    
+    <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-2 px-4 rounded-md shadow-md transition-all flex items-center gap-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+      Imprimer / Export PDF
+    </button>
+  </header>
+
+  <!-- ================================================================================= -->
+  <!-- VERSION 1 : DÉVELOPPEUR PHP / LARAVEL / FULLSTACK -->
+  <!-- ================================================================================= -->
+  <main id="cv-laravel" class="cv-card active w-[210mm] h-[297mm] bg-white text-slate-800 shadow-2xl print:shadow-none box-border overflow-hidden">
+    <aside class="w-[72mm] bg-slate-50 border-r border-slate-200/80 p-6 flex flex-col justify-between shrink-0">
+      <div>
+        <div class="mb-5">
+          <h1 class="text-xl font-bold tracking-tight text-slate-950 leading-snug">Kessé Emmanuel<br><span class="text-indigo-600">SIGUI</span></h1>
+          <p class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider mt-1">Développeur PHP/Laravel & Fullstack</p>
+        </div>
+
+        <div class="mb-5 space-y-1.5 text-[10.5px] text-slate-600 font-medium">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Contact</p>
+          <div>📍 Abidjan, Côte d'Ivoire</div>
+          <div>✉️ <a href="mailto:sikessem@gmail.com" class="hover:text-indigo-600">sikessem@gmail.com</a></div>
+          <div>📞 +225 07 49 28 88 35</div>
+          <div class="pt-1">🌐 <a href="https://github.com/siguici" class="hover:text-indigo-600">github.com/siguici</a></div>
+          <div>🔗 <a href="https://siguici.github.io" class="hover:text-indigo-600">siguici.github.io</a></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Points forts</p>
+          <ul class="text-[10.5px] text-slate-700 space-y-1 font-medium">
+            <li>• APIs RESTful & Microservices</li>
+            <li>• Architecture MVC & Modulaire</li>
+            <li>• Livewire, Alpine.js & React</li>
+            <li>• Intégrations Paiements Money</li>
+            <li>• Optimisation Eloquent & SQL</li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Stack Technique</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-indigo-50 text-indigo-700 text-[9.5px] font-bold rounded">PHP 8+</span>
+            <span class="px-1.5 py-0.5 bg-indigo-50 text-indigo-700 text-[9.5px] font-bold rounded">Laravel</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Symfony</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Livewire</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Alpine.js</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">TypeScript</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">React / Qwik</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">MySQL</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">PostgreSQL</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Redis</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Docker</span>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Formation</p>
+          <div class="space-y-1.5 text-[10px]">
+            <div><p class="font-bold text-slate-900">Mastère 1 Big Data / Data Science</p><p class="text-slate-500">Leaders University (2022–2023)</p></div>
+            <div><p class="font-bold text-slate-900">Licence Business Intelligence</p><p class="text-slate-500">Med. Institute of Tunisia (2019–2022)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-200/60 text-[10px]">
+        <p class="font-bold text-slate-900">Français : <span class="font-normal text-slate-600">Courant</span></p>
+        <p class="font-bold text-slate-900">Anglais : <span class="font-normal text-slate-600">Technique</span></p>
+      </div>
+    </aside>
+
+    <section class="flex-1 p-6 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1.5">// Profil Professionnel</h2>
+          <p class="text-[11px] leading-relaxed text-slate-700 border-l-2 border-indigo-500/30 pl-2.5">
+            Ingénieur logiciel et développeur Fullstack spécialisé dans l'écosystème PHP/Laravel et les architectures modernes. Fort d'une expérience concrète dans le développement de plateformes web complexes, SaaS et e-commerce, je conçois des systèmes performants, testables et maintenables, de la modélisation métier au déploiement.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3">// Expériences & Projets Phares</h2>
+          <div class="space-y-4">
+            
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-indigo-600"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Membre Core Team & Contributeur</h3><span class="text-[9.5px] font-semibold text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">Qwik Framework</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Framework Frontend Ultra-rapide (Open Source)</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Contribution aux intégrations de performance et à l'écosystème de rendu côté serveur (SSR).</li>
+                <li>› Développement de générateurs de sites statiques (SSG) et d'outils de documentation optimisés.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Co-Fondateur & Lead Développeur</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Ahlabik</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Plateforme E-Commerce en production</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Développeur principal de la plateforme sous Laravel : gestion du panier, catalogue, commandes et règles métier.</li>
+                <li>› Intégration sécurisée des passerelles de paiements mobiles (Mobile Money) et suivi des événements d'achat.</li>
+                <li>› Conception des APIs RESTful consommées par l'application front-end et le service logistique.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Concepteur & Développeur Principal</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Melanoderme</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Marketplace d'Annonces Régionales</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Architecture globale d'une plateforme d'annonces sous Laravel, Alpine.js et Tailwind CSS.</li>
+                <li>› Implémentation du moteur de recherche multi-critères, du système de catégories et des modules de modération.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Créateur & Mainteneur</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Sikessem</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Écosystème Logiciel & Outils Open Source</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Création de paquets PHP réutilisables, composants d'ingénierie web et outils CLI (dont Cup Engine).</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="pt-2 border-t border-slate-100 text-[10px] text-slate-400">Kessé Emmanuel SIGUI — Portfolio: siguici.github.io</footer>
+    </section>
+  </main>
+
+
+  <!-- ================================================================================= -->
+  <!-- VERSION 2 : ARCHITECTE LOGICIEL BACKEND & DDD -->
+  <!-- ================================================================================= -->
+  <main id="cv-architect" class="cv-card w-[210mm] h-[297mm] bg-white text-slate-800 shadow-2xl print:shadow-none box-border overflow-hidden">
+    <aside class="w-[72mm] bg-slate-50 border-r border-slate-200/80 p-6 flex flex-col justify-between shrink-0">
+      <div>
+        <div class="mb-5">
+          <h1 class="text-xl font-bold tracking-tight text-slate-950 leading-snug">Kessé Emmanuel<br><span class="text-purple-600">SIGUI</span></h1>
+          <p class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider mt-1">Architecte Logiciel Backend</p>
+        </div>
+
+        <div class="mb-5 space-y-1.5 text-[10.5px] text-slate-600 font-medium">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Contact</p>
+          <div>📍 Abidjan, Côte d'Ivoire</div>
+          <div>✉️ <a href="mailto:sikessem@gmail.com">sikessem@gmail.com</a></div>
+          <div>📞 +225 07 49 28 88 35</div>
+          <div class="pt-1">🌐 <a href="https://github.com/siguici">github.com/siguici</a></div>
+          <div>🔗 <a href="https://siguici.github.io">siguici.github.io</a></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Points forts</p>
+          <ul class="text-[10.5px] text-slate-700 space-y-1 font-medium">
+            <li>• Domain-Driven Design (DDD)</li>
+            <li>• Clean & Hexagonal Architecture</li>
+            <li>• Modular Microservices & Monoliths</li>
+            <li>• Réduction Dette Technique</li>
+            <li>• Polyglot System Design</li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Stack Backend</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-purple-50 text-purple-700 text-[9.5px] font-bold rounded">PHP 8 / Laravel</span>
+            <span class="px-1.5 py-0.5 bg-purple-50 text-purple-700 text-[9.5px] font-bold rounded">TypeScript / Deno</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Go</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Rust</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Vlang</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">PostgreSQL</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Redis</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Docker</span>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Formation</p>
+          <div class="space-y-1.5 text-[10px]">
+            <div><p class="font-bold text-slate-900">Mastère 1 Big Data & Data Science</p><p class="text-slate-500">Leaders University (2022–2023)</p></div>
+            <div><p class="font-bold text-slate-900">Licence Business Intelligence</p><p class="text-slate-500">Med. Institute of Tunisia (2019–2022)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-200/60 text-[10px]">
+        <p class="font-bold text-slate-900">Français : <span class="font-normal text-slate-600">Courant</span></p>
+        <p class="font-bold text-slate-900">Anglais : <span class="font-normal text-slate-600">Technique</span></p>
+      </div>
+    </aside>
+
+    <section class="flex-1 p-6 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1.5">// Profil Professionnel</h2>
+          <p class="text-[11px] leading-relaxed text-slate-700 border-l-2 border-purple-500/30 pl-2.5">
+            Architecte Logiciel Backend spécialisé dans le découplage des règles métier complexes et la conception de plateformes modulaires évolutives. Expert en Domain-Driven Design (DDD) et Clean Architecture, j'aide les projets critiques à maintenir une vélocité élevée sans accumuler de dette technique.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-3">// Réalisations & Architectures</h2>
+          <div class="space-y-4">
+            
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-purple-600"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Fondateur & Architecte Logiciel</h3><span class="text-[9.5px] font-semibold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">Sikessem Ecosystem</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Plateforme Logicielle Modulaire & DDD</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Conception d'une architecture modulaire orientée domaine (DDD) séparant le domaine métier des drivers d'infrastructure.</li>
+                <li>› Modélisation et création du moteur de template Cup Engine et du langage Phi axés sur la réutilisabilité inter-systèmes.</li>
+                <li>› Définition des contrats d'interfaces stricts entre packages backend (PHP, TypeScript, Go, V).</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Architecte & Tech Lead</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Studium LMS</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Plateforme d'Apprentissage Évolutive</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Découpage architectural en sous-domaines métier (Inscriptions, Cours, Évaluations, Certifications).</li>
+                <li>› Conception du schéma relationnel PostgreSQL haute performance pour la gestion de volumétries élevées.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Lead Développeur Backend</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Ahlabik</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Plateforme E-Commerce Transactionnelle</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Conception du modèle de données transactionnel supportant les paniers concurrents, stocks et paiements mobile.</li>
+                <li>› Définition des contrats d'API RESTful robustes pour l'intégration sécurisée de services tierces.</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="pt-2 border-t border-slate-100 text-[10px] text-slate-400">Kessé Emmanuel SIGUI — Portfolio: siguici.github.io</footer>
+    </section>
+  </main>
+
+
+  <!-- ================================================================================= -->
+  <!-- VERSION 3 : INGÉNIEUR DEVOPS, CLOUD & INFRASTRUCTURE -->
+  <!-- ================================================================================= -->
+  <main id="cv-devops" class="cv-card w-[210mm] h-[297mm] bg-white text-slate-800 shadow-2xl print:shadow-none box-border overflow-hidden">
+    <aside class="w-[72mm] bg-slate-50 border-r border-slate-200/80 p-6 flex flex-col justify-between shrink-0">
+      <div>
+        <div class="mb-5">
+          <h1 class="text-xl font-bold tracking-tight text-slate-950 leading-snug">Kessé Emmanuel<br><span class="text-emerald-600">SIGUI</span></h1>
+          <p class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider mt-1">Ingénieur DevOps & Cloud Infra</p>
+        </div>
+
+        <div class="mb-5 space-y-1.5 text-[10.5px] text-slate-600 font-medium">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Contact</p>
+          <div>📍 Abidjan, Côte d'Ivoire</div>
+          <div>✉️ <a href="mailto:sikessem@gmail.com">sikessem@gmail.com</a></div>
+          <div>📞 +225 07 49 28 88 35</div>
+          <div class="pt-1">🌐 <a href="https://github.com/siguici">github.com/siguici</a></div>
+          <div>🔗 <a href="https://siguici.github.io">siguici.github.io</a></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Points forts</p>
+          <ul class="text-[10.5px] text-slate-700 space-y-1 font-medium">
+            <li>• Conteneurisation (Docker)</li>
+            <li>• CI/CD Pipelines (GitHub Actions)</li>
+            <li>• Administration Linux / Nginx</li>
+            <li>• Supervision, Caching & Redis</li>
+            <li>• Automation Shell / Go / Python</li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Stack DevOps</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-700 text-[9.5px] font-bold rounded">Docker</span>
+            <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-700 text-[9.5px] font-bold rounded">Linux (Ubuntu)</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">GitHub Actions</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Nginx</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">PostgreSQL</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Redis</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Go</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Python</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Bash</span>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Formation</p>
+          <div class="space-y-1.5 text-[10px]">
+            <div><p class="font-bold text-slate-900">Mastère 1 Big Data & Data Science</p><p class="text-slate-500">Leaders University (2022–2023)</p></div>
+            <div><p class="font-bold text-slate-900">Licence Business Intelligence</p><p class="text-slate-500">Med. Institute of Tunisia (2019–2022)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-200/60 text-[10px]">
+        <p class="font-bold text-slate-900">Français : <span class="font-normal text-slate-600">Courant</span></p>
+        <p class="font-bold text-slate-900">Anglais : <span class="font-normal text-slate-600">Technique</span></p>
+      </div>
+    </aside>
+
+    <section class="flex-1 p-6 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1.5">// Profil Professionnel</h2>
+          <p class="text-[11px] leading-relaxed text-slate-700 border-l-2 border-emerald-500/30 pl-2.5">
+            Ingénieur Backend orienté DevOps & Cloud, combinant une double expertise en développement d'APIs et en automatisation d'infrastructures. Spécialisé dans la conteneurisation, les intégrations continues et la gestion de serveurs Linux en production pour garantir zéro interruption de service.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-3">// Réalisations Infrastructure & Automation</h2>
+          <div class="space-y-4">
+            
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-emerald-600"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Lead Infrastructure & DevOps</h3><span class="text-[9.5px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Ahlabik</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Plateforme E-Commerce Haute Disponibilité</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Configuration et administration des serveurs web Linux sous Nginx, PHP-FPM et PostgreSQL.</li>
+                <li>› Mise en œuvre de stratégies de caching Redis pour absorber les pics de charge durant les campagnes de vente.</li>
+                <li>› Mise en place des sauvegardes automatisées de BDD et supervision de la stabilité serveur.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Développeur & Mainteneur CI/CD</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Sikessem</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Automation Multi-Environnements</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Création d'environnements de développement uniformes sous Docker Compose pour des stacks variées (PHP, Go, Deno).</li>
+                <li>› Conception de workflows GitHub Actions automatisant l'analyse statique, les tests unitaires et la publication de paquets.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Ingénieur Systèmes & DevOps</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Glaxuss Tech</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Projets Client & Déploiement Cloud</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Hardening des configurations serveurs Linux et déploiement d'applications Web via conteneurs isolés.</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="pt-2 border-t border-slate-100 text-[10px] text-slate-400">Kessé Emmanuel SIGUI — Portfolio: siguici.github.io</footer>
+    </section>
+  </main>
+
+
+  <!-- ================================================================================= -->
+  <!-- VERSION 4 : DATA ENGINEER & BDD ARCHITECT -->
+  <!-- ================================================================================= -->
+  <main id="cv-dataengineer" class="cv-card w-[210mm] h-[297mm] bg-white text-slate-800 shadow-2xl print:shadow-none box-border overflow-hidden">
+    <aside class="w-[72mm] bg-slate-50 border-r border-slate-200/80 p-6 flex flex-col justify-between shrink-0">
+      <div>
+        <div class="mb-5">
+          <h1 class="text-xl font-bold tracking-tight text-slate-950 leading-snug">Kessé Emmanuel<br><span class="text-blue-600">SIGUI</span></h1>
+          <p class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider mt-1">Data Engineer & BDD Architect</p>
+        </div>
+
+        <div class="mb-5 space-y-1.5 text-[10.5px] text-slate-600 font-medium">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Contact</p>
+          <div>📍 Abidjan, Côte d'Ivoire</div>
+          <div>✉️ <a href="mailto:sikessem@gmail.com">sikessem@gmail.com</a></div>
+          <div>📞 +225 07 49 28 88 35</div>
+          <div class="pt-1">🌐 <a href="https://github.com/siguici">github.com/siguici</a></div>
+          <div>🔗 <a href="https://siguici.github.io">siguici.github.io</a></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Points forts</p>
+          <ul class="text-[10.5px] text-slate-700 space-y-1 font-medium">
+            <li>• Modélisation BDD (OLTP / OLAP)</li>
+            <li>• Pipelines ETL & Scripting Python</li>
+            <li>• Optimisation Requêtes SQL</li>
+            <li>• Entreposage & Business Intelligence</li>
+            <li>• Integrations BDD (Postgres, Redis)</li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Stack Data</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-blue-50 text-blue-700 text-[9.5px] font-bold rounded">Python</span>
+            <span class="px-1.5 py-0.5 bg-blue-50 text-blue-700 text-[9.5px] font-bold rounded">PostgreSQL</span>
+            <span class="px-1.5 py-0.5 bg-blue-50 text-blue-700 text-[9.5px] font-bold rounded">MySQL</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Redis</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">ETL / Pipelines</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Pandas</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Docker</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">PHP / Laravel</span>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Formation Académique</p>
+          <div class="space-y-1.5 text-[10px]">
+            <div><p class="font-bold text-slate-900">Mastère 1 Big Data & Data Science</p><p class="text-slate-500">Leaders University (2022–2023)</p></div>
+            <div><p class="font-bold text-slate-900">Licence Business Intelligence</p><p class="text-slate-500">Med. Institute of Tunisia (2019–2022)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-200/60 text-[10px]">
+        <p class="font-bold text-slate-900">Français : <span class="font-normal text-slate-600">Courant</span></p>
+        <p class="font-bold text-slate-900">Anglais : <span class="font-normal text-slate-600">Technique</span></p>
+      </div>
+    </aside>
+
+    <section class="flex-1 p-6 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1.5">// Profil Professionnel</h2>
+          <p class="text-[11px] leading-relaxed text-slate-700 border-l-2 border-blue-500/30 pl-2.5">
+            Diplômé en Business Intelligence et Big Data/Data Science, je suis spécialisé dans la modélisation de bases de données transactionnelles et analytiques, ainsi que la création de pipelines d'intégration de données (ETL). J'allie rigueur académique et pratique backend pour concevoir des flux de données fiables et hautement performants.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">// Projets Data Engineering & Systems</h2>
+          <div class="space-y-4">
+            
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-blue-600"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Data Engineer & Concepteur</h3><span class="text-[9.5px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">Melanoderme</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Modélisation BDD & Indexation pour Marketplace</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Conception du schéma relationnel PostgreSQL/MySQL pour l'indexation de milliers d'annonces classées.</li>
+                <li>› Optimisation des requêtes complexes et création d'index composites pour accélérer les recherches multi-critères.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Lead Data Backend</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Ahlabik</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Flux de Données Transactionnelles & Reporting</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Structuration des modèles de données d'inventaire, commandes et sessions paniers sous PostgreSQL et Redis.</li>
+                <li>› Définition des flux de synchronisation des événements de vente pour alimenter les rapports décisionnels.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Ingénieur Logiciel & Scripts ETL</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Sikessem</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Pipelines de Traitement Multi-Langages</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Développement de scripts Python et Go pour l'extraction, le nettoyage et la conversion de formats de données.</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="pt-2 border-t border-slate-100 text-[10px] text-slate-400">Kessé Emmanuel SIGUI — Portfolio: siguici.github.io</footer>
+    </section>
+  </main>
+
+
+  <!-- ================================================================================= -->
+  <!-- VERSION 5 : DATA SCIENTIST & DATA ANALYST -->
+  <!-- ================================================================================= -->
+  <main id="cv-datascientist" class="cv-card w-[210mm] h-[297mm] bg-white text-slate-800 shadow-2xl print:shadow-none box-border overflow-hidden">
+    <aside class="w-[72mm] bg-slate-50 border-r border-slate-200/80 p-6 flex flex-col justify-between shrink-0">
+      <div>
+        <div class="mb-5">
+          <h1 class="text-xl font-bold tracking-tight text-slate-950 leading-snug">Kessé Emmanuel<br><span class="text-rose-600">SIGUI</span></h1>
+          <p class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider mt-1">Data Scientist / Data Analyst</p>
+        </div>
+
+        <div class="mb-5 space-y-1.5 text-[10.5px] text-slate-600 font-medium">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Contact</p>
+          <div>📍 Abidjan, Côte d'Ivoire</div>
+          <div>✉️ <a href="mailto:sikessem@gmail.com">sikessem@gmail.com</a></div>
+          <div>📞 +225 07 49 28 88 35</div>
+          <div class="pt-1">🌐 <a href="https://github.com/siguici">github.com/siguici</a></div>
+          <div>🔗 <a href="https://siguici.github.io">siguici.github.io</a></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Points forts</p>
+          <ul class="text-[10.5px] text-slate-700 space-y-1 font-medium">
+            <li>• Analyse Exploratoire (EDA)</li>
+            <li>• Machine Learning & Predictive Models</li>
+            <li>• Visualisation de données & KPIs</li>
+            <li>• Business Intelligence & Mining</li>
+            <li>• Traitement Python & SQL</li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Stack Data Science</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 text-[9.5px] font-bold rounded">Python</span>
+            <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 text-[9.5px] font-bold rounded">Pandas / NumPy</span>
+            <span class="px-1.5 py-0.5 bg-rose-50 text-rose-700 text-[9.5px] font-bold rounded">Scikit-Learn</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">SQL / Postgres</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Business Intelligence</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Data Mining</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Docker</span>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Formation Académique</p>
+          <div class="space-y-1.5 text-[10px]">
+            <div><p class="font-bold text-slate-900">Mastère 1 Big Data & Data Science</p><p class="text-slate-500">Leaders University (2022–2023)</p></div>
+            <div><p class="font-bold text-slate-900">Licence Business Intelligence</p><p class="text-slate-500">Med. Institute of Tunisia (2019–2022)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-200/60 text-[10px]">
+        <p class="font-bold text-slate-900">Français : <span class="font-normal text-slate-600">Courant</span></p>
+        <p class="font-bold text-slate-900">Anglais : <span class="font-normal text-slate-600">Technique</span></p>
+      </div>
+    </aside>
+
+    <section class="flex-1 p-6 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-rose-600 mb-1.5">// Profil Professionnel</h2>
+          <p class="text-[11px] leading-relaxed text-slate-700 border-l-2 border-rose-500/30 pl-2.5">
+            Diplômé d'un Mastère en Big Data & Data Science et d'une Licence en Business Intelligence. Spécialisé dans l'analyse de données complexes, le traitement quantitatif et la modélisation prédictive. Je traduis les volumes de données brutes en informations stratégiques et tableaux de bord d'aide à la décision.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-rose-600 mb-3">// Projets Analytics & Data Science</h2>
+          <div class="space-y-4">
+            
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-rose-600"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Data Analyst & Concepteur</h3><span class="text-[9.5px] font-semibold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded">Melanoderme</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Analyse de Marché & Segments d'Annonces</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Collecte et analyse exploratoire des données d'offres locales pour catégoriser la demande du marché ivoirien.</li>
+                <li>› Définition des règles de pertinence pour la recherche et la modération des annonces.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Lead Analyst E-Commerce</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Ahlabik</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Analyse Comportementale & KPIs de Vente</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Analyse du parcours utilisateur (taux de conversion, abandons de panier, performances catégories).</li>
+                <li>› Suivi analytique des taux d'échec des paiements Mobile Money pour optimiser les règles d'interfaçage.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Développeur Scripting Python</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Sikessem</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Nettoyage & Traitement Automatisé</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Écriture de scripts Python utilisant Pandas pour le nettoyage, la transformation et la structuration de données brutes.</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="pt-2 border-t border-slate-100 text-[10px] text-slate-400">Kessé Emmanuel SIGUI — Portfolio: siguici.github.io</footer>
+    </section>
+  </main>
+
+
+  <!-- ================================================================================= -->
+  <!-- VERSION 6 : TECH LEAD & CO-FONDATEUR -->
+  <!-- ================================================================================= -->
+  <main id="cv-leadtech" class="cv-card w-[210mm] h-[297mm] bg-white text-slate-800 shadow-2xl print:shadow-none box-border overflow-hidden">
+    <aside class="w-[72mm] bg-slate-50 border-r border-slate-200/80 p-6 flex flex-col justify-between shrink-0">
+      <div>
+        <div class="mb-5">
+          <h1 class="text-xl font-bold tracking-tight text-slate-950 leading-snug">Kessé Emmanuel<br><span class="text-amber-600">SIGUI</span></h1>
+          <p class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider mt-1">Tech Lead & Co-Fondateur</p>
+        </div>
+
+        <div class="mb-5 space-y-1.5 text-[10.5px] text-slate-600 font-medium">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Contact</p>
+          <div>📍 Abidjan, Côte d'Ivoire</div>
+          <div>✉️ <a href="mailto:sikessem@gmail.com">sikessem@gmail.com</a></div>
+          <div>📞 +225 07 49 28 88 35</div>
+          <div class="pt-1">🌐 <a href="https://github.com/siguici">github.com/siguici</a></div>
+          <div>🔗 <a href="https://siguici.github.io">siguici.github.io</a></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Points forts</p>
+          <ul class="text-[10.5px] text-slate-700 space-y-1 font-medium">
+            <li>• Direction Technique & Mentorat</li>
+            <li>• Gestion du Cycle de Vie Produit</li>
+            <li>• Architecture Web Multi-plateforme</li>
+            <li>• Open Source Management</li>
+            <li>• Alignement Technique & Business</li>
+          </ul>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Stack & Outils</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-amber-50 text-amber-700 text-[9.5px] font-bold rounded">PHP / Laravel</span>
+            <span class="px-1.5 py-0.5 bg-amber-50 text-amber-700 text-[9.5px] font-bold rounded">TypeScript</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Docker</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Git / CI-CD</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">PostgreSQL</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Qwik Core</span>
+            <span class="px-1.5 py-0.5 bg-slate-200/70 text-slate-800 text-[9.5px]">Go</span>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Formation</p>
+          <div class="space-y-1.5 text-[10px]">
+            <div><p class="font-bold text-slate-900">Mastère 1 Big Data & Data Science</p><p class="text-slate-500">Leaders University (2022–2023)</p></div>
+            <div><p class="font-bold text-slate-900">Licence Business Intelligence</p><p class="text-slate-500">Med. Institute of Tunisia (2019–2022)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-200/60 text-[10px]">
+        <p class="font-bold text-slate-900">Français : <span class="font-normal text-slate-600">Courant</span></p>
+        <p class="font-bold text-slate-900">Anglais : <span class="font-normal text-slate-600">Technique</span></p>
+      </div>
+    </aside>
+
+    <section class="flex-1 p-6 flex flex-col justify-between">
+      <div>
+        <div class="mb-5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-1.5">// Profil Professionnel</h2>
+          <p class="text-[11px] leading-relaxed text-slate-700 border-l-2 border-amber-500/30 pl-2.5">
+            Ingénieur Logiciel senior et entrepreneur tech fort d'une expérience accomplie dans le co-fondatage d'entreprises (Glaxuss Tech, Ahlabik) et la direction technique de projets d'envergure. Capable d'orchestrer la vision technique complète d'un produit, du cadrage des besoins métier à la livraison continue en production.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-3">// Leadership & Expériences Fondatrices</h2>
+          <div class="space-y-4">
+            
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-amber-600"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Co-Fondateur & Lead Développeur</h3><span class="text-[9.5px] font-semibold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">Ahlabik</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Plateforme E-Commerce & Logistique</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Co-fondatage et direction technique de la plateforme e-commerce en production.</li>
+                <li>› Encadrement de la conception logicielle, du choix des technologies et du suivi de la stabilité en production.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Co-Fondateur & Director Tech</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Glaxuss Tech (2024)</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Services d'Ingénierie & Transformation Digitale</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Direction technique des projets clients et définition des normes d'architecture web et mobile.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Fondateur & Software Creator</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Sikessem</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Écosystème Open Source & Outils Développeurs</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Direction du projet open-source et gestion des contributions de la communauté.</li>
+              </ul>
+            </article>
+
+            <article class="print-avoid relative pl-3.5 border-l border-slate-200">
+              <div class="absolute -left-[4.5px] top-1 w-2 h-2 rounded-full bg-slate-300"></div>
+              <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-xs font-bold text-slate-950">Membre Core Team</h3><span class="text-[9.5px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">Qwik Framework</span></div>
+              <p class="text-[10px] font-semibold text-slate-500 mb-1">Implication dans un Projet Open Source Global</p>
+              <ul class="text-[10.5px] text-slate-700 space-y-1 leading-snug">
+                <li>› Collaboration avec des ingénieurs internationaux sur l'évolution du framework.</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="pt-2 border-t border-slate-100 text-[10px] text-slate-400">Kessé Emmanuel SIGUI — Portfolio: siguici.github.io</footer>
+    </section>
+  </main>
+
+  <!-- JS Basculement de versions -->
+  <script>
+    function switchVersion(versionId) {
+      document.querySelectorAll('.cv-card').forEach(card => card.classList.remove('active'));
+      const activeCard = document.getElementById(versionId);
+      if(activeCard) activeCard.classList.add('active');
+    }
+  </script>
+</body>
+</html>
