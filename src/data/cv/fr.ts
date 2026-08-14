@@ -41,7 +41,7 @@ export default {
     tools_dx: 'Outillage & Developer Experience (DX)',
   },
   summary:
-    "Ingénieur logiciel senior et architecte logiciel avec plus de <strong>10 ans d'expérience</strong> dans la création de plateformes numériques complexes. Spécialisé dans l'alignement des exigences métier avec des architectures techniques solides, hautement scalables et pérennes. Je maîtrise l'ensemble du cycle de vie produit : analyse fonctionnelle, modélisation de domaine (DDD), conception système, développement full-stack, assurance qualité automatisée et infrastructure cloud. Fort d'une double expertise en ingénierie logicielle et en intelligence des données (Big Data & BI), j'interviens aussi bien sur la création de produits ex nihilo que sur la modernisation progressive de systèmes legacy complexes sans interruption de service.",
+    "Architect logiciel senior et Ingénieur data avec plus de <strong>10 ans d'expérience</strong> dans la création de plateformes numériques complexes. Spécialisé dans l'alignement des exigences métier avec des architectures techniques solides, hautement scalables et pérennes. Je maîtrise l'ensemble du cycle de vie produit : analyse fonctionnelle, modélisation de domaine (DDD), conception système, développement full-stack, assurance qualité automatisée et infrastructure cloud. Fort d'une double expertise en ingénierie logicielle et en intelligence des données (Big Data & BI), j'interviens aussi bien sur la création de produits ex nihilo que sur la modernisation progressive de systèmes legacy complexes sans interruption de service.",
   capabilities: [
     {
       title: 'Ingénierie Produit de Bout en Bout',
@@ -59,7 +59,7 @@ export default {
         "Exploitation d'un cursus solide en Big Data & BI (M1) pour concevoir des pipelines de données, des tableaux de bord décisionnels et intégrer des briques IA (LLM, RAG, agents intelligents).",
     },
     {
-      title: 'DevOps, Cloud & Outillage DX',
+      title: 'DevOps, Orchestration Cloud & Outillage DX',
       description:
         "Infrastructure pragmatique et automatisée : conteneurisation Docker, reverse proxies (Caddy/Nginx), pipelines CI/CD complexes (GitHub Actions) et création d'outils sur mesure pour booster la productivité des équipes.",
     },

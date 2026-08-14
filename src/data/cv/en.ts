@@ -40,7 +40,7 @@ export default {
     tools_dx: 'Tooling & Developer Experience (DX)',
   },
   summary:
-    'Senior Software Engineer & Software Architect with <strong>10+ years of experience</strong> engineering complex digital platforms. Specialized in bridging business goals with resilient, highly scalable, and long-lasting technical architectures. Covers the entire product lifecycle: requirement analysis, domain modeling (DDD), system architecture, full-stack development, automated QA, and cloud infrastructure. Combining software engineering with a strong background in Data Intelligence (Big Data & BI), I excel at executing greenfield products as well as modernizing legacy systems with zero downtime.',
+    'Senior Software Architect & Data Engineer with <strong>10+ years of experience</strong> engineering complex digital platforms. Specialized in bridging business goals with resilient, highly scalable, and long-lasting technical architectures. Covers the entire product lifecycle: requirement analysis, domain modeling (DDD), system architecture, full-stack development, automated QA, and cloud infrastructure. Combining software engineering with a strong background in Data Intelligence (Big Data & BI), I excel at executing greenfield products as well as modernizing legacy systems with zero downtime.',
   capabilities: [
     {
       title: 'End-to-End Product Engineering',
@@ -58,7 +58,7 @@ export default {
         'Leverages a solid academic foundation in Big Data & BI (Master 1) to build robust data pipelines, executive BI dashboards, and embed tailored AI capabilities (LLMs, RAG architectures, intelligent agents).',
     },
     {
-      title: 'DevOps, Cloud & DX Tooling',
+      title: 'DevOps, Cloud Orchestration & DX Tooling',
       description:
         'Pragmatic and automated infrastructure setups: Docker containerization, reverse proxy configuration (Caddy/Nginx), robust CI/CD pipelines (GitHub Actions), and developer velocity tooling.',
     },
