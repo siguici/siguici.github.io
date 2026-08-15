@@ -1,7 +1,4 @@
-import en from '../locales/en.ts';
-import fr from '../locales/fr.ts';
-
-const dictionaries = { fr, en };
+import dictionaries from '../locales';
 
 type TranslationTree = string | { [key: string]: TranslationTree };
 
