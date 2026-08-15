@@ -3,6 +3,8 @@ import fr from '../locales/fr.ts';
 
 const dictionaries = { fr, en };
 
+type TranslationTree = string | { [key: string]: TranslationTree };
+
 type NestedKeys<T> = T extends object
   ? {
       [K in keyof T & (string | number)]: T[K] extends object
@@ -14,16 +16,22 @@ type NestedKeys<T> = T extends object
 export type TranslationKey = NestedKeys<typeof fr>;
 
 export function useTranslations(lang: keyof typeof dictionaries) {
-  const dictionary = dictionaries[lang] || dictionaries.fr;
+  const dictionary = (dictionaries[lang] || dictionaries.fr) as TranslationTree;
 
   return function __(
     key: TranslationKey | (string & {}),
     replacements: Record<string, string | number> = {},
   ): string {
-    let translation =
-      key.split('.').reduce((obj: any, i) => obj?.[i], dictionary) || key;
+    const targetValue = key
+      .split('.')
+      .reduce<TranslationTree | undefined>((obj, token) => {
+        if (obj && typeof obj === 'object' && token in obj) {
+          return obj[token];
+        }
+        return undefined;
+      }, dictionary);
 
-    if (typeof translation !== 'string') return key;
+    let translation = typeof targetValue === 'string' ? targetValue : key;
 
     if ('count' in replacements) {
       const count = Number(replacements.count);
