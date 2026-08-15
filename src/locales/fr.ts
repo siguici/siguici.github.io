@@ -3,5 +3,6 @@ export default {
   Vision: 'Vision',
   Projects: 'Projets',
   Background: 'Cursus',
+  Courses: 'Cours',
   Contact: 'Contact',
 };
