@@ -24,6 +24,8 @@ const {
   bodyId = 'app',
 } = Astro.props;
 
+const { locale } = Astro.locals;
+
 let {
   cssClass = 'antialiased noise bg-[#fef9f2] dark:bg-[#040711] bg-gradient-to-b from-[#070617] via-[#070922] to-[#0b0720] min-h-screen w-full font-sans text-slate-100 relative overflow-x-hidden flex flex-col selection:bg-ske-500/60 selection:text-white',
   data,
@@ -36,7 +38,7 @@ data = data
 
 <!DOCTYPE html>
 <html
-  lang="en"
+  lang={locale}
   transition:animate={animate}
   class="scroll-smooth no-scrollbar h-full w-full select-none touch-manipulation"
   id={ rootId }

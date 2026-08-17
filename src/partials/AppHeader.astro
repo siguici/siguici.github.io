@@ -1,9 +1,6 @@
 ---
-import { useTranslations } from '../i18n';
-
-const lang = Astro.currentLocale as 'fr' | 'en';
-const trans = useTranslations(lang);
-const __ = trans.__.bind(trans);
+const { translator } = Astro.locals;
+const __ = translator.__.bind(translator);
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-black/5 bg-white/80 backdrop-blur-md dark:border-white/5 dark:bg-[#0d1117]/80">

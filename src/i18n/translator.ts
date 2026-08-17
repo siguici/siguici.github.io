@@ -3,6 +3,8 @@ import dictionaries from '../locales';
 export type Dictionary = typeof dictionaries.fr;
 export type SupportedLocale = keyof typeof dictionaries;
 
+export const SUPPORTED_LOCALES = Object.keys(dictionaries);
+
 // ============================================================================
 // 1. TYPE-LEVEL PROGRAMMING: AUTO-COMPLETION FOR KEYS & VARIABLES
 // ============================================================================

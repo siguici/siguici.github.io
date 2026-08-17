@@ -1,5 +1,8 @@
 import { type SupportedLocale, Translator } from './translator';
 
+export { SUPPORTED_LOCALES } from './translator';
+export { type SupportedLocale, Translator };
+
 /**
  * Factory Hook to instantiate the Translator API.
  */
