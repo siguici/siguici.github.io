@@ -3,6 +3,11 @@ import dictionaries from '../locales';
 export type Dictionary = typeof dictionaries.fr;
 export type SupportedLocale = keyof typeof dictionaries;
 
+// ============================================================================
+// 1. TYPE-LEVEL PROGRAMMING: AUTO-COMPLETION FOR KEYS & VARIABLES
+// ============================================================================
+
+/** Dot-nested string keys: "auth.login", "welcome", etc. */
 type NestedKeys<T> = T extends object
   ? {
       [K in keyof T & (string | number)]: T[K] extends object
@@ -13,6 +18,7 @@ type NestedKeys<T> = T extends object
 
 export type TranslationKey = NestedKeys<Dictionary>;
 
+/** Automatic compile-time extraction of `:variable` placeholders */
 type ExtractVars<T extends string> = T extends `${string}:${infer Var}`
   ? Var extends
       | `${infer Name} ${string}`
@@ -40,6 +46,10 @@ type ReplacementsFor<K extends string> =
       : { [P in ExtractVars<KeyTranslation<K>>]: string | number }
     : Record<string, string | number> | void;
 
+// ============================================================================
+// 2. COMPILED REGEXES & RESOLVER (WITH TRAVERSAL CACHE)
+// ============================================================================
+
 const VARIABLE_REGEX = /:([A-Za-z0-9_]+)/g;
 const PLURAL_RANGE_REGEX = /^([{[])([^}\]]+)[}\]]\s*(.*)$/;
 
@@ -63,6 +73,7 @@ export function resolve(
   return value as string | object | undefined;
 }
 
+// Internal cache for Intl.PluralRules instances
 const pluralRulesCache = new Map<string, Intl.PluralRules>();
 function getPluralRules(locale: string): Intl.PluralRules {
   if (!pluralRulesCache.has(locale)) {
@@ -71,25 +82,38 @@ function getPluralRules(locale: string): Intl.PluralRules {
   return pluralRulesCache.get(locale)!;
 }
 
+// ============================================================================
+// 3. TRANSLATOR CLASS & ENGINE API
+// ============================================================================
+
 export class Translator {
   public readonly locale: SupportedLocale;
   public readonly dictionary: Dictionary;
   private pluralRules: Intl.PluralRules;
 
   constructor(locale: SupportedLocale) {
-    this.locale = dictionaries[locale] ? locale : 'fr';
+    this.locale = dictionaries[locale] ? locale : 'en';
     this.dictionary = dictionaries[this.locale] as Dictionary;
     this.pluralRules = getPluralRules(this.locale);
   }
 
+  /**
+   * Checks if a translation key exists in the current dictionary.
+   */
   public exists(key: string): boolean {
     return resolve(this.dictionary, key) !== undefined;
   }
 
+  /**
+   * Expressive alias for exists().
+   */
   public has(key: string): boolean {
     return this.exists(key);
   }
 
+  /**
+   * Main translation method with resolution, Intl/ pluralization & single-pass interpolation.
+   */
   public translate<K extends TranslationKey | (string & {})>(
     key: K,
     ...args: ReplacementsFor<K> extends void
@@ -99,6 +123,7 @@ export class Translator {
     const replacements = (args[0] || {}) as Record<string, string | number>;
     const targetValue = resolve(this.dictionary, key as string);
 
+    // Dev mode: Warning on missing translation key
     if (targetValue === undefined) {
       if (import.meta.env?.DEV || import.meta.env?.CI) {
         console.warn(
@@ -110,6 +135,7 @@ export class Translator {
 
     let translation = '';
 
+    // Native Intl Pluralization Object ({ "one": "...", "other": "..." })
     if (
       typeof targetValue === 'object' &&
       targetValue !== null &&
@@ -123,6 +149,7 @@ export class Translator {
     } else if (typeof targetValue === 'string') {
       translation = targetValue;
 
+      // Backward Compatibility: Inline  Pluralization ("{0} None|[1,*] :count")
       if ('count' in replacements && translation.includes('|')) {
         translation = this.resolvePlural(
           translation,
@@ -133,18 +160,24 @@ export class Translator {
       return String(key);
     }
 
+    // Single-pass regex interpolation
     return translation.replace(VARIABLE_REGEX, (fullMatch, varName) => {
       const val = replacements[varName];
       return val !== undefined ? String(val) : fullMatch;
     });
   }
 
+  /**
+   * Expressive shorthand alias for translate().
+   */
   public __(
     key: TranslationKey | (string & {}),
     replacements: Record<string, string | number> = {},
   ): string {
     return this.translate(key, replacements);
   }
+
+  // --- INTL FORMATTING HELPERS ---
 
   public formatDate(
     date: Date | number | string,
@@ -164,7 +197,7 @@ export class Translator {
     return new Intl.NumberFormat(this.locale, options).format(number);
   }
 
-  public formatCurrency(amount: number, currency: string = 'EUR'): string {
+  public formatCurrency(amount: number, currency: string = 'USD'): string {
     return new Intl.NumberFormat(this.locale, {
       style: 'currency',
       currency,
@@ -187,7 +220,7 @@ export class Translator {
         }
       }
     }
-
+    // Standard Fallback: "Singular | Plural"
     if (segments.length === 2 && !segments[0].match(/^[{[]/)) {
       return count <= 1 ? segments[0].trim() : segments[1].trim();
     }
