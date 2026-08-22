@@ -14,7 +14,7 @@ const getProfileUrl = (targetProfile: string, lang: string) => {
   if (targetProfile === 'master') {
     return lang === 'en' ? '/cv/en' : '/cv';
   }
-  return lang === 'en' ? `/cv/${targetProfile}/en` : `/cv/${targetProfile}`;
+  return lang === 'en' ? `/cv/${targetProfile}/en` : `/cv/${targetProfile}/fr`;
 };
 
 const getLangUrl = (currentProfile: string, targetLang: string) => {
