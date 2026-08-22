@@ -3,4 +3,4 @@ import fr from './fr';
 
 export { en, fr };
 
-export default { fr, en } as const;
+export default Object.freeze({ fr, en }) as const;
