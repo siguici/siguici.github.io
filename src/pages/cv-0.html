@@ -1,300 +1,674 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" class="bg-slate-900 text-slate-100 font-sans antialiased">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Sigui Kessé Emmanuel | Senior Software Engineer & Software Architect</title>
+    <title>
+      CV - Sigui Kessé Emmanuel | Senior Software Engineer & Software Architect
+    </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            900: '#0c4a6e',
-                        }
-                    }
-                }
-            }
-        }
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            },
+          },
+        },
+      },
+    };
     </script>
     <style>
-        @media print {
-            body { background-color: #ffffff !important; color: #0f172a !important; }
-            .no-print { display: none !important; }
-            .print-card { background-color: #f8fafc !important; border: 1px solid #e2e8f0 !important; color: #0f172a !important; }
-            .print-text-dark { color: #0f172a !important; }
-            .print-text-muted { color: #475569 !important; }
-            .print-border { border-color: #cbd5e1 !important; }
-            a { text-decoration: underline; color: #0284c7 !important; }
-        }
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-card {
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #0f172a !important;
+      }
+      .print-text-dark {
+        color: #0f172a !important;
+      }
+      .print-text-muted {
+        color: #475569 !important;
+      }
+      .print-border {
+        border-color: #cbd5e1 !important;
+      }
+      a {
+        text-decoration: underline;
+        color: #0284c7 !important;
+      }
+    }
     </style>
-</head>
-<body class="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto selection:bg-brand-500 selection:text-white">
-
+  </head>
+  <body
+    class="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto selection:bg-brand-500 selection:text-white"
+  >
     <!-- Control Bar / Print Button -->
-    <div class="no-print flex justify-between items-center mb-8 pb-4 border-b border-slate-800">
-        <span class="text-xs font-mono text-slate-400">STATUS: AVAILABLE FOR ARCHITECTURE & LEAD ROLES</span>
-        <button onclick="window.print()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm rounded-lg transition-all duration-200 shadow-lg shadow-brand-600/30 flex items-center space-x-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-            <span>Imprimer / Imprimer en PDF</span>
-        </button>
+    <div
+      class="no-print flex justify-between items-center mb-8 pb-4 border-b border-slate-800"
+    >
+      <span class="text-xs font-mono text-slate-400"
+        >STATUS: AVAILABLE FOR ARCHITECTURE & LEAD ROLES</span
+      >
+      <button
+        onclick="window.print()"
+        class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm rounded-lg transition-all duration-200 shadow-lg shadow-brand-600/30 flex items-center space-x-2"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+          ></path>
+        </svg>
+        <span>Imprimer / Imprimer en PDF</span>
+      </button>
     </div>
 
     <!-- Header Section -->
-    <header class="mb-10 bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-slate-700/60 shadow-xl print-card">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div>
-                <div class="flex items-center gap-3 mb-2">
-                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight print-text-dark">Sigui Kessé Emmanuel</h1>
-                    <span class="no-print px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-400 border border-brand-500/30">10+ ans d'exp.</span>
-                </div>
-                <p class="text-xl font-medium text-brand-400 print-text-dark">Senior Software Engineer • Platform Engineer • Software Architect</p>
-                <p class="text-slate-400 text-sm mt-2 max-w-2xl print-text-muted">
-                    Spécialiste en ingénierie logicielle avancée, architectures distribuées, conception de langages de programmation & moteurs de rendu (Vlang, PHP, Rust), et systèmes Big Data / Data Science.
-                </p>
-            </div>
-
-            <!-- Contact Badges -->
-            <div class="flex flex-col gap-2.5 text-sm font-mono text-slate-300 print-text-dark border-t md:border-t-0 md:border-l border-slate-700/80 pt-4 md:pt-0 md:pl-6 print-border">
-                <a href="mailto:siguici@proton.me" class="flex items-center gap-2 hover:text-brand-400 transition-colors">
-                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    <span>siguici@proton.me</span>
-                </a>
-                <a href="tel:+2250768163740" class="flex items-center gap-2 hover:text-brand-400 transition-colors">
-                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 002-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    <span>+225 07 68 16 37 40</span>
-                </a>
-                <a href="https://siguici.deno.dev" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-400 transition-colors">
-                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                    <span>siguici.deno.dev</span>
-                </a>
-                <div class="flex items-center gap-2 text-slate-400 print-text-muted">
-                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <span>Abidjan, Côte d'Ivoire</span>
-                </div>
-            </div>
+    <header
+      class="mb-10 bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-slate-700/60 shadow-xl print-card"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-center justify-between gap-6"
+      >
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <h1
+              class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight print-text-dark"
+            >
+              Sigui Kessé Emmanuel
+            </h1>
+            <span
+              class="no-print px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-400 border border-brand-500/30"
+              >10+ ans d'exp.</span
+            >
+          </div>
+          <p class="text-xl font-medium text-brand-400 print-text-dark">
+            Senior Software Engineer • Platform Engineer • Software Architect
+          </p>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl print-text-muted">
+            Spécialiste en ingénierie logicielle avancée, architectures
+            distribuées, conception de langages de programmation & moteurs de
+            rendu (Vlang, PHP, Rust), et systèmes Big Data / Data Science.
+          </p>
         </div>
+
+        <!-- Contact Badges -->
+        <div
+          class="flex flex-col gap-2.5 text-sm font-mono text-slate-300 print-text-dark border-t md:border-t-0 md:border-l border-slate-700/80 pt-4 md:pt-0 md:pl-6 print-border"
+        >
+          <a
+            href="mailto:siguici@proton.me"
+            class="flex items-center gap-2 hover:text-brand-400 transition-colors"
+          >
+            <svg
+              class="w-4 h-4 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <span>siguici@proton.me</span>
+          </a>
+          <a
+            href="tel:+2250768163740"
+            class="flex items-center gap-2 hover:text-brand-400 transition-colors"
+          >
+            <svg
+              class="w-4 h-4 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 002-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            <span>+225 07 68 16 37 40</span>
+          </a>
+          <a
+            href="https://siguici.deno.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-brand-400 transition-colors"
+          >
+            <svg
+              class="w-4 h-4 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              ></path>
+            </svg>
+            <span>siguici.deno.dev</span>
+          </a>
+          <div class="flex items-center gap-2 text-slate-400 print-text-muted">
+            <svg
+              class="w-4 h-4 text-brand-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+            <span>Abidjan, Côte d'Ivoire</span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Content Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- Left Column (Main Focus: Experience & Projects) -->
-        <div class="lg:col-span-2 space-y-8">
-            
-            <!-- Projets Phares & Ingénierie Système -->
-            <section class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card">
-                <div class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80">
-                    <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h2 class="text-xl font-bold text-white print-text-dark">Projets Phares & Projets Open Source</h2>
-                </div>
+      <!-- Left Column (Main Focus: Experience & Projects) -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Projets Phares & Ingénierie Système -->
+        <section
+          class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card"
+        >
+          <div
+            class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80"
+          >
+            <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-white print-text-dark">
+              Projets Phares & Projets Open Source
+            </h2>
+          </div>
 
-                <div class="space-y-6">
-                    <!-- Sikessem Ecosystem -->
-                    <div class="relative pl-4 border-l-2 border-brand-500">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-slate-100 print-text-dark">Sikessem Operating Ecosystem</h3>
-                            <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded">2024 - Présent</span>
-                        </div>
-                        <p class="text-xs font-mono text-slate-400 mb-2 print-text-muted">Fondateur & Architecte Logiciel Principal</p>
-                        <p class="text-sm text-slate-300 print-text-muted leading-relaxed">
-                            Conception et développement d'un écosystème numérique d'exploitation open source complet. Définition de la vision technique, de l'outillage développeur (DevTools) et des architectures de plateformes modulaires.
-                        </p>
-                    </div>
+          <div class="space-y-6">
+            <!-- Sikessem Ecosystem -->
+            <div class="relative pl-4 border-l-2 border-brand-500">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-slate-100 print-text-dark">
+                  Sikessem Operating Ecosystem
+                </h3>
+                <span
+                  class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded"
+                  >2024 - Présent</span
+                >
+              </div>
+              <p class="text-xs font-mono text-slate-400 mb-2 print-text-muted">
+                Fondateur & Architecte Logiciel Principal
+              </p>
+              <p
+                class="text-sm text-slate-300 print-text-muted leading-relaxed"
+              >
+                Conception et développement d'un écosystème numérique
+                d'exploitation open source complet. Définition de la vision
+                technique, de l'outillage développeur (DevTools) et des
+                architectures de plateformes modulaires.
+              </p>
+            </div>
 
-                    <!-- Cup Engine -->
-                    <div class="relative pl-4 border-l-2 border-slate-700">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-slate-100 print-text-dark">Cup 🫖 (Cascading Templating Engine)</h3>
-                            <span class="text-xs font-mono text-slate-400">Vlang • Parser • Compilateur</span>
-                        </div>
-                        <p class="text-sm text-slate-300 mt-1 print-text-muted leading-relaxed">
-                            Moteur de rendu de templates hautes performances écrit en Vlang. Fusion innovante de structures HTML, CSS imbriqué et logique JavaScript dans un pipeline de compilation unifié avec analyse lexicale avancée.
-                        </p>
-                    </div>
+            <!-- Cup Engine -->
+            <div class="relative pl-4 border-l-2 border-slate-700">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-slate-100 print-text-dark">
+                  Cup 🫖 (Cascading Templating Engine)
+                </h3>
+                <span class="text-xs font-mono text-slate-400"
+                  >Vlang • Parser • Compilateur</span
+                >
+              </div>
+              <p
+                class="text-sm text-slate-300 mt-1 print-text-muted leading-relaxed"
+              >
+                Moteur de rendu de templates hautes performances écrit en Vlang.
+                Fusion innovante de structures HTML, CSS imbriqué et logique
+                JavaScript dans un pipeline de compilation unifié avec analyse
+                lexicale avancée.
+              </p>
+            </div>
 
-                    <!-- Phi & Phix Language -->
-                    <div class="relative pl-4 border-l-2 border-slate-700">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-slate-100 print-text-dark">Langage Phi & Phix (SiguiLang)</h3>
-                            <span class="text-xs font-mono text-slate-400">Grammaire EBNF • Vlang Compiler</span>
-                        </div>
-                        <p class="text-sm text-slate-300 mt-1 print-text-muted leading-relaxed">
-                            Création d'un langage de programmation fortement typé étendant la syntaxe moderne de PHP, accompagné de son moteur de templating dédié (Phix). Réalisation de la grammaire EBNF, du lexer et du parser distribué.
-                        </p>
-                    </div>
+            <!-- Phi & Phix Language -->
+            <div class="relative pl-4 border-l-2 border-slate-700">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-slate-100 print-text-dark">
+                  Langage Phi & Phix (SiguiLang)
+                </h3>
+                <span class="text-xs font-mono text-slate-400"
+                  >Grammaire EBNF • Vlang Compiler</span
+                >
+              </div>
+              <p
+                class="text-sm text-slate-300 mt-1 print-text-muted leading-relaxed"
+              >
+                Création d'un langage de programmation fortement typé étendant
+                la syntaxe moderne de PHP, accompagné de son moteur de
+                templating dédié (Phix). Réalisation de la grammaire EBNF, du
+                lexer et du parser distribué.
+              </p>
+            </div>
 
-                    <!-- Ecosystem Vlang / PHP Integration -->
-                    <div class="relative pl-4 border-l-2 border-slate-700">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-slate-100 print-text-dark">Liaison C & Sérialisation Vlang / PHP</h3>
-                            <span class="text-xs font-mono text-slate-400">C Interop • High Performance</span>
-                        </div>
-                        <p class="text-sm text-slate-300 mt-1 print-text-muted leading-relaxed">
-                            Développement d'un framework de sérialisation binaire/texte et intégration d'une couche de liaison C permettant l'exécution native et ultra-rapide de composants PHP dans l'environnement Vlang.
-                        </p>
-                    </div>
+            <!-- Ecosystem Vlang / PHP Integration -->
+            <div class="relative pl-4 border-l-2 border-slate-700">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-slate-100 print-text-dark">
+                  Liaison C & Sérialisation Vlang / PHP
+                </h3>
+                <span class="text-xs font-mono text-slate-400"
+                  >C Interop • High Performance</span
+                >
+              </div>
+              <p
+                class="text-sm text-slate-300 mt-1 print-text-muted leading-relaxed"
+              >
+                Développement d'un framework de sérialisation binaire/texte et
+                intégration d'une couche de liaison C permettant l'exécution
+                native et ultra-rapide de composants PHP dans l'environnement
+                Vlang.
+              </p>
+            </div>
 
-                    <!-- Applications Métiers et Système -->
-                    <div class="relative pl-4 border-l-2 border-slate-700">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-slate-100 print-text-dark">Plateformes Métiers & Systèmes Critiques</h3>
-                            <span class="text-xs font-mono text-slate-400">Architecture Entreprise</span>
-                        </div>
-                        <ul class="text-sm text-slate-300 mt-2 list-disc list-inside space-y-1 print-text-muted">
-                            <li><strong class="text-white print-text-dark">Complexe Hôtelier Mawla Kiélé :</strong> Architecture et réalisation complète du système ERP hôtelier (gestion des réservations, facturation, stock et statistiques temps réel).</li>
-                            <li><strong class="text-white print-text-dark">Plateforme Multi-Bookmaker :</strong> Conception du moteur d'agrégation de paris sportifs en ligne (intégration d'APIs tierces en temps réel, calcul de cotes et haute disponibilité).</li>
-                            <li><strong class="text-white print-text-dark">Partenariat Mina-CapBon :</strong> Ingénierie de plateformes web et solutions digitales adaptées aux exigences métiers.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <!-- Applications Métiers et Système -->
+            <div class="relative pl-4 border-l-2 border-slate-700">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-slate-100 print-text-dark">
+                  Plateformes Métiers & Systèmes Critiques
+                </h3>
+                <span class="text-xs font-mono text-slate-400"
+                  >Architecture Entreprise</span
+                >
+              </div>
+              <ul
+                class="text-sm text-slate-300 mt-2 list-disc list-inside space-y-1 print-text-muted"
+              >
+                <li>
+                  <strong class="text-white print-text-dark"
+                    >Complexe Hôtelier Mawla Kiélé :</strong
+                  >
+                  Architecture et réalisation complète du système ERP hôtelier
+                  (gestion des réservations, facturation, stock et statistiques
+                  temps réel).
+                </li>
+                <li>
+                  <strong class="text-white print-text-dark"
+                    >Plateforme Multi-Bookmaker :</strong
+                  >
+                  Conception du moteur d'agrégation de paris sportifs en ligne
+                  (intégration d'APIs tierces en temps réel, calcul de cotes et
+                  haute disponibilité).
+                </li>
+                <li>
+                  <strong class="text-white print-text-dark"
+                    >Partenariat Mina-CapBon :</strong
+                  >
+                  Ingénierie de plateformes web et solutions digitales adaptées
+                  aux exigences métiers.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-            <!-- Parcours Professionnel -->
-            <section class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card">
-                <div class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80">
-                    <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h2 class="text-xl font-bold text-white print-text-dark">Expérience Professionnelle</h2>
-                </div>
+        <!-- Parcours Professionnel -->
+        <section
+          class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card"
+        >
+          <div
+            class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80"
+          >
+            <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-white print-text-dark">
+              Expérience Professionnelle
+            </h2>
+          </div>
 
-                <div class="space-y-6">
-                    <div>
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-white print-text-dark">Co-fondateur & Lead Developer</h3>
-                            <span class="text-sm font-mono text-brand-400">Glaxuss Tech • 2024 - Présent</span>
-                        </div>
-                        <p class="text-sm text-slate-300 mt-2 print-text-muted leading-relaxed">
-                            Direction technique de l'entreprise, supervision de l'architecture des systèmes clients, définition des normes de code et de déploiement CI/CD, et développement de produits propriétaires SaaS.
-                        </p>
-                    </div>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-white print-text-dark">
+                  Co-fondateur & Lead Developer
+                </h3>
+                <span class="text-sm font-mono text-brand-400"
+                  >Glaxuss Tech • 2024 - Présent</span
+                >
+              </div>
+              <p
+                class="text-sm text-slate-300 mt-2 print-text-muted leading-relaxed"
+              >
+                Direction technique de l'entreprise, supervision de
+                l'architecture des systèmes clients, définition des normes de
+                code et de déploiement CI/CD, et développement de produits
+                propriétaires SaaS.
+              </p>
+            </div>
 
-                    <div class="pt-4 border-t border-slate-700/40">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold text-white print-text-dark">Senior Software Engineer & Architecte Indépendant</h3>
-                            <span class="text-sm font-mono text-slate-400">Consulting • 2014 - Présent</span>
-                        </div>
-                        <p class="text-sm text-slate-300 mt-2 print-text-muted leading-relaxed">
-                            Plus de 10 ans d'accompagnement technique pour des entreprises et startups : conseil en architecture logicielle, refonte de systèmes monolithiques vers des microservices, optimisation de bases de données volumineuses et développement web full-stack.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <div class="pt-4 border-t border-slate-700/40">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-lg font-bold text-white print-text-dark">
+                  Senior Software Engineer & Architecte Indépendant
+                </h3>
+                <span class="text-sm font-mono text-slate-400"
+                  >Consulting • 2014 - Présent</span
+                >
+              </div>
+              <p
+                class="text-sm text-slate-300 mt-2 print-text-muted leading-relaxed"
+              >
+                Plus de 10 ans d'accompagnement technique pour des entreprises
+                et startups : conseil en architecture logicielle, refonte de
+                systèmes monolithiques vers des microservices, optimisation de
+                bases de données volumineuses et développement web full-stack.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
 
-        </div>
+      <!-- Right Column (Skills, Education, Technical Stack) -->
+      <div class="space-y-8">
+        <!-- Technical Stack -->
+        <section
+          class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card"
+        >
+          <div
+            class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80"
+          >
+            <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-white print-text-dark">
+              Stack & Compétences
+            </h2>
+          </div>
 
-        <!-- Right Column (Skills, Education, Technical Stack) -->
-        <div class="space-y-8">
-            
-            <!-- Technical Stack -->
-            <section class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card">
-                <div class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80">
-                    <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                    </div>
-                    <h2 class="text-xl font-bold text-white print-text-dark">Stack & Compétences</h2>
-                </div>
+          <div class="space-y-5">
+            <div>
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2"
+              >
+                Langages de Programmation
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Vlang</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >PHP (8.x)</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Rust</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >TypeScript</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >SQL</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >C (Interop)</span
+                >
+              </div>
+            </div>
 
-                <div class="space-y-5">
-                    <div>
-                        <h4 class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2">Langages de Programmation</h4>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Vlang</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">PHP (8.x)</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Rust</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">TypeScript</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">JavaScript</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">SQL</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">C (Interop)</span>
-                        </div>
-                    </div>
+            <div>
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2"
+              >
+                Frameworks & Moteurs
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Écosystème Laravel</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >TALL Stack</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Astro</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Deno Runtime</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >TailwindCSS</span
+                >
+              </div>
+            </div>
 
-                    <div>
-                        <h4 class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2">Frameworks & Moteurs</h4>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Écosystème Laravel</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">TALL Stack</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Astro</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Deno Runtime</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">TailwindCSS</span>
-                        </div>
-                    </div>
+            <div>
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2"
+              >
+                Architecture & Tools
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Compilateurs & Lexers</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Grammaires EBNF</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Git / GitHub Actions</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Docker & CI/CD</span
+                >
+              </div>
+            </div>
 
-                    <div>
-                        <h4 class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2">Architecture & Tools</h4>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Compilateurs & Lexers</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Grammaires EBNF</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Git / GitHub Actions</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Docker & CI/CD</span>
-                        </div>
-                    </div>
+            <div>
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2"
+              >
+                Data & Analytics
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Big Data Processing</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >Business Intelligence</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card"
+                  >MySQL / PostgreSQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
 
-                    <div>
-                        <h4 class="text-xs font-mono uppercase tracking-wider text-brand-400 mb-2">Data & Analytics</h4>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Big Data Processing</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">Business Intelligence</span>
-                            <span class="px-2.5 py-1 bg-slate-700/60 rounded text-xs font-mono text-slate-200 border border-slate-600/50 print-card">MySQL / PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <!-- Education & Diplômes -->
+        <section
+          class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card"
+        >
+          <div
+            class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80"
+          >
+            <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-white print-text-dark">
+              Formation Académique
+            </h2>
+          </div>
 
-            <!-- Education & Diplômes -->
-            <section class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card">
-                <div class="flex items-center space-x-3 mb-6 pb-2 border-b border-slate-700/80">
-                    <div class="p-2 bg-brand-500/10 rounded-lg text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
-                    </div>
-                    <h2 class="text-xl font-bold text-white print-text-dark">Formation Académique</h2>
-                </div>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-sm font-bold text-white print-text-dark">
+                Master 1 — Big Data & Data Science
+              </h3>
+              <p class="text-xs text-slate-400 print-text-muted">
+                Modélisation de données, statistiques avancées et traitement à
+                grande échelle.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-700/40">
+              <h3 class="text-sm font-bold text-white print-text-dark">
+                Licence — Business Intelligence
+              </h3>
+              <p class="text-xs text-slate-400 print-text-muted">
+                Entreposage de données, systèmes décisionnels et analyse de
+                données d'entreprise.
+              </p>
+            </div>
+          </div>
+        </section>
 
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="text-sm font-bold text-white print-text-dark">Master 1 — Big Data & Data Science</h3>
-                        <p class="text-xs text-slate-400 print-text-muted">Modélisation de données, statistiques avancées et traitement à grande échelle.</p>
-                    </div>
-                    <div class="pt-3 border-t border-slate-700/40">
-                        <h3 class="text-sm font-bold text-white print-text-dark">Licence — Business Intelligence</h3>
-                        <p class="text-xs text-slate-400 print-text-muted">Entreposage de données, systèmes décisionnels et analyse de données d'entreprise.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Philosophy / Directives -->
-            <section class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card">
-                <h3 class="text-sm font-bold text-brand-400 mb-2 font-mono">// Engagements & Principes</h3>
-                <p class="text-xs text-slate-300 print-text-muted leading-relaxed">
-                    Code propre, typage rigoureux, respect des idioms langage (ex: gestion explicite des erreurs avec options et 'or' en Vlang) et séparation stricte des responsabilités (architecture Phix / Phi pure).
-                </p>
-            </section>
-
-        </div>
-
+        <!-- Philosophy / Directives -->
+        <section
+          class="bg-slate-800/40 rounded-2xl p-6 sm:p-7 border border-slate-700/50 print-card"
+        >
+          <h3 class="text-sm font-bold text-brand-400 mb-2 font-mono">
+            // Engagements & Principes
+          </h3>
+          <p class="text-xs text-slate-300 print-text-muted leading-relaxed">
+            Code propre, typage rigoureux, respect des idioms langage (ex:
+            gestion explicite des erreurs avec options et 'or' en Vlang) et
+            séparation stricte des responsabilités (architecture Phix / Phi
+            pure).
+          </p>
+        </section>
+      </div>
     </div>
 
     <!-- Footer -->
-    <footer class="mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-500 font-mono no-print">
-        <p>CV généré en HTML5 / TailwindCSS — Sigui Kessé Emmanuel • siguici.deno.dev</p>
+    <footer
+      class="mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-500 font-mono no-print"
+    >
+      <p>
+        CV généré en HTML5 / TailwindCSS — Sigui Kessé Emmanuel •
+        siguici.deno.dev
+      </p>
     </footer>
-
-</body>
+  </body>
 </html>
