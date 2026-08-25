@@ -1,6 +1,9 @@
-// src/data/cv/domain/types.ts
+export type ProfileId =
+  | 'software-architect'
+  | 'data-engineer'
+  | 'data-scientist'
+  | 'data-analyst';
 
-export type ProfileId = 'master' | 'data-scientist' | 'data-analyst';
 export type Locale = 'fr' | 'en';
 
 export interface ContactInfo {
@@ -35,7 +38,6 @@ export interface StructuralEducation {
   period: string;
 }
 
-// Représentation normalisée d'un CV une fois résolu/traduit
 export interface ResolvedCV {
   meta: {
     profileId: ProfileId;

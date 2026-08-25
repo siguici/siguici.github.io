@@ -1,243 +1,296 @@
 import type { CVData } from '../index';
 
 export const dataAnalystFR: CVData = {
-  title: 'Sigui Kessé Emmanuel — Data Analyst & Business Intelligence Engineer',
+  title: 'Kessé Emmanuel SIGUI — Data Analyst & BI Engineer',
+
   identity: {
-    name: 'SIGUI KESSÉ EMMANUEL',
+    name: 'KESSÉ EMMANUEL SIGUI',
     role: 'Data Analyst & Business Intelligence Engineer',
   },
-  location: "05°20'11\"N 04°01'36\"W (Côte d'Ivoire)",
+
+  location: "Abidjan, Côte d'Ivoire · Remote",
+
   subtitle:
-    'Architecture décisionnelle, modélisation de données et création de tableaux de bord stratégiques.',
+    'Business Intelligence, analyse de données, reporting et aide à la décision.',
+
   tagline:
-    "Diplômé en Business Intelligence avec 10+ ans d'expérience en ingénierie de données.",
+    'Transformer les données opérationnelles en indicateurs fiables et directement exploitables.',
+
   summary:
-    "Data Analyst / BI Specialist détenteur d'une **Licence en Business Intelligence** et d'un **Master 1 Big Data**[cite: 1]. Expert dans la transformation des données brutes en indicateurs clés de performance (KPIs), la modélisation en étoile/flocon (Data Warehousing) et l'automatisation des flux reporting d'entreprise[cite: 1].",
+    "Data Analyst et BI Engineer avec une Licence en Business Intelligence, un Master 1 en Big Data & Data Science et plus de 10 ans d'expérience en ingénierie logicielle. Je combine compréhension métier, SQL, modélisation des données, reporting, automatisation et développement logiciel pour construire des systèmes décisionnels réellement intégrés aux applications métier.",
+
   capabilities: [
     {
-      title: 'BI & DATA WAREHOUSING',
+      title: 'BUSINESS INTELLIGENCE',
       description:
-        'Modélisation dimensionnelle (Schéma en étoile, flocon), création de Data Marts et entrepôts de données.',
+        'Conception d’indicateurs, Data Marts, modèles analytiques et tableaux de bord orientés décision.',
     },
     {
-      title: 'SQL & ETL AUTOMATION',
+      title: 'SQL & DATA MODELING',
       description:
-        "Écriture de requêtes SQL complexes, procédures stockées, optimisation d'index et flux ETL automatisés[cite: 1].",
+        'Requêtes SQL, modélisation relationnelle, optimisation et structuration des données pour l’analyse.',
     },
     {
-      title: 'DASHBOARDING & REPORTING',
+      title: 'REPORTING & ANALYTICS',
       description:
-        'Conception de tableaux de bord interactifs et suivi des KPIs business pour la prise de décision stratégique.',
+        'Construction de rapports et de tableaux de bord permettant de suivre les performances et les KPIs métier.',
     },
     {
-      title: 'BUSINESS & DATA QUALITY',
+      title: 'DATA QUALITY',
       description:
-        'Audit de qualité des données, nettoyage, réconciliation de données hétérogènes et analyse de rentabilité[cite: 1].',
+        'Nettoyage, validation, rapprochement et contrôle de cohérence de données provenant de plusieurs systèmes.',
     },
   ],
+
   experiences: [
     {
-      role: 'Lead Developer & Architecte BI',
+      role: 'Software Engineer & Data/BI Engineer',
+      company: 'Sikessem',
+      period: 'Depuis les débuts du parcours — Présent',
+      subtitle: 'Data-Driven Applications & Digital Ecosystem',
+      impacts: [
+        'Conception de modèles de données et de systèmes permettant d’exploiter les informations métier.',
+        'Développement d’applications et de composants orientés données.',
+        'Intégration progressive de capacités analytiques et décisionnelles dans les produits.',
+      ],
+    },
+    {
+      role: 'Co-fondateur & CTO',
       company: 'Glaxuss Tech',
-      period: '2024 — PRÉSENT',
-      subtitle: 'Systèmes de reporting & Data Warehousing client',
+      period: '2024 — Présent',
+      subtitle: 'Enterprise Reporting & Business Data',
       impacts: [
-        'Conception de schémas analytiques et entrepôts de données pour piloter les KPIs de nos clients[cite: 1].',
-        "Automatisation de l'extraction et du nettoyage des métriques d'exploitation[cite: 1].",
+        'Conception de systèmes de reporting et de modèles de données adaptés aux besoins des projets.',
+        'Automatisation de l’extraction et de la transformation de données.',
+        'Conception d’indicateurs et de mécanismes de suivi de performance.',
       ],
     },
     {
-      role: 'Lead Dev E-Commerce & Analyste Métriques',
-      company: 'Ahlabik',
-      period: '2021 — 2024',
-      subtitle: 'Analyse des ventes & Performance transactionnelle',
+      role: 'Software Engineer & BI Consultant',
+      company: 'Consulting indépendant & Projets clients',
+      period: '2015 — Présent',
+      subtitle: 'ERP, E-Commerce, Reporting & Business Data',
       impacts: [
-        'Mise en place des indicateurs de conversion, suivi du panier moyen et analyse du comportement utilisateur[cite: 1].',
-        "Création de requêtes d'extraction SQL haute performance sur PostgreSQL[cite: 1].",
-      ],
-    },
-    {
-      role: 'Consultant ERP & Ingénieur Systèmes',
-      company: 'Projets Indépendants / Enterprise ERP',
-      period: '2015 — 2021',
-      subtitle: 'Business Intelligence & Flux de gestion',
-      impacts: [
-        "Modélisation et intégration des flux de données de gestion financière et de stock au sein d'ERPs[cite: 1].",
-        'Automatisation des rapports décisionnels mensuels pour la direction[cite: 1].',
+        'Exploitation de données transactionnelles issues de systèmes e-commerce et ERP.',
+        'Développement de requêtes SQL pour l’extraction et le reporting.',
+        'Automatisation de rapports et de flux de données destinés aux besoins métier.',
       ],
     },
   ],
+
   categories: {
-    bi: 'BUSINESS INTELLIGENCE & SQL',
-    analytics: 'ANALYTICS & TOOLING',
-    dev: 'DEVELOPMENT FOUNDATIONS',
+    bi: 'BUSINESS INTELLIGENCE',
+    analytics: 'ANALYTICS & REPORTING',
+    sql: 'SQL & DATA MODELING',
+    engineering: 'SOFTWARE & DATA ENGINEERING',
   },
+
   ecosystem: [
     {
       categoryId: 'bi',
       skills: [
-        'SQL Avancé',
-        'PostgreSQL',
+        'Business Intelligence',
         'Data Warehousing',
-        'Star/Snowflake Schema',
-        'Flux ETL',
+        'Data Marts',
+        'KPI Design',
+        'Reporting',
       ],
     },
     {
       categoryId: 'analytics',
       skills: [
-        'PowerBI / Tableau',
-        'Excel Avancé',
-        'Python (Pandas)',
-        'Analyse de KPIs',
+        'Data Analysis',
+        'Dashboarding',
+        'Performance Analysis',
+        'Data Quality',
       ],
     },
     {
-      categoryId: 'dev',
-      skills: ['PHP / Laravel', 'TypeScript', 'Deno', 'Git', 'Docker'],
+      categoryId: 'sql',
+      skills: [
+        'SQL',
+        'PostgreSQL',
+        'MySQL',
+        'Relational Modeling',
+        'Query Optimization',
+      ],
+    },
+    {
+      categoryId: 'engineering',
+      skills: ['PHP', 'Laravel', 'TypeScript', 'Python', 'Docker', 'Git'],
     },
   ],
+
   education: [
     {
-      degree: 'Licence — Business Intelligence (BI)',
-      institution: 'Spécialisation Entrepôts de Données & Reporting',
-      period: '2020 — 2021',
+      degree: 'Licence — Business Intelligence',
+      institution: 'Mediterranean Institute of Tunisia — Nabeul, Tunisie',
+      period: '2019 — 2022',
     },
     {
       degree: 'Master 1 — Big Data & Data Science',
-      institution: 'Spécialisation Analytics & Data Pipelines',
-      period: '2023 — 2024',
+      institution: 'Leaders University — Nabeul, Tunisie',
+      period: '2022 — 2023',
     },
   ],
-  languages: 'Français (Natif) / Anglais (Professionnel / Technique)',
+
+  languages:
+    'Français (Natif / bilingue) · Anglais (Technique & professionnel)',
+
   contact: {
-    email: 'kessy.emmanuel@gmail.com',
-    web: 'sikessem.com',
-    webUrl: 'https://sikessem.com',
-    github: 'github.com/sikessem',
-    githubUrl: 'https://github.com/sikessem',
-    linkedin: 'linkedin.com/in/sigui-kesse-emmanuel',
-    linkedinUrl: 'https://linkedin.com/in/sigui-kesse-emmanuel',
+    email: 'siguici@proton.me',
+    web: 'siguici.sikessem.com',
+    webUrl: 'https://siguici.sikessem.com',
+    github: 'github.com/siguici',
+    githubUrl: 'https://github.com/siguici',
+    linkedin: 'linkedin.com/in/siguici',
+    linkedinUrl: 'https://linkedin.com/in/siguici',
   },
 };
 
 export const dataAnalystEN: CVData = {
-  title: 'Sigui Kessé Emmanuel — Data Analyst & Business Intelligence Engineer',
+  title: 'Kessé Emmanuel SIGUI — Data Analyst & BI Engineer',
+
   identity: {
-    name: 'SIGUI KESSÉ EMMANUEL',
+    name: 'KESSÉ EMMANUEL SIGUI',
     role: 'Data Analyst & Business Intelligence Engineer',
   },
-  location: '05°20\'11"N 04°01\'36"W (Ivory Coast)',
+
+  location: 'Abidjan, Ivory Coast · Remote',
+
   subtitle:
-    'Decision support architectures, data modeling, and strategic dashboarding.',
+    'Business Intelligence, data analysis, reporting and decision support.',
+
   tagline:
-    'Degree in Business Intelligence combined with 10+ years of enterprise data engineering.',
+    'Turning operational data into reliable and actionable business information.',
+
   summary:
-    "Data Analyst / BI Specialist holding a **Bachelor's Degree in Business Intelligence** and a **Master's 1 in Big Data**[cite: 1]. Expert at transforming raw operational data into actionable KPIs, designing dimensional Data Warehouses (Star/Snowflake schemas), and automating corporate reporting pipelines[cite: 1].",
+    "Data Analyst and BI Engineer with a Bachelor's Degree in Business Intelligence, a Master 1 in Big Data & Data Science and 10+ years of software engineering experience. I combine business understanding, SQL, data modeling, reporting, automation and software engineering to build decision-support systems that are closely integrated with business applications.",
+
   capabilities: [
     {
-      title: 'BI & DATA WAREHOUSING',
+      title: 'BUSINESS INTELLIGENCE',
       description:
-        'Dimensional modeling (Star & Snowflake schemas), Data Mart design, and enterprise Data Warehousing.',
+        'Design of KPIs, Data Marts, analytical models and decision-oriented dashboards.',
     },
     {
-      title: 'SQL & ETL AUTOMATION',
+      title: 'SQL & DATA MODELING',
       description:
-        'Advanced SQL query writing, stored procedures, index tuning, and automated ETL workflows[cite: 1].',
+        'SQL querying, relational modeling, query optimization and analytical data structuring.',
     },
     {
-      title: 'DASHBOARDING & REPORTING',
+      title: 'REPORTING & ANALYTICS',
       description:
-        'Interactive dashboard creation, KPI tracking, and decision-support analytics for leadership teams.',
+        'Reporting and dashboard systems for monitoring business performance and operational KPIs.',
     },
     {
-      title: 'BUSINESS & DATA QUALITY',
+      title: 'DATA QUALITY',
       description:
-        'Data quality auditing, data cleansing, cross-system reconciliation, and operational metrics analysis[cite: 1].',
+        'Cleansing, validation, reconciliation and consistency checks across heterogeneous systems.',
     },
   ],
+
   experiences: [
     {
-      role: 'Lead Developer & BI Architect',
+      role: 'Software Engineer & Data/BI Engineer',
+      company: 'Sikessem',
+      period: 'Since the early stages of my career — Present',
+      subtitle: 'Data-Driven Applications & Digital Ecosystem',
+      impacts: [
+        'Designed data models and systems for operational and business information.',
+        'Built data-driven applications and reusable components.',
+        'Progressively integrated analytical and decision-support capabilities into products.',
+      ],
+    },
+    {
+      role: 'Co-Founder & CTO',
       company: 'Glaxuss Tech',
-      period: '2024 — PRESENT',
-      subtitle: 'Reporting Systems & Client Data Warehousing',
+      period: '2024 — Present',
+      subtitle: 'Enterprise Reporting & Business Data',
       impacts: [
-        'Designed analytical database schemas and Data Marts for client business performance tracking[cite: 1].',
-        'Automated data extraction and cleansing workflows for operational reporting[cite: 1].',
+        'Designed reporting systems and data models adapted to project requirements.',
+        'Automated data extraction and transformation workflows.',
+        'Designed business indicators and performance monitoring mechanisms.',
       ],
     },
     {
-      role: 'Lead E-Commerce Dev & Metrics Analyst',
-      company: 'Ahlabik',
-      period: '2021 — 2024',
-      subtitle: 'Sales Analytics & Transactional Metrics',
+      role: 'Software Engineer & BI Consultant',
+      company: 'Independent Consulting & Client Projects',
+      period: '2015 — Present',
+      subtitle: 'ERP, E-Commerce, Reporting & Business Data',
       impacts: [
-        'Implemented conversion rate tracking, cart size analytics, and user journey metrics[cite: 1].',
-        'Wrote high-performance PostgreSQL queries for business reporting[cite: 1].',
-      ],
-    },
-    {
-      role: 'ERP Consultant & Systems Engineer',
-      company: 'Independent Projects / Enterprise ERP',
-      period: '2015 — 2021',
-      subtitle: 'Business Intelligence & Management Workflows',
-      impacts: [
-        'Modeled and integrated financial and inventory data flows inside enterprise ERP systems[cite: 1].',
-        'Automated monthly executive reporting dashboards[cite: 1].',
+        'Worked with transactional data from e-commerce and ERP systems.',
+        'Developed SQL queries for extraction and reporting.',
+        'Automated reports and data workflows supporting business requirements.',
       ],
     },
   ],
+
   categories: {
-    bi: 'BUSINESS INTELLIGENCE & SQL',
-    analytics: 'ANALYTICS & TOOLING',
-    dev: 'DEVELOPMENT FOUNDATIONS',
+    bi: 'BUSINESS INTELLIGENCE',
+    analytics: 'ANALYTICS & REPORTING',
+    sql: 'SQL & DATA MODELING',
+    engineering: 'SOFTWARE & DATA ENGINEERING',
   },
+
   ecosystem: [
     {
       categoryId: 'bi',
       skills: [
-        'Advanced SQL',
-        'PostgreSQL',
+        'Business Intelligence',
         'Data Warehousing',
-        'Star/Snowflake Schema',
-        'ETL Pipelines',
+        'Data Marts',
+        'KPI Design',
+        'Reporting',
       ],
     },
     {
       categoryId: 'analytics',
       skills: [
-        'PowerBI / Tableau',
-        'Advanced Excel',
-        'Python (Pandas)',
-        'KPI Tracking',
+        'Data Analysis',
+        'Dashboarding',
+        'Performance Analysis',
+        'Data Quality',
       ],
     },
     {
-      categoryId: 'dev',
-      skills: ['PHP / Laravel', 'TypeScript', 'Deno', 'Git', 'Docker'],
+      categoryId: 'sql',
+      skills: [
+        'SQL',
+        'PostgreSQL',
+        'MySQL',
+        'Relational Modeling',
+        'Query Optimization',
+      ],
+    },
+    {
+      categoryId: 'engineering',
+      skills: ['PHP', 'Laravel', 'TypeScript', 'Python', 'Docker', 'Git'],
     },
   ],
+
   education: [
     {
-      degree: "Bachelor's Degree — Business Intelligence (BI)",
-      institution: 'Focus on Data Warehousing & Reporting',
-      period: '2020 — 2021',
+      degree: "Bachelor's Degree — Business Intelligence",
+      institution: 'Mediterranean Institute of Tunisia — Nabeul, Tunisia',
+      period: '2019 — 2022',
     },
     {
       degree: 'Master 1 — Big Data & Data Science',
-      institution: 'Focus on Analytics & Data Pipelines',
-      period: '2023 — 2024',
+      institution: 'Leaders University — Nabeul, Tunisia',
+      period: '2022 — 2023',
     },
   ],
-  languages: 'French (Native) / English (Professional / Technical)',
+
+  languages: 'French (Native / bilingual) · English (Technical & professional)',
+
   contact: {
-    email: 'kessy.emmanuel@gmail.com',
-    web: 'sikessem.com',
-    webUrl: 'https://sikessem.com',
-    github: 'github.com/sikessem',
-    githubUrl: 'https://github.com/sikessem',
-    linkedin: 'linkedin.com/in/sigui-kesse-emmanuel',
-    linkedinUrl: 'https://linkedin.com/in/sigui-kesse-emmanuel',
+    email: 'siguici@proton.me',
+    web: 'siguici.sikessem.com',
+    webUrl: 'https://siguici.sikessem.com',
+    github: 'github.com/siguici',
+    githubUrl: 'https://github.com/siguici',
+    linkedin: 'linkedin.com/in/siguici',
+    linkedinUrl: 'https://linkedin.com/in/siguici',
   },
 };

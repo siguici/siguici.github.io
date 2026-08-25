@@ -1,13 +1,17 @@
+export type SkillCategoryId =
+  | 'architecture'
+  | 'product_delivery'
+  | 'backend'
+  | 'frontend'
+  | 'databases'
+  | 'testing_qa'
+  | 'data'
+  | 'ai'
+  | 'devops_infra'
+  | 'tools_dx';
+
 export interface SkillCategory {
-  category:
-    | 'architecture'
-    | 'backend'
-    | 'frontend'
-    | 'databases'
-    | 'testing_qa'
-    | 'ai_data'
-    | 'devops_infra'
-    | 'tools_dx';
+  category: SkillCategoryId;
   skills: readonly string[];
 }
 
@@ -29,12 +33,13 @@ export interface CVCommonData {
   ecosystem: readonly SkillCategory[];
 }
 
-const commonData: CVCommonData = {
+const commonData = {
   identity: {
     name: 'Kessé Emmanuel SIGUI',
     firstname: 'Kessé Emmanuel',
     lastname: 'SIGUI',
   },
+
   contact: {
     email: 'siguici@proton.me',
     web: 'siguici.sikessem.com',
@@ -44,39 +49,66 @@ const commonData: CVCommonData = {
     linkedin: 'linkedin.com/in/siguici',
     linkedinUrl: 'https://linkedin.com/in/siguici',
   },
+
   ecosystem: [
     {
       category: 'architecture',
       skills: [
         'Domain-Driven Design (DDD)',
-        'Clean & Hexagonal Architecture',
+        'Clean Architecture',
+        'Hexagonal Architecture',
         'SOLID Principles',
         'Modular Monoliths',
+        'Domain Modeling',
+        'API Design',
         'Multi-tenancy',
-        'Cloud Native Practices',
-        'API Design (REST, GraphQL, gRPC)',
+        'Distributed Systems',
+      ],
+    },
+    {
+      category: 'product_delivery',
+      skills: [
+        'Requirements Analysis',
+        'Functional Specifications',
+        'Technical Specifications',
+        'Agile / Scrum',
+        'Jira',
+        'Trello',
+        'Product Delivery',
+        'Technical Leadership',
       ],
     },
     {
       category: 'backend',
       skills: [
-        'PHP (Laravel / Symfony)',
-        'TypeScript (Node.js / Deno / Bun)',
-        'Vlang',
+        'PHP',
+        'Laravel',
+        'Symfony',
+        'TypeScript',
+        'Node.js',
+        'Deno',
+        'Bun',
         'Go',
+        'Vlang',
+        'REST',
+        'GraphQL',
+        'gRPC',
       ],
     },
     {
       category: 'frontend',
       skills: [
         'TypeScript / JavaScript',
+        'Vue.js',
+        'Inertia.js',
+        'Livewire',
+        'Alpine.js',
+        'React Ecosystem',
         'Astro',
         'Qwik',
-        'React Ecosystem',
-        'Vue.js / Inertia.js',
-        'Livewire / Alpine.js',
-        'htmx',
-        'Tailwind CSS & Design Systems',
+        'Tailwind CSS',
+        'Design Systems',
+        'PWA',
       ],
     },
     {
@@ -84,43 +116,87 @@ const commonData: CVCommonData = {
       skills: [
         'PostgreSQL',
         'MySQL',
-        'Redis',
         'SQLite',
+        'Redis',
         'Neo4j',
-        'ORM & Query Builders (Prisma, Eloquent, Kysely)',
+        'Eloquent',
+        'Prisma',
+        'Kysely',
+        'Database Modeling',
       ],
     },
     {
       category: 'testing_qa',
       skills: [
+        'Unit Testing',
+        'Integration Testing',
+        'End-to-End Testing',
+        'TDD',
         'Pest',
+        'PHPUnit',
         'PHPStan',
         'Psalm',
         'Rector',
-        'Static Analysis & Linters',
+        'Static Analysis',
+        'Regression Testing',
       ],
     },
     {
-      category: 'ai_data',
+      category: 'data',
       skills: [
-        'BI & Analytics Dashboards',
-        'AI Agents & LLMs',
-        'RAG Architectures',
+        'Business Intelligence',
+        'Data Analytics',
+        'Data Engineering',
+        'Data Warehousing',
+        'ETL / ELT',
         'Data Pipelines',
+        'Data Modeling',
+        'SQL',
+        'BI Dashboards',
+      ],
+    },
+    {
+      category: 'ai',
+      skills: [
+        'LLM Integration',
+        'RAG Architectures',
+        'AI Agents',
+        'NLP',
+        'Data-driven Applications',
       ],
     },
     {
       category: 'devops_infra',
       skills: [
         'Docker',
-        'Linux VPS (Ubuntu / Debian)',
-        'Caddy / Nginx / Apache',
-        'GitHub Actions CI/CD',
+        'Linux',
+        'Ubuntu',
+        'Debian',
+        'Caddy',
+        'Nginx',
+        'Apache',
+        'GitHub Actions',
+        'CI/CD',
+        'VPS Infrastructure',
+        'Cloud Deployment',
       ],
     },
     {
       category: 'tools_dx',
-      skills: ['Just (Command Runner)', 'Typst', 'Git & GitHub Workflows'],
+      skills: [
+        'Git',
+        'GitHub',
+        'Developer Experience',
+        'CLI Tooling',
+        'GitHub Actions',
+        'SigUI',
+        'colorwind',
+        'plugwind.js',
+        'Setup JS',
+        'Cup',
+        'Loom',
+        'Phi',
+      ],
     },
   ],
 } as const satisfies CVCommonData;
