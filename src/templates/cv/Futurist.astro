@@ -1,9 +1,13 @@
 ---
-import AppLayout from '../layouts/AppLayout.astro';
+import type { ResolvedCV } from '../../../data/cv/domain/types';
+
+interface Props {
+  cv: ResolvedCV;
+}
+
+const { cv } = Astro.props;
 ---
-<AppLayout
-  title="CV — ARCHITECTURAL MANIFESTO & EOS RUNTIME"
-  >
+<main class="cv">
   <div class="eos-viewport">
     <!-- 0x01. SYSTEM HEADER -->
     <header class="sys-header col-12">
@@ -253,7 +257,7 @@ import AppLayout from '../layouts/AppLayout.astro';
       <span>CANONICAL URI: SIKESSEM.COM</span>
     </footer>
   </div>
-</AppLayout>
+</main>
 
 <style>
 /* ==========================================================================
