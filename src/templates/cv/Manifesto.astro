@@ -1,10 +1,13 @@
 ---
-import AppLayout from '../layouts/AppLayout.astro';
+import type { ResolvedCV } from '../../../data/cv/domain/types';
+
+interface Props {
+  cv: ResolvedCV;
+}
+
+const { cv } = Astro.props;
 ---
-<AppLayout
-  title="CV — ARCHITECTURAL MANIFESTO & EOS RUNTIME"
-  cssClass="bg-[#080B11] text-slate-300 bg-grid min-h-screen p-4 sm:p-8 md:p-12 selection:bg-cyan-500 selection:text-black"
-  >
+<main class="bg-[#080B11] text-slate-300 bg-grid min-h-screen p-4 sm:p-8 md:p-12 selection:bg-cyan-500 selection:text-black">
   <style>
   /* ==========================================================================
                   0x01. DESIGN TOKENS & SYSTEM VARIABLES
@@ -608,4 +611,4 @@ import AppLayout from '../layouts/AppLayout.astro';
       <span>CANONICAL URI: SIKESSEM.COM</span>
     </footer>
   </div>
-</AppLayout>
+</main>

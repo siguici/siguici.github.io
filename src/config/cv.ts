@@ -14,6 +14,7 @@ export const CV_TEMPLATES = [
   'default',
   'futurist',
   'modern',
+  'manifesto',
   'compact',
 ] as const satisfies readonly CVTemplate[];
 
