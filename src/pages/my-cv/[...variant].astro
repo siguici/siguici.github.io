@@ -1,4 +1,13 @@
 ---
+import {
+  CV_LOCALES,
+  CV_PROFILES,
+  CV_TEMPLATES,
+  DEFAULT_CV_LOCALE,
+  DEFAULT_CV_PROFILE,
+  DEFAULT_CV_TEMPLATE,
+} from '../../config/cv';
+
 import { getCVData, type Locale, type ProfileType } from '../../data/cv';
 
 import { resolveCV } from '../../data/cv/resolver';
@@ -6,18 +15,16 @@ import { resolveCV } from '../../data/cv/resolver';
 import { type CVTemplate, templates } from '../../templates/cv';
 
 export function getStaticPaths() {
-  const locales = ['fr', 'en'] as const;
-
-  const profiles = ['master', 'data-scientist', 'data-analyst'] as const;
-
-  const templates = ['default', 'modern', 'compact'] as const;
-
   const paths = [];
 
-  for (const locale of locales) {
-    for (const profile of profiles) {
-      for (const template of templates) {
-        if (locale === 'fr' && profile === 'master' && template === 'default') {
+  for (const locale of CV_LOCALES) {
+    for (const profile of CV_PROFILES) {
+      for (const template of CV_TEMPLATES) {
+        if (
+          locale === DEFAULT_CV_LOCALE &&
+          profile === DEFAULT_CV_PROFILE &&
+          template === DEFAULT_CV_TEMPLATE
+        ) {
           paths.push({
             params: {
               variant: undefined,
@@ -32,7 +39,10 @@ export function getStaticPaths() {
           continue;
         }
 
-        if (profile === 'master' && template === 'default') {
+        if (
+          profile === DEFAULT_CV_PROFILE &&
+          template === DEFAULT_CV_TEMPLATE
+        ) {
           paths.push({
             params: {
               variant: locale,
@@ -47,15 +57,15 @@ export function getStaticPaths() {
           continue;
         }
 
-        const variant = [
+        const segments = [
           locale,
           profile,
-          ...(template === 'default' ? [] : [template]),
-        ].join('/');
+          ...(template === DEFAULT_CV_TEMPLATE ? [] : [template]),
+        ];
 
         paths.push({
           params: {
-            variant,
+            variant: segments.join('/'),
           },
           props: {
             locale,
