@@ -5,6 +5,7 @@ import FuturistTemplate from './Futurist.astro';
 import ManifestoTemplate from './Manifesto.astro';
 import MinimalTemplate from './Minimal.astro';
 import ModernTemplate from './Modern.astro';
+import TechnicalTemplate from './Technical.astro';
 
 export type CVTemplate =
   | 'default'
@@ -12,6 +13,7 @@ export type CVTemplate =
   | 'minimal'
   | 'compact'
   | 'futurist'
+  | 'technical'
   | 'manifesto';
 
 export const DEFAULT_TEMPLATE: CVTemplate = 'default';
@@ -22,4 +24,5 @@ export const templates = {
   minimal: MinimalTemplate,
   futurist: FuturistTemplate,
   manifesto: ManifestoTemplate,
+  technical: TechnicalTemplate,
 } satisfies Record<CVTemplate, Component>;

@@ -17,6 +17,7 @@ export const CV_TEMPLATES = [
   'modern',
   'manifesto',
   'compact',
+  'technical',
 ] as const satisfies readonly CVTemplate[];
 
 export const DEFAULT_CV_LOCALE: Locale = 'fr';
