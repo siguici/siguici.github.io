@@ -1,10 +1,14 @@
 ---
-import AppLayout from '../layouts/AppLayout.astro';
+import type { ResolvedCV } from '../../../data/cv/domain/types';
+
+interface Props {
+  cv: ResolvedCV;
+}
+
+const { cv } = Astro.props;
 ---
-<AppLayout
-  title="CV — Senior Software Engineer & Software Architect"
-  cssClass="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto selection:bg-brand-500 selection:text-white"
-  >
+
+<main class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto selection:bg-brand-500 selection:text-white">
   <!-- Control Bar / Print Button -->
   <div
     class="no-print flex justify-between items-center mb-8 pb-4 border-b border-slate-800"
@@ -607,9 +611,11 @@ import AppLayout from '../layouts/AppLayout.astro';
       siguici.deno.dev
     </p>
   </footer>
-</AppLayout>
+</main>
 
 <style>
+@reference '../../styles/app.css';
+
 @media print {
   body {
     background-color: #ffffff !important;

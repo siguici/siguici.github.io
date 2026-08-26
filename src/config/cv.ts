@@ -13,6 +13,7 @@ export const CV_PROFILES = [
 export const CV_TEMPLATES = [
   'default',
   'futurist',
+  'minimal',
   'modern',
   'manifesto',
   'compact',
