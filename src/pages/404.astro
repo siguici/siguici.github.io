@@ -1,8 +1,49 @@
 ---
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import ErrorLayout from '../layouts/ErrorLayout.astro';
+
+const { __ } = Astro.locals;
 ---
 
-<BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
-</BaseLayout>
+<ErrorLayout title={__('error.404.meta_title')}>
+  <div class="flex flex-col items-start">
+    <!-- Code Erreur & Badge -->
+    <div class="flex items-center gap-4 font-mono">
+      <span class="glitch-text text-7xl font-bold tracking-tighter md:text-9xl">
+        {__('error.404.code')}
+      </span>
+      <div class="h-12 w-px bg-[var(--line-strong)]"></div>
+      <span class="border border-red-500/30 bg-red-500/10 px-3 py-1 text-xs uppercase tracking-widest text-red-400">
+        {__('error.404.status')}
+      </span>
+    </div>
+
+    <!-- Titre et Description -->
+    <h1 class="mt-8 text-3xl font-semibold tracking-tight md:text-5xl">
+      {__('error.404.title')}
+    </h1>
+
+    <p class="mt-4 max-w-xl text-lg leading-relaxed text-[var(--muted)]">
+      {__('error.404.description')}
+    </p>
+
+    <!-- Console Terminal Debug HUD -->
+    <div class="mt-8 w-full border border-[var(--line)] bg-[var(--surface)] p-4 font-mono text-xs text-[var(--muted)] backdrop-blur-md">
+      <div class="flex items-center justify-between border-b border-[var(--line)] pb-2 mb-3">
+        <span>// {__('error.terminal_title')}</span>
+        <span class="size-1.5 rounded-full bg-red-500"></span>
+      </div>
+      <p class="text-red-400/90">> ERR_ROUTE_NOT_FOUND: Path resolution failed.</p>
+      <p class="mt-1 opacity-60">> Target namespace check: NULL</p>
+    </div>
+
+    <!-- Action -->
+    <div class="mt-10 flex items-center gap-6 font-mono text-xs uppercase tracking-[0.2em]">
+      <a
+        href="/"
+        class="group flex items-center gap-3 border border-[var(--line-strong)] bg-[var(--foreground)] px-6 py-3.5 text-[var(--background)] transition-all hover:bg-transparent hover:text-[var(--foreground)]"
+      >
+        <span>← {__('error.back_home')}</span>
+      </a>
+    </div>
+  </div>
+</ErrorLayout>

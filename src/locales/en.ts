@@ -1,3 +1,5 @@
+import error from './en/error';
+
 export default {
   Home: 'Home',
   Vision: 'Vision',
@@ -5,4 +7,6 @@ export default {
   Background: 'Background',
   Courses: 'Courses',
   Contact: 'Contact',
+
+  error,
 };

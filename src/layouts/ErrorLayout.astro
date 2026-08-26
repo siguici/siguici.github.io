@@ -1,0 +1,112 @@
+---
+import AppLayout from './AppLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const { __ } = Astro.locals;
+---
+
+<AppLayout {title} cssClass="flex flex-col justify-between p-6 md:p-10">
+  <Fragment slot="head">
+    <style is:global>
+      :root {
+        --background: #050505;
+        --foreground: #f4f4f0;
+        --muted: #777772;
+        --line: rgba(255, 255, 255, 0.08);
+        --line-strong: rgba(255, 255, 255, 0.2);
+        --accent-red: #ef4444;
+        --accent-amber: #f59e0b;
+        --surface: rgba(15, 15, 15, 0.75);
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--background);
+        color: var(--foreground);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      ::selection {
+        background: var(--foreground);
+        color: var(--background);
+      }
+
+      /* Grid & Noise FX */
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      .error-grid {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.35;
+        background-image: 
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+      }
+
+      /* Scanline CRT FX */
+      .scanlines {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 40;
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0) 50%,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.3)
+        );
+        background-size: 100% 4px;
+        opacity: 0.6;
+      }
+
+      .glitch-text {
+        text-shadow: 0.05em 0 0 rgba(239, 68, 68, 0.75), -0.05em -0.025em 0 rgba(59, 130, 246, 0.75);
+      }
+    </style>
+
+    <div class="noise"></div>
+    <div class="error-grid"></div>
+    <div class="scanlines"></div>
+
+    <!-- Header minimaliste -->
+    <header class="relative z-10 flex items-center justify-between font-mono text-xs tracking-widest text-[var(--muted)]">
+      <a href="/" class="flex items-center gap-2 transition-colors hover:text-[var(--foreground)]">
+        <span class="size-2 bg-red-500 animate-pulse"></span>
+        <span>SIGUI // KERNEL</span>
+      </a>
+      <span class="uppercase">{__('error.system_status')}: CRITICAL</span>
+    </header>
+
+    <!-- Contenu principal inséré par les pages 404/500 -->
+    <main class="relative z-10 mx-auto my-auto w-full max-w-4xl">
+      <slot />
+    </main>
+
+    <!-- Footer minimaliste -->
+    <footer class="relative z-10 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--muted)]">
+      <span>SYS_ADDR: 0x000F4E</span>
+      <span>© {new Date().getFullYear()} SIGUI</span>
+    </footer>
+  </Fragment>
+</AppLayout>

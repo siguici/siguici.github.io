@@ -1,0 +1,69 @@
+---
+import ErrorLayout from '../layouts/ErrorLayout.astro';
+
+interface Props {
+  error?: unknown;
+}
+
+const { __ } = Astro.locals;
+const { error } = Astro.props;
+
+// Extraction sécurisée du message d'erreur en mode dev/CI
+const errorMessage =
+  error instanceof Error
+    ? error.message
+    : String(error ?? 'Unknown system exception');
+---
+
+<ErrorLayout title={__('error.500.meta_title')}>
+  <div class="flex flex-col items-start">
+    <!-- Code Erreur & Badge -->
+    <div class="flex items-center gap-4 font-mono">
+      <span class="glitch-text text-7xl font-bold tracking-tighter text-amber-500 md:text-9xl">
+        {__('error.500.code')}
+      </span>
+      <div class="h-12 w-px bg-[var(--line-strong)]"></div>
+      <span class="border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs uppercase tracking-widest text-amber-400">
+        {__('error.500.status')}
+      </span>
+    </div>
+
+    <!-- Titre et Description -->
+    <h1 class="mt-8 text-3xl font-semibold tracking-tight md:text-5xl">
+      {__('error.500.title')}
+    </h1>
+
+    <p class="mt-4 max-w-xl text-lg leading-relaxed text-[var(--muted)]">
+      {__('error.500.description')}
+    </p>
+
+    <!-- Console Terminal Debug HUD avec Trace -->
+    <div class="mt-8 w-full border border-[var(--line)] bg-[var(--surface)] p-4 font-mono text-xs text-[var(--muted)] backdrop-blur-md">
+      <div class="flex items-center justify-between border-b border-[var(--line)] pb-2 mb-3">
+        <span>// {__('error.terminal_title')}</span>
+        <span class="size-1.5 rounded-full bg-amber-500"></span>
+      </div>
+      <p class="text-amber-400/90">> KERNEL_PANIC: Unhandled runtime fault.</p>
+      {import.meta.env.DEV && (
+        <pre class="mt-3 overflow-x-auto border-t border-[var(--line)] pt-3 text-[11px] text-red-400">{errorMessage}</pre>
+      )}
+    </div>
+
+    <!-- Actions -->
+    <div class="mt-10 flex flex-wrap items-center gap-4 font-mono text-xs uppercase tracking-[0.2em]">
+      <button
+        onclick="window.location.reload()"
+        class="border border-[var(--line-strong)] bg-[var(--foreground)] px-6 py-3.5 text-[var(--background)] transition-all hover:bg-transparent hover:text-[var(--foreground)]"
+      >
+        {__('error.reload')}
+      </button>
+
+      <a
+        href="/"
+        class="border border-[var(--line)] px-6 py-3.5 text-[var(--foreground)] transition-all hover:border-[var(--line-strong)]"
+      >
+        ← {__('error.back_home')}
+      </a>
+    </div>
+  </div>
+</ErrorLayout>
