@@ -19,6 +19,20 @@ declare global {
       translator: Translator;
       /** Active locale for the current request */
       locale: SupportedLocale;
+
+      __(
+        key: TranslationKey | (string & {}),
+        replacements: Record<string, string | number> = {},
+      ): string;
+
+      date(
+        date: Date | number | string,
+        options?: Intl.DateTimeFormatOptions,
+      ): string;
+
+      number(number: number, options?: Intl.NumberFormatOptions): string;
+
+      currency(amount: number, currency: string = 'USD'): string;
     }
   }
 }

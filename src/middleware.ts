@@ -48,6 +48,10 @@ export const onRequest: MiddlewareHandler = defineMiddleware(
     // 3. Attach to Astro.locals
     context.locals.locale = locale;
     context.locals.translator = t;
+    context.locals.__ = t.__.bind(t);
+    context.locals.date = t.formatDate.bind(t);
+    context.locals.number = t.formatNumber.bind(t);
+    context.locals.currency = t.formatCurrency.bind(t);
 
     return next();
   },
