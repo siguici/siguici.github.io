@@ -1,0 +1,637 @@
+---
+const principles = [
+  {
+    index: '01',
+    title: 'SYSTEMS',
+    text: 'Je conçois des systèmes qui restent compréhensibles lorsque leur complexité augmente.',
+  },
+  {
+    index: '02',
+    title: 'ARCHITECTURE',
+    text: 'Les frontières, les contrats et les invariants comptent davantage que les abstractions à la mode.',
+  },
+  {
+    index: '03',
+    title: 'PRODUCT',
+    text: 'Un système logiciel doit résoudre un problème réel avant de chercher à impressionner techniquement.',
+  },
+];
+
+const projects = [
+  {
+    name: 'Sikessem',
+    type: 'Digital Infrastructure',
+    description:
+      'Une infrastructure numérique ouverte construite autour de l’identité, des espaces, des organisations et des expériences numériques.',
+  },
+  {
+    name: 'Loom',
+    type: 'Operations System',
+    description:
+      'Un système universel pour organiser, exécuter et automatiser les opérations d’une organisation.',
+  },
+  {
+    name: 'TransMo',
+    type: 'Financial Operations',
+    description:
+      'Un système d’exploitation financier pour les points de services télécoms et Mobile Money.',
+  },
+];
+
+const capabilities = [
+  'Software Architecture',
+  'Platform Engineering',
+  'Developer Tooling',
+  'Distributed Systems',
+  'Domain-Driven Design',
+  'Product Engineering',
+  'Open Source',
+  'Data Systems',
+];
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>SIGUI — Software Engineer & Systems Architect</title>
+
+    <meta
+      name="description"
+      content="SIGUI — Software Engineer, Systems Architect, Product Engineer and Open Source Builder."
+    />
+
+    <style is:global>
+      :root {
+        --background: #f4f4f1;
+        --foreground: #111111;
+        --muted: #73736d;
+        --line: rgba(17, 17, 17, 0.12);
+        --line-strong: rgba(17, 17, 17, 0.22);
+        --surface: rgba(255, 255, 255, 0.58);
+        --accent: #111111;
+      }
+
+      :root.dark {
+        --background: #080808;
+        --foreground: #f2f2ed;
+        --muted: #8d8d87;
+        --line: rgba(255, 255, 255, 0.1);
+        --line-strong: rgba(255, 255, 255, 0.2);
+        --surface: rgba(255, 255, 255, 0.035);
+        --accent: #ffffff;
+      }
+
+      html {
+        background: var(--background);
+        color: var(--foreground);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(
+            circle at 80% 8%,
+            rgba(120, 120, 120, 0.08),
+            transparent 30rem
+          ),
+          var(--background);
+        color: var(--foreground);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: var(--foreground);
+        color: var(--background);
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 100;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+      }
+
+      .grid-background {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.5;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(
+          to bottom,
+          black,
+          transparent 80%
+        );
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 800ms cubic-bezier(.16,1,.3,1),
+          transform 800ms cubic-bezier(.16,1,.3,1);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .cursor {
+        position: fixed;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--foreground);
+        border-radius: 999px;
+        pointer-events: none;
+        z-index: 200;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition:
+          width 180ms ease,
+          height 180ms ease,
+          opacity 180ms ease;
+        mix-blend-mode: difference;
+      }
+
+      @media (max-width: 768px) {
+        .grid-background {
+          background-size: 48px 48px;
+        }
+
+        .cursor {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="noise"></div>
+    <div class="grid-background"></div>
+    <div id="cursor" class="cursor"></div>
+
+    <header
+      class="relative z-10 mx-auto flex w-full max-w-[1600px] items-center justify-between px-6 py-6 md:px-10"
+    >
+      <a
+        href="/"
+        class="group flex items-center gap-3 text-sm font-medium tracking-tight"
+      >
+        <span
+          class="flex size-8 items-center justify-center border border-[var(--line-strong)] text-xs"
+        >
+          S
+        </span>
+
+        <span
+          class="opacity-60 transition-opacity group-hover:opacity-100"
+        >
+          SIGUI
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-xs uppercase tracking-[0.18em] md:flex">
+        <a
+          href="#about"
+          class="opacity-50 transition-opacity hover:opacity-100"
+        >
+          About
+        </a>
+
+        <a
+          href="#work"
+          class="opacity-50 transition-opacity hover:opacity-100"
+        >
+          Work
+        </a>
+
+        <a
+          href="#contact"
+          class="opacity-50 transition-opacity hover:opacity-100"
+        >
+          Contact
+        </a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        class="flex items-center gap-2 text-xs uppercase tracking-[0.16em] opacity-60 transition-opacity hover:opacity-100"
+        aria-label="Changer le thème"
+      >
+        <span class="size-1.5 rounded-full bg-current"></span>
+        <span id="theme-label">System</span>
+      </button>
+    </header>
+
+    <main class="relative z-10">
+      <!-- HERO -->
+
+      <section
+        class="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-[1600px] flex-col justify-center px-6 py-20 md:px-10 md:py-28"
+      >
+        <div class="max-w-7xl">
+          <div class="reveal mb-8 flex items-center gap-4 text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
+            <span class="h-px w-10 bg-current"></span>
+            <span>Software Engineer / Systems Architect</span>
+          </div>
+
+          <h1
+            class="reveal max-w-6xl text-[clamp(4rem,12vw,11rem)] font-medium leading-[0.78] tracking-[-0.075em]"
+          >
+            I BUILD
+            <br />
+            <span class="ml-[8vw]">SYSTEMS.</span>
+          </h1>
+
+          <div
+            class="reveal mt-14 grid max-w-6xl gap-10 md:grid-cols-[1fr_0.65fr]"
+          >
+            <p
+              class="max-w-2xl text-xl leading-relaxed tracking-tight text-[var(--muted)] md:text-2xl"
+            >
+              Je suis
+              <strong class="font-medium text-[var(--foreground)]">
+                SIGUI Kessé Emmanuel
+              </strong>,
+              ingénieur logiciel et architecte de systèmes.
+              Je construis des produits, des plateformes et des
+              infrastructures numériques destinés à durer.
+            </p>
+
+            <div class="flex flex-col justify-end">
+              <div class="mb-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+                Currently building
+              </div>
+
+              <div class="border-l border-[var(--line-strong)] pl-5">
+                <div class="text-lg tracking-tight">
+                  Sikessem
+                </div>
+
+                <div class="mt-1 text-sm text-[var(--muted)]">
+                  Digital infrastructure
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-auto flex items-end justify-between pt-20 text-xs uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          <span>Abidjan / Côte d'Ivoire</span>
+
+          <a
+            href="#about"
+            class="group flex items-center gap-3"
+          >
+            Scroll
+            <span
+              class="block h-px w-12 bg-current transition-all duration-500 group-hover:w-20"
+            ></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+
+      <section
+        id="about"
+        class="mx-auto w-full max-w-[1600px] border-t border-[var(--line)] px-6 py-28 md:px-10 md:py-40"
+      >
+        <div class="grid gap-20 lg:grid-cols-[0.35fr_1fr]">
+          <div class="reveal">
+            <div class="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+              01 / About
+            </div>
+          </div>
+
+          <div class="max-w-5xl">
+            <p
+              class="reveal text-[clamp(2rem,5vw,5rem)] leading-[1.02] tracking-[-0.055em]"
+            >
+              I don't just write software.
+              <span class="text-[var(--muted)]">
+                I think about the systems underneath it.
+              </span>
+            </p>
+
+            <div
+              class="reveal mt-20 grid gap-10 border-t border-[var(--line)] pt-10 md:grid-cols-3"
+            >
+              {
+                principles.map((principle) => (
+                  <article>
+                    <div class="mb-8 text-xs text-[var(--muted)]">
+                      {principle.index}
+                    </div>
+
+                    <h2 class="mb-4 text-sm font-medium tracking-[0.16em]">
+                      {principle.title}
+                    </h2>
+
+                    <p class="text-sm leading-7 text-[var(--muted)]">
+                      {principle.text}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES -->
+
+      <section
+        class="border-y border-[var(--line)]"
+      >
+        <div class="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
+          <div class="grid gap-16 lg:grid-cols-[0.35fr_1fr]">
+            <div class="reveal text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+              02 / Capabilities
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2">
+              {
+                capabilities.map((capability, index) => (
+                  <div
+                    class="reveal border-b border-[var(--line)] py-6 text-xl tracking-tight transition-transform duration-500 hover:translate-x-3 md:text-2xl"
+                    style={`transition-delay: ${index * 45}ms`}
+                  >
+                    <span class="mr-4 text-xs text-[var(--muted)]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+
+                    {capability}
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+
+      <section
+        id="work"
+        class="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-40"
+      >
+        <div class="grid gap-20 lg:grid-cols-[0.35fr_1fr]">
+          <div class="reveal">
+            <div class="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+              03 / Work
+            </div>
+          </div>
+
+          <div>
+            <div class="reveal mb-16 max-w-4xl">
+              <p class="text-3xl leading-tight tracking-[-0.04em] md:text-5xl">
+                A small selection of systems I'm shaping.
+              </p>
+            </div>
+
+            <div class="border-t border-[var(--line)]">
+              {
+                projects.map((project, index) => (
+                  <article class="reveal group relative border-b border-[var(--line)] py-10 md:py-14">
+                    <div class="grid gap-8 md:grid-cols-[80px_0.7fr_1fr_auto] md:items-start">
+                      <div class="text-xs text-[var(--muted)]">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+
+                      <div>
+                        <h2 class="text-2xl tracking-tight md:text-4xl">
+                          {project.name}
+                        </h2>
+
+                        <div class="mt-2 text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+                          {project.type}
+                        </div>
+                      </div>
+
+                      <p class="max-w-lg text-sm leading-7 text-[var(--muted)]">
+                        {project.description}
+                      </p>
+
+                      <div class="hidden size-10 items-center justify-center rounded-full border border-[var(--line-strong)] transition-all duration-500 group-hover:-rotate-45 group-hover:bg-[var(--foreground)] group-hover:text-[var(--background)] md:flex">
+                        ↗
+                      </div>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MANIFESTO -->
+
+      <section class="overflow-hidden border-y border-[var(--line)]">
+        <div
+          class="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-40"
+        >
+          <div class="reveal">
+            <div class="mb-12 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+              04 / Philosophy
+            </div>
+
+            <p
+              class="max-w-7xl text-[clamp(3rem,8vw,8rem)] leading-[0.9] tracking-[-0.075em]"
+            >
+              GOOD SOFTWARE
+              <br />
+              <span class="text-[var(--muted)]">
+                IS A FORM OF
+              </span>
+              <br />
+              <span class="ml-[12vw]">
+                THINKING.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <section
+        id="contact"
+        class="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-40"
+      >
+        <div class="grid gap-20 lg:grid-cols-[0.35fr_1fr]">
+          <div class="reveal text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+            05 / Contact
+          </div>
+
+          <div>
+            <h2
+              class="reveal max-w-5xl text-[clamp(3rem,8vw,8rem)] leading-[0.9] tracking-[-0.075em]"
+            >
+              LET'S BUILD
+              <br />
+              SOMETHING
+              <br />
+              <span class="text-[var(--muted)]">MEANINGFUL.</span>
+            </h2>
+
+            <div
+              class="reveal mt-16 flex flex-col gap-5 border-t border-[var(--line)] pt-8 text-sm md:flex-row md:items-center md:justify-between"
+            >
+              <a
+                href="mailto:kessy.emmanuel@gmail.com"
+                class="text-lg tracking-tight transition-opacity hover:opacity-50"
+              >
+                kessy.emmanuel@gmail.com
+              </a>
+
+              <div class="flex gap-6 text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+                <a
+                  href="https://github.com/siguici"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="transition-colors hover:text-[var(--foreground)]"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/sigui-kesse-emmanuel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="transition-colors hover:text-[var(--foreground)]"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  href="/cv"
+                  class="transition-colors hover:text-[var(--foreground)]"
+                >
+                  CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="relative z-10 mx-auto flex w-full max-w-[1600px] flex-col gap-4 border-t border-[var(--line)] px-6 py-8 text-xs text-[var(--muted)] md:flex-row md:items-center md:justify-between md:px-10"
+    >
+      <span>© {new Date().getFullYear()} SIGUI</span>
+
+      <span class="uppercase tracking-[0.16em]">
+        Designing systems for what comes next
+      </span>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const themeToggle = document.querySelector('#theme-toggle');
+      const themeLabel = document.querySelector('#theme-label');
+
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme === 'dark') {
+        root.classList.add('dark');
+      }
+
+      function updateThemeLabel() {
+        if (themeLabel) {
+          themeLabel.textContent = root.classList.contains('dark')
+            ? 'Dark'
+            : 'Light';
+        }
+      }
+
+      updateThemeLabel();
+
+      themeToggle?.addEventListener('click', () => {
+        root.classList.toggle('dark');
+
+        localStorage.setItem(
+          'theme',
+          root.classList.contains('dark') ? 'dark' : 'light',
+        );
+
+        updateThemeLabel();
+      });
+
+      const revealElements =
+        document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: '0px 0px -40px 0px',
+        },
+      );
+
+      revealElements.forEach((element) =>
+        observer.observe(element),
+      );
+
+      const cursor =
+        document.querySelector('#cursor');
+
+      if (
+        cursor &&
+        window.matchMedia('(pointer: fine)').matches
+      ) {
+        window.addEventListener('mousemove', (event) => {
+          cursor.style.left = `${event.clientX}px`;
+          cursor.style.top = `${event.clientY}px`;
+          cursor.style.opacity = '1';
+        });
+
+        document
+          .querySelectorAll('a, button')
+          .forEach((element) => {
+            element.addEventListener('mouseenter', () => {
+              cursor.style.width = '42px';
+              cursor.style.height = '42px';
+            });
+
+            element.addEventListener('mouseleave', () => {
+              cursor.style.width = '18px';
+              cursor.style.height = '18px';
+            });
+          });
+      }
+    </script>
+  </body>
+</html>
