@@ -130,7 +130,7 @@ export const locales = {
   fr,
 } as const;
 
-export function getCV(locale: Locale = DEFAULT_LOCALE) {
+function getMasterCV(locale: Locale = DEFAULT_LOCALE) {
   const selectedLocale = locales[locale] ?? locales.en;
 
   return {
@@ -155,4 +155,4 @@ export function getCVData(
   };
 }
 
-export default getCV;
+export default getMasterCV;
