@@ -1,0 +1,43 @@
+---
+import {
+  DEFAULT_CV_LOCALE,
+  DEFAULT_CV_PROFILE,
+  DEFAULT_CV_TEMPLATE,
+} from '../../config/cv';
+
+import { getCVData } from '../../data/cv';
+import { resolveCV } from '../../data/cv/resolver';
+import { templates } from '../../templates/cv';
+
+const locale = DEFAULT_CV_LOCALE;
+const profile = DEFAULT_CV_PROFILE;
+const template = DEFAULT_CV_TEMPLATE;
+
+const { data } = getCVData(profile, locale);
+
+const cv = resolveCV(profile, locale);
+
+const Template = templates[template];
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>{data.title}</title>
+
+    <meta
+      name="description"
+      content={data.tagline}
+    />
+  </head>
+
+  <body>
+    <Template cv={cv} />
+  </body>
+</html>

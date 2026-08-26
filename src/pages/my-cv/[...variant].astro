@@ -1,88 +1,62 @@
 ---
+import { getCVData } from '../../data/cv';
+import type { Locale, ProfileId } from '../../data/cv/domain/types';
 import {
-  CV_LOCALES,
-  CV_PROFILES,
-  CV_TEMPLATES,
-  DEFAULT_CV_LOCALE,
-  DEFAULT_CV_PROFILE,
-  DEFAULT_CV_TEMPLATE,
-} from '../../config/cv';
-
-import { getCVData, type Locale, type ProfileType } from '../../data/cv';
-
-import { resolveCV } from '../../data/cv/resolver';
-
+  generateCVVariantSegments,
+  generateCVVariants,
+  resolveCV,
+  resolveCVVariant,
+} from '../../data/cv/resolver';
 import { type CVTemplate, templates } from '../../templates/cv';
 
 export function getStaticPaths() {
-  const paths = [];
+  const variants = generateCVVariants();
 
-  for (const locale of CV_LOCALES) {
-    for (const profile of CV_PROFILES) {
-      for (const template of CV_TEMPLATES) {
-        if (
-          locale === DEFAULT_CV_LOCALE &&
-          profile === DEFAULT_CV_PROFILE &&
-          template === DEFAULT_CV_TEMPLATE
-        ) {
-          paths.push({
-            params: {
-              variant: undefined,
-            },
-            props: {
-              locale,
-              profile,
-              template,
-            },
-          });
+  const paths = new Map<
+    string,
+    {
+      params: {
+        variant?: string;
+      };
+      props: {
+        locale: Locale;
+        profile: ProfileId;
+        template: CVTemplate;
+      };
+    }
+  >();
 
-          continue;
-        }
+  for (const variant of variants) {
+    const combinations = generateCVVariantSegments(variant);
 
-        if (
-          profile === DEFAULT_CV_PROFILE &&
-          template === DEFAULT_CV_TEMPLATE
-        ) {
-          paths.push({
-            params: {
-              variant: locale,
-            },
-            props: {
-              locale,
-              profile,
-              template,
-            },
-          });
+    for (const segments of combinations) {
+      const resolved = resolveCVVariant(segments);
 
-          continue;
-        }
+      const key = segments.join('/');
 
-        const segments = [
-          locale,
-          profile,
-          ...(template === DEFAULT_CV_TEMPLATE ? [] : [template]),
-        ];
-
-        paths.push({
-          params: {
-            variant: segments.join('/'),
-          },
-          props: {
-            locale,
-            profile,
-            template,
-          },
-        });
+      if (paths.has(key)) {
+        continue;
       }
+
+      paths.set(key, {
+        params: {
+          variant: segments.length > 0 ? segments.join('/') : undefined,
+        },
+        props: {
+          locale: resolved.locale,
+          profile: resolved.profile,
+          template: resolved.template,
+        },
+      });
     }
   }
 
-  return paths;
+  return [...paths.values()];
 }
 
 interface Props {
   locale: Locale;
-  profile: ProfileType;
+  profile: ProfileId;
   template: CVTemplate;
 }
 

@@ -6,8 +6,11 @@ import {
   DEFAULT_CV_PROFILE,
   DEFAULT_CV_TEMPLATE,
 } from '../../config/cv';
+
 import type { Locale, ProfileId, ResolvedCV } from '../../domain/cv/types';
+
 import type { CVTemplate } from '../../templates/cv';
+
 import { getCVData } from './index';
 
 export interface CVVariant {
