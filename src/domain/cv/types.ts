@@ -1,4 +1,5 @@
 export type ProfileId =
+  | 'master'
   | 'software-architect'
   | 'data-engineer'
   | 'data-scientist'

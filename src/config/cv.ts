@@ -5,6 +5,7 @@ export const CV_LOCALES = ['fr', 'en'] as const satisfies readonly Locale[];
 
 export const CV_PROFILES = [
   'master',
+  'software-architect',
   'data-scientist',
   'data-analyst',
 ] as const satisfies readonly ProfileId[];

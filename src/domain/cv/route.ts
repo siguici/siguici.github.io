@@ -1,5 +1,5 @@
-import type { CVTemplate } from '../../../components/cv/templates';
-import type { ProfileType } from '../index';
+import type { CVTemplate } from '../../../templates/cv';
+import type { ProfileType } from '../data/cv';
 import type { Locale } from './types';
 
 export interface CVRoute {
@@ -18,6 +18,7 @@ const locales = new Set<Locale>(['fr', 'en']);
 
 const profiles = new Set<ProfileType>([
   'master',
+  'software-architect',
   'data-scientist',
   'data-analyst',
 ]);
