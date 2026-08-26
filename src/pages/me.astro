@@ -1,637 +1,752 @@
 ---
-const principles = [
-  {
-    index: '01',
-    title: 'SYSTEMS',
-    text: 'Je conçois des systèmes qui restent compréhensibles lorsque leur complexité augmente.',
-  },
-  {
-    index: '02',
-    title: 'ARCHITECTURE',
-    text: 'Les frontières, les contrats et les invariants comptent davantage que les abstractions à la mode.',
-  },
-  {
-    index: '03',
-    title: 'PRODUCT',
-    text: 'Un système logiciel doit résoudre un problème réel avant de chercher à impressionner techniquement.',
-  },
-];
-
-const projects = [
-  {
-    name: 'Sikessem',
-    type: 'Digital Infrastructure',
-    description:
-      'Une infrastructure numérique ouverte construite autour de l’identité, des espaces, des organisations et des expériences numériques.',
-  },
-  {
-    name: 'Loom',
-    type: 'Operations System',
-    description:
-      'Un système universel pour organiser, exécuter et automatiser les opérations d’une organisation.',
-  },
-  {
-    name: 'TransMo',
-    type: 'Financial Operations',
-    description:
-      'Un système d’exploitation financier pour les points de services télécoms et Mobile Money.',
-  },
-];
-
-const capabilities = [
-  'Software Architecture',
-  'Platform Engineering',
-  'Developer Tooling',
-  'Distributed Systems',
-  'Domain-Driven Design',
-  'Product Engineering',
-  'Open Source',
-  'Data Systems',
-];
+const { __ } = Astro.locals;
 ---
 
-<html lang="fr">
+<!doctype html>
+<html lang={Astro.currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{__('profile.meta.title')}</title>
+    <meta name="description" content={__('profile.meta.description')} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
-
-    <title>SIGUI — Software Engineer & Systems Architect</title>
-
-    <meta
-      name="description"
-      content="SIGUI — Software Engineer, Systems Architect, Product Engineer and Open Source Builder."
-    />
-
-    <style is:global>
-      :root {
-        --background: #f4f4f1;
-        --foreground: #111111;
-        --muted: #73736d;
-        --line: rgba(17, 17, 17, 0.12);
-        --line-strong: rgba(17, 17, 17, 0.22);
-        --surface: rgba(255, 255, 255, 0.58);
-        --accent: #111111;
-      }
-
-      :root.dark {
-        --background: #080808;
-        --foreground: #f2f2ed;
-        --muted: #8d8d87;
-        --line: rgba(255, 255, 255, 0.1);
-        --line-strong: rgba(255, 255, 255, 0.2);
-        --surface: rgba(255, 255, 255, 0.035);
-        --accent: #ffffff;
-      }
-
-      html {
-        background: var(--background);
-        color: var(--foreground);
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        min-width: 320px;
-        background:
-          radial-gradient(
-            circle at 80% 8%,
-            rgba(120, 120, 120, 0.08),
-            transparent 30rem
-          ),
-          var(--background);
-        color: var(--foreground);
-        font-family:
-          Inter,
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-        overflow-x: hidden;
-      }
-
-      ::selection {
-        background: var(--foreground);
-        color: var(--background);
-      }
-
-      .noise {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 100;
-        opacity: 0.035;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-      }
-
-      .grid-background {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.5;
-        background-image:
-          linear-gradient(var(--line) 1px, transparent 1px),
-          linear-gradient(90deg, var(--line) 1px, transparent 1px);
-        background-size: 72px 72px;
-        mask-image: linear-gradient(
-          to bottom,
-          black,
-          transparent 80%
-        );
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition:
-          opacity 800ms cubic-bezier(.16,1,.3,1),
-          transform 800ms cubic-bezier(.16,1,.3,1);
-      }
-
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .cursor {
-        position: fixed;
-        width: 18px;
-        height: 18px;
-        border: 1px solid var(--foreground);
-        border-radius: 999px;
-        pointer-events: none;
-        z-index: 200;
-        opacity: 0;
-        transform: translate(-50%, -50%);
-        transition:
-          width 180ms ease,
-          height 180ms ease,
-          opacity 180ms ease;
-        mix-blend-mode: difference;
-      }
-
-      @media (max-width: 768px) {
-        .grid-background {
-          background-size: 48px 48px;
-        }
-
-        .cursor {
-          display: none;
-        }
-      }
-    </style>
   </head>
 
   <body>
-    <div class="noise"></div>
-    <div class="grid-background"></div>
-    <div id="cursor" class="cursor"></div>
+    <main class="profile">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="grid"></div>
 
-    <header
-      class="relative z-10 mx-auto flex w-full max-w-[1600px] items-center justify-between px-6 py-6 md:px-10"
-    >
-      <a
-        href="/"
-        class="group flex items-center gap-3 text-sm font-medium tracking-tight"
-      >
-        <span
-          class="flex size-8 items-center justify-center border border-[var(--line-strong)] text-xs"
-        >
-          S
-        </span>
-
-        <span
-          class="opacity-60 transition-opacity group-hover:opacity-100"
-        >
-          SIGUI
-        </span>
-      </a>
-
-      <nav class="hidden items-center gap-8 text-xs uppercase tracking-[0.18em] md:flex">
-        <a
-          href="#about"
-          class="opacity-50 transition-opacity hover:opacity-100"
-        >
-          About
+      <header class="topbar">
+        <a href="/" class="brand">
+          <span class="brand-mark">S</span>
+          <span>SIGUI</span>
         </a>
 
-        <a
-          href="#work"
-          class="opacity-50 transition-opacity hover:opacity-100"
-        >
-          Work
-        </a>
+        <div class="status">
+          <span class="status-dot"></span>
+          <span>{__('profile.status')}</span>
+        </div>
+      </header>
 
-        <a
-          href="#contact"
-          class="opacity-50 transition-opacity hover:opacity-100"
-        >
-          Contact
-        </a>
-      </nav>
+      <section class="hero">
+        <div class="hero-index">00 / 01</div>
 
-      <button
-        id="theme-toggle"
-        type="button"
-        class="flex items-center gap-2 text-xs uppercase tracking-[0.16em] opacity-60 transition-opacity hover:opacity-100"
-        aria-label="Changer le thème"
-      >
-        <span class="size-1.5 rounded-full bg-current"></span>
-        <span id="theme-label">System</span>
-      </button>
-    </header>
+        <div class="hero-content">
+          <p class="eyebrow">{__('profile.hero.eyebrow')}</p>
 
-    <main class="relative z-10">
-      <!-- HERO -->
-
-      <section
-        class="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-[1600px] flex-col justify-center px-6 py-20 md:px-10 md:py-28"
-      >
-        <div class="max-w-7xl">
-          <div class="reveal mb-8 flex items-center gap-4 text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
-            <span class="h-px w-10 bg-current"></span>
-            <span>Software Engineer / Systems Architect</span>
-          </div>
-
-          <h1
-            class="reveal max-w-6xl text-[clamp(4rem,12vw,11rem)] font-medium leading-[0.78] tracking-[-0.075em]"
-          >
-            I BUILD
-            <br />
-            <span class="ml-[8vw]">SYSTEMS.</span>
+          <h1>
+            {__('profile.hero.title.line1')}
+            <span>{__('profile.hero.title.line2')}</span>
           </h1>
 
-          <div
-            class="reveal mt-14 grid max-w-6xl gap-10 md:grid-cols-[1fr_0.65fr]"
-          >
-            <p
-              class="max-w-2xl text-xl leading-relaxed tracking-tight text-[var(--muted)] md:text-2xl"
-            >
-              Je suis
-              <strong class="font-medium text-[var(--foreground)]">
-                SIGUI Kessé Emmanuel
-              </strong>,
-              ingénieur logiciel et architecte de systèmes.
-              Je construis des produits, des plateformes et des
-              infrastructures numériques destinés à durer.
-            </p>
+          <p class="intro">
+            {__('profile.hero.intro')}
+          </p>
 
-            <div class="flex flex-col justify-end">
-              <div class="mb-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-                Currently building
-              </div>
+          <div class="hero-actions">
+            <a href="/my-cv" class="button button-primary">
+              {__('profile.hero.cv')}
+              <span>↗</span>
+            </a>
 
-              <div class="border-l border-[var(--line-strong)] pl-5">
-                <div class="text-lg tracking-tight">
-                  Sikessem
-                </div>
-
-                <div class="mt-1 text-sm text-[var(--muted)]">
-                  Digital infrastructure
-                </div>
-              </div>
-            </div>
+            <a href="#contact" class="button button-secondary">
+              {__('profile.hero.contact')}
+            </a>
           </div>
         </div>
 
-        <div
-          class="mt-auto flex items-end justify-between pt-20 text-xs uppercase tracking-[0.18em] text-[var(--muted)]"
-        >
-          <span>Abidjan / Côte d'Ivoire</span>
-
-          <a
-            href="#about"
-            class="group flex items-center gap-3"
-          >
-            Scroll
-            <span
-              class="block h-px w-12 bg-current transition-all duration-500 group-hover:w-20"
-            ></span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-
-      <section
-        id="about"
-        class="mx-auto w-full max-w-[1600px] border-t border-[var(--line)] px-6 py-28 md:px-10 md:py-40"
-      >
-        <div class="grid gap-20 lg:grid-cols-[0.35fr_1fr]">
-          <div class="reveal">
-            <div class="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-              01 / About
-            </div>
-          </div>
-
-          <div class="max-w-5xl">
-            <p
-              class="reveal text-[clamp(2rem,5vw,5rem)] leading-[1.02] tracking-[-0.055em]"
-            >
-              I don't just write software.
-              <span class="text-[var(--muted)]">
-                I think about the systems underneath it.
-              </span>
-            </p>
-
-            <div
-              class="reveal mt-20 grid gap-10 border-t border-[var(--line)] pt-10 md:grid-cols-3"
-            >
-              {
-                principles.map((principle) => (
-                  <article>
-                    <div class="mb-8 text-xs text-[var(--muted)]">
-                      {principle.index}
-                    </div>
-
-                    <h2 class="mb-4 text-sm font-medium tracking-[0.16em]">
-                      {principle.title}
-                    </h2>
-
-                    <p class="text-sm leading-7 text-[var(--muted)]">
-                      {principle.text}
-                    </p>
-                  </article>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CAPABILITIES -->
-
-      <section
-        class="border-y border-[var(--line)]"
-      >
-        <div class="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
-          <div class="grid gap-16 lg:grid-cols-[0.35fr_1fr]">
-            <div class="reveal text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-              02 / Capabilities
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2">
-              {
-                capabilities.map((capability, index) => (
-                  <div
-                    class="reveal border-b border-[var(--line)] py-6 text-xl tracking-tight transition-transform duration-500 hover:translate-x-3 md:text-2xl"
-                    style={`transition-delay: ${index * 45}ms`}
-                  >
-                    <span class="mr-4 text-xs text-[var(--muted)]">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-
-                    {capability}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WORK -->
-
-      <section
-        id="work"
-        class="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-40"
-      >
-        <div class="grid gap-20 lg:grid-cols-[0.35fr_1fr]">
-          <div class="reveal">
-            <div class="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-              03 / Work
-            </div>
+        <div class="hero-meta">
+          <div>
+            <span>{__('profile.hero.location.label')}</span>
+            <strong>{__('profile.hero.location.value')}</strong>
           </div>
 
           <div>
-            <div class="reveal mb-16 max-w-4xl">
-              <p class="text-3xl leading-tight tracking-[-0.04em] md:text-5xl">
-                A small selection of systems I'm shaping.
-              </p>
-            </div>
-
-            <div class="border-t border-[var(--line)]">
-              {
-                projects.map((project, index) => (
-                  <article class="reveal group relative border-b border-[var(--line)] py-10 md:py-14">
-                    <div class="grid gap-8 md:grid-cols-[80px_0.7fr_1fr_auto] md:items-start">
-                      <div class="text-xs text-[var(--muted)]">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-
-                      <div>
-                        <h2 class="text-2xl tracking-tight md:text-4xl">
-                          {project.name}
-                        </h2>
-
-                        <div class="mt-2 text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
-                          {project.type}
-                        </div>
-                      </div>
-
-                      <p class="max-w-lg text-sm leading-7 text-[var(--muted)]">
-                        {project.description}
-                      </p>
-
-                      <div class="hidden size-10 items-center justify-center rounded-full border border-[var(--line-strong)] transition-all duration-500 group-hover:-rotate-45 group-hover:bg-[var(--foreground)] group-hover:text-[var(--background)] md:flex">
-                        ↗
-                      </div>
-                    </div>
-                  </article>
-                ))
-              }
-            </div>
+            <span>{__('profile.hero.focus.label')}</span>
+            <strong>{__('profile.hero.focus.value')}</strong>
           </div>
         </div>
       </section>
 
-      <!-- MANIFESTO -->
+      <section class="identity-section">
+        <div class="section-label">
+          <span>01</span>
+          <span>{__('profile.identity.label')}</span>
+        </div>
 
-      <section class="overflow-hidden border-y border-[var(--line)]">
-        <div
-          class="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-40"
-        >
-          <div class="reveal">
-            <div class="mb-12 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-              04 / Philosophy
-            </div>
+        <div class="identity-grid">
+          <div class="identity-title">
+            <p>{__('profile.identity.kicker')}</p>
+            <h2>{__('profile.identity.title')}</h2>
+          </div>
 
-            <p
-              class="max-w-7xl text-[clamp(3rem,8vw,8rem)] leading-[0.9] tracking-[-0.075em]"
-            >
-              GOOD SOFTWARE
-              <br />
-              <span class="text-[var(--muted)]">
-                IS A FORM OF
-              </span>
-              <br />
-              <span class="ml-[12vw]">
-                THINKING.
-              </span>
-            </p>
+          <div class="identity-copy">
+            <p>{__('profile.identity.paragraph1')}</p>
+            <p>{__('profile.identity.paragraph2')}</p>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
+      <section class="systems-section">
+        <div class="section-label">
+          <span>02</span>
+          <span>{__('profile.systems.label')}</span>
+        </div>
 
-      <section
-        id="contact"
-        class="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-40"
-      >
-        <div class="grid gap-20 lg:grid-cols-[0.35fr_1fr]">
-          <div class="reveal text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-            05 / Contact
-          </div>
+        <div class="systems-grid">
+          <article class="system-card system-main">
+            <span class="system-number">01</span>
 
-          <div>
-            <h2
-              class="reveal max-w-5xl text-[clamp(3rem,8vw,8rem)] leading-[0.9] tracking-[-0.075em]"
-            >
-              LET'S BUILD
-              <br />
-              SOMETHING
-              <br />
-              <span class="text-[var(--muted)]">MEANINGFUL.</span>
-            </h2>
-
-            <div
-              class="reveal mt-16 flex flex-col gap-5 border-t border-[var(--line)] pt-8 text-sm md:flex-row md:items-center md:justify-between"
-            >
-              <a
-                href="mailto:kessy.emmanuel@gmail.com"
-                class="text-lg tracking-tight transition-opacity hover:opacity-50"
-              >
-                kessy.emmanuel@gmail.com
-              </a>
-
-              <div class="flex gap-6 text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
-                <a
-                  href="https://github.com/siguici"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="transition-colors hover:text-[var(--foreground)]"
-                >
-                  GitHub
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/sigui-kesse-emmanuel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="transition-colors hover:text-[var(--foreground)]"
-                >
-                  LinkedIn
-                </a>
-
-                <a
-                  href="/cv"
-                  class="transition-colors hover:text-[var(--foreground)]"
-                >
-                  CV
-                </a>
-              </div>
+            <div>
+              <p class="system-type">{__('profile.systems.sikessem.type')}</p>
+              <h3>Sikessem</h3>
+              <p>{__('profile.systems.sikessem.description')}</p>
             </div>
+
+            <a href="https://sikessem.com" target="_blank" rel="noreferrer">
+              {__('profile.systems.explore')} ↗
+            </a>
+          </article>
+
+          <article class="system-card">
+            <span class="system-number">02</span>
+
+            <div>
+              <p class="system-type">{__('profile.systems.loom.type')}</p>
+              <h3>Loom</h3>
+              <p>{__('profile.systems.loom.description')}</p>
+            </div>
+
+            <a href="https://loom.sikessem.com" target="_blank" rel="noreferrer">
+              {__('profile.systems.explore')} ↗
+            </a>
+          </article>
+
+          <article class="system-card">
+            <span class="system-number">03</span>
+
+            <div>
+              <p class="system-type">{__('profile.systems.tooling.type')}</p>
+              <h3>{__('profile.systems.tooling.title')}</h3>
+              <p>{__('profile.systems.tooling.description')}</p>
+            </div>
+
+            <a href="https://github.com/siguici" target="_blank" rel="noreferrer">
+              {__('profile.systems.explore')} ↗
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="principles-section">
+        <div class="section-label">
+          <span>03</span>
+          <span>{__('profile.principles.label')}</span>
+        </div>
+
+        <div class="principles">
+          <article>
+            <span>01</span>
+            <h3>{__('profile.principles.systems.title')}</h3>
+            <p>{__('profile.principles.systems.description')}</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>{__('profile.principles.domain.title')}</h3>
+            <p>{__('profile.principles.domain.description')}</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>{__('profile.principles.product.title')}</h3>
+            <p>{__('profile.principles.product.description')}</p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>{__('profile.principles.open.title')}</h3>
+            <p>{__('profile.principles.open.description')}</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="statement-section">
+        <div class="statement-mark">“</div>
+
+        <blockquote>
+          {__('profile.statement')}
+        </blockquote>
+
+        <span>{__('profile.statement.author')}</span>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="section-label">
+          <span>04</span>
+          <span>{__('profile.contact.label')}</span>
+        </div>
+
+        <div class="contact-content">
+          <h2>{__('profile.contact.title')}</h2>
+
+          <div class="contact-links">
+            <a href="mailto:kessy.emmanuel@gmail.com">
+              <span>{__('profile.contact.email')}</span>
+              <strong>kessy.emmanuel@gmail.com ↗</strong>
+            </a>
+
+            <a
+              href="https://github.com/siguici"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>GitHub</span>
+              <strong>@siguici ↗</strong>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/sigui-kesse-emmanuel"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>LinkedIn</span>
+              <strong>Sigui Kessé Emmanuel ↗</strong>
+            </a>
           </div>
         </div>
       </section>
+
+      <footer>
+        <span>© {new Date().getFullYear()} SIGUI KESSÉ EMMANUEL</span>
+        <span>{__('profile.footer')}</span>
+      </footer>
     </main>
-
-    <footer
-      class="relative z-10 mx-auto flex w-full max-w-[1600px] flex-col gap-4 border-t border-[var(--line)] px-6 py-8 text-xs text-[var(--muted)] md:flex-row md:items-center md:justify-between md:px-10"
-    >
-      <span>© {new Date().getFullYear()} SIGUI</span>
-
-      <span class="uppercase tracking-[0.16em]">
-        Designing systems for what comes next
-      </span>
-    </footer>
-
-    <script>
-      const root = document.documentElement;
-      const themeToggle = document.querySelector('#theme-toggle');
-      const themeLabel = document.querySelector('#theme-label');
-
-      const savedTheme = localStorage.getItem('theme');
-
-      if (savedTheme === 'dark') {
-        root.classList.add('dark');
-      }
-
-      function updateThemeLabel() {
-        if (themeLabel) {
-          themeLabel.textContent = root.classList.contains('dark')
-            ? 'Dark'
-            : 'Light';
-        }
-      }
-
-      updateThemeLabel();
-
-      themeToggle?.addEventListener('click', () => {
-        root.classList.toggle('dark');
-
-        localStorage.setItem(
-          'theme',
-          root.classList.contains('dark') ? 'dark' : 'light',
-        );
-
-        updateThemeLabel();
-      });
-
-      const revealElements =
-        document.querySelectorAll('.reveal');
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.08,
-          rootMargin: '0px 0px -40px 0px',
-        },
-      );
-
-      revealElements.forEach((element) =>
-        observer.observe(element),
-      );
-
-      const cursor =
-        document.querySelector('#cursor');
-
-      if (
-        cursor &&
-        window.matchMedia('(pointer: fine)').matches
-      ) {
-        window.addEventListener('mousemove', (event) => {
-          cursor.style.left = `${event.clientX}px`;
-          cursor.style.top = `${event.clientY}px`;
-          cursor.style.opacity = '1';
-        });
-
-        document
-          .querySelectorAll('a, button')
-          .forEach((element) => {
-            element.addEventListener('mouseenter', () => {
-              cursor.style.width = '42px';
-              cursor.style.height = '42px';
-            });
-
-            element.addEventListener('mouseleave', () => {
-              cursor.style.width = '18px';
-              cursor.style.height = '18px';
-            });
-          });
-      }
-    </script>
   </body>
 </html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+    background: #070708;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #070708;
+    color: #f4f4f0;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .profile {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 75% 15%, rgba(130, 255, 180, 0.08), transparent 28rem),
+      radial-gradient(circle at 15% 70%, rgba(100, 140, 255, 0.06), transparent 30rem),
+      #070708;
+  }
+
+  .grid {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom, black, transparent 80%);
+  }
+
+  .ambient {
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+
+  .ambient-one {
+    top: 10rem;
+    right: -15rem;
+    background: rgba(90, 255, 160, 0.08);
+  }
+
+  .ambient-two {
+    top: 70rem;
+    left: -15rem;
+    background: rgba(80, 110, 255, 0.07);
+  }
+
+  .topbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(1400px, calc(100% - 64px));
+    margin: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    font-size: 0.7rem;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: rgba(255, 255, 255, 0.48);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7dffad;
+    box-shadow: 0 0 15px rgba(125, 255, 173, 0.7);
+  }
+
+  .hero,
+  .identity-section,
+  .systems-section,
+  .principles-section,
+  .statement-section,
+  .contact-section,
+  footer {
+    position: relative;
+    z-index: 1;
+    width: min(1400px, calc(100% - 64px));
+    margin: auto;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 120px 1fr 260px;
+    gap: 40px;
+    min-height: 800px;
+    padding: 130px 0 120px;
+  }
+
+  .hero-index,
+  .section-label,
+  .eyebrow,
+  .hero-meta span,
+  .system-type,
+  .contact-links span,
+  footer {
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-index {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.65rem;
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    margin: 0 0 35px;
+    color: #8affb5;
+    font-size: 0.68rem;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(4rem, 8vw, 9rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.075em;
+  }
+
+  h1 span {
+    display: block;
+    color: rgba(255, 255, 255, 0.28);
+  }
+
+  .intro {
+    max-width: 610px;
+    margin: 55px 0 0;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: 250ms ease;
+  }
+
+  .button-primary {
+    border-color: #8affb5;
+    background: #8affb5;
+    color: #070708;
+  }
+
+  .button-secondary:hover,
+  .button-primary:hover {
+    transform: translateY(-3px);
+  }
+
+  .button-secondary:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .hero-meta {
+    align-self: end;
+    display: grid;
+    gap: 30px;
+    padding-bottom: 15px;
+  }
+
+  .hero-meta div {
+    display: grid;
+    gap: 9px;
+  }
+
+  .hero-meta span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.58rem;
+  }
+
+  .hero-meta strong {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .identity-section,
+  .systems-section,
+  .principles-section,
+  .contact-section {
+    padding: 130px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .section-label {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 70px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.62rem;
+  }
+
+  .section-label span:first-child {
+    color: #8affb5;
+  }
+
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+
+  .identity-title p {
+    margin: 0 0 20px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 0;
+    max-width: 700px;
+    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .identity-copy {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .identity-copy p {
+    margin: 0 0 25px;
+  }
+
+  .systems-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .system-card {
+    display: flex;
+    min-height: 420px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    background: #0b0b0d;
+    transition: 300ms ease;
+  }
+
+  .system-card:hover {
+    background: #101013;
+  }
+
+  .system-number {
+    color: rgba(255, 255, 255, 0.25);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+  }
+
+  .system-type {
+    margin-bottom: 15px;
+    color: #8affb5;
+    font-size: 0.58rem;
+  }
+
+  .system-card h3 {
+    margin: 0 0 20px;
+    font-size: 2.2rem;
+    letter-spacing: -0.05em;
+  }
+
+  .system-card p:not(.system-type) {
+    max-width: 400px;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.7;
+  }
+
+  .system-card a {
+    width: fit-content;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 100px;
+  }
+
+  .principles article {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 25px;
+  }
+
+  .principles article > span {
+    color: #8affb5;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+  }
+
+  .principles h3 {
+    margin: 0 0 15px;
+    font-size: 1.35rem;
+  }
+
+  .principles p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.75;
+  }
+
+  .statement-section {
+    padding: 180px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .statement-mark {
+    color: #8affb5;
+    font-size: 6rem;
+    line-height: 0.5;
+  }
+
+  blockquote {
+    max-width: 1100px;
+    margin: 50px 0;
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.06em;
+  }
+
+  .statement-section > span {
+    color: rgba(255, 255, 255, 0.35);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+
+  .contact-links {
+    display: grid;
+  }
+
+  .contact-links a {
+    display: grid;
+    gap: 10px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-links span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.58rem;
+  }
+
+  .contact-links strong {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 0;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.55rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding: 90px 0;
+    }
+
+    .hero-index {
+      display: none;
+    }
+
+    .hero-meta {
+      grid-template-columns: 1fr 1fr;
+      margin-top: 80px;
+    }
+
+    .identity-grid,
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .systems-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .principles {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .topbar,
+    .hero,
+    .identity-section,
+    .systems-section,
+    .principles-section,
+    .statement-section,
+    .contact-section,
+    footer {
+      width: min(100% - 36px, 1400px);
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 18vw, 6rem);
+    }
+
+    .hero-meta {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .button {
+      justify-content: space-between;
+    }
+
+    .identity-section,
+    .systems-section,
+    .principles-section,
+    .contact-section {
+      padding: 90px 0;
+    }
+
+    .statement-section {
+      padding: 120px 0;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>
