@@ -1,33 +1,22 @@
 ---
-import type { Locale, ProfileType } from '../../data/cv';
+import { getCVData, type Locale, type ProfileType } from '../../data/cv';
 
 import { resolveCV } from '../../data/cv/resolver';
 
 import { type CVTemplate, templates } from '../../templates/cv';
 
-const locales = ['fr', 'en'] as const;
-
-const profiles = ['master', 'data-scientist', 'data-analyst'] as const;
-
-const templateNames = ['default', 'modern', 'compact'] as const;
-
-type PageProps = {
-  locale: Locale;
-  profile: ProfileType;
-  template: CVTemplate;
-};
-
 export function getStaticPaths() {
-  const paths: Array<{
-    params: {
-      variant?: string;
-    };
-    props: PageProps;
-  }> = [];
+  const locales = ['fr', 'en'] as const;
+
+  const profiles = ['master', 'data-scientist', 'data-analyst'] as const;
+
+  const templates = ['default', 'modern', 'compact'] as const;
+
+  const paths = [];
 
   for (const locale of locales) {
     for (const profile of profiles) {
-      for (const template of templateNames) {
+      for (const template of templates) {
         if (locale === 'fr' && profile === 'master' && template === 'default') {
           paths.push({
             params: {
@@ -58,15 +47,15 @@ export function getStaticPaths() {
           continue;
         }
 
-        const segments = [
+        const variant = [
           locale,
           profile,
           ...(template === 'default' ? [] : [template]),
-        ];
+        ].join('/');
 
         paths.push({
           params: {
-            variant: segments.join('/'),
+            variant,
           },
           props: {
             locale,
@@ -81,14 +70,22 @@ export function getStaticPaths() {
   return paths;
 }
 
-const { locale, profile, template } = Astro.props;
+interface Props {
+  locale: Locale;
+  profile: ProfileType;
+  template: CVTemplate;
+}
+
+const { locale, profile, template } = Astro.props as Props;
+
+const { data } = getCVData(profile, locale);
 
 const cv = resolveCV(profile, locale);
 
 const Template = templates[template];
 
 if (!Template) {
-  throw new Error(`CV template "${template}" does not exist.`);
+  throw new Error(`Unknown CV template: ${template}`);
 }
 ---
 
@@ -98,18 +95,18 @@ if (!Template) {
 
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1"
     />
 
-    <title>{cv.meta.title}</title>
+    <title>{data.title}</title>
 
     <meta
       name="description"
-      content={cv.identity.tagline}
+      content={data.tagline}
     />
   </head>
 
   <body>
-    <Template {cv} />
+    <Template cv={cv} />
   </body>
 </html>

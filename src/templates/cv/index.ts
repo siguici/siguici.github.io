@@ -5,10 +5,10 @@ import ModernTemplate from './Modern.astro';
 
 export type CVTemplate = 'default' | 'modern' | 'compact';
 
+export const DEFAULT_TEMPLATE: CVTemplate = 'default';
+
 export const templates = {
   default: DefaultTemplate,
   modern: ModernTemplate,
   compact: CompactTemplate,
 } satisfies Record<CVTemplate, Component>;
-
-export const DEFAULT_TEMPLATE: CVTemplate = 'default';
