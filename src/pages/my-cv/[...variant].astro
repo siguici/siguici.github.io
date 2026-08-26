@@ -1,0 +1,118 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCVData } from '../../data/cv';
+import type { Locale, ProfileType } from '../../data/cv/domain/types';
+import { type CVTemplate, templates } from '../../templates/cv';
+
+const locales = ['fr', 'en'] as const;
+
+const profiles = ['master', 'data-scientist', 'data-analyst'] as const;
+
+const templateNames = ['default', 'modern', 'compact'] as const;
+
+type RouteLocale = (typeof locales)[number];
+type RouteProfile = (typeof profiles)[number];
+type RouteTemplate = (typeof templateNames)[number];
+
+interface CVPageProps {
+  locale: RouteLocale;
+  profile: RouteProfile;
+  template: RouteTemplate;
+}
+
+export const getStaticPaths = (() => {
+  const paths: {
+    params: {
+      variant?: string;
+    };
+    props: CVPageProps;
+  }[] = [];
+
+  for (const locale of locales) {
+    for (const profile of profiles) {
+      for (const template of templateNames) {
+        const isDefaultRoute =
+          locale === 'fr' && profile === 'master' && template === 'default';
+
+        const isDefaultLocale = profile === 'master' && template === 'default';
+
+        if (isDefaultRoute) {
+          paths.push({
+            params: {
+              variant: undefined,
+            },
+            props: {
+              locale,
+              profile,
+              template,
+            },
+          });
+
+          continue;
+        }
+
+        if (isDefaultLocale) {
+          paths.push({
+            params: {
+              variant: locale,
+            },
+            props: {
+              locale,
+              profile,
+              template,
+            },
+          });
+
+          continue;
+        }
+
+        const variant = [
+          locale,
+          profile,
+          ...(template === 'default' ? [] : [template]),
+        ].join('/');
+
+        paths.push({
+          params: {
+            variant,
+          },
+          props: {
+            locale,
+            profile,
+            template,
+          },
+        });
+      }
+    }
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { locale, profile, template } = Astro.props as CVPageProps;
+
+const { data } = getCVData(profile as ProfileType, locale as Locale);
+
+const Template = templates[template as CVTemplate];
+
+if (!Template) {
+  throw new Error(`Unknown CV template: ${template}`);
+}
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>{data.title}</title>
+  </head>
+
+  <body>
+    <Template cv={data} />
+  </body>
+</html>

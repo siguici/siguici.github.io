@@ -1,0 +1,128 @@
+---
+import type { ResolvedCV } from '../../../data/cv/domain/types';
+
+interface Props {
+  cv: ResolvedCV;
+}
+
+const { cv } = Astro.props;
+---
+
+<main class="cv cv--modern">
+  <header>
+    <span>{cv.meta.title}</span>
+
+    <h1>{cv.identity.name}</h1>
+    <h2>{cv.identity.role}</h2>
+
+    <p>{cv.identity.tagline}</p>
+  </header>
+
+  <aside>
+    <section>
+      <h2>Contact</h2>
+
+      <a href={`mailto:${cv.contact.email}`}>
+        {cv.contact.email}
+      </a>
+
+      <a href={cv.contact.webUrl}>
+        {cv.contact.web}
+      </a>
+
+      <a href={cv.contact.githubUrl}>
+        {cv.contact.github}
+      </a>
+
+      <a href={cv.contact.linkedinUrl}>
+        {cv.contact.linkedin}
+      </a>
+    </section>
+
+    <section>
+      <h2>Expertise</h2>
+
+      {
+        cv.ecosystem.map((group) => (
+          <div>
+            <h3>{group.categoryLabel}</h3>
+
+            <ul>
+              {
+                group.skills.map((skill) => (
+                  <li>{skill}</li>
+                ))
+              }
+            </ul>
+          </div>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>{cv.languages}</p>
+    </section>
+  </aside>
+
+  <div>
+    <section>
+      <h2>Profile</h2>
+      <p set:html={cv.identity.summary} />
+    </section>
+
+    <section>
+      <h2>Capabilities</h2>
+
+      {
+        cv.capabilities.map((capability) => (
+          <article>
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
+          </article>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      {
+        cv.experiences.map((experience) => (
+          <article>
+            <header>
+              <h3>{experience.role}</h3>
+              <span>{experience.period}</span>
+            </header>
+
+            <strong>{experience.company}</strong>
+
+            <p>{experience.subtitle}</p>
+
+            <ul>
+              {
+                experience.impacts.map((impact) => (
+                  <li set:html={impact} />
+                ))
+              }
+            </ul>
+          </article>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2>Education</h2>
+
+      {
+        cv.education.map((education) => (
+          <article>
+            <h3>{education.degree}</h3>
+            <p>{education.institution}</p>
+            <time>{education.period}</time>
+          </article>
+        ))
+      }
+    </section>
+  </div>
+</main>

@@ -1,0 +1,92 @@
+---
+import type { ResolvedCV } from '../../../data/cv/domain/types';
+
+interface Props {
+  cv: ResolvedCV;
+}
+
+const { cv } = Astro.props;
+---
+
+<main class="cv cv--compact">
+  <header>
+    <h1>{cv.identity.name}</h1>
+    <h2>{cv.identity.role}</h2>
+
+    <div>
+      <a href={`mailto:${cv.contact.email}`}>
+        {cv.contact.email}
+      </a>
+
+      <a href={cv.contact.webUrl}>
+        {cv.contact.web}
+      </a>
+
+      <a href={cv.contact.githubUrl}>
+        {cv.contact.github}
+      </a>
+
+      <a href={cv.contact.linkedinUrl}>
+        {cv.contact.linkedin}
+      </a>
+    </div>
+  </header>
+
+  <section>
+    <p set:html={cv.identity.summary} />
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    {
+      cv.experiences.map((experience) => (
+        <article>
+          <div>
+            <strong>{experience.role}</strong>
+            <span>{experience.company}</span>
+            <time>{experience.period}</time>
+          </div>
+
+          <ul>
+            {
+              experience.impacts.map((impact) => (
+                <li set:html={impact} />
+              ))
+            }
+          </ul>
+        </article>
+      ))
+    }
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+
+    {
+      cv.ecosystem.map((group) => (
+        <div>
+          <strong>{group.categoryLabel}</strong>
+
+          <span>
+            {group.skills.join(' · ')}
+          </span>
+        </div>
+      ))
+    }
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    {
+      cv.education.map((education) => (
+        <article>
+          <strong>{education.degree}</strong>
+          <span>{education.institution}</span>
+          <time>{education.period}</time>
+        </article>
+      ))
+    }
+  </section>
+</main>
