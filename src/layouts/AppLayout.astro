@@ -50,7 +50,7 @@ data = data
     <meta name="description" property="og:description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{(process.env.APP_NAME || app.title) + (title ? ` - ${title}` : '')}</title>
+    <title>{(process.env.APP_NAME || app.title) + (title ? ` | ${title}` : '')}</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />

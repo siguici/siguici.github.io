@@ -36,6 +36,8 @@
   --color-text: #f8fafc;
   --color-muted: #94a3b8;
 
+  --color-neutral-850: #1f1f1f;
+
   /* --- Raw Brand Scale --- */
   --color-primary-50: #ecfeff;
   --color-primary-100: #cffafe;
@@ -49,8 +51,13 @@
   --color-primary-900: #164e63;
   --color-primary-950: #083344;
 
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #e0effe;
+  --color-brand-400: #38bdf8;
   --color-brand-500: #0ea5e9;
   --color-brand-600: #0284c7;
+  --color-brand-700: #0369a1;
+  --color-brand-900: #0c4a6e;
 
   --color-accent-400: #a78bfa;
   --color-accent-500: #6d28d9;
